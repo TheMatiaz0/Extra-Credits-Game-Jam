@@ -9,7 +9,3 @@ People that participate in this project (sorting by join date):
 - Hyopplo,
 - w4ty,
 - DavidLags.
-
-
-
-test
