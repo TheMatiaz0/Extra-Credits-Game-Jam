@@ -7,5 +7,4 @@ People that participate in this project (sorting by join date):
 - bobert,
 - $Jakub$,
 - Hyopplo,
-- w4ty,
 - DavidLags.
