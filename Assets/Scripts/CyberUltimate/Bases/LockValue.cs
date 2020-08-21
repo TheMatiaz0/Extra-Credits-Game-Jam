@@ -152,14 +152,14 @@ public class LockValue
 	public string GetLastEffector() => (Effectors.Count >= 1) ? Effectors[Effectors.Count - 1] : null;
 	public void Take(uint value, string from)
 	{
-		SetValue(Value - value, from);
+		SetValue(Cint.CheckedRemove(Value, value), from);
 	}
 
 	public void Give(uint value, string from)
 	{
-
-		SetValue(Value + value, from);
+		SetValue(Cint.CheckedAdd(Value, value), from);
 	}
+
 	public bool IsInRange(float val)
 		=> Max >= val && Min <= val;
 	public uint Max
