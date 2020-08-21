@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class Inventory : MonoSingleton<Inventory>
 {
-    private Item[] items = new Item[5];
+    private Item[] Items { get; } = new Item[5];
 
     public Item GetItem(Cint slot)
     {
-        if (slot >= items.Length) return null;
-        return items[slot];
+        if (slot >= Items.Length) return null;
+        return Items[slot];
     }
     
     public bool AddItem(Item item)
     {
         var foundSlot = false;
-        for (var i = 0; i < items.Length; i++)
+        for (var i = 0; i < Items.Length; i++)
         {
-            if (items[i] != null) continue;
+            if (Items[i] != null) continue;
             
-            items[i] = item;
+            Items[i] = item;
             foundSlot = true;
             break;
         }
@@ -30,7 +30,7 @@ public class Inventory : MonoSingleton<Inventory>
 
     public void Remove(Cint slot)
     {
-        items[slot] = null;
+        Items[slot] = null;
         InventoryUI.Instance.Refresh();
     }
 }
