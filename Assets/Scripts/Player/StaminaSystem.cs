@@ -10,6 +10,6 @@ public class StaminaSystem : MonoSingleton<StaminaSystem>
 	protected override void Awake()
 	{
 		base.Awake();
-		Stamina = new LockValue(1000, 0, 0);
+		Stamina = new LockValue(1000, 0, 1000);
 	}
 }
