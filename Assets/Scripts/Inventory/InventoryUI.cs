@@ -11,8 +11,7 @@ public class InventoryUI : MonoSingleton<InventoryUI>
     public Sprite testImage;
     
     private const int alphaKeyCodesOffset = 49;
-
-
+    
     public void Start()
     {
         for(var i=0; i<transform.childCount; i++)
