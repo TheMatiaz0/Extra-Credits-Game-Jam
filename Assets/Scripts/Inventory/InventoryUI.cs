@@ -4,89 +4,98 @@ using UnityEngine;
 
 public class InventoryUI : MonoSingleton<InventoryUI>
 {
-    private Slot[] slots = new Slot[5];
-    private Cint selectedSlot = 0;
+	private Slot[] slots = new Slot[5];
+	private Cint selectedSlot = 0;
 
-    public Sprite emptyImage;
-    public Sprite testImage;
-    
-    private const int alphaKeyCodesOffset = 49;
-    
-    public void Start()
-    {
-        for(var i=0; i<transform.childCount; i++)
-        {
-            slots[i] = transform.GetChild(i).GetComponent<Slot>();
-        }
-        Refresh();
-    }
+	public Sprite emptyImage;
+	public Sprite testImage;
 
-    public void Refresh()
-    {
-        for (var i=0; i<slots.Length; i++)
-        {
-            var item = Inventory.Instance.GetItem((Cint)(uint)i);
-            if (item == null)
-            {
-                slots[i].image.sprite = emptyImage;
-            }
-            else
-            {
-                slots[i].image.sprite = item.Icon;
-            }
-            slots[i].Selected = selectedSlot == i;
-        }
-    }
+	private const int alphaKeyCodesOffset = 49;
 
-    private void Select(Cint i)
-    {
-        selectedSlot = i;
-        Refresh();
-    }
-    
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            Inventory.Instance.AddItem(new Item
-            {
-               Name =  "Test",
-               Icon = testImage
-            });
-        } else if (Input.GetKeyDown(KeyCode.H))
-        {
-            Inventory.Instance.Remove(selectedSlot);
-        }
 
-        ScrollWheel();
-        AlphaKeys();
-    }
+	private ItemScriptableObject[] items;
 
-    private void ScrollWheel()
-    {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0)
-        {
-            selectedSlot += selectedSlot < 4 ? (Cint)1 : Cint.Zero;
-            Refresh();
-        } else if (Input.GetAxis("Mouse ScrollWheel") < 0)
-        {
-            selectedSlot--;
-            Refresh();
-        }
-    }
+	public void Start()
+	{
+		for (var i = 0; i < transform.childCount; i++)
+		{
+			slots[i] = transform.GetChild(i).GetComponent<Slot>();
+		}
+		Refresh();
 
-    private void AlphaKeys()
-    {
-        var refresh = false;
-        for (var i = alphaKeyCodesOffset; i < alphaKeyCodesOffset + 6; i++)
-        {
-            if (Input.GetKeyDown((KeyCode)i))
-            {
-                Select((Cint)(uint)i - alphaKeyCodesOffset);
-                refresh = true;
-            }
-        }
+		items = Resources.LoadAll<ItemScriptableObject>("Items");
+	}
 
-        if (refresh) Refresh();
-    }
+	public void Refresh()
+	{
+		for (var i = 0; i < slots.Length; i++)
+		{
+			var item = Inventory.Instance.GetItem((Cint)(uint)i);
+			if (item == null)
+			{
+				slots[i].image.sprite = emptyImage;
+			}
+			else
+			{
+				slots[i].image.sprite = item.Icon;
+			}
+			slots[i].Selected = selectedSlot == i;
+		}
+	}
+
+	private void Select(Cint i)
+	{
+		selectedSlot = i;
+		Refresh();
+	}
+
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.G))
+		{
+			ItemScriptableObject item = items[Random.Range(0, items.Length)];
+
+			Inventory.Instance.AddItem(new Item
+			{
+				Name = item.specialName,
+				Icon = item.invImg
+			});
+		}
+		else if (Input.GetKeyDown(KeyCode.H))
+		{
+			Inventory.Instance.Remove(selectedSlot);
+		}
+
+		ScrollWheel();
+		AlphaKeys();
+	}
+
+	private void ScrollWheel()
+	{
+		if (Input.GetAxis("Mouse ScrollWheel") > 0)
+		{
+			selectedSlot += selectedSlot < 4 ? (Cint)1 : Cint.Zero;
+			Refresh();
+		}
+		else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+		{
+			selectedSlot--;
+			Refresh();
+		}
+	}
+
+	private void AlphaKeys()
+	{
+		var refresh = false;
+		for (var i = alphaKeyCodesOffset; i < alphaKeyCodesOffset + 6; i++)
+		{
+			if (Input.GetKeyDown((KeyCode)i))
+			{
+				Select((Cint)(uint)i - alphaKeyCodesOffset);
+				refresh = true;
+			}
+		}
+
+		if (refresh) Refresh();
+	}
 }
