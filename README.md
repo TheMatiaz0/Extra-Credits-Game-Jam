@@ -4,7 +4,6 @@ Game Engine: Unity 2020.1.2.
 
 People that participate in this project (sorting by join date):
 - TheMatiaz0,
-- bobert,
 - $Jakub$,
 - Hyopplo,
 - DavidLags,
