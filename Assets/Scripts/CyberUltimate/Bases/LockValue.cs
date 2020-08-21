@@ -21,12 +21,12 @@ public class LockValue
 	}
 	public interface ILockArgs
 	{
-		 Action Action { get; }
-		 LockValue Hp { get; }
-		 uint ValueBeforeChange { get; }
+		Action Action { get; }
+		LockValue Hp { get; }
+		uint ValueBeforeChange { get; }
 		uint ValueAfterChange { get; }
 	}
-	public class AnyHpValueChangedArgs:EventArgs,ILockArgs
+	public class AnyHpValueChangedArgs : EventArgs, ILockArgs
 	{
 		public uint Last { get; }
 		public uint Actual { get; }
@@ -36,7 +36,7 @@ public class LockValue
 		public LockValue Hp { get; }
 		uint ILockArgs.ValueAfterChange => Actual;
 		uint ILockArgs.ValueBeforeChange => Last;
-		public AnyHpValueChangedArgs(uint last, uint actual, Action action, Element element, string who,LockValue hp)
+		public AnyHpValueChangedArgs(uint last, uint actual, Action action, Element element, string who, LockValue hp)
 		{
 			Last = last;
 			Actual = actual;
@@ -45,8 +45,8 @@ public class LockValue
 			From = who ?? throw new ArgumentNullException(nameof(who));
 			Hp = hp;
 		}
-	
-	
+
+
 	}
 	public class CanChangeArgs : BoolResolverArgs, ILockArgs
 	{
@@ -78,12 +78,12 @@ public class LockValue
 		{
 			if (value == _Value)
 				return;
-			Value =MathHelper.Clamp<uint>((uint)value, Min, Max);
+			_Value = MathHelper.Clamp((uint)value, Min, Max);
 
 
 		}
 	}
-	
+
 	public uint Min { get; }
 	public readonly uint MaxOfMax;
 
@@ -97,7 +97,7 @@ public class LockValue
 	private Cint _Value = 0;
 	private uint _Max;
 	private readonly List<string> effectors = new List<string>();
-	public LockValue(uint max, uint min, uint value,uint? maxOfMax=null)
+	public LockValue(uint max, uint min, uint value, uint? maxOfMax = null)
 	{
 		_Max = max;
 		Min = min;
@@ -110,18 +110,18 @@ public class LockValue
 			return;
 		Action action = (val > Value) ? Action.Add : Action.Take;
 		CanChangeArgs args = null;
-		if (action==Action.Take)
-        {
-			 args = new CanChangeArgs(this, ((int)(uint)val) - ((int)(uint)Value), val, action, from);
+		if (action == Action.Take)
+		{
+			args = new CanChangeArgs(this, ((int)(uint)val) - ((int)(uint)Value), val, action, from);
 			CanGetSmaller(this, args);
 		}
-		
-		if (action==Action.Add||args.ResolveValue)
+
+		if (action == Action.Add || args.ResolveValue)
 		{
 			effectors.Add(from);
 			Cint last = Value;
 			Value = val;
-			AnyHpValueChangedArgs ev = new AnyHpValueChangedArgs( last, Value, action,Element.Value,from,this);
+			AnyHpValueChangedArgs ev = new AnyHpValueChangedArgs(last, Value, action, Element.Value, from, this);
 			OnValueChanged(this, ev);
 			if (Value == Min)
 				OnValueChangeToMin(this, ev);
@@ -146,16 +146,16 @@ public class LockValue
 		{
 			SetValue(_Max, "Max");
 		}
-		OnMaxValueChanged.Invoke(this, new AnyHpValueChangedArgs(last, val, (last > val) ? Action.Take : Action.Add, Element.Max, who,this));
+		OnMaxValueChanged.Invoke(this, new AnyHpValueChangedArgs(last, val, (last > val) ? Action.Take : Action.Add, Element.Max, who, this));
 
 	}
 	public string GetLastEffector() => (Effectors.Count >= 1) ? Effectors[Effectors.Count - 1] : null;
-	public void TakeHp(uint value, string from)
+	public void Take(uint value, string from)
 	{
 		SetValue(Value - value, from);
 	}
 
-	public void GiveHp(uint value, string from)
+	public void Give(uint value, string from)
 	{
 
 		SetValue(Value + value, from);
