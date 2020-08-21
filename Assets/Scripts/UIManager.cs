@@ -9,17 +9,24 @@ public class UIManager : MonoBehaviour
 	protected void OnEnable()
 	{
 		HealthSystem.Instance.Health.OnValueChanged += Value_OnValueChanged;
+		StaminaSystem.Instance.Stamina.OnValueChanged += Stamina_OnValueChanged;
+	}
+
+	private void Stamina_OnValueChanged(object sender, LockValue.AnyHpValueChangedArgs e)
+	{
+		// throw new System.NotImplementedException();
 	}
 
 	protected void OnDisable()
 	{
 		HealthSystem.Instance.Health.OnValueChanged -= Value_OnValueChanged;
+		StaminaSystem.Instance.Stamina.OnValueChanged -= Stamina_OnValueChanged;
 	}
 
 	protected void Start()
 	{
 		hpBar.fillAmount = 1;
-		// staminaBar.fillAmount = 1;
+		staminaBar.fillAmount = 1;
 	}
 
 	private void Value_OnValueChanged(object sender, LockValue.AnyHpValueChangedArgs e)
