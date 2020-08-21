@@ -6,20 +6,31 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+	[SerializeField]
+	private Image hpBar = null;
+
+	[SerializeField]
+	private Image staminaBar = null;
+
 	protected void OnEnable()
 	{
-		HealthSystem.Instance.Health.OnValueChanged += Value_OnValueChanged;
+		HealthSystem.Instance.Health.OnValueChanged += Health_OnValueChanged;
 		StaminaSystem.Instance.Stamina.OnValueChanged += Stamina_OnValueChanged;
 	}
 
 	private void Stamina_OnValueChanged(object sender, LockValue.AnyHpValueChangedArgs e)
 	{
-		// throw new System.NotImplementedException();
+		staminaBar.fillAmount = Percent.FromValueInRange(e.Hp.Value, (0, e.Hp.Max)).AsFloat;
+	}
+
+	private void Health_OnValueChanged(object sender, LockValue.AnyHpValueChangedArgs e)
+	{
+		hpBar.fillAmount = Percent.FromValueInRange(e.Hp.Value, (0, e.Hp.Max)).AsFloat;
 	}
 
 	protected void OnDisable()
 	{
-		HealthSystem.Instance.Health.OnValueChanged -= Value_OnValueChanged;
+		HealthSystem.Instance.Health.OnValueChanged -= Health_OnValueChanged;
 		StaminaSystem.Instance.Stamina.OnValueChanged -= Stamina_OnValueChanged;
 	}
 
@@ -28,17 +39,4 @@ public class UIManager : MonoBehaviour
 		hpBar.fillAmount = 1;
 		staminaBar.fillAmount = 1;
 	}
-
-	private void Value_OnValueChanged(object sender, LockValue.AnyHpValueChangedArgs e)
-	{
-		hpBar.fillAmount = Percent.FromValueInRange(e.Hp.Value, (0, e.Hp.Max)).AsFloat;
-	}
-
-	[SerializeField]
-	private Image hpBar = null;
-
-	[SerializeField]
-	private Image staminaBar = null;
-
-	
 }
