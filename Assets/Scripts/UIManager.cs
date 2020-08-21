@@ -20,12 +20,12 @@ public class UIManager : MonoBehaviour
 
 	private void Stamina_OnValueChanged(object sender, LockValue.AnyHpValueChangedArgs e)
 	{
-		staminaBar.fillAmount = Percent.FromValueInRange(e.Hp.Value, (0, e.Hp.Max)).AsFloat;
+		staminaBar.fillAmount = Percent.FromValueInRange(e.LockedValue.Value, (0, e.LockedValue.Max)).AsFloat;
 	}
 
 	private void Health_OnValueChanged(object sender, LockValue.AnyHpValueChangedArgs e)
 	{
-		hpBar.fillAmount = Percent.FromValueInRange(e.Hp.Value, (0, e.Hp.Max)).AsFloat;
+		hpBar.fillAmount = Percent.FromValueInRange(e.LockedValue.Value, (0, e.LockedValue.Max)).AsFloat;
 	}
 
 	protected void OnDisable()

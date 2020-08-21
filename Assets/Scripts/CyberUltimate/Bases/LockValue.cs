@@ -22,7 +22,7 @@ public class LockValue
 	public interface ILockArgs
 	{
 		Action Action { get; }
-		LockValue Hp { get; }
+		LockValue LockedValue { get; }
 		uint ValueBeforeChange { get; }
 		uint ValueAfterChange { get; }
 	}
@@ -33,7 +33,7 @@ public class LockValue
 		public Action Action { get; }
 		public Element Element { get; }
 		public string From { get; }
-		public LockValue Hp { get; }
+		public LockValue LockedValue { get; }
 		uint ILockArgs.ValueAfterChange => Actual;
 		uint ILockArgs.ValueBeforeChange => Last;
 		public AnyHpValueChangedArgs(uint last, uint actual, Action action, Element element, string who, LockValue hp)
@@ -43,7 +43,7 @@ public class LockValue
 			Action = action;
 			Element = element;
 			From = who ?? throw new ArgumentNullException(nameof(who));
-			Hp = hp;
+			LockedValue = hp;
 		}
 
 
@@ -51,7 +51,7 @@ public class LockValue
 	public class CanChangeArgs : BoolResolverArgs, ILockArgs
 	{
 		public string From { get; }
-		public LockValue Hp { get; }
+		public LockValue LockedValue { get; }
 		public int Change { get; }
 		public uint TryTo { get; }
 		public Action Action { get; }
@@ -59,7 +59,7 @@ public class LockValue
 		uint ILockArgs.ValueAfterChange => TryTo;
 		public CanChangeArgs(LockValue hp, int change, uint tryTo, Action action, string from)
 		{
-			Hp = hp ?? throw new ArgumentNullException(nameof(hp));
+			LockedValue = hp ?? throw new ArgumentNullException(nameof(hp));
 			TryTo = tryTo;
 			Change = change;
 			Action = action;
