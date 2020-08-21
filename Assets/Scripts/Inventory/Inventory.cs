@@ -6,13 +6,13 @@ public class Inventory : MonoSingleton<Inventory>
 {
     private Item[] items = new Item[5];
 
-    public Item GetItem(int slot)
+    public Item GetItem(Cint slot)
     {
         if (slot >= items.Length) return null;
         return items[slot];
     }
     
-    public bool Add(Item item)
+    public bool AddItem(Item item)
     {
         var foundSlot = false;
         for (var i = 0; i < items.Length; i++)
@@ -21,13 +21,14 @@ public class Inventory : MonoSingleton<Inventory>
             
             items[i] = item;
             foundSlot = true;
+            break;
         }
 
         InventoryUI.Instance.Refresh();
         return foundSlot;
     }
 
-    public void Remove(int slot)
+    public void Remove(Cint slot)
     {
         items[slot] = null;
         InventoryUI.Instance.Refresh();

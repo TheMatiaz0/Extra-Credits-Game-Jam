@@ -1,12 +1,17 @@
-﻿using Cyberultimate.Unity;
+﻿using Cyberultimate;
+using Cyberultimate.Unity;
 using UnityEngine;
 
 public class InventoryUI : MonoSingleton<InventoryUI>
 {
     private Slot[] slots = new Slot[5];
-    private int currentlySelected = 0;
+    private Cint selectedSlot = 0;
 
     public Sprite emptyImage;
+    public Sprite testImage;
+    
+    private const int alphaKeyCodesOffset = 49;
+
 
     public void Start()
     {
@@ -21,7 +26,7 @@ public class InventoryUI : MonoSingleton<InventoryUI>
     {
         for (var i=0; i<slots.Length; i++)
         {
-            var item = Inventory.Instance.GetItem(i);
+            var item = Inventory.Instance.GetItem((Cint)(uint)i);
             if (item == null)
             {
                 slots[i].image.sprite = emptyImage;
@@ -30,38 +35,57 @@ public class InventoryUI : MonoSingleton<InventoryUI>
             {
                 slots[i].image.sprite = item.Icon;
             }
-            slots[i].Selected = currentlySelected == i;
+            slots[i].Selected = selectedSlot == i;
         }
     }
 
-    private void Select(int i)
+    private void Select(Cint i)
     {
-        currentlySelected = i;
+        selectedSlot = i;
         Refresh();
     }
-
+    
     private void Update()
     {
-        var refresh = true;
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.G))
         {
-            Select(0);
-        } else if (Input.GetKeyDown(KeyCode.Alpha2))
+            Inventory.Instance.AddItem(new Item
+            {
+               Name =  "Test",
+               Icon = testImage
+            });
+        } else if (Input.GetKeyDown(KeyCode.H))
         {
-            Select(1);
-        } else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            Select(2);
-        } else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            Select(3);
-        } else if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            Select(4);
+            Inventory.Instance.Remove(selectedSlot);
         }
-        else
+
+        ScrollWheel();
+        AlphaKeys();
+    }
+
+    private void ScrollWheel()
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
-            refresh = false;
+            selectedSlot += selectedSlot < 4 ? (Cint)1 : Cint.Zero;
+            Refresh();
+        } else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            selectedSlot--;
+            Refresh();
+        }
+    }
+
+    private void AlphaKeys()
+    {
+        var refresh = false;
+        for (var i = alphaKeyCodesOffset; i < alphaKeyCodesOffset + 6; i++)
+        {
+            if (Input.GetKeyDown((KeyCode)i))
+            {
+                Select((Cint)(uint)i - alphaKeyCodesOffset);
+                refresh = true;
+            }
         }
 
         if (refresh) Refresh();

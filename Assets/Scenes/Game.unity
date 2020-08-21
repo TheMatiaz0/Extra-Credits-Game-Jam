@@ -547,10 +547,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6777685088475637024, guid: c292b38cb3294684c9b1e41d69ec31c6, type: 3}
-      propertyPath: emptyImage
-      value: 
-      objectReference: {fileID: 21300000, guid: 83010c816506b0d438b66452bcf999a6, type: 3}
     - target: {fileID: 7193591115044947057, guid: c292b38cb3294684c9b1e41d69ec31c6, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0

@@ -93,7 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebb180105e84e3e95268b8b8d21b630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptyImage: {fileID: 0}
+  emptyImage: {fileID: 21300000, guid: 83010c816506b0d438b66452bcf999a6, type: 3}
+  testImage: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1001 &509086607521527548
 PrefabInstance:
   m_ObjectHideFlags: 0
