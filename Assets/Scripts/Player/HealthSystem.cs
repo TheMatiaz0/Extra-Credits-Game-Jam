@@ -1,18 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cyberultimate;
+using Cyberultimate.Unity;
 
-public class HealthSystem : MonoBehaviour
+public class HealthSystem : MonoSingleton<HealthSystem>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public LockValue Health { get; set; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	protected override void Awake()
+	{
+		base.Awake();
+		Health = new LockValue(100, 0, 100);
+	}
+
+	protected void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.J))
+		{
+			Health.Take(10, "Whoooo");
+		}
+	}
+
 }

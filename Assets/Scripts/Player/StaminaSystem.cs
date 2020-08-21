@@ -1,18 +1,15 @@
-﻿using System.Collections;
+﻿using Cyberultimate.Unity;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StaminaSystem : MonoBehaviour
+public class StaminaSystem : MonoSingleton<StaminaSystem>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public LockValue Stamina { get; set; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	protected override void Awake()
+	{
+		base.Awake();
+		Stamina = new LockValue(100, 0, 100);
+	}
 }
