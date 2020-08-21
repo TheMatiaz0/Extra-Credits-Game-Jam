@@ -14,10 +14,12 @@ public class MovementController : MonoSingleton<MovementController>
     public float maxTurnAngle = 90.0f;
 
     public float jumpHeight = 20f;
-    
+    private bool isGrounded;
+
     private float rotX;
 
     private Rigidbody rb;
+
 
     private void Start()
     {
@@ -35,8 +37,6 @@ public class MovementController : MonoSingleton<MovementController>
     {
         // get the mouse inputs
         var y = Input.GetAxis("Mouse X") * turnSpeed;
-        Debug.Log(y);
-        Debug.Log(transform.eulerAngles.y + y);
         rotX += Input.GetAxis("Mouse Y") * turnSpeed;
  
         // clamp the vertical rotation
@@ -62,9 +62,25 @@ public class MovementController : MonoSingleton<MovementController>
 
     private void Jumping()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(new Vector3(0, jumpHeight * 100, 0));
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+    
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
         }
     }
 }
