@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b0ceeaa0d5b4d6cae7073ffecaa0449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 70
+  mouseSensitivity: 90
   minTurnAngle: -70
   maxTurnAngle: 70
   moveSpeed: 8
@@ -307,7 +307,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 75
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

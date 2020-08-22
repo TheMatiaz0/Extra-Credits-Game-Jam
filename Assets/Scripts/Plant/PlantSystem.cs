@@ -45,6 +45,8 @@ public class PlantSystem : MonoSingleton<PlantSystem>
 
     protected override void Awake()
     {
+        base.Awake();
+
         waterUse = SetToRandom(resourceUseRandom);
         soilUse = SetToRandom(resourceUseRandom);
         freshAirUse = SetToRandom(resourceUseRandom);
@@ -66,6 +68,18 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         PlantSize.SetValue(0);
         PlantState = State.Dying;
     }
+
+    public Color GetColorBasedOnState ()
+	{
+        switch (PlantState)
+		{
+            case State.Dying:
+                return Color.red;
+
+            default:
+                return Color.green;
+		}
+	}
 
     private void Update()
     {
@@ -140,7 +154,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     }
 
     private float modifier = 7f;
-    public void AddResources(PlantResources resource, float amount)
+    public void AddResources(float amount, PlantResources resource)
     {
         if (resource == PlantResources.Soil)
         {

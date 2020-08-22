@@ -6,8 +6,12 @@ public class HealPlant : InteractableObject
 {
     protected override void OnInteract()
     {
-        Inventory.Instance.DrainResources(Inventory.Instance.water.Value,PlantSystem.PlantResources.Water);
-        Inventory.Instance.DrainResources(Inventory.Instance.soil.Value, PlantSystem.PlantResources.Soil);
+        PlantSystem.Instance.AddResources(Inventory.Instance.soil.Value, PlantSystem.PlantResources.Soil);
+        PlantSystem.Instance.AddResources(Inventory.Instance.water.Value, PlantSystem.PlantResources.Water);
+
+        Inventory.Instance.DrainResources();
+
+        
         UIManager.Instance.ShowPopupText("Gave all resources to the plant");
     }
 }

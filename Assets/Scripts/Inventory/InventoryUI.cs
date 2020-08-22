@@ -46,13 +46,13 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.G))
+        /*if (Input.GetKeyDown(KeyCode.G))
 		{
 			var item = Inventory.Instance.AllGameItems["Shovel"];
 
 			Inventory.Instance.AddItem(item);
-		}
-		else if (Input.GetKeyDown(KeyCode.H))
+		} else */
+        if (Input.GetKeyDown(KeyCode.Q))
 		{
 			Inventory.Instance.RemoveItem(selectedSlot);
 		}

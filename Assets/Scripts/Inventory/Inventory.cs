@@ -86,18 +86,13 @@ public class Inventory : MonoSingleton<Inventory>
         }
     }
 
-    public void DrainResources(uint count, PlantSystem.PlantResources resource)
+    public void DrainResources()
     {
-        if (resource == PlantSystem.PlantResources.Soil)
-        {
-            soil.TakeValue(count);
-            UIManager.Instance.ChangeResources(resource, soil.Value, soil.Max);
-        }
-        else if (resource == PlantSystem.PlantResources.Water)
-        {
-            UIManager.Instance.ChangeResources(resource, water.Value, water.Max);
-            water.TakeValue(count);
-        }
+        soil.TakeValue(soil.Value);
+        UIManager.Instance.ChangeResources(PlantSystem.PlantResources.Soil, soil.Value, soil.Max);
+
+        water.TakeValue(water.Value);
+        UIManager.Instance.ChangeResources(PlantSystem.PlantResources.Water, water.Value, water.Max);
     }
 
     public void RemoveItem(Cint slot)
