@@ -214,7 +214,7 @@ MonoBehaviour:
   runSpeed: 12
   outOfStaminaSpeed: 5
   movingStamina: 0.5
-  runningStamina: 1
+  runningStamina: 0.75
   gravity: -9.8
   jumpHeight: 1
   jumpingStamina: 10
@@ -223,6 +223,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+  blockAiming: 0
 --- !u!114 &5528639196325777759
 MonoBehaviour:
   m_ObjectHideFlags: 0
