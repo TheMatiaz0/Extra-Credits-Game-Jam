@@ -13,9 +13,9 @@ public class InteractionChecker : MonoSingleton<InteractionChecker>
     private void Update()
     {
         var fwd = Camera.main.transform.forward;
+        //Debug.DrawRay(transform.position, fwd, Color.red);
         if (Physics.Raycast(transform.position, fwd, out var hit, distance, layerMask))
         {
-            Debug.DrawRay(transform.position, fwd, Color.red);
             var go = hit.collider.gameObject;
             if (go.TryGetComponent<InteractableObject>(out var c))
             {

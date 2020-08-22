@@ -4,13 +4,12 @@ using UnityEngine;
 using Cyberultimate;
 using Cyberultimate.Unity;
 
-public class HealthSystem : MonoSingleton<HealthSystem>
+public class HealthSystem : MonoBehaviour
 {
 	public LockValue<float> Health { get; set; }
 
-	protected override void Awake()
+	protected void Awake()
 	{
-		base.Awake();
 		Health = new LockValue<float>(100, 0, 100);
 	}
 

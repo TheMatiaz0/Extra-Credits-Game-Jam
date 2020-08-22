@@ -9,6 +9,8 @@ using System;
 
 public class UIManager : MonoSingleton<UIManager>
 {
+
+
 	[SerializeField]
 	private Image hpBar = null;
 
@@ -22,17 +24,6 @@ public class UIManager : MonoSingleton<UIManager>
 
     [SerializeField]
     private Text popupText = null;
-
-    [SerializeField]
-    private Image soilImage;
-    [SerializeField]
-    private Image waterImage;
-
-	protected void OnEnable()
-	{
-		HealthSystem.Instance.Health.OnValueChanged += Health_OnValueChanged;
-		StaminaSystem.Instance.Stamina.OnValueChanged += Stamina_OnValueChanged;
-	}
 
 	private void Instance_OnCurrentTimeChange(object sender, SimpleArgs<TimeSpan> e)
 	{
@@ -56,18 +47,18 @@ public class UIManager : MonoSingleton<UIManager>
 
 	private void Stamina_OnValueChanged(object sender, LockValue<float>.AnyValueChangedArgs e)
 	{
-		staminaBar.fillAmount = Percent.FromValueInRange(e.Hp.Value, (0, e.Hp.Max)).AsFloat;
+		staminaBar.fillAmount = Percent.FromValueInRange(e.LockValue.Value, (0, e.LockValue.Max)).AsFloat;
 	}
 
 	private void Health_OnValueChanged(object sender, LockValue<float>.AnyValueChangedArgs e)
 	{
-		hpBar.fillAmount = Percent.FromValueInRange(e.Hp.Value, (0, e.Hp.Max)).AsFloat;
+		hpBar.fillAmount = Percent.FromValueInRange(e.LockValue.Value, (0, e.LockValue.Max)).AsFloat;
 	}
 
 	protected void OnDisable()
 	{
-		HealthSystem.Instance.Health.OnValueChanged -= Health_OnValueChanged;
-		StaminaSystem.Instance.Stamina.OnValueChanged -= Stamina_OnValueChanged;
+		GameManager.Instance.HealthSys.Health.OnValueChanged -= Health_OnValueChanged;
+		GameManager.Instance.StaminaSys.Stamina.OnValueChanged -= Stamina_OnValueChanged;
 
 		TimeManager.Instance.OnCurrentDayChange -= Instance_OnCurrentDayChange;
 		TimeManager.Instance.OnCurrentTimeChange -= Instance_OnCurrentTimeChange;
@@ -75,13 +66,14 @@ public class UIManager : MonoSingleton<UIManager>
 
 	protected void Start()
 	{
+		GameManager.Instance.HealthSys.Health.OnValueChanged += Health_OnValueChanged;
+		GameManager.Instance.StaminaSys.Stamina.OnValueChanged += Stamina_OnValueChanged;
+
 		TimeManager.Instance.OnCurrentDayChange += Instance_OnCurrentDayChange;
 		TimeManager.Instance.OnCurrentTimeChange += Instance_OnCurrentTimeChange;
 
 		hpBar.fillAmount = 1;
 		staminaBar.fillAmount = 1;
-        soilImage.fillAmount = 0;
-        waterImage.fillAmount = 0;
 	}
 
     public void ShowPopupText(string txt)
@@ -89,17 +81,5 @@ public class UIManager : MonoSingleton<UIManager>
         popupText.text = txt;
         popupText.color = new Color(popupText.color.r, popupText.color.b, popupText.color.g, 1);
         LeanTween.alpha(popupText.rectTransform, 1, 1).setOnComplete(() => LeanTween.alpha(popupText.rectTransform,0,0.5f).setOnComplete(()=> popupText.color = new Color(popupText.color.r, popupText.color.b, popupText.color.g, 0))); 
-    }
-
-    public void ChangeResources(PlantNeeds.PlantResources resource, float current, float max)
-    {
-        float v = current / max;
-        if (resource == PlantNeeds.PlantResources.soil)
-        {
-            soilImage.fillAmount = v;
-        } else if(resource == PlantNeeds.PlantResources.water)
-        {
-            waterImage.fillAmount = v;
-        }
     }
 }

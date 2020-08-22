@@ -28,7 +28,7 @@ namespace Cyberultimate
 		public interface ILockArgs
 		{
 			Action Action { get; }
-			LockValue<T> Hp { get; }
+			LockValue<T> LockValue { get; }
 			T ValueBeforeChange { get; }
 			T ValueAfterChange { get; }
 		}
@@ -39,17 +39,17 @@ namespace Cyberultimate
 			public Action Action { get; }
 			public Element Element { get; }
 			public string From { get; }
-			public LockValue<T> Hp { get; }
+			public LockValue<T> LockValue { get; }
 			T ILockArgs.ValueAfterChange => Actual;
 			T ILockArgs.ValueBeforeChange => Last;
-			public AnyValueChangedArgs(T last, T actual, Action action, Element element, string who, LockValue<T> hp)
+			public AnyValueChangedArgs(T last, T actual, Action action, Element element, string who, LockValue<T> lockValue)
 			{
 				Last = last;
 				Actual = actual;
 				Action = action;
 				Element = element;
 				From = who ?? throw new ArgumentNullException(nameof(who));
-				Hp = hp;
+				LockValue = lockValue;
 			}
 
 
@@ -57,14 +57,14 @@ namespace Cyberultimate
 		public class CanChangeArgs : BoolResolverArgs, ILockArgs
 		{
 			public string From { get; }
-			public LockValue<T> Hp { get; }
+			public LockValue<T> LockValue { get; }
 			public T TryTo { get; }
 			public Action Action { get; }
 			public T ValueBeforeChange { get; }
 			T ILockArgs.ValueAfterChange => TryTo;
 			public CanChangeArgs(LockValue<T> hp, T tryTo, Action action, string from)
 			{
-				Hp = hp ?? throw new ArgumentNullException(nameof(hp));
+				LockValue = hp ?? throw new ArgumentNullException(nameof(hp));
 				TryTo = tryTo;
 
 				Action = action;
