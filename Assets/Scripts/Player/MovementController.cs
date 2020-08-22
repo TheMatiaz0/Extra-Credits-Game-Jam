@@ -1,4 +1,5 @@
 ﻿using System;
+using Cyberultimate;
 using Cyberultimate.Unity;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ public class MovementController : MonoSingleton<MovementController>
     [Header("Movement")]
     public float moveSpeed = 8.0f;
     public float runSpeed = 12.0f;
+    public float runningStamina = 1f;
     
     private bool isRunning = false;
     private float CurrentSpeed => (isRunning ? runSpeed : moveSpeed);
@@ -40,6 +42,7 @@ public class MovementController : MonoSingleton<MovementController>
     private void Update()
     {
         MouseAiming();
+        Running();
         KeyboardMovement();
         Jumping();
     }
@@ -69,8 +72,7 @@ public class MovementController : MonoSingleton<MovementController>
         
         var x = Input.GetAxis("Horizontal");
         var z = Input.GetAxis("Vertical");
-
-        isRunning = Input.GetKey(KeyCode.LeftShift);
+        
 
         var dir = (transform.forward * z) + (transform.right * x);
 
@@ -78,6 +80,15 @@ public class MovementController : MonoSingleton<MovementController>
 
         velocity.y += gravity * Time.deltaTime;
         cc.Move(velocity * Time.deltaTime);
+    }
+
+    private void Running()
+    {
+        isRunning = Input.GetKey(KeyCode.LeftShift);
+        if (isRunning)
+        {
+            StaminaSystem.Instance.Stamina.Take((Cint)(uint)Mathf.RoundToInt(Time.deltaTime * runningStamina * 100), "Running");
+        }
     }
 
     private void Jumping()
