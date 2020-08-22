@@ -33,8 +33,9 @@ public class EnemyBehaviour : MonoBehaviour
 	private Rigidbody rb;
 
 	private float nextAttackTime = 0;
+    private bool goingBack = false;
 
-	protected void Start()
+    protected void Start()
 	{
 		agent = GetComponent<NavMeshAgent>();
 		agent.stoppingDistance = attackDistance;
@@ -50,17 +51,22 @@ public class EnemyBehaviour : MonoBehaviour
 
 	protected void Update()
 	{
-        HandleOutside();
-        HandleChase();
-        HandleSoloMoving();
+        Debug.Log("distance: " + Vector2.Distance(startingPos, MovementController.Instance.transform.position));
+        if (!goingBack)
+        {
+            HandleOutside();
+            HandleChase();
+            HandleSoloMoving();
+        }
+        else if (agent.remainingDistance < 0.01f) goingBack = false;
 
 		rb.velocity *= 0.99f;
 	}
 
     void HandleChase()
     {
-        Vector3 playerPos = MovementController.Instance.transform.position;
-        if (Vector3.Distance(transform.position, playerPos) <= chasingRange) chasingPlayer = true; else chasingPlayer = false;
+        Vector3 playerPos =MovementController.Instance.transform.position;
+        if (Vector3.Distance(transform.position, new Vector2(playerPos.x,playerPos.z)) <= chasingRange) chasingPlayer = true; else chasingPlayer = false;
 
         if (chasingPlayer)
         {
@@ -93,11 +99,13 @@ public class EnemyBehaviour : MonoBehaviour
 
     void HandleOutside()
     {
-        if (Vector2.Distance(startingPos, transform.position) >= maxMovingRange)
+        Vector2 playerPos =MovementController.Instance.transform.position;
+        if (Vector2.Distance(startingPos, playerPos) >= maxMovingRange)
         {
             //nowa pozycja w kwadracie dookoła środka
-            agent.Move(NewMovingPosition(startingPos));
+            agent.SetDestination(NewMovingPosition(startingPos));
             Debug.Log("Too far away ;(");
+            goingBack = true;
         }
     }
 
@@ -105,7 +113,7 @@ public class EnemyBehaviour : MonoBehaviour
     float nextMoveTime = 4;
     void HandleSoloMoving()
     {
-        if (agent.remainingDistance<0.01f || agent.remainingDistance==Mathf.Infinity) //stoi w miejscu
+        if (agent.remainingDistance<2f || agent.remainingDistance==Mathf.Infinity&&!chasingPlayer) //stoi w miejscu
         {
             nextMoveTimer += Time.deltaTime;
             Debug.Log("Waiting for next move");
@@ -114,7 +122,7 @@ public class EnemyBehaviour : MonoBehaviour
                 Debug.Log("Next move!");
                 nextMoveTimer = 0;
                 nextMoveTime = Random.Range(nextMoveRandomDelay.x, nextMoveRandomDelay.y);
-                agent.Move(NewMovingPosition(transform.position));
+                agent.SetDestination(NewMovingPosition(transform.position));
             }
         }
     }
