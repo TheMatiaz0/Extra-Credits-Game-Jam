@@ -52,11 +52,7 @@ public class UIManager : MonoSingleton<UIManager>
     public void ShowPopupText(string txt)
     {
         popupText.text = txt;
-        popupAnimation.SetBool("FadeOut",true);
-    }
-
-    public void PopupFadedOut()
-    {
-        popupAnimation.SetBool("FadeOut", false);
+        popupText.color = new Color(popupText.color.r, popupText.color.b, popupText.color.g, 1);
+        LeanTween.alpha(popupText.rectTransform, 1, 1).setOnComplete(() => LeanTween.alpha(popupText.rectTransform,0,0.5f));
     }
 }
