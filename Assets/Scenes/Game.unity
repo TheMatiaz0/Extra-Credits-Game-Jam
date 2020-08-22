@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.70239675, g: 0.34603867, b: 0.11244258, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 88971ec6db5105e4a8ab1c8ce617a581, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 7f88c65f8088d0343aeebb637cad89a2, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 740752633}
   - component: {fileID: 740752632}
   - component: {fileID: 740752631}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 1109644397}
   - component: {fileID: 1109644396}
   - component: {fileID: 1109644399}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 1415062384}
   - component: {fileID: 1415062383}
   - component: {fileID: 1415062379}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlantCube
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -763,7 +763,7 @@ GameObject:
   - component: {fileID: 1926221797}
   - component: {fileID: 1926221796}
   - component: {fileID: 1926221795}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -778,7 +778,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926221792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.517, y: -0.184, z: 0}
+  m_LocalPosition: {x: -16.343239, y: -0.18439603, z: 0}
   m_LocalScale: {x: 2.3135223, y: 1.631208, z: 10}
   m_Children: []
   m_Father: {fileID: 1892376789}
