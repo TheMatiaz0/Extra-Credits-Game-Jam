@@ -483,7 +483,7 @@ MonoBehaviour:
   inGameTimeSpan:
     seconds: 1
     mode: 1
-  minutesPerTimeSpan: 5
+  minutesPerTimeSpan: 60
 --- !u!4 &316146376
 Transform:
   m_ObjectHideFlags: 0
@@ -2149,7 +2149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623096835}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -150, y: 0, z: -150}
+  m_LocalPosition: {x: -150, y: -0.001, z: -150}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

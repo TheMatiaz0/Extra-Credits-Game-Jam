@@ -22,8 +22,6 @@ public class Inventory : MonoSingleton<Inventory>
         {
             AllGameItems[item.name] = item;
         }
-        
-        Debug.Log($"Loaded {items.Length} items: {string.Join(", ", (IEnumerable<ItemScriptableObject>)items)}");
     }
 
     public bool HasItem(string name)

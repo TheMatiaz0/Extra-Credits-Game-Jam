@@ -84,9 +84,10 @@ public class MovementController : MonoSingleton<MovementController>
         
         if(Math.Abs(x) > 0.2 || Math.Abs(z) > 0.2) LosingStamina();
 
+        /*var dir = new Vector3(z, 0, x);
+        dir.Normalize();*/
         
         var dir = (transform.forward * z) + (transform.right * x);
-        dir.Normalize();
 
         cc.Move(dir * (CurrentSpeed * Time.deltaTime));
 
@@ -101,7 +102,7 @@ public class MovementController : MonoSingleton<MovementController>
 
     private void Jumping()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !IsOutOfStamina)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             GameManager.Instance.StaminaSys.Stamina.TakeValue(Time.deltaTime * jumpingStamina, "Jumping");
