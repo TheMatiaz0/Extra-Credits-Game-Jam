@@ -65,12 +65,12 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 	{
 		if (Input.GetAxis("Mouse ScrollWheel") > 0)
 		{
-			selectedSlot += selectedSlot < 4 ? (Cint)1 : Cint.Zero;
+			selectedSlot--;
 			Refresh();
 		}
 		else if (Input.GetAxis("Mouse ScrollWheel") < 0)
 		{
-			selectedSlot--;
+			selectedSlot += selectedSlot < 4 ? (Cint)1 : Cint.Zero;
 			Refresh();
 		}
 	}

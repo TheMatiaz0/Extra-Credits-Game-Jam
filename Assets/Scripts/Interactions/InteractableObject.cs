@@ -38,7 +38,7 @@ public abstract class InteractableObject : MonoBehaviour
         return false;
     }
     
-    public void MouseDown()
+    public void KeyDown()
     {
         if (!CheckItemsNeeded(true)) return;
         if (interactionTime == 0)
@@ -47,7 +47,7 @@ public abstract class InteractableObject : MonoBehaviour
         } 
     }
 
-    public void MouseHold()
+    public void KeyHold()
     {
         if (!usable || interactionTime == 0) return;
         if (!CheckItemsNeeded()) return;
@@ -66,7 +66,7 @@ public abstract class InteractableObject : MonoBehaviour
         InteractionUI.Instance.SetPossibleInteractionProgress(progress);
     }
 
-    public void MouseUp()
+    public void ActionUp()
     {
         usable = true;
         holdingTime = 0;
