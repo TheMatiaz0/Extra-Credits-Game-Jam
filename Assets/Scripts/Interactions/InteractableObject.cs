@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UI;
 using UnityEngine;
 
@@ -13,8 +14,28 @@ public abstract class InteractableObject : MonoBehaviour
 
     private bool usable = true;
 
+    private bool CheckItemsNeeded(bool showMessage = false)
+    {
+        foreach (var item in itemsNeeded)
+        {
+            if (!Inventory.Instance.HasItem(item))
+            {
+                if (showMessage)
+                {
+                    // TODO: Show message
+                    // UIManager.Instance.AddMessage($"{item} is required");
+                    Debug.Log($"{item} is required");
+                }
+                return false;
+            }
+        }
+
+        return true;
+    }
+    
     public void MouseDown()
     {
+        if (!CheckItemsNeeded(true)) return;
         if (interactTime == 0)
         {
             OnInteract();
@@ -24,6 +45,7 @@ public abstract class InteractableObject : MonoBehaviour
     public void MouseHold()
     {
         if (!usable || interactTime == 0) return;
+        if (!CheckItemsNeeded()) return;
         
         if (holdingTime >= interactTime)
         {

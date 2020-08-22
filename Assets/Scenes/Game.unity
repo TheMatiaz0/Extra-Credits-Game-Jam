@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.702417, g: 0.34597975, b: 0.11247656, a: 1}
+  m_IndirectSpecularColor: {r: 0.70239675, g: 0.34603867, b: 0.11244258, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -510,6 +510,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactTime: 2
   takesStamina: 5
+  itemsNeeded:
+  - Shovel
 --- !u!1 &1271331428
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactTime: 5
   takesStamina: 10
+  itemsNeeded: []
   maximumNeedsToMakeATask: 60
 --- !u!65 &1415062380
 BoxCollider:
