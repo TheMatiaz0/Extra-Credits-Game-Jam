@@ -1956,10 +1956,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8436613177284702583, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
-      propertyPath: m_Text
-      value: DAY 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
 --- !u!1001 &6738984028112784058

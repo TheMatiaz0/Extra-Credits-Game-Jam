@@ -212,8 +212,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 70
-  minTurnAngle: -45
-  maxTurnAngle: 45
+  minTurnAngle: -70
+  maxTurnAngle: 70
   moveSpeed: 8
   runSpeed: 12
   movingStamina: 0.5

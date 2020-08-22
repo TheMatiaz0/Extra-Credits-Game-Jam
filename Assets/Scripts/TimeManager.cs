@@ -35,7 +35,7 @@ public class TimeManager : MonoSingleton<TimeManager>
 
 	protected void Start()
 	{
-		CurrentTime = new TimeSpan(20, 0, 0);
+		CurrentTime = new TimeSpan(8, 0, 0);
 		StartCoroutine(TimeCount());
 	}
 
@@ -48,15 +48,6 @@ public class TimeManager : MonoSingleton<TimeManager>
 			CurrentTime = new TimeSpan(CurrentTime.Hours, CurrentTime.Minutes + 10, CurrentTime.Seconds);
 
 			CurrentDay += (Cint)((uint)CurrentTime.Days);
-			UnityEngine.Debug.Log(CurrentDay);
-
-			/*
-			if (CurrentTime.Days == 1)
-			{
-				CurrentDay++;
-
-			}
-			*/
 		}
 	}
 }
