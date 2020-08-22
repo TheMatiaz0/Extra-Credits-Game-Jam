@@ -34,6 +34,7 @@ public class Garbage : InteractableObject
             int itemRnd = Random.Range(0, itemDrops.Count);
             if (Inventory.Instance.AddItem(itemDrops[itemRnd]))
             {
+                UIManager.Instance.ShowPopupText("You found a " + itemDrops[itemRnd].name);
                 garbageUsed = true;
                 Destroy(this);
             } else 
