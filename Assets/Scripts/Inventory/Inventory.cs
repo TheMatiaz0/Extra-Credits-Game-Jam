@@ -60,9 +60,9 @@ public class Inventory : MonoSingleton<Inventory>
         return foundSlot;
     }
 
-    public void AddResource(uint count, PlantNeeds.PlantResources resource)
+    public void AddResource(uint count, PlantSystem.PlantResources resource)
     {
-        if (resource == PlantNeeds.PlantResources.soil)
+        if (resource == PlantSystem.PlantResources.soil)
         {
             if (soil.Value == soil.Max)
             {
@@ -73,7 +73,7 @@ public class Inventory : MonoSingleton<Inventory>
                 UIManager.Instance.ChangeResources(resource, soil.Value, soil.Max);
                 UIManager.Instance.ShowPopupText("Collected soil");
             }
-        } else if (resource == PlantNeeds.PlantResources.water)
+        } else if (resource == PlantSystem.PlantResources.water)
         {
             if (water.Value == water.Max)
             {

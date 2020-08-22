@@ -30,6 +30,8 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     private float freshAirUse;
     private float sunlightUse;
 
+    public enum PlantResources { soil, water, air, light }
+
     private void Start()
     {
         waterUse = SetToRandom(resourceUseRandom);

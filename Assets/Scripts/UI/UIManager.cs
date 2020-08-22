@@ -25,7 +25,12 @@ public class UIManager : MonoSingleton<UIManager>
     [SerializeField]
     private Text popupText = null;
 
-	private void Instance_OnCurrentTimeChange(object sender, SimpleArgs<TimeSpan> e)
+    [SerializeField]
+    private Image soilImage;
+    [SerializeField]
+    private Image waterImage;
+
+    private void Instance_OnCurrentTimeChange(object sender, SimpleArgs<TimeSpan> e)
 	{
 		var dateTime = new DateTime(e.Value.Ticks);
 		var formattedTime = dateTime.ToString("h:mm tt", CultureInfo.InvariantCulture);
@@ -82,4 +87,18 @@ public class UIManager : MonoSingleton<UIManager>
         popupText.color = new Color(popupText.color.r, popupText.color.b, popupText.color.g, 1);
         LeanTween.alpha(popupText.rectTransform, 1, 1).setOnComplete(() => LeanTween.alpha(popupText.rectTransform,0,0.5f).setOnComplete(()=> popupText.color = new Color(popupText.color.r, popupText.color.b, popupText.color.g, 0))); 
     }
+
+    public void ChangeResources(PlantSystem.PlantResources resource, float current, float max)
+    {
+        float v = current / max;
+        if (resource == PlantSystem.PlantResources.soil)
+        {
+            soilImage.fillAmount = v;
+        }
+        else if (resource == PlantSystem.PlantResources.water)
+        {
+            waterImage.fillAmount = v;
+        }
+    }
 }
+
