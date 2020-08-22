@@ -433,7 +433,7 @@ MonoBehaviour:
   inGameTimeSpan:
     seconds: 1
     mode: 1
-  minutesPerTimeSpan: 60
+  minutesPerTimeSpan: 5
 --- !u!4 &316146376
 Transform:
   m_ObjectHideFlags: 0
