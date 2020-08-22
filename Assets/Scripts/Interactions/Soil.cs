@@ -9,6 +9,6 @@ public class Soil : InteractableObject
 
     protected override void OnInteract()
     {
-        Inventory.Instance.AddResource(2,Inventory.PlantResources.soil); //zależnie od rodzaju łopaty
+        Inventory.Instance.AddResource(2,PlantNeeds.PlantResources.soil); //zależnie od rodzaju łopaty
     }
 }
