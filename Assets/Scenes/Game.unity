@@ -204,7 +204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionTime: 3
   takesStamina: 5
-  itemsNeeded: []
+  itemsNeeded:
+    _Array: []
   itemDrops:
   - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
   - {fileID: 11400000, guid: 1d163f09b76a94e4a8fb8855b5aef55d, type: 2}
@@ -334,7 +335,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionTime: 3
   takesStamina: 5
-  itemsNeeded: []
+  itemsNeeded:
+    _Array: []
   itemDrops:
   - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
   - {fileID: 11400000, guid: 1d163f09b76a94e4a8fb8855b5aef55d, type: 2}
@@ -550,7 +552,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionTime: 3
   takesStamina: 5
-  itemsNeeded: []
+  itemsNeeded:
+    _Array: []
   itemDrops:
   - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
   - {fileID: 11400000, guid: 1d163f09b76a94e4a8fb8855b5aef55d, type: 2}
@@ -742,7 +745,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionTime: 3
   takesStamina: 5
-  itemsNeeded: []
+  itemsNeeded:
+    _Array: []
   itemDrops:
   - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
   - {fileID: 11400000, guid: 1d163f09b76a94e4a8fb8855b5aef55d, type: 2}
@@ -810,7 +814,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionTime: 3
   takesStamina: 5
-  itemsNeeded: []
+  itemsNeeded:
+    _Array: []
   itemDrops:
   - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
   - {fileID: 11400000, guid: 1d163f09b76a94e4a8fb8855b5aef55d, type: 2}
@@ -1036,7 +1041,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionTime: 3
   takesStamina: 5
-  itemsNeeded: []
+  itemsNeeded:
+    _Array: []
   itemDrops:
   - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
   - {fileID: 11400000, guid: 1d163f09b76a94e4a8fb8855b5aef55d, type: 2}
@@ -1204,7 +1210,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionTime: 3
   takesStamina: 5
-  itemsNeeded: []
+  itemsNeeded:
+    _Array: []
   itemDrops:
   - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
   - {fileID: 11400000, guid: 1d163f09b76a94e4a8fb8855b5aef55d, type: 2}
@@ -1296,6 +1303,7 @@ GameObject:
   - component: {fileID: 1109644395}
   - component: {fileID: 1109644398}
   - component: {fileID: 1109644397}
+  - component: {fileID: 1109644399}
   - component: {fileID: 1109644396}
   m_Layer: 9
   m_Name: Cube
@@ -1380,6 +1388,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109644394}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1109644399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109644394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf1668d21ea4c6b8df5eb0e37fc8a8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionTime: 0
+  takesStamina: 0
+  itemsNeeded:
+    _Array:
+    - _Array:
+      - Shovel
 --- !u!1 &1271331428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1496,7 +1522,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionTime: 5
   takesStamina: 10
-  itemsNeeded: []
+  itemsNeeded:
+    _Array: []
   maximumNeedsToMakeATask: 60
 --- !u!65 &1415062380
 BoxCollider:
@@ -1732,7 +1759,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionTime: 3
   takesStamina: 5
-  itemsNeeded: []
+  itemsNeeded:
+    _Array: []
   itemDrops:
   - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
   - {fileID: 11400000, guid: 1d163f09b76a94e4a8fb8855b5aef55d, type: 2}
@@ -2234,26 +2262,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 837730327054030038, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
-      propertyPath: m_ShowCustomSorter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 837730327054030038, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
-      propertyPath: m_ShowToolkit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 837730327054030038, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
-      propertyPath: antialiasingMode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2576859048924146377, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3431571246878215494, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
-      propertyPath: sharedProfile
-      value: 
-      objectReference: {fileID: 11400000, guid: a0d50c53e392cf444a356f1a1d93ca9e, type: 2}
     - target: {fileID: 7255697829055022433, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2301,22 +2309,6 @@ PrefabInstance:
     - target: {fileID: 7255697829055022461, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7255697829160652609, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
-      propertyPath: field of view
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 7255697829160652611, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
-      propertyPath: m_VolumeLayerMask.m_Bits
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7255697829160652611, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
-      propertyPath: m_RendererIndex
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7255697829160652611, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
