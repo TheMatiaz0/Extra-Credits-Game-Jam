@@ -13,15 +13,18 @@ public class MovementController : MonoSingleton<MovementController>
     [Header("Movement")]
     public float moveSpeed = 8.0f;
     public float runSpeed = 12.0f;
+    public float movingStamina = 0.5f;
     public float runningStamina = 1f;
     
     private bool isRunning = false;
     private float CurrentSpeed => (isRunning ? runSpeed : moveSpeed);
+    private float CurrentStamina => (isRunning ? runningStamina : movingStamina);
     
     
     [Header("Gravity & jumping")]
     public float gravity = -9.8f;
     public float jumpHeight = 5f;
+    public float jumpingStamina = 10f;
 
     [Header("Ground checks")]
     public Transform groundCheck;
@@ -45,6 +48,7 @@ public class MovementController : MonoSingleton<MovementController>
         Running();
         KeyboardMovement();
         Jumping();
+        LosingStamina();
     }
 
     private void MouseAiming()
@@ -85,10 +89,6 @@ public class MovementController : MonoSingleton<MovementController>
     private void Running()
     {
         isRunning = Input.GetKey(KeyCode.LeftShift);
-        if (isRunning)
-        {
-            StaminaSystem.Instance.Stamina.Take((Cint)(uint)Mathf.RoundToInt(Time.deltaTime * runningStamina * 100), "Running");
-        }
     }
 
     private void Jumping()
@@ -96,6 +96,12 @@ public class MovementController : MonoSingleton<MovementController>
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            StaminaSystem.Instance.Stamina.Take((Cint)(uint)Mathf.RoundToInt(Time.deltaTime * jumpingStamina * 100), "Jumping");
         }
+    }
+
+    private void LosingStamina()
+    {
+        StaminaSystem.Instance.Stamina.Take((Cint)(uint)Mathf.RoundToInt(Time.deltaTime * CurrentStamina * 100), "Running");
     }
 }
