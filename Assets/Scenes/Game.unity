@@ -481,8 +481,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inGameTimeSpan:
-    seconds: 1
-    mode: 1
+    seconds: 0.1
+    mode: 0
   minutesPerTimeSpan: 5
 --- !u!4 &316146376
 Transform:
