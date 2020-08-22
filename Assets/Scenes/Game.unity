@@ -433,7 +433,7 @@ MonoBehaviour:
   inGameTimeSpan:
     seconds: 1
     mode: 1
-  minutesPerTimeSpan: 0
+  minutesPerTimeSpan: 60
 --- !u!4 &316146376
 Transform:
   m_ObjectHideFlags: 0
@@ -2686,10 +2686,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543450652813336487}
     m_Modifications:
-    - target: {fileID: 4434532884866480259, guid: 089b59e3508e05f44b308168e51f1f7a, type: 3}
-      propertyPath: interactionTime
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 4434532884866480262, guid: 089b59e3508e05f44b308168e51f1f7a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.1800013

@@ -689,6 +689,7 @@ MonoBehaviour:
   staminaBar: {fileID: 138492495301105564}
   timeText: {fileID: 3908250942323714425}
   dayText: {fileID: 8436613177284702583}
+  goToSleepText: {fileID: 1854819206889964753}
   popupText: {fileID: 6190856166800128025}
   soilImage: {fileID: 1241748497}
   waterImage: {fileID: 234400103}
@@ -1834,8 +1835,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 7829924398751099205, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
+--- !u!1 &1854819206889964753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7829924398751099205, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
+  m_PrefabInstance: {fileID: 8436613177101692308}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &3908250942029316381 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4839183195523574921, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
+  m_PrefabInstance: {fileID: 8436613177101692308}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3908250942323714425 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4839183195835253997, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
@@ -1847,8 +1862,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &3908250942029316381 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4839183195523574921, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
-  m_PrefabInstance: {fileID: 8436613177101692308}
-  m_PrefabAsset: {fileID: 0}
