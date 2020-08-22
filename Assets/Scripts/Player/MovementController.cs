@@ -57,6 +57,7 @@ public class MovementController : MonoSingleton<MovementController>
 
         isRunning = Input.GetKey(KeyCode.LeftShift);
 
+        rb.AddForce(transform.forward * (Time.deltaTime * (isRunning ? runSpeed : moveSpeed)) * dir);
         transform.Translate(dir * ((isRunning ? runSpeed : moveSpeed) * Time.deltaTime));
     }
 
