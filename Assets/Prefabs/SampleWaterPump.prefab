@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6890518541796918127}
   - component: {fileID: 6890518541796918126}
   m_Layer: 9
-  m_Name: WaterPump
+  m_Name: SampleWaterPump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,8 +122,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14f2cbaf9e5b2cd4d943e2739f161c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionTime: 0
-  takesStamina: 0
-  itemsNeeded: []
-  bottle: {fileID: 0}
+  interactionTime: 4
+  takesStamina: 10
+  itemsNeeded:
+    _Array:
+    - _Array:
+      - Bottle
   bottleWithWater: {fileID: 0}

@@ -125,5 +125,7 @@ MonoBehaviour:
   interactionTime: 3
   takesStamina: 5
   itemsNeeded:
-  - Shovel
-  soil: {fileID: 0}
+    _Array:
+    - _Array:
+      - Shovel
+  soil: {fileID: 11400000, guid: 1d8adbe6214c724479fe226172b0b3ef, type: 2}

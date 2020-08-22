@@ -75,7 +75,6 @@ public class UIManager : MonoSingleton<UIManager>
     {
         popupText.text = txt;
         popupText.color = new Color(popupText.color.r, popupText.color.b, popupText.color.g, 1);
-        LeanTween.alpha(popupText.rectTransform, 1, 1).setOnComplete(() => LeanTween.alpha(popupText.rectTransform,0,0.5f));
-        popupText.color = new Color(popupText.color.r, popupText.color.b, popupText.color.g, 0);
+        LeanTween.alpha(popupText.rectTransform, 1, 1).setOnComplete(() => LeanTween.alpha(popupText.rectTransform,0,0.5f).setOnComplete(()=> popupText.color = new Color(popupText.color.r, popupText.color.b, popupText.color.g, 0))); 
     }
 }
