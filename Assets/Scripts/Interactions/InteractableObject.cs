@@ -18,6 +18,12 @@ public abstract class InteractableObject : MonoBehaviour
 
     private bool CheckItemsNeeded(bool showMessage = false)
     {
+        if (GameManager.Instance.StaminaSys.Stamina.Value == 0)
+        {
+            UIManager.Instance.ShowPopupText("Not enough stamina!");
+            return false;
+        }
+
         List<string> missingItems = new List<string>();
         foreach (var itemOptions in itemsNeeded)
         {
