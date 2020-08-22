@@ -25,12 +25,6 @@ public class UIManager : MonoSingleton<UIManager>
     [SerializeField]
     private Text popupText = null;
 
-	protected void OnEnable()
-	{
-		GameManager.Instance.HealthSys.Health.OnValueChanged += Health_OnValueChanged;
-		GameManager.Instance.StaminaSys.Stamina.OnValueChanged += Stamina_OnValueChanged;
-	}
-
 	private void Instance_OnCurrentTimeChange(object sender, SimpleArgs<TimeSpan> e)
 	{
 		var dateTime = new DateTime(e.Value.Ticks);
@@ -72,6 +66,9 @@ public class UIManager : MonoSingleton<UIManager>
 
 	protected void Start()
 	{
+		GameManager.Instance.HealthSys.Health.OnValueChanged += Health_OnValueChanged;
+		GameManager.Instance.StaminaSys.Stamina.OnValueChanged += Stamina_OnValueChanged;
+
 		TimeManager.Instance.OnCurrentDayChange += Instance_OnCurrentDayChange;
 		TimeManager.Instance.OnCurrentTimeChange += Instance_OnCurrentTimeChange;
 

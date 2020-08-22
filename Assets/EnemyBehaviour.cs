@@ -53,5 +53,12 @@ public class EnemyBehaviour : MonoBehaviour
 				}
 			}
 		}
+
+		Vector3 playerPos = MovementController.Instance.transform.position;
+		agent.destination = playerPos;
+
+		transform.LookAt(new Vector3(playerPos.x, this.transform.position.y, playerPos.z));
+
+		rb.velocity *= 0.99f;
 	}
 }
