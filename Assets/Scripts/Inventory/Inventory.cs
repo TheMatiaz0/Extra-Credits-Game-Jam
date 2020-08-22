@@ -23,6 +23,11 @@ public class Inventory : MonoSingleton<Inventory>
         Debug.Log($"Loaded {items.Length} items: {string.Join(", ", (IEnumerable<ItemScriptableObject>)items)}");
     }
 
+    public bool HasItem(string name)
+    {
+        return Items.Any(x => x != null && x.name == name);
+    }
+    
     public ItemScriptableObject GetItem(Cint slot)
     {
         if (slot >= Items.Length) return null;

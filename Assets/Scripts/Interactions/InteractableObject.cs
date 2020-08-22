@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Linq;
 using UI;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
 public abstract class InteractableObject : MonoBehaviour
 {
-    public float interactionTime = 0;
+    public float interactTime = 0;
     public float takesStamina = 0;
     public string[] itemsNeeded;
 
@@ -13,9 +14,29 @@ public abstract class InteractableObject : MonoBehaviour
 
     private bool usable = true;
 
+    private bool CheckItemsNeeded(bool showMessage = false)
+    {
+        foreach (var item in itemsNeeded)
+        {
+            if (!Inventory.Instance.HasItem(item))
+            {
+                if (showMessage)
+                {
+                    // TODO: Show message
+                    // UIManager.Instance.AddMessage($"{item} is required");
+                    Debug.Log($"{item} is required");
+                }
+                return false;
+            }
+        }
+
+        return true;
+    }
+    
     public void MouseDown()
     {
-        if (interactionTime == 0)
+        if (!CheckItemsNeeded(true)) return;
+        if (interactTime == 0)
         {
             OnInteract();
         } 
@@ -23,18 +44,19 @@ public abstract class InteractableObject : MonoBehaviour
 
     public void MouseHold()
     {
-        if (!usable || interactionTime == 0) return;
+        if (!usable || interactTime == 0) return;
+        if (!CheckItemsNeeded()) return;
         
-        if (holdingTime >= interactionTime)
+        if (holdingTime >= interactTime)
         {
             OnInteract();
             holdingTime = 0;
             usable = false;
         }
 
-        var progress = holdingTime / interactionTime;
+        var progress = holdingTime / interactTime;
 
-        StaminaSystem.Instance.Stamina.Take((uint)Mathf.RoundToInt((takesStamina / interactionTime) * Time.deltaTime * 100), "Interaction");
+        StaminaSystem.Instance.Stamina.Take((uint)Mathf.RoundToInt((takesStamina / interactTime) * Time.deltaTime * 100), "Interaction");
         holdingTime += Time.deltaTime;
         InteractionUI.Instance.SetPossibleInteractionProgress(progress);
     }
