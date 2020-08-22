@@ -6,13 +6,14 @@ using UnityEngine;
 public class InteractionChecker : MonoSingleton<InteractionChecker>
 {
     public float distance = 10;
+    public LayerMask layerMask;
 
     private InteractableObject lastObject;
     
     private void Update()
     {
         var fwd = Camera.main.transform.forward;
-        if (Physics.Raycast(transform.position, fwd, out var hit, distance))
+        if (Physics.Raycast(transform.position, fwd, out var hit, distance, layerMask))
         {
             Debug.DrawRay(transform.position, fwd, Color.red);
             var go = hit.collider.gameObject;

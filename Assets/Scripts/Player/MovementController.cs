@@ -4,29 +4,36 @@ using UnityEngine;
 
 public class MovementController : MonoSingleton<MovementController>
 {
-    public float turnSpeed = 2.0f;
+    [Header("Mouse look")]
+    public float mouseSensitivity = 100.0f;
     public float minTurnAngle = -90.0f;
-     public float maxTurnAngle = 90.0f;
+    public float maxTurnAngle = 90.0f;
      
+    [Header("Movement")]
     public float moveSpeed = 8.0f;
     public float runSpeed = 12.0f;
-    public float CurrentSpeed => (isRunning ? runSpeed : moveSpeed);
-
-    private bool isRunning = false;
- 
     
-    public float jumpHeight = 20f;
+    private bool isRunning = false;
+    private float CurrentSpeed => (isRunning ? runSpeed : moveSpeed);
+    
+    
+    [Header("Gravity & jumping")]
+    public float gravity = -9.8f;
+    public float jumpHeight = 5f;
+
+    [Header("Ground checks")]
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
     private bool isGrounded;
-
+    
     private float rotX;
-
-    private Rigidbody rb;
+    private Vector3 velocity;
     private CharacterController cc;
 
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
         cc = GetComponent<CharacterController>();
     }
 
@@ -40,8 +47,8 @@ public class MovementController : MonoSingleton<MovementController>
     private void MouseAiming()
     {
         // get the mouse inputs
-        var y = Input.GetAxis("Mouse X") * turnSpeed;
-        rotX += Input.GetAxis("Mouse Y") * turnSpeed;
+        var y = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        rotX += Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
  
         // clamp the vertical rotation
         rotX = Mathf.Clamp(rotX, minTurnAngle, maxTurnAngle);
@@ -53,6 +60,13 @@ public class MovementController : MonoSingleton<MovementController>
 
     private void KeyboardMovement()
     {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        if (isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+        
         var x = Input.GetAxis("Horizontal");
         var z = Input.GetAxis("Vertical");
 
@@ -61,29 +75,16 @@ public class MovementController : MonoSingleton<MovementController>
         var dir = (transform.forward * z) + (transform.right * x);
 
         cc.Move(dir * CurrentSpeed * Time.deltaTime);
+
+        velocity.y += gravity * Time.deltaTime;
+        cc.Move(velocity * Time.deltaTime);
     }
 
     private void Jumping()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(new Vector3(0, jumpHeight * 100, 0));
-        }
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-    }
-    
-    private void OnCollisionExit(Collision other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
     }
 }
