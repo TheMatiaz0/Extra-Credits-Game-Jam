@@ -8,7 +8,7 @@ namespace Interactions
     public class TestInteractionGridObject : InteractionGridObject
     {
         [SerializeField]
-        private List<InteractionGrid.Interaction> interactions;
-        protected override List<InteractionGrid.Interaction> Interactions => interactions;
-    }
+        private ReorderableArray<InteractionGrid.Interaction> interactions;
+        protected override IList<InteractionGrid.Interaction> Interactions => interactions;
+    }f
 }

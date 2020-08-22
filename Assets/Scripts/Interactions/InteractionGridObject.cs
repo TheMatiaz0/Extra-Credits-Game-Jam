@@ -6,7 +6,7 @@ namespace Interactions
 {
     public abstract class InteractionGridObject : InteractableObject
     {
-        protected abstract List<InteractionGrid.Interaction> Interactions { get; }
+        protected abstract IList<InteractionGrid.Interaction> Interactions { get; }
         
         protected override void OnInteract()
         {
