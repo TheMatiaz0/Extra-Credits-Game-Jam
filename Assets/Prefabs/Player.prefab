@@ -92,7 +92,6 @@ GameObject:
   - component: {fileID: 7255697829055022434}
   - component: {fileID: 1902129097557111946}
   - component: {fileID: 7255697829055022462}
-  - component: {fileID: 59883374}
   - component: {fileID: 5528639196325777759}
   - component: {fileID: 2796607492772967153}
   m_Layer: 0
@@ -226,22 +225,6 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &59883374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7255697829055022433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100005172ac549c7bebdd98184d0b43b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 10
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!114 &5528639196325777759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,6 +262,7 @@ GameObject:
   - component: {fileID: 7255697829160652608}
   - component: {fileID: 7255697829160652611}
   - component: {fileID: 837730327054030038}
+  - component: {fileID: 7723669659662283447}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -443,3 +427,19 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &7723669659662283447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7255697829160652615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 100005172ac549c7bebdd98184d0b43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 10
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0

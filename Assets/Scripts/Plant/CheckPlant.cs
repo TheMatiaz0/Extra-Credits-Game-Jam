@@ -15,25 +15,25 @@ public class CheckPlant : InteractableObject
     protected override void OnInteract()
     {
         TaskManager task = TaskManager.Instance;
-        if (plant.Water <= maximumNeedsToMakeATask)
+        if (plant.Water.Value <= maximumNeedsToMakeATask)
         {
             //add task needs water
             Debug.Log("Needs water!");
             task.AddTask("Get water for plant");
         }
-        if (plant.Soil <= maximumNeedsToMakeATask)
+        if (plant.Soil.Value <= maximumNeedsToMakeATask)
         {
             //add task needs soil
             Debug.Log("Needs soil!");
             task.AddTask("Get soil for plant");
         }
-        if (plant.FreshAir <= maximumNeedsToMakeATask)
+        if (plant.FreshAir.Value <= maximumNeedsToMakeATask)
         {
             //add task needs air
             Debug.Log("Needs air!");
             task.AddTask("Give the plant fresh air");
         }
-        if (plant.Sunlight <= maximumNeedsToMakeATask)
+        if (plant.Sunlight.Value <= maximumNeedsToMakeATask)
         {
             //add task needs sun
             Debug.Log("Needs sun!");

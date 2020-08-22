@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cyberultimate;
 using Cyberultimate.Unity;
 using UnityEngine;
 
@@ -17,10 +18,10 @@ public class PlantNeeds : MonoSingleton<PlantNeeds>
     [SerializeField]
     private float sunlight;
 
-    public float Water { get { return water; } set { if (value >= 0) water = value; else water = 0; } }
-    public float Soil { get { return soil; } set { if (value >= 0) soil = value; else soil = 0; } }
-    public float FreshAir { get { return freshAir; } set { if (value >= 0) freshAir = value; else freshAir = 0; } }
-    public float Sunlight { get { return sunlight; } set { if (value >= 0) sunlight = value; else sunlight = 0; } }
+    public LockValue<float> Water = new LockValue<float>(100, 0, 50);
+    public LockValue<float> Soil = new LockValue<float>(100, 0, 50);
+    public LockValue<float> FreshAir = new LockValue<float>(100, 0, 50);
+    public LockValue<float> Sunlight = new LockValue<float>(100, 0, 50);
 
     private float waterUse;
     private float soilUse;
@@ -42,10 +43,10 @@ public class PlantNeeds : MonoSingleton<PlantNeeds>
 
     private void Update()
     {
-        Water -= Time.deltaTime * waterUse;
-        Soil -= Time.deltaTime * soilUse;
-        FreshAir -= Time.deltaTime * freshAirUse;
-        Sunlight -= Time.deltaTime * sunlightUse;
+        Water.TakeValue(Time.deltaTime * waterUse);
+        Soil.TakeValue(Time.deltaTime * soilUse);
+        FreshAir.TakeValue(Time.deltaTime * freshAirUse);
+        Sunlight.TakeValue(Time.deltaTime * sunlightUse);
     }
 
     float SetToRandom(Vector2 rnd)
