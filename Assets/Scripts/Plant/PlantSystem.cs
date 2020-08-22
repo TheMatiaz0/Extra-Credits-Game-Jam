@@ -45,6 +45,8 @@ public class PlantSystem : MonoSingleton<PlantSystem>
 
     protected override void Awake()
     {
+        base.Awake();
+
         waterUse = SetToRandom(resourceUseRandom);
         soilUse = SetToRandom(resourceUseRandom);
         freshAirUse = SetToRandom(resourceUseRandom);

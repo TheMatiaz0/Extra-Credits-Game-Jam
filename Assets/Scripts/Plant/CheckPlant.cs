@@ -9,7 +9,7 @@ public class CheckPlant : InteractableObject
     private PlantSystem plant;
     private void Start()
     {
-        plant = PlantSystem.Instance;
+        plant = GetComponent<PlantSystem>();
     }
 
     protected override void OnInteract()
