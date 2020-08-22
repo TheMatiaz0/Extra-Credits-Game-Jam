@@ -23,17 +23,16 @@ public abstract class InteractableObject : MonoBehaviour
         {
             if (!itemOptions.Any(x => Inventory.Instance.HasItem(x)))
             {
-                if (showMessage)
-                {
-                    missingItems.Add(string.Join(" or ", itemOptions));
-                }
+                missingItems.Add(string.Join(" or ", itemOptions));
             }
         }
 
         if (missingItems.Count <= 0) return true;
-        
-        UIManager.Instance.ShowPopupText($"Required items: {string.Join("; ", missingItems)}");
-        Debug.Log($"Required items: {string.Join("; ", missingItems)}");
+
+        if (showMessage)
+        {
+            UIManager.Instance.ShowPopupText($"Required items: {string.Join("; ", missingItems)}");
+        }
         
         return false;
     }
