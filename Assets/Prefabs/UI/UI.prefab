@@ -308,7 +308,7 @@ MonoBehaviour:
   hpBar: {fileID: 138492495581682091}
   staminaBar: {fileID: 138492495301105564}
   timeText: {fileID: 3908250942323714425}
-  popupAnimation: {fileID: 3908250941095275297}
+  dayText: {fileID: 8436613177284702583}
   popupText: {fileID: 6190856166800128025}
 --- !u!1 &7585109381420978127
 GameObject:
@@ -382,7 +382,6 @@ GameObject:
   - component: {fileID: 5673435090226587232}
   - component: {fileID: 4229783947363574658}
   - component: {fileID: 6190856166800128025}
-  - component: {fileID: 3908250941095275297}
   m_Layer: 5
   m_Name: PopupText
   m_TagString: Untagged
@@ -451,25 +450,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Picked up shovel
---- !u!95 &3908250941095275297
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8264167061530245539}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 65c27dd18cb683a4fa8006c7abd576d4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8759695142986343626
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,7 +961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4839183195835253997, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
       propertyPath: m_Text
-      value: DAY 1
+      value: DAY 0
       objectReference: {fileID: 0}
     - target: {fileID: 8625425187617570298, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
       propertyPath: m_EffectDistance.x
@@ -994,6 +974,17 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8625425187617570298, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
+--- !u!114 &8436613177284702583 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4839183195835253997, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
+  m_PrefabInstance: {fileID: 3908250942178588058}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8436613176985590035 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4839183195523574921, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}

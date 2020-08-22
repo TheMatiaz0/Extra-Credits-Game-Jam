@@ -54,7 +54,7 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 		}
 		else if (Input.GetKeyDown(KeyCode.H))
 		{
-			Inventory.Instance.Remove(selectedSlot);
+			Inventory.Instance.RemoveItem(selectedSlot);
 		}
 
 		ScrollWheel();

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using Cyberultimate.Unity;
 using UI;
 using UnityEngine;
 
@@ -8,7 +10,7 @@ public abstract class InteractableObject : MonoBehaviour
 {
     public float interactionTime = 0;
     public float takesStamina = 0;
-    public string[] itemsNeeded;
+    public ReorderableArray<ReorderableArray<string>> itemsNeeded;
 
     private float holdingTime = 0;
 
@@ -16,21 +18,24 @@ public abstract class InteractableObject : MonoBehaviour
 
     private bool CheckItemsNeeded(bool showMessage = false)
     {
-        foreach (var item in itemsNeeded)
+        List<string> missingItems = new List<string>();
+        foreach (var itemOptions in itemsNeeded)
         {
-            if (!Inventory.Instance.HasItem(item))
+            if (!itemOptions.Any(x => Inventory.Instance.HasItem(x)))
             {
                 if (showMessage)
                 {
-                    // TODO: Show message
-                    // UIManager.Instance.AddMessage($"{item} is required");
-                    Debug.Log($"{item} is required");
+                    missingItems.Add(string.Join(" or ", itemOptions));
                 }
-                return false;
             }
         }
 
-        return true;
+        if (missingItems.Count <= 0) return true;
+        
+        UIManager.Instance.ShowPopupText($"Required items: {string.Join("; ", missingItems)}");
+        Debug.Log($"Required items: {string.Join("; ", missingItems)}");
+        
+        return false;
     }
     
     public void MouseDown()

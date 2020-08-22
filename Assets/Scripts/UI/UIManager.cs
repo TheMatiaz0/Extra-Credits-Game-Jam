@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cyberultimate.Unity;
+using System.Globalization;
+using System;
 
 public class UIManager : MonoSingleton<UIManager>
 {
@@ -15,9 +17,9 @@ public class UIManager : MonoSingleton<UIManager>
 
 	[SerializeField]
 	private Text timeText = null;
+	[SerializeField]
+	private Text dayText = null;
 
-    [SerializeField]
-    private Animator popupAnimation = null;
     [SerializeField]
     private Text popupText = null;
 
@@ -25,7 +27,21 @@ public class UIManager : MonoSingleton<UIManager>
 	{
 		HealthSystem.Instance.Health.OnValueChanged += Health_OnValueChanged;
 		StaminaSystem.Instance.Stamina.OnValueChanged += Stamina_OnValueChanged;
+
 	}
+
+	private void Instance_OnCurrentTimeChange(object sender, SimpleArgs<System.TimeSpan> e)
+	{
+		var dateTime = new DateTime(e.Value.Ticks);
+		var formattedTime = dateTime.ToString("h:mm tt", CultureInfo.InvariantCulture);
+		timeText.text = formattedTime;
+	}
+
+	private void Instance_OnCurrentDayChange(object sender, SimpleArgs<Cint> e)
+	{
+		dayText.text = $"Day {e.Value}";
+	}
+
 
 	private void Stamina_OnValueChanged(object sender, LockValue.AnyHpValueChangedArgs e)
 	{
@@ -41,10 +57,16 @@ public class UIManager : MonoSingleton<UIManager>
 	{
 		HealthSystem.Instance.Health.OnValueChanged -= Health_OnValueChanged;
 		StaminaSystem.Instance.Stamina.OnValueChanged -= Stamina_OnValueChanged;
+
+		TimeManager.Instance.OnCurrentDayChange -= Instance_OnCurrentDayChange;
+		TimeManager.Instance.OnCurrentTimeChange -= Instance_OnCurrentTimeChange;
 	}
 
 	protected void Start()
 	{
+		TimeManager.Instance.OnCurrentDayChange += Instance_OnCurrentDayChange;
+		TimeManager.Instance.OnCurrentTimeChange += Instance_OnCurrentTimeChange;
+
 		hpBar.fillAmount = 1;
 		staminaBar.fillAmount = 1;
 	}

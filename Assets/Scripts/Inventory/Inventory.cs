@@ -47,12 +47,32 @@ public class Inventory : MonoSingleton<Inventory>
         }
 
         InventoryUI.Instance.Refresh();
+
+        if (!foundSlot)
+        {
+            UIManager.Instance.ShowPopupText("Inventory full!");
+        }
+        
         return foundSlot;
     }
 
-    public void Remove(Cint slot)
+    public void RemoveItem(Cint slot)
     {
         Items[slot] = null;
         InventoryUI.Instance.Refresh();
+    }
+
+    public bool RemoveItemByName(string name)
+    {
+        for (var i=0; i<Items.Length; i++)
+        {
+            if (Items[i].name == name)
+            {
+                Items[i] = null;
+                return true;
+            }
+        }
+
+        return false;
     }
 }

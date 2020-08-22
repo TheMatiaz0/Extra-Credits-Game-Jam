@@ -1,4 +1,6 @@
-﻿using Cyberultimate.Unity;
+﻿using Cyberultimate;
+using Cyberultimate.Unity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,14 +9,54 @@ using UnityEngine;
 
 public class TimeManager : MonoSingleton<TimeManager>
 {
-    private const float RealSecondsPerIngameDay = 120;
-    private const byte HourPerDay = 24;
-    private const float MinutesPerHour = 60;
-	private Stopwatch t;
+	[SerializeField]
+	private SerializedTimeSpan inGameTimeSpan;
+
+	public TimeSpan CurrentTime 
+	{
+		get { return _CurrentTime; }
+		private set { if (value == _CurrentTime) return; _CurrentTime = value; OnCurrentTimeChange(this, _CurrentTime); }
+	}
+
+	private TimeSpan _CurrentTime;
+
+	public event EventHandler<SimpleArgs<TimeSpan>> OnCurrentTimeChange = delegate { };
+
+	public Cint CurrentDay 
+	{
+		get { return _CurrentDay; }
+		private set { if (value == _CurrentDay) return;  _CurrentDay = value; OnCurrentDayChange(this, _CurrentDay); } 
+	}
+
+	public event EventHandler<SimpleArgs<Cint>> OnCurrentDayChange = delegate { };
+
+
+	private Cint _CurrentDay;
 
 	protected void Start()
 	{
-		t = new Stopwatch();
-		t.Start();
+		CurrentTime = new TimeSpan(20, 0, 0);
+		StartCoroutine(TimeCount());
+	}
+
+
+	private IEnumerator TimeCount()
+	{
+		while (true)
+		{
+			yield return Async.Wait(inGameTimeSpan.TotalSeconds);
+			CurrentTime = new TimeSpan(CurrentTime.Hours, CurrentTime.Minutes + 10, CurrentTime.Seconds);
+
+			CurrentDay += (Cint)((uint)CurrentTime.Days);
+			UnityEngine.Debug.Log(CurrentDay);
+
+			/*
+			if (CurrentTime.Days == 1)
+			{
+				CurrentDay++;
+
+			}
+			*/
+		}
 	}
 }
