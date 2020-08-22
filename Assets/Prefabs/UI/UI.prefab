@@ -308,7 +308,7 @@ MonoBehaviour:
   hpBar: {fileID: 138492495581682091}
   staminaBar: {fileID: 138492495301105564}
   timeText: {fileID: 3908250942323714425}
-  popupAnimation: {fileID: 3908250941095275297, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
+  popupAnimation: {fileID: 3908250941095275297}
   popupText: {fileID: 6190856166800128025}
 --- !u!1 &7585109381420978127
 GameObject:
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.11320752, g: 0.07913727, b: 0.058205754, a: 1}
+  m_Color: {r: 0.11320752, g: 0.07913727, b: 0.058205754, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -541,7 +541,7 @@ MonoBehaviour:
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
+  m_FillClockwise: 0
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1

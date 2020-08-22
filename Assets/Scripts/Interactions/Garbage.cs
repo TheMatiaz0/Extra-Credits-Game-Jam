@@ -25,13 +25,16 @@ public class Garbage : InteractableObject
         if (garbageRnd <= garbageDropChance)
         {
             UIManager.Instance.ShowPopupText("You found garbage");
+            Debug.Log("Garbage");
+            garbageUsed = true;
+            Destroy(this);
         } else
         {
             int itemRnd = Random.Range(0, itemDrops.Count);
             if (Inventory.Instance.AddItem(itemDrops[itemRnd]))
             {
                 garbageUsed = true;
-                this.enabled = false;
+                Destroy(this);
             } else 
             {
                 if(!garbageOpen) interactionTime /= 2;
