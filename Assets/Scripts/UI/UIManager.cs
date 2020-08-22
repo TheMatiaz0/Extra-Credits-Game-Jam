@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cyberultimate.Unity;
 
-public class UIManager : MonoBehaviour
+public class UIManager : MonoSingleton<UIManager>
 {
 	[SerializeField]
 	private Image hpBar = null;
@@ -14,6 +15,11 @@ public class UIManager : MonoBehaviour
 
 	[SerializeField]
 	private Text timeText = null;
+
+    [SerializeField]
+    private Animator popupAnimation = null;
+    [SerializeField]
+    private Text popupText = null;
 
 	protected void OnEnable()
 	{
@@ -42,4 +48,15 @@ public class UIManager : MonoBehaviour
 		hpBar.fillAmount = 1;
 		staminaBar.fillAmount = 1;
 	}
+
+    public void ShowPopupText(string txt)
+    {
+        popupText.text = txt;
+        popupAnimation.SetBool("FadeOut",true);
+    }
+
+    public void PopupFadedOut()
+    {
+        popupAnimation.SetBool("FadeOut", false);
+    }
 }

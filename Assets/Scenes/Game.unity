@@ -412,7 +412,6 @@ GameObject:
   - component: {fileID: 1109644398}
   - component: {fileID: 1109644397}
   - component: {fileID: 1109644396}
-  - component: {fileID: 1109644399}
   m_Layer: 9
   m_Name: Cube
   m_TagString: Ground
@@ -496,20 +495,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109644394}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1109644399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109644394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6984b1ef3cd04223b15ac19fac7fefec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactTime: 2
-  takesStamina: 5
 --- !u!1 &1271331428
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,7 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8c8cecb2d605d4894bfb2d4e10d0f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactTime: 5
+  interactionTime: 5
   takesStamina: 10
   maximumNeedsToMakeATask: 60
 --- !u!65 &1415062380

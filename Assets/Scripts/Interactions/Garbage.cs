@@ -8,6 +8,7 @@ public class Garbage : InteractableObject
     public float garbageDropChance = 50;
 
     private bool garbageUsed = false;
+    private bool garbageOpen = false;
 
     protected override void OnInteract()
     {
@@ -17,7 +18,7 @@ public class Garbage : InteractableObject
         int garbageRnd = Random.Range(0, 100);
         if (garbageRnd <= garbageDropChance)
         {
-            PopupText.Instance.ShowText("You found garbage");
+            UIManager.Instance.ShowPopupText("You found garbage");
         } else
         {
             int itemRnd = Random.Range(0, itemDrops.Count);
@@ -27,8 +28,11 @@ public class Garbage : InteractableObject
                 gameObject.RemoveComponent<this>();
             } else 
             {
-                PopupText.Instance.ShowText("Inventory full!");
+                if(!garbageOpen) interactionTime /= 2;
+                garbageOpen=true;
+                UIManager.Instance.ShowPopupText("Inventory full!");
             }*/
-        }   
+
+        }
     }
 }
