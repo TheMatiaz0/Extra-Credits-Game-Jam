@@ -57,6 +57,15 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 			Inventory.Instance.RemoveItem(selectedSlot);
 		}
 
+		if (Input.GetMouseButtonDown(1))
+		{
+			Cint slot;
+			ItemScriptableObject it = Inventory.Instance.GetItem(slot = selectedSlot);
+			it.ActionForItem.Do();
+			Inventory.Instance.RemoveItem(slot);
+			// Inventory.Instance.selected
+		}
+
 		ScrollWheel();
 		AlphaKeys();
 	}
