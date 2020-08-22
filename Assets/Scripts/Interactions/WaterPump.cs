@@ -5,14 +5,14 @@ using UnityEngine;
 public class WaterPump : InteractableObject
 {
     [SerializeField]
-    private ItemScriptableObject bottle;
-
-    [SerializeField]
     private ItemScriptableObject bottleWithWater;
 
     protected override void OnInteract()
     {
         //Inventory.Instance.RemoveItem(bottle);
-        Inventory.Instance.AddItem(bottleWithWater);
+        if (Inventory.Instance.AddItem(bottleWithWater))
+        {
+            UIManager.Instance.ShowPopupText("Got some water");
+        }
     }
 }
