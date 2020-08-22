@@ -2728,6 +2728,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6190856166800128025, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190856166800128025, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.3568091
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190856166800128025, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
+      propertyPath: m_Color.b
+      value: 0.2667764
+      objectReference: {fileID: 0}
     - target: {fileID: 8136663593090698512, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -3098,22 +3110,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543450652813336487}
     m_Modifications:
-    - target: {fileID: 2079182383, guid: 063634d55c6ec14439459e39c5d3f02f, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562302308259483565, guid: 063634d55c6ec14439459e39c5d3f02f, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562302308562780045, guid: 063634d55c6ec14439459e39c5d3f02f, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562302308804820969, guid: 063634d55c6ec14439459e39c5d3f02f, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 8796094414251078652, guid: 063634d55c6ec14439459e39c5d3f02f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.9920015
@@ -3161,10 +3157,6 @@ PrefabInstance:
     - target: {fileID: 8796094414251078655, guid: 063634d55c6ec14439459e39c5d3f02f, type: 3}
       propertyPath: m_Name
       value: ThePlant
-      objectReference: {fileID: 0}
-    - target: {fileID: 8796094414251078655, guid: 063634d55c6ec14439459e39c5d3f02f, type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 063634d55c6ec14439459e39c5d3f02f, type: 3}
