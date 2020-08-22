@@ -1,117 +1,118 @@
-﻿using System;
+﻿using Cyberultimate;
+using Cyberultimate.Unity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Cyberultimate;
-using Cyberultimate.Unity;
 using UnityEditor;
 using UnityEngine;
 
 public class Inventory : MonoSingleton<Inventory>
 {
-    private ItemScriptableObject[] Items { get; } = new ItemScriptableObject[5];
-    
-    public Dictionary<string, ItemScriptableObject> AllGameItems { get; private set; } = new Dictionary<string, ItemScriptableObject>();
+	private ItemScriptableObject[] Items { get; } = new ItemScriptableObject[5];
 
-    public LockValue<uint> soil = new LockValue<uint>(10, 0, 0);
-    public LockValue<uint> water = new LockValue<uint>(10, 0, 0);
+	public Dictionary<string, ItemScriptableObject> AllGameItems { get; private set; } = new Dictionary<string, ItemScriptableObject>();
 
-    private void Start()
-    {
-        var items = Resources.LoadAll<ItemScriptableObject>("Items");
-        foreach (var item in items)
-        {
-            AllGameItems[item.name] = item;
-        }
-        
-        Debug.Log($"Loaded {items.Length} items: {string.Join(", ", (IEnumerable<ItemScriptableObject>)items)}");
-    }
+	public LockValue<uint> soil = new LockValue<uint>(10, 0, 0);
+	public LockValue<uint> water = new LockValue<uint>(10, 0, 0);
 
-    public bool HasItem(string name)
-    {
-        return Items.Any(x => x != null && x.name == name);
-    }
-    
-    public ItemScriptableObject GetItem(Cint slot)
-    {
-        if (slot >= Items.Length) return null;
-        return Items[slot];
-    }
-    
-    public bool AddItem(ItemScriptableObject item)
-    {
-        var foundSlot = false;
-        for (var i = 0; i < Items.Length; i++)
-        {
-            if (Items[i] != null) continue;
-            
-            Items[i] = item;
-            foundSlot = true;
-            break;
-        }
+	private void Start()
+	{
+		var items = Resources.LoadAll<ItemScriptableObject>("Items");
+		foreach (var item in items)
+		{
+			AllGameItems[item.name] = item;
+		}
+	}
 
-        InventoryUI.Instance.Refresh();
+	public bool HasItem(string name)
+	{
+		return Items.Any(x => x != null && x.name == name);
+	}
 
-        if (!foundSlot)
-        {
-            UIManager.Instance.ShowPopupText("Inventory full!");
-        }
-        
-        return foundSlot;
-    }
+	public ItemScriptableObject GetItem(Cint slot)
+	{
+		if (slot >= Items.Length) return null;
+		return Items[slot];
+	}
 
-    public void AddResource(uint count, PlantSystem.PlantResources resource)
-    {
-        if (resource == PlantSystem.PlantResources.Soil)
-        {
-            if (soil.Value == soil.Max)
-            {
-                UIManager.Instance.ShowPopupText("Not enough space for soil!");
-            } else
-            {
-                soil.GiveValue(count, "");
-                UIManager.Instance.ChangeResources(resource, soil.Value, soil.Max);
-                UIManager.Instance.ShowPopupText("Collected soil");
-            }
-        } else if (resource == PlantSystem.PlantResources.Water)
-        {
-            if (water.Value == water.Max)
-            {
-                UIManager.Instance.ShowPopupText("Not enough space for water!");
-            } else
-            {
-                water.GiveValue(count, "");
-                UIManager.Instance.ChangeResources(resource, water.Value, water.Max);
-                UIManager.Instance.ShowPopupText("Collected water");
-            }
-        }
-    }
+	public bool AddItem(ItemScriptableObject item)
+	{
+		var foundSlot = false;
+		for (var i = 0; i < Items.Length; i++)
+		{
+			if (Items[i] != null) continue;
 
-    public void DrainResources()
-    {
-        soil.TakeValue(soil.Value);
-        UIManager.Instance.ChangeResources(PlantSystem.PlantResources.Soil, soil.Value, soil.Max);
+			Items[i] = item;
+			foundSlot = true;
+			break;
+		}
 
-        water.TakeValue(water.Value);
-        UIManager.Instance.ChangeResources(PlantSystem.PlantResources.Water, water.Value, water.Max);
-    }
+		InventoryUI.Instance.Refresh();
 
-    public void RemoveItem(Cint slot)
-    {
-        Items[slot] = null;
-        InventoryUI.Instance.Refresh();
-    }
+		if (!foundSlot)
+		{
+			UIManager.Instance.ShowPopupText("Inventory full!");
+		}
 
-    public bool RemoveItemByName(string name)
-    {
-        for (var i=0; i<Items.Length; i++)
-        {
-            if (Items[i].name == name)
-            {
-                Items[i] = null;
-                return true;
-            }
-        }
+		return foundSlot;
+	}
 
-        return false;
-    }
+	public void AddResource(uint count, PlantSystem.PlantResources resource)
+	{
+		if (resource == PlantSystem.PlantResources.Soil)
+		{
+			if (soil.Value == soil.Max)
+			{
+				UIManager.Instance.ShowPopupText("Not enough space for soil!");
+			}
+			else
+			{
+				soil.GiveValue(count, "");
+				UIManager.Instance.ChangeResources(resource, soil.Value, soil.Max);
+				UIManager.Instance.ShowPopupText("Collected soil");
+			}
+		}
+		else if (resource == PlantSystem.PlantResources.Water)
+		{
+			if (water.Value == water.Max)
+			{
+				UIManager.Instance.ShowPopupText("Not enough space for water!");
+			}
+			else
+			{
+				water.GiveValue(count, "");
+				UIManager.Instance.ChangeResources(resource, water.Value, water.Max);
+				UIManager.Instance.ShowPopupText("Collected water");
+			}
+		}
+	}
+
+	public void DrainResources()
+	{
+		soil.TakeValue(soil.Value);
+		UIManager.Instance.ChangeResources(PlantSystem.PlantResources.Soil, soil.Value, soil.Max);
+
+		water.TakeValue(water.Value);
+		UIManager.Instance.ChangeResources(PlantSystem.PlantResources.Water, water.Value, water.Max);
+	}
+
+	public void RemoveItem(Cint slot)
+	{
+		Items[slot] = null;
+		InventoryUI.Instance.Refresh();
+	}
+
+	public bool RemoveItemByName(string name)
+	{
+		for (var i = 0; i < Items.Length; i++)
+		{
+			if (Items[i].name == name)
+			{
+				Items[i] = null;
+				return true;
+			}
+		}
+
+		return false;
+	}
 }

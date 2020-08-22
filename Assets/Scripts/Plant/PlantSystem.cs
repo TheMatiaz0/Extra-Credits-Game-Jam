@@ -34,6 +34,8 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     public LockValue<float> FreshAir { get; set; } = new LockValue<float>(100, 0, 50);
     public LockValue<float> Sunlight { get; set; } = new LockValue<float>(100, 0, 50);
 
+    private int failedDays;
+
     [SerializeField]
     private GameObject plantModelSmall, plantModelMedium, plantModelLarge;
 
@@ -76,6 +78,12 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         maximumNeedsToMakeATask = plantActions.maximumNeedsToMakeATask;
         PlantSize.SetValue(0);
         PlantState = State.Dying;
+        TimeManager.Instance.OnCurrentDayChange += OnDayChange;
+    }
+
+    private void OnDisable()
+    {
+        TimeManager.Instance.OnCurrentDayChange -= OnDayChange;
     }
 
     public Color GetColorBasedOnState ()
@@ -158,7 +166,6 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     {
         _plantState = newState;
         var mr = GetCurrentPlantModel().GetComponent<MeshRenderer>();
-        Debug.Log($"Setting {mr.gameObject.name} material to {newState}");
         switch (newState)
         {
             case State.Dying:
@@ -185,6 +192,15 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         } else if (resource == PlantResources.Light)
         {
             Sunlight.GiveValue(amount * modifier, "");
+        }
+    }
+
+    public void OnDayChange(object sender, SimpleArgs<Cint> args)
+    {
+        if (PlantState == State.Dying) failedDays++;
+        if (failedDays >= 3)
+        {
+            GameManager.Instance.GameOver("The plant died!", GameOverType.Failed);
         }
     }
 }

@@ -8,6 +8,8 @@ namespace UI
     public class GameOver : MonoBehaviour
     {
         private CanvasGroup canvas;
+
+        [SerializeField] private Text titleText;
         [SerializeField] private Text reasonText;
 
         private bool loaded = false;
@@ -24,6 +26,7 @@ namespace UI
         public void Start()
         {
             LeanTween.alphaCanvas(canvas, 1f, 1f).setEaseInOutCubic().setOnComplete(_ => loaded = true);
+            titleText.text = $"You <color=red>{PlayerPrefs.GetString("GameOverType") ?? "Failed"}</color>";
             reasonText.text = PlayerPrefs.GetString("GameOverReason");
         }
 
