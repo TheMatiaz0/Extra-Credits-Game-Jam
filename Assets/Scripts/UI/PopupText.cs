@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cyberultimate.Unity;
 
-public class PopupText : MonoBehaviour
+public class PopupText : MonoSingleton<PopupText>
 {
-    public void ShowText(string txt, float duration)
+    public void ShowText(string txt)
     {
         GetComponent<Text>().text = txt;
-        GetComponent<Animator>().Play("PopupFadeOut");
+        GetComponent<Animator>().SetBool("FadeOut",true);
+    }
+
+    public void FadedOut()
+    {
+        GetComponent<Animator>().SetBool("FadeOut", false);
     }
 }

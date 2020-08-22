@@ -14,7 +14,7 @@ public class CheckPlant : InteractableObject
 
     protected override void OnInteract()
     {
-        TaskManager task = TaskManager.instance;
+        TaskManager task = TaskManager.Instance;
         if (plant.Water <= maximumNeedsToMakeATask)
         {
             //add task needs water
