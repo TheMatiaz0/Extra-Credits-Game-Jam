@@ -6,10 +6,10 @@ public class CheckPlant : InteractableObject
 {
     public float maximumNeedsToMakeATask = 60;
 
-    private PlantNeeds plant;
+    private PlantSystem plant;
     private void Start()
     {
-        plant = PlantNeeds.Instance;
+        plant = PlantSystem.Instance;
     }
 
     protected override void OnInteract()
