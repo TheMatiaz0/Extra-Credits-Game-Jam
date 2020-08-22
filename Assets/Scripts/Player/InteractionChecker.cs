@@ -21,10 +21,10 @@ public class InteractionChecker : MonoSingleton<InteractionChecker>
             {
                 lastObject = c;
                 InteractionUI.Instance.ShowPossibleInteraction();
-                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     c.KeyDown();
-                } else if (Input.GetMouseButton(0) || Input.GetKey(KeyCode.E))
+                } else if (Input.GetKey(KeyCode.E))
                 {
                     c.KeyHold();
                 }

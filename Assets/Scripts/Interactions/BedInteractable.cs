@@ -13,7 +13,7 @@ public class BedInteractable : InteractableObject
 
 		else
 		{
-			Debug.Log("You can't sleep now.");
+			UIManager.Instance.ShowPopupText("You can't sleep now");
 		}
 	}
 }

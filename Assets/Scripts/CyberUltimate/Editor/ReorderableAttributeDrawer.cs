@@ -50,9 +50,11 @@ namespace Cyberultimate.Editor
                 };
                 list.drawElementCallback += (Rect rect, int index, bool isActive, bool isFocused) =>
                 {
+                    var element = ar.GetArrayElementAtIndex(index);
                     float before = EditorGUIUtility.labelWidth;
-                    EditorGUIUtility.labelWidth = new GUIStyle("label").CalcSize(new GUIContent($"100")).x;
-                    EditorGUI.PropertyField(rect, ar.GetArrayElementAtIndex(index), new GUIContent($"{index}:"));
+                    if (element.GetChildren().Any() == false)
+                        EditorGUIUtility.labelWidth = new GUIStyle("label").CalcSize(new GUIContent($"100")).x;
+                    EditorGUI.PropertyField(rect, element, new GUIContent($"{index}:"),true);
                     EditorGUIUtility.labelWidth = before;
                 };
                 list.elementHeightCallback += (int index) =>
