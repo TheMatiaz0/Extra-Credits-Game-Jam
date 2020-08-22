@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.702417, g: 0.34597975, b: 0.11247656, a: 1}
+  m_IndirectSpecularColor: {r: 0.70239675, g: 0.34603867, b: 0.11244258, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 154617849}
   - component: {fileID: 154617848}
   - component: {fileID: 154617847}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: SampleGarbage (6)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 245680689}
   - component: {fileID: 245680688}
   - component: {fileID: 245680687}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: SampleGarbage (4)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 647585139}
   - component: {fileID: 647585138}
   - component: {fileID: 647585137}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: SampleGarbage (5)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 693128038}
   - component: {fileID: 693128042}
   - component: {fileID: 693128041}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: SampleGarbage
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -775,7 +775,7 @@ GameObject:
   - component: {fileID: 732979631}
   - component: {fileID: 732979630}
   - component: {fileID: 732979629}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: SampleGarbage (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1001,7 +1001,7 @@ GameObject:
   - component: {fileID: 893359202}
   - component: {fileID: 893359201}
   - component: {fileID: 893359200}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: SampleGarbage (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1169,7 +1169,7 @@ GameObject:
   - component: {fileID: 1104321279}
   - component: {fileID: 1104321278}
   - component: {fileID: 1104321277}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: SampleGarbage (7)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1697,7 +1697,7 @@ GameObject:
   - component: {fileID: 1508711138}
   - component: {fileID: 1508711137}
   - component: {fileID: 1508711136}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: SampleGarbage (3)
   m_TagString: Ground
   m_Icon: {fileID: 0}

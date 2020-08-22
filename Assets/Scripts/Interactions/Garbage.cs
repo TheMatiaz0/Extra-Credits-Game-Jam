@@ -1,6 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Garbage : InteractableObject
 {
@@ -9,6 +10,11 @@ public class Garbage : InteractableObject
 
     private bool garbageUsed = false;
     private bool garbageOpen = false;
+
+    private void Start()
+    {
+        interactionTime = 3f;
+    }
 
     protected override void OnInteract()
     {
