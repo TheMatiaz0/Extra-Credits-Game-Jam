@@ -84,7 +84,9 @@ public class MovementController : MonoSingleton<MovementController>
         
         if(Math.Abs(x) > 0.2 || Math.Abs(z) > 0.2) LosingStamina();
 
+        
         var dir = (transform.forward * z) + (transform.right * x);
+        dir.Normalize();
 
         cc.Move(dir * (CurrentSpeed * Time.deltaTime));
 
