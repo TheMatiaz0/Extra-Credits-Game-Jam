@@ -7,6 +7,7 @@ public abstract class InteractableObject : MonoBehaviour
 {
     public float interactionTime = 0;
     public float takesStamina = 0;
+    public string[] itemsNeeded;
 
     private float holdingTime = 0;
 

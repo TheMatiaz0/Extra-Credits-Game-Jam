@@ -74,7 +74,7 @@ public class MovementController : MonoSingleton<MovementController>
 
         var dir = (transform.forward * z) + (transform.right * x);
 
-        cc.Move(dir * CurrentSpeed * Time.deltaTime);
+        cc.Move(dir * (CurrentSpeed * Time.deltaTime));
 
         velocity.y += gravity * Time.deltaTime;
         cc.Move(velocity * Time.deltaTime);
