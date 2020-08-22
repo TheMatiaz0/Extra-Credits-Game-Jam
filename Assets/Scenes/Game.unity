@@ -529,8 +529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8c8cecb2d605d4894bfb2d4e10d0f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactTime: 4
-  takesStamina: 0
+  interactTime: 5
+  takesStamina: 10
   maximumNeedsToMakeATask: 60
 --- !u!65 &1415062380
 BoxCollider:
@@ -606,12 +606,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7ab9b9c095db34ab7c05f2a818cdb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingResourcesRandom: {x: 50, y: 70}
+  resourceUseRandom: {x: 0.05, y: 0.7}
   water: 0
   soil: 0
   freshAir: 0
   sunlight: 0
-  startingResourcesRandom: {x: 40, y: 70}
-  resourceUseRandom: {x: 0.05, y: 0.7}
 --- !u!65 &1415062384
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1063,6 +1063,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
+--- !u!1 &3908250941095275296 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8264167061530245539, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
+  m_PrefabInstance: {fileID: 3908250941095275295}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3908250941095275297
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3908250941095275296}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 65c27dd18cb683a4fa8006c7abd576d4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &7255697829047597580
 PrefabInstance:
   m_ObjectHideFlags: 0

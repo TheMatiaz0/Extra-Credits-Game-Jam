@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PlantNeeds : MonoSingleton<PlantNeeds>
 {
+    public Vector2 startingResourcesRandom = new Vector2(40, 70); //min and max
+    public Vector2 resourceUseRandom = new Vector2(0.1f, 0.7f); //min and max
+
     [SerializeField]
     private float water;
     [SerializeField]
@@ -23,9 +26,6 @@ public class PlantNeeds : MonoSingleton<PlantNeeds>
     private float soilUse;
     private float freshAirUse;
     private float sunlightUse;
-
-    public Vector2 startingResourcesRandom = new Vector2(40,70); //min and max
-    public Vector2 resourceUseRandom = new Vector2(0.1f, 0.7f); //min and max
 
     private void Start()
     {

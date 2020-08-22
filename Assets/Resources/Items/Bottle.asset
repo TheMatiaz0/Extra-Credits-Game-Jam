@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3cfe33c833a1714e9850b0ba6675e0a, type: 3}
-  m_Name: WaterFilter
+  m_Name: Bottle
   m_EditorClassIdentifier: 
-  specialName: WaterFilter
-  invImg: {fileID: 21300000, guid: fb18f2794eef1944084d0288ba0cf698, type: 3}
+  specialName: Bottle
+  invImg: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
