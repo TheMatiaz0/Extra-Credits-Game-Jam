@@ -12,6 +12,10 @@ public class Inventory : MonoSingleton<Inventory>
     
     public Dictionary<string, ItemScriptableObject> AllGameItems { get; private set; } = new Dictionary<string, ItemScriptableObject>();
 
+    [SerializeField]
+    private LockValue<uint> soil = new LockValue<uint>(10, 0, 0);
+    private LockValue<uint> water = new LockValue<uint>(10, 0, 0);
+
     private void Start()
     {
         var items = Resources.LoadAll<ItemScriptableObject>("Items");
@@ -54,6 +58,33 @@ public class Inventory : MonoSingleton<Inventory>
         }
         
         return foundSlot;
+    }
+
+    public void AddResource(uint count, PlantNeeds.PlantResources resource)
+    {
+        if (resource == PlantNeeds.PlantResources.soil)
+        {
+            if (soil.Value == soil.Max)
+            {
+                UIManager.Instance.ShowPopupText("Not enough space for soil!");
+            } else
+            {
+                soil.GiveValue(count, "");
+                UIManager.Instance.ChangeResources(resource, soil.Value, soil.Max);
+                UIManager.Instance.ShowPopupText("Collected soil");
+            }
+        } else if (resource == PlantNeeds.PlantResources.water)
+        {
+            if (water.Value == water.Max)
+            {
+                UIManager.Instance.ShowPopupText("Not enough space for water!");
+            } else
+            {
+                water.GiveValue(count, "");
+                UIManager.Instance.ChangeResources(resource, water.Value, water.Max);
+                UIManager.Instance.ShowPopupText("Collected water");
+            }
+        }
     }
 
     public void RemoveItem(Cint slot)
