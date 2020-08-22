@@ -13,7 +13,7 @@ namespace Cyberultimate.Unity
         protected virtual void Awake()
         {
             if (Instance != null)
-                throw new InvalidOperationException("That MonoSingleton already exists");
+                throw new InvalidOperationException($"That MonoSingleton already exists ({((T)this).GetType().Name})");
             Instance = (T)this;
         }
     }
