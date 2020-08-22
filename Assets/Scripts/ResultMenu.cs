@@ -49,7 +49,7 @@ public class ResultMenu : MonoBehaviour
 			plantStateInfo.text = string.Empty;
 		}
 
-		plantStateInfo.text = $"...<color=#{ColorUtility.ToHtmlStringRGB(PlantSystem.Instance.GetColorBasedOnState())}>{PlantSystem.Instance.PlantState}</color>";
+		plantStateInfo.text = $"...<color=#{ColorUtility.ToHtmlStringRGB(PlantSystem.Instance.GetColorBasedOnState())}>{PlantSystem.Instance.PlantState.ToString().ToUpper()}</color>";
 	}
 
 
