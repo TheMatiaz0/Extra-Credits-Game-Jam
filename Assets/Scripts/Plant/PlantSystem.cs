@@ -140,7 +140,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     }
 
     private float modifier = 7f;
-    public void AddResources(PlantResources resource, float amount)
+    public void AddResources(float amount, PlantResources resource)
     {
         if (resource == PlantResources.Soil)
         {
