@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 9190673595340012765}
   - component: {fileID: 5198296798887850872}
   - component: {fileID: 8052709003694852018}
-  - component: {fileID: 8412728898361353828}
   - component: {fileID: 8412728898361353829}
   - component: {fileID: 8412728898361353830}
+  - component: {fileID: 8647313215686821981}
   m_Layer: 9
   m_Name: Watertower
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8412728898361353831}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 62.15, y: -1.04, z: -4.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -84,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8412728898361353828
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8412728898361353831}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.3650615, y: 8.128272, z: 3.6649332}
-  m_Center: {x: -0.020159602, y: 4.064136, z: -0.09181243}
 --- !u!135 &8412728898361353829
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -128,4 +115,18 @@ MonoBehaviour:
     _Array:
     - _Array:
       - Bottle
-  bottleWithWater: {fileID: 11400000, guid: b323bd151e2684f4da70739d38e2a067, type: 2}
+  bottleWithWater: {fileID: 0}
+--- !u!64 &8647313215686821981
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8412728898361353831}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3519752066229484816, guid: 74b914699709c0d4a98ab1d365d287a5, type: 3}

@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079182383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.382, z: -2.877}
+  m_LocalPosition: {x: 1.124, y: -0.215, z: 0.043}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8796094414251078652}
@@ -207,8 +207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8c8cecb2d605d4894bfb2d4e10d0f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionTime: 5
-  takesStamina: 10
+  interactionTime: 2
+  takesStamina: 5
   itemsNeeded:
     _Array: []
   maximumNeedsToMakeATask: 60
