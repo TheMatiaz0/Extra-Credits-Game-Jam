@@ -7,15 +7,23 @@ namespace UI
     public class Menu : MonoBehaviour
     {
         public CanvasGroup canvas;
+
+        private bool loaded = false;
+        
         private void Start()
         {
-            canvas = GetComponent<CanvasGroup>();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            
+            canvas = GetComponent<CanvasGroup>();
+            canvas.alpha = 0f;
+
+            LeanTween.alphaCanvas(canvas, 1f, 1f).setEaseInOutCubic().setOnComplete(_ => loaded = true);
         }
 
         private void Update()
         {
+            if (!loaded) return;
             if (Input.GetKeyDown(KeyCode.Escape))
             {
 #if UNITY_STANDALONE
@@ -27,6 +35,7 @@ namespace UI
 #endif
             } else if (Input.anyKeyDown)
             {
+                loaded = false;
                 LeanTween.alphaCanvas(canvas, 0, 1f).setEaseInOutCubic().setOnComplete(StartGame);
             }
         }
