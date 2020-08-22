@@ -33,7 +33,7 @@ public class TimeManager : MonoSingleton<TimeManager>
 
 	public event EventHandler<SimpleArgs<Cint>> OnCurrentDayChange = delegate { };
 
-	public bool IsSleeping { get; set; }
+	public bool IsSleeping { get; private set; }
 
 
 	private Cint _CurrentDay;
@@ -73,6 +73,7 @@ public class TimeManager : MonoSingleton<TimeManager>
 
 			if (CurrentTime.Days == 1)
 			{
+				StopAllCoroutines();
 				StartNewDay();
 				GameManager.Instance.HealthSys.Health.TakeValue(GameManager.Instance.HealthSys.Health.Max, "Death without Caution");
 			}

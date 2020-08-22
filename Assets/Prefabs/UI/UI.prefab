@@ -1956,6 +1956,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 4839183195835253997, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
+      propertyPath: m_Text
+      value: 6:00 am
+      objectReference: {fileID: 0}
     - target: {fileID: 7829924398751099205, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
       propertyPath: m_IsActive
       value: 0

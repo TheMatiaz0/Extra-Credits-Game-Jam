@@ -59,11 +59,16 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 
 		if (Input.GetMouseButtonDown(1))
 		{
-			Cint slot;
-			ItemScriptableObject it = Inventory.Instance.GetItem(slot = selectedSlot);
-			it.ActionForItem.Do();
-			Inventory.Instance.RemoveItem(slot);
-			// Inventory.Instance.selected
+			Cint slot = 0;
+			ItemScriptableObject it = null;
+			if (it != null)
+			{
+				it = Inventory.Instance.GetItem(slot = selectedSlot);
+				it?.ActionForItem?.Do();
+				Inventory.Instance.RemoveItem(slot);
+			}
+
+
 		}
 
 		ScrollWheel();
