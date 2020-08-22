@@ -30,7 +30,7 @@ public class UIManager : MonoSingleton<UIManager>
 
 	}
 
-	private void Instance_OnCurrentTimeChange(object sender, SimpleArgs<System.TimeSpan> e)
+	private void Instance_OnCurrentTimeChange(object sender, SimpleArgs<TimeSpan> e)
 	{
 		var dateTime = new DateTime(e.Value.Ticks);
 		var formattedTime = dateTime.ToString("h:mm tt", CultureInfo.InvariantCulture);
@@ -43,14 +43,14 @@ public class UIManager : MonoSingleton<UIManager>
 	}
 
 
-	private void Stamina_OnValueChanged(object sender, LockValue.AnyHpValueChangedArgs e)
+	private void Stamina_OnValueChanged(object sender, LockValue<float>.AnyValueChangedArgs e)
 	{
-		staminaBar.fillAmount = Percent.FromValueInRange(e.LockedValue.Value, (0, e.LockedValue.Max)).AsFloat;
+		staminaBar.fillAmount = Percent.FromValueInRange(e.Hp.Value, (0, e.Hp.Max)).AsFloat;
 	}
 
-	private void Health_OnValueChanged(object sender, LockValue.AnyHpValueChangedArgs e)
+	private void Health_OnValueChanged(object sender, LockValue<float>.AnyValueChangedArgs e)
 	{
-		hpBar.fillAmount = Percent.FromValueInRange(e.LockedValue.Value, (0, e.LockedValue.Max)).AsFloat;
+		hpBar.fillAmount = Percent.FromValueInRange(e.Hp.Value, (0, e.Hp.Max)).AsFloat;
 	}
 
 	protected void OnDisable()

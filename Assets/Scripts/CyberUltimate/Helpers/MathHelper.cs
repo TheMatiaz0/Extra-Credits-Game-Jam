@@ -45,6 +45,24 @@ namespace Cyberultimate
             else return min;
 
         }
+        public static T GeneralCheckedRemove<T>(T a, T b,Func<T,T,T> minusOperation,T min)
+            where T:IComparable<T>
+        {
+            T different = minusOperation(a,min);
+            if (different.CompareTo(b) != -1)
+                return minusOperation(a, b);
+            else
+                return min;
+        }
+        public static T GeneralCheckedAdd<T>(T a, T b, Func<T,T,T> addOperation,Func<T,T,T> minusOperation, T max)
+            where T : IComparable<T>
+        {
+            T different = minusOperation(max, a);
+            if (different.CompareTo(b) != -1)
+                return addOperation(a, b);
+            else
+                return max;
+        }
         
        
     }

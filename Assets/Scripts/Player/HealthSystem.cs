@@ -6,19 +6,19 @@ using Cyberultimate.Unity;
 
 public class HealthSystem : MonoSingleton<HealthSystem>
 {
-	public LockValue Health { get; set; }
+	public LockValue<float> Health { get; set; }
 
 	protected override void Awake()
 	{
 		base.Awake();
-		Health = new LockValue(100, 0, 100);
+		Health = new LockValue<float>(100, 0, 100);
 	}
 
 	protected void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.J))
 		{
-			Health.Take(10, "Whoooo");
+			Health.TakeValue(10f, "Whoooo");
 		}
 	}
 

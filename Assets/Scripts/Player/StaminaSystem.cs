@@ -1,15 +1,16 @@
 ﻿using Cyberultimate.Unity;
 using System.Collections;
 using System.Collections.Generic;
+using Cyberultimate;
 using UnityEngine;
 
 public class StaminaSystem : MonoSingleton<StaminaSystem>
 {
-	public LockValue Stamina { get; set; }
+	public LockValue<float> Stamina { get; set; }
 
 	protected override void Awake()
 	{
 		base.Awake();
-		Stamina = new LockValue(10000, 0, 10000);
+		Stamina = new LockValue<float>(100, 0, 100);
 	}
 }
