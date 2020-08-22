@@ -67,11 +67,13 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 		{
 			selectedSlot--;
 			Refresh();
+			ShowCurrentItem();
 		}
 		else if (Input.GetAxis("Mouse ScrollWheel") < 0)
 		{
 			selectedSlot += selectedSlot < 4 ? (Cint)1 : Cint.Zero;
 			Refresh();
+			ShowCurrentItem();
 		}
 	}
 
@@ -87,6 +89,15 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 			}
 		}
 
-		if (refresh) Refresh();
+		if (refresh)
+		{
+			Refresh();
+			ShowCurrentItem();
+		}
+	}
+
+	private void ShowCurrentItem()
+	{
+		UIManager.Instance.ShowPopupText(Inventory.Instance.GetItem(selectedSlot)?.name ?? "");
 	}
 }
