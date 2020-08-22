@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 3908250940365777765}
   - component: {fileID: 3908250940365777762}
   m_Layer: 0
-  m_Name: PossibleInteraction
+  m_Name: Dot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

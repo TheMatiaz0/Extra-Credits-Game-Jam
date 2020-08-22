@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b0ceeaa0d5b4d6cae7073ffecaa0449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
+  mouseSensitivity: 70
   minTurnAngle: -45
   maxTurnAngle: 45
   moveSpeed: 10
