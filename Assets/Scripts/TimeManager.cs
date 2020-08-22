@@ -13,7 +13,7 @@ public class TimeManager : MonoSingleton<TimeManager>
 	private SerializedTimeSpan inGameTimeSpan;
 
 	[SerializeField]
-	private uint minutesPerTimeSpan = 10;
+	private uint minutesPerTimeSpan = 5;
 
 	public TimeSpan CurrentTime 
 	{
@@ -51,6 +51,8 @@ public class TimeManager : MonoSingleton<TimeManager>
 
 	public void StartNewDay ()
 	{
+		GameManager.Instance.StaminaSys.Stamina.SetValue(GameManager.Instance.StaminaSys.Stamina.Max);
+
 		IsSleeping = false;
 		CurrentDay++;
 		CurrentTime = new TimeSpan(6, 0, 0);
