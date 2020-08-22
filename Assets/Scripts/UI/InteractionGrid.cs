@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cyberultimate.Unity;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -11,10 +12,12 @@ namespace UI
         [Serializable]
         public class Interaction
         {
+            public string interactionName;
             public Sprite sprite;
             public UnityEvent action;
         }
-        
+
+        public Text tooltipText;
         public CanvasGroup interactionWheel;
         public RectTransform slots;
         public GameObject interactionPrefab;
@@ -25,6 +28,7 @@ namespace UI
         {
             base.Awake();
             interactionWheel.alpha = 0;
+            HideTooltip();
         }
 
         public void Show(IList<Interaction> interactions)
@@ -39,6 +43,7 @@ namespace UI
 
         public void Hide()
         {
+            HideTooltip();
             LeanTween.alphaCanvas(interactionWheel, 0f, appearanceTime).setEaseInOutCubic();
             MovementController.Instance.blockAiming = false;
             Cursor.visible = false;
@@ -54,9 +59,21 @@ namespace UI
                 var g = Instantiate(interactionPrefab, slots);
                 
                 var slot = g.GetComponent<InteractionGridSlot>();
+                slot.interactionName = interaction?.interactionName;
                 slot.image.sprite = interaction?.sprite;
                 slot.onClick = interaction?.action;
             }
+        }
+
+        public void ShowTooltip(string text)
+        {
+            tooltipText.text = text;
+            tooltipText.gameObject.SetActive(true);
+        }
+
+        public void HideTooltip()
+        {
+            tooltipText.gameObject.SetActive(false);
         }
     }
 }

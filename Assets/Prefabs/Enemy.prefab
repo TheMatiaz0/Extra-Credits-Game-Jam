@@ -211,6 +211,23 @@ MonoBehaviour:
   movementSpeed: 4
   attackRate: 0.5
   firePoint: {fileID: 5768034870148786244}
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!54 &7894296668085742171
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -25,6 +25,11 @@ public class EnemyBehaviour : MonoBehaviour
 
 	private float nextAttackTime = 0;
 
+	private Vector3 startPosition;
+
+	[SerializeField]
+	private Transform[] waypoints = null;
+
 	protected void Start()
 	{
 		agent = GetComponent<NavMeshAgent>();
@@ -33,6 +38,8 @@ public class EnemyBehaviour : MonoBehaviour
 		rb = GetComponent<Rigidbody>();
 		rb.useGravity = false;
 		rb.isKinematic = true;
+
+		startPosition = this.transform.position;
 	}
 
 	protected void Update()
@@ -48,25 +55,43 @@ public class EnemyBehaviour : MonoBehaviour
 				{
 					nextAttackTime = Time.time + attackRate;
 
-					RaycastHit hit;
-					if (Physics.Raycast(firePoint.position, firePoint.forward, out hit, attackDistance))
+					if (Physics.Raycast(firePoint.position, firePoint.forward, out RaycastHit hit, attackDistance))
 					{
 						HealthSystem healthSys = null;
 						if (healthSys = (hit.transform.GetComponent<HealthSystem>()))
 						{
 							Debug.DrawLine(firePoint.position, firePoint.position + firePoint.forward * attackDistance, Color.cyan);
-				
+
 							// healthSys.Health.TakeValue(10, "Żombi");
 						}
 					}
 				}
 			}
 
-			agent.destination = playerPos;
-			transform.LookAt(new Vector3(playerPos.x, this.transform.position.y, playerPos.z));
-			rb.velocity *= 0.99f;
+			ChangeFocus(playerPos);
 		}
 
+		else if (Vector3.Distance(this.transform.position, startPosition) > 3)
+		{
+			if (agent.remainingDistance - attackDistance < 0.01f)
+			{
+				ChangeFocus(startPosition);
+			}
+		}
 
+		else
+		{
+			if (agent.remainingDistance - attackDistance < 0.01f)
+			{
+				ChangeFocus(waypoints[Random.Range(0, waypoints.Length)].position);
+			}
+		}
+	}
+
+	private void ChangeFocus (Vector3 pos)
+	{
+		agent.destination = pos;
+		transform.LookAt(new Vector3(pos.x, this.transform.position.y, pos.z));
+		rb.velocity *= 0.99f;
 	}
 }
