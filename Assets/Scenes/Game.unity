@@ -2234,6 +2234,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 837730327054030038, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
+      propertyPath: m_ShowCustomSorter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 837730327054030038, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
+      propertyPath: m_ShowToolkit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 837730327054030038, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
+      propertyPath: antialiasingMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2576859048924146377, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431571246878215494, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: a0d50c53e392cf444a356f1a1d93ca9e, type: 2}
     - target: {fileID: 7255697829055022433, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2281,6 +2301,22 @@ PrefabInstance:
     - target: {fileID: 7255697829055022461, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255697829160652609, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255697829160652611, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
+      propertyPath: m_VolumeLayerMask.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255697829160652611, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
+      propertyPath: m_RendererIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255697829160652611, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
