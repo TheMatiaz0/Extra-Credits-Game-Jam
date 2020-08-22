@@ -47,6 +47,12 @@ public class Inventory : MonoSingleton<Inventory>
         }
 
         InventoryUI.Instance.Refresh();
+
+        if (!foundSlot)
+        {
+            UIManager.Instance.ShowPopupText("Inventory full!");
+        }
+        
         return foundSlot;
     }
 
