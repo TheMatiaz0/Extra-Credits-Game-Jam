@@ -9,9 +9,6 @@ public class Soil : InteractableObject
 
     protected override void OnInteract()
     {
-        if (Inventory.Instance.AddItem(soil))
-        {
-            UIManager.Instance.ShowPopupText("Collected soil");
-        }
+        Inventory.Instance.AddResource(2,Inventory.PlantResources.soil); //zależnie od rodzaju łopaty
     }
 }

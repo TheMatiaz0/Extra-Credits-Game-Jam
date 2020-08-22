@@ -27,6 +27,8 @@ public class PlantNeeds : MonoSingleton<PlantNeeds>
     private float freshAirUse;
     private float sunlightUse;
 
+    public enum PlantResources { soil, water, air, light }
+
     private void Start()
     {
         water = SetToRandom(startingResourcesRandom);
@@ -51,5 +53,22 @@ public class PlantNeeds : MonoSingleton<PlantNeeds>
     float SetToRandom(Vector2 rnd)
     {
         return Random.Range(rnd.x, rnd.y);
+    }
+
+    public void RestoreResources(PlantResources resource, float amount)
+    {
+        if (resource == PlantResources.soil)
+        {
+
+        } else if (resource == PlantResources.water)
+        {
+
+        } else if (resource == PlantResources.air)
+        {
+
+        } else if (resource == PlantResources.light)
+        {
+
+        }
     }
 }

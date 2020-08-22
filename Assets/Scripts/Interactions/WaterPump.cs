@@ -9,10 +9,6 @@ public class WaterPump : InteractableObject
 
     protected override void OnInteract()
     {
-        //Inventory.Instance.RemoveItem(bottle);
-        if (Inventory.Instance.AddItem(bottleWithWater))
-        {
-            UIManager.Instance.ShowPopupText("Got some water");
-        }
+        Inventory.Instance.AddResource(2,Inventory.PlantResources.water);
     }
 }

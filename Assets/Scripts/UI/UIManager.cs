@@ -23,6 +23,11 @@ public class UIManager : MonoSingleton<UIManager>
     [SerializeField]
     private Text popupText = null;
 
+    [SerializeField]
+    private Image soilImage;
+    [SerializeField]
+    private Image waterImage;
+
 	protected void OnEnable()
 	{
 		HealthSystem.Instance.Health.OnValueChanged += Health_OnValueChanged;
@@ -75,6 +80,8 @@ public class UIManager : MonoSingleton<UIManager>
 
 		hpBar.fillAmount = 1;
 		staminaBar.fillAmount = 1;
+        soilImage.fillAmount = 0;
+        waterImage.fillAmount = 0;
 	}
 
     public void ShowPopupText(string txt)
@@ -82,5 +89,17 @@ public class UIManager : MonoSingleton<UIManager>
         popupText.text = txt;
         popupText.color = new Color(popupText.color.r, popupText.color.b, popupText.color.g, 1);
         LeanTween.alpha(popupText.rectTransform, 1, 1).setOnComplete(() => LeanTween.alpha(popupText.rectTransform,0,0.5f).setOnComplete(()=> popupText.color = new Color(popupText.color.r, popupText.color.b, popupText.color.g, 0))); 
+    }
+
+    public void ChangeResources(PlantNeeds.PlantResources resource, float current, float max)
+    {
+        float v = current / max;
+        if (resource == PlantNeeds.PlantResources.soil)
+        {
+            soilImage.fillAmount = v;
+        } else if(resource == PlantNeeds.PlantResources.water)
+        {
+            waterImage.fillAmount = v;
+        }
     }
 }
