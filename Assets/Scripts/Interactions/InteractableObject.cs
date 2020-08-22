@@ -60,7 +60,7 @@ public abstract class InteractableObject : MonoBehaviour
 
         var progress = holdingTime / interactionTime;
 
-        StaminaSystem.Instance.Stamina.TakeValue((takesStamina / interactionTime) * Time.deltaTime, "Interaction");
+        GameManager.Instance.StaminaSys.Stamina.TakeValue((takesStamina / interactionTime) * Time.deltaTime, "Interaction");
         holdingTime += Time.deltaTime;
         InteractionUI.Instance.SetPossibleInteractionProgress(progress);
     }

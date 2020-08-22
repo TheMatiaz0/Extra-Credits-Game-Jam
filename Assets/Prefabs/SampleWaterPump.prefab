@@ -128,4 +128,4 @@ MonoBehaviour:
     _Array:
     - _Array:
       - Bottle
-  bottleWithWater: {fileID: 0}
+  bottleWithWater: {fileID: 11400000, guid: b323bd151e2684f4da70739d38e2a067, type: 2}
