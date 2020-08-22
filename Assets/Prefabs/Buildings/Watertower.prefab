@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8412728898361353829}
   - component: {fileID: 8412728898361353830}
   - component: {fileID: 8647313215686821981}
+  - component: {fileID: 417611424}
   m_Layer: 9
   m_Name: Watertower
   m_TagString: Untagged
@@ -130,3 +131,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3519752066229484816, guid: 74b914699709c0d4a98ab1d365d287a5, type: 3}
+--- !u!208 &417611424
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8412728898361353831}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.6830001, y: 4.064, z: 1.8320001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.020000001, y: 4.064, z: -0.09200001}
+  m_TimeToStationary: 0.5
