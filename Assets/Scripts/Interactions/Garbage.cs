@@ -22,16 +22,16 @@ public class Garbage : InteractableObject
         } else
         {
             int itemRnd = Random.Range(0, itemDrops.Count);
-            /*if (Inventory.Instance.AddItem(itemDrops[itemRnd]))
+            if (Inventory.Instance.AddItem(itemDrops[itemRnd]))
             {
                 garbageUsed = true;
-                gameObject.RemoveComponent<this>();
+                this.enabled = false;
             } else 
             {
                 if(!garbageOpen) interactionTime /= 2;
                 garbageOpen=true;
                 UIManager.Instance.ShowPopupText("Inventory full!");
-            }*/
+            }
 
         }
     }

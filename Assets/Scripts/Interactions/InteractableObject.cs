@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public abstract class InteractableObject : MonoBehaviour
 {
-    public float interactTime = 0;
+    public float interactionTime = 0;
     public float takesStamina = 0;
     public string[] itemsNeeded;
 
@@ -36,7 +36,7 @@ public abstract class InteractableObject : MonoBehaviour
     public void MouseDown()
     {
         if (!CheckItemsNeeded(true)) return;
-        if (interactTime == 0)
+        if (interactionTime == 0)
         {
             OnInteract();
         } 
@@ -44,19 +44,19 @@ public abstract class InteractableObject : MonoBehaviour
 
     public void MouseHold()
     {
-        if (!usable || interactTime == 0) return;
+        if (!usable || interactionTime == 0) return;
         if (!CheckItemsNeeded()) return;
         
-        if (holdingTime >= interactTime)
+        if (holdingTime >= interactionTime)
         {
             OnInteract();
             holdingTime = 0;
             usable = false;
         }
 
-        var progress = holdingTime / interactTime;
+        var progress = holdingTime / interactionTime;
 
-        StaminaSystem.Instance.Stamina.Take((uint)Mathf.RoundToInt((takesStamina / interactTime) * Time.deltaTime * 100), "Interaction");
+        StaminaSystem.Instance.Stamina.Take((uint)Mathf.RoundToInt((takesStamina / interactionTime) * Time.deltaTime * 100), "Interaction");
         holdingTime += Time.deltaTime;
         InteractionUI.Instance.SetPossibleInteractionProgress(progress);
     }

@@ -9,7 +9,7 @@ public class TaskManager : MonoSingleton<TaskManager>
     private Dictionary<string, GameObject> tasks = new Dictionary<string,GameObject>();
     public GameObject textObj;
 
-    public void AddTask(string txt)
+	public void AddTask(string txt)
     {
         if (!tasks.ContainsKey(txt))
         {
