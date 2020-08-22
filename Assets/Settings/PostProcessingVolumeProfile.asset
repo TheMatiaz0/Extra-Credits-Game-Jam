@@ -25,7 +25,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.315
+    m_Value: 0.338
     min: 0
     max: 1
   smoothness:
@@ -117,6 +117,7 @@ MonoBehaviour:
   - {fileID: 3215082257090036914}
   - {fileID: 8938300232863837256}
   - {fileID: -1513001786126924964}
+  - {fileID: 5279803560299031411}
 --- !u!114 &3215082257090036914
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -129,11 +130,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e1dc532bcb41949b58bc4f2abfbb7e, type: 3}
   m_Name: LensDistortion
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.076
+    m_Value: 0.37
     min: -1
     max: 1
   xMultiplier:
@@ -154,6 +155,30 @@ MonoBehaviour:
     m_Value: 1
     min: 0.01
     max: 5
+--- !u!114 &5279803560299031411
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb60a22f311433c4c962b888d1393f88, type: 3}
+  m_Name: PaniniProjection
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  distance:
+    m_OverrideState: 1
+    m_Value: 0.304
+    min: 0
+    max: 1
+  cropToFit:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
 --- !u!114 &5323800278928377372
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -217,10 +242,10 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.04
+    m_Value: -0.63
   contrast:
     m_OverrideState: 1
-    m_Value: 22.3
+    m_Value: 5
     min: -100
     max: 100
   colorFilter:
