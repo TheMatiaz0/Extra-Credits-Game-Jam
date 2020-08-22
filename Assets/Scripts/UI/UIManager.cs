@@ -12,6 +12,9 @@ public class UIManager : MonoBehaviour
 	[SerializeField]
 	private Image staminaBar = null;
 
+	[SerializeField]
+	private Text timeText = null;
+
 	protected void OnEnable()
 	{
 		HealthSystem.Instance.Health.OnValueChanged += Health_OnValueChanged;
