@@ -55,12 +55,20 @@ public class TimeManager : MonoSingleton<TimeManager>
 		StartCoroutine(TimeCount());
 	}
 
+    int previousHours;
 	private IEnumerator TimeCount()
 	{
 		while (true)
 		{
 			yield return Async.Wait(inGameTimeSpan.TotalSeconds);
 			CurrentTime = new TimeSpan(CurrentTime.Hours, CurrentTime.Minutes + (int)minutesPerTimeSpan, CurrentTime.Seconds);
+
+            if (previousHours != CurrentTime.Hours )
+            {
+                //PlantSystem.Instance.ChangeResourceUse(CurrentTime.Hours);
+                //lista godzin w plant systemie -> jeżeli jest w liście currenttime.hours to zmienia zasoby
+            }
+            previousHours = CurrentTime.Hours;
 
 			if (CurrentTime.Days == 1)
 			{
