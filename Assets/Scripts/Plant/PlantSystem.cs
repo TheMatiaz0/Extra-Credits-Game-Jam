@@ -67,6 +67,18 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         PlantState = State.Dying;
     }
 
+    public Color GetColorBasedOnState ()
+	{
+        switch (PlantState)
+		{
+            case State.Dying:
+                return Color.red;
+
+            default:
+                return Color.green;
+		}
+	}
+
     private void Update()
     {
         Water.TakeValue(Time.deltaTime * waterUse);
