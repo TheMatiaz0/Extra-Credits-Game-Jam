@@ -8,7 +8,7 @@ namespace UI
     public class InteractionUI : MonoSingleton<InteractionUI>
     {
         [SerializeField] private Image progressImage;
-        [SerializeField] private Image interactionImage;
+        [SerializeField] private Text eKeyText;
 
         private void Start()
         {
@@ -17,7 +17,7 @@ namespace UI
 
         public void ShowPossibleInteraction()
         {
-            interactionImage.color = progressImage.color = Color.white;
+            eKeyText.color = progressImage.color = Color.white;
             progressImage.fillAmount = 0;
         }
 
@@ -28,7 +28,7 @@ namespace UI
 
         public void HidePossibleInteraction()
         {
-            interactionImage.color = progressImage.color = Color.clear;
+            eKeyText.color = progressImage.color = Color.clear;
             progressImage.fillAmount = 0;
         }
     }

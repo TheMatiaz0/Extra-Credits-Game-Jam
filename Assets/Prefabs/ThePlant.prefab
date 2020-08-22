@@ -87,7 +87,8 @@ MonoBehaviour:
     _Array: []
   interactions:
     _Array:
-    - sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    - interactionName: Check needs
+      sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
       action:
         m_PersistentCalls:
           m_Calls:
@@ -103,7 +104,8 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-    - sprite: {fileID: 21300000, guid: 4adab807e2341d64fbe74fcd99a7c3d7, type: 3}
+    - interactionName: Heal
+      sprite: {fileID: 21300000, guid: 4adab807e2341d64fbe74fcd99a7c3d7, type: 3}
       action:
         m_PersistentCalls:
           m_Calls:
