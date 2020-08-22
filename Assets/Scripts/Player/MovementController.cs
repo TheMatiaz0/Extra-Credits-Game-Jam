@@ -48,7 +48,6 @@ public class MovementController : MonoSingleton<MovementController>
         Running();
         KeyboardMovement();
         Jumping();
-        LosingStamina();
     }
 
     private void MouseAiming()
@@ -77,6 +76,7 @@ public class MovementController : MonoSingleton<MovementController>
         var x = Input.GetAxis("Horizontal");
         var z = Input.GetAxis("Vertical");
         
+        if(Math.Abs(x) > 0.2 || Math.Abs(z) > 0.2) LosingStamina();
 
         var dir = (transform.forward * z) + (transform.right * x);
 
