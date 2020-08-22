@@ -10,5 +10,5 @@ namespace Interactions
         [SerializeField]
         private ReorderableArray<InteractionGrid.Interaction> interactions;
         protected override IList<InteractionGrid.Interaction> Interactions => interactions;
-    }f
+    }
 }
