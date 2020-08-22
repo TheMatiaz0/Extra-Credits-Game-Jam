@@ -5,11 +5,11 @@ using UnityEngine;
 public class CheckPlant : InteractableObject
 {
     public float maximumNeedsToMakeATask = 60;
-    PlantNeeds plant;
 
+    private PlantNeeds plant;
     private void Start()
     {
-        plant = GetComponent<PlantNeeds>();
+        plant = PlantNeeds.Instance;
     }
 
     protected override void OnInteract()

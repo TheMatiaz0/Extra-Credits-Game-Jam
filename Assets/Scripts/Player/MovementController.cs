@@ -5,25 +5,29 @@ using UnityEngine;
 public class MovementController : MonoSingleton<MovementController>
 {
     public float turnSpeed = 2.0f;
+    public float minTurnAngle = -90.0f;
+     public float maxTurnAngle = 90.0f;
+     
     public float moveSpeed = 8.0f;
     public float runSpeed = 12.0f;
+    public float CurrentSpeed => (isRunning ? runSpeed : moveSpeed);
 
     private bool isRunning = false;
  
-    public float minTurnAngle = -90.0f;
-    public float maxTurnAngle = 90.0f;
-
+    
     public float jumpHeight = 20f;
     private bool isGrounded;
 
     private float rotX;
 
     private Rigidbody rb;
+    private CharacterController cc;
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        cc = GetComponent<CharacterController>();
     }
 
     private void Update()
@@ -49,16 +53,14 @@ public class MovementController : MonoSingleton<MovementController>
 
     private void KeyboardMovement()
     {
-        var dir = new Vector3
-        {
-            x = Input.GetAxis("Horizontal"), 
-            z = Input.GetAxis("Vertical")
-        };
+        var x = Input.GetAxis("Horizontal");
+        var z = Input.GetAxis("Vertical");
 
         isRunning = Input.GetKey(KeyCode.LeftShift);
 
-        //rb.AddForce(transform.forward * (Time.deltaTime * (isRunning ? runSpeed : moveSpeed)) * dir);
-        transform.Translate(dir * ((isRunning ? runSpeed : moveSpeed) * Time.deltaTime));
+        var dir = (transform.forward * z) + (transform.right * x);
+
+        cc.Move(dir * CurrentSpeed * Time.deltaTime);
     }
 
     private void Jumping()
