@@ -12,9 +12,6 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 
 	private const int alphaKeyCodesOffset = 49;
 
-
-	private ItemScriptableObject[] items;
-
 	public void Start()
 	{
 		for (var i = 0; i < transform.childCount; i++)
@@ -22,8 +19,6 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 			slots[i] = transform.GetChild(i).GetComponent<Slot>();
 		}
 		Refresh();
-
-		items = Resources.LoadAll<ItemScriptableObject>("Items");
 	}
 
 	public void Refresh()
@@ -37,7 +32,7 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 			}
 			else
 			{
-				slots[i].image.sprite = item.Icon;
+				slots[i].image.sprite = item.icon;
 			}
 			slots[i].Selected = selectedSlot == i;
 		}
@@ -53,13 +48,9 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 	{
 		if (Input.GetKeyDown(KeyCode.G))
 		{
-			ItemScriptableObject item = items[Random.Range(0, items.Length)];
+			var item = Inventory.Instance.AllGameItems["Shovel"];
 
-			Inventory.Instance.AddItem(new Item
-			{
-				Name = item.specialName,
-				Icon = item.invImg
-			});
+			Inventory.Instance.AddItem(item);
 		}
 		else if (Input.GetKeyDown(KeyCode.H))
 		{
