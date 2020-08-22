@@ -23,6 +23,11 @@ public class GameManager : MonoSingleton<GameManager>
         HealthSys.Health.OnValueChangeToMin += Health_OnValueChangedToMin;
     }
 
+	protected void OnDisable()
+	{
+		HealthSys.Health.OnValueChangeToMin -= Health_OnValueChangedToMin;
+	}
+
 	protected void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.R))
