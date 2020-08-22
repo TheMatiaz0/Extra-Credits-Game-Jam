@@ -18,7 +18,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     private int maximumNeedsToMakeATask;
 
     public State PlantState {
-        get => (Water.Value + Soil.Value + Sunlight.Value + FreshAir.Value > maximumNeedsToMakeATask*4) ? State.Growing:State.Dying;
+        get => (Water.Value + Soil.Value + Sunlight.Value > maximumNeedsToMakeATask * 3) ? State.Growing : State.Dying;
         set => SetPlantState(value);
     }
     
@@ -29,20 +29,21 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     
     public LockValue<float> Water { get; set; } = new LockValue<float>(100, 0, 50);
     public LockValue<float> Soil { get; set; } = new LockValue<float>(100, 0, 50);
-    public LockValue<float> FreshAir { get; set; } = new LockValue<float>(100, 0, 50);
     public LockValue<float> Sunlight { get; set; } = new LockValue<float>(100, 0, 50);
 
     private int failedDays;
 
+    [SerializeField] private Transform sunlight;
+    
     [SerializeField]
     private GameObject plantModelSmall, plantModelMedium, plantModelLarge;
 
     [SerializeField] 
     private Material growingMaterial, dyingMaterial;
     
+    
     private float waterUse;
     private float soilUse;
-    private float freshAirUse;
     private float sunlightUse;
 
     public enum PlantResources { Soil, Water, Air, Light }
@@ -53,14 +54,12 @@ public class PlantSystem : MonoSingleton<PlantSystem>
 
         waterUse = SetToRandom(resourceUseRandom);
         soilUse = SetToRandom(resourceUseRandom);
-        freshAirUse = SetToRandom(resourceUseRandom);
         sunlightUse = SetToRandom(resourceUseRandom);
 
         var startResources = SetToRandom(startingResourcesRandom);
         
         Water.SetValue(startResources);
         Soil.SetValue(startResources);
-        FreshAir.SetValue(startResources);
         Sunlight.SetValue(startResources);
         
         PlantSize.OnValueChanged += PlantSize_OnValueChanged;
@@ -72,7 +71,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
 
     private void Start()
     {
-        maximumNeedsToMakeATask = plantActions.maximumNeedsToMakeATask;
+        maximumNeedsToMakeATask = plantActions.maximumNeedsToCompleteTask;
         PlantSize.SetValue(0);
         PlantState = State.Dying;
         TimeManager.Instance.OnCurrentDayChange += OnDayChange;
@@ -97,10 +96,17 @@ public class PlantSystem : MonoSingleton<PlantSystem>
 
     private void Update()
     {
-        Water.TakeValue(Time.deltaTime * waterUse);
         Soil.TakeValue(Time.deltaTime * soilUse);
-        FreshAir.TakeValue(Time.deltaTime * freshAirUse);
-        Sunlight.TakeValue(Time.deltaTime * sunlightUse);
+
+        if (Physics.Raycast(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles * -1), out _, 50f)) // if plant is inside
+        {
+            Sunlight.TakeValue(Time.deltaTime * sunlightUse);
+            Debug.Log("plant inside");
+        }
+        else
+        {
+            Water.TakeValue(Time.deltaTime * waterUse);
+        }
 
         if (Input.GetKeyDown(KeyCode.Y))
         {
@@ -175,21 +181,24 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         } else if (resource == PlantResources.Water)
         {
             Water.GiveValue(amount * modifier, "");
-        } else if (resource == PlantResources.Air)
-        {
-            FreshAir.GiveValue(amount * modifier, "");
         } else if (resource == PlantResources.Light)
         {
             Sunlight.GiveValue(amount * modifier, "");
         }
     }
 
-    public void OnDayChange(object sender, SimpleArgs<Cint> args)
+    private void OnDayChange(object sender, SimpleArgs<Cint> args)
     {
+        SetPlantState(PlantState);
         if (PlantState == State.Dying) failedDays++;
         if (failedDays >= 3)
         {
             GameManager.Instance.GameOver("The plant died!", GameOverType.Failed);
         }
+    }
+
+    public void ChangeResourceuse(int hours)
+    {
+        
     }
 }

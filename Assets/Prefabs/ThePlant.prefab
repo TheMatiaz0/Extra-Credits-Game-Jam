@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8796094414251078652}
+  - component: {fileID: 4986949192610338894}
   - component: {fileID: 8796094414251078630}
   - component: {fileID: 8796094414251078649}
   - component: {fileID: 8922648348788734259}
@@ -36,6 +37,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &4986949192610338894
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8796094414251078655}
+  serializedVersion: 2
+  m_Mass: 2
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!65 &8796094414251078630
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -121,7 +138,24 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-  maximumNeedsToMakeATask: 60
+    - interactionName: Pick up
+      sprite: {fileID: 21300000, guid: 3e102e582da0e744286d15b0d3d39c75, type: 3}
+      action:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 8922648348788734259}
+            m_TargetAssemblyTypeName: Interactions.PlantActions, Assembly-CSharp
+            m_MethodName: PickUpPlant
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  maximumNeedsToCompleteTask: 60
 --- !u!1001 &8796094415076131548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -184,6 +218,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b6e5fefca6dd4a140a46c1109531fc3e, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b6e5fefca6dd4a140a46c1109531fc3e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b6e5fefca6dd4a140a46c1109531fc3e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6e5fefca6dd4a140a46c1109531fc3e, type: 3}
@@ -260,6 +302,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d8863081f75745245a5ad4d00ccc450a, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d8863081f75745245a5ad4d00ccc450a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8863081f75745245a5ad4d00ccc450a, type: 3}
 --- !u!1 &8562302308804820969 stripped
@@ -330,6 +380,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5148981657b3d734492783db011ec1e5, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5148981657b3d734492783db011ec1e5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5148981657b3d734492783db011ec1e5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5148981657b3d734492783db011ec1e5, type: 3}
