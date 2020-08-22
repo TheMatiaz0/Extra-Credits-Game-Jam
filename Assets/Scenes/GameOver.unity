@@ -462,7 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17687619bb4f4c0a97fe227f1dff1193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 1403865260}
+  titleText: {fileID: 1265277496}
   reasonText: {fileID: 956733017}
 --- !u!225 &1403865260
 CanvasGroup:

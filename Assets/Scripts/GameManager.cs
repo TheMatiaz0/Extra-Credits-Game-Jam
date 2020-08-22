@@ -4,6 +4,11 @@ using Cyberultimate.Unity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum GameOverType
+{
+	Died, Failed
+}
+
 public class GameManager : MonoSingleton<GameManager>
 {
     [SerializeField]
@@ -52,8 +57,9 @@ public class GameManager : MonoSingleton<GameManager>
 		GameOver("You have lost your health");
 	}
 
-	public void GameOver(string reason)
+	public void GameOver(string reason, GameOverType type = GameOverType.Died)
 	{
+		PlayerPrefs.SetString("GameOverType", type.ToString());
 		PlayerPrefs.SetString("GameOverReason", reason);
 		SceneManager.LoadScene("GameOver");
 	}
