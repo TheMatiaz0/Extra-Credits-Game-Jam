@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealPlant : MonoBehaviour
+public class HealPlant : InteractableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override void OnInteract()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Inventory.Instance.DrainResources(Inventory.Instance.water.Value,PlantSystem.PlantResources.water);
+        Inventory.Instance.DrainResources(Inventory.Instance.soil.Value, PlantSystem.PlantResources.soil);
+        UIManager.Instance.ShowPopupText("Gave all resources to the plant");
     }
 }

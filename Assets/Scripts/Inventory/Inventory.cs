@@ -12,9 +12,8 @@ public class Inventory : MonoSingleton<Inventory>
     
     public Dictionary<string, ItemScriptableObject> AllGameItems { get; private set; } = new Dictionary<string, ItemScriptableObject>();
 
-    [SerializeField]
-    private LockValue<uint> soil = new LockValue<uint>(10, 0, 0);
-    private LockValue<uint> water = new LockValue<uint>(10, 0, 0);
+    public LockValue<uint> soil = new LockValue<uint>(10, 0, 0);
+    public LockValue<uint> water = new LockValue<uint>(10, 0, 0);
 
     private void Start()
     {
@@ -84,6 +83,20 @@ public class Inventory : MonoSingleton<Inventory>
                 UIManager.Instance.ChangeResources(resource, water.Value, water.Max);
                 UIManager.Instance.ShowPopupText("Collected water");
             }
+        }
+    }
+
+    public void DrainResources(uint count, PlantSystem.PlantResources resource)
+    {
+        if (resource == PlantSystem.PlantResources.soil)
+        {
+            soil.TakeValue(count);
+            UIManager.Instance.ChangeResources(resource, soil.Value, soil.Max);
+        }
+        else if (resource == PlantSystem.PlantResources.water)
+        {
+            UIManager.Instance.ChangeResources(resource, water.Value, water.Max);
+            water.TakeValue(count);
         }
     }
 

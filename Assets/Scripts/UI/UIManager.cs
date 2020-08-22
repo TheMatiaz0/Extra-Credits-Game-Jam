@@ -30,6 +30,19 @@ public class UIManager : MonoSingleton<UIManager>
     [SerializeField]
     private Image waterImage;
 
+	[SerializeField]
+	private GameObject resultObj = null;
+
+	public void OpenResults ()
+	{
+		resultObj.SetActive(true);
+	}
+
+	public void CloseResults ()
+	{
+		resultObj.SetActive(false);
+	}
+
     private void Instance_OnCurrentTimeChange(object sender, SimpleArgs<TimeSpan> e)
 	{
 		var dateTime = new DateTime(e.Value.Ticks);
