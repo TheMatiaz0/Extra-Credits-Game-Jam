@@ -18,8 +18,8 @@ GameObject:
   m_Name: SampleSoil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &6738984027772800138
 Transform:
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6738984027772800149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 20.5, y: -1.3, z: -46.7}
-  m_LocalScale: {x: 7.2690487, y: 0.99999845, z: 5.9320483}
+  m_LocalScale: {x: 7.2690487, y: 1, z: 5.9320483}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -128,4 +128,6 @@ MonoBehaviour:
     _Array:
     - _Array:
       - Shovel
-  soil: {fileID: 11400000, guid: 1d8adbe6214c724479fe226172b0b3ef, type: 2}
+      - Broken Shovel
+      - Ultra Shovel
+  soil: {fileID: 0}
