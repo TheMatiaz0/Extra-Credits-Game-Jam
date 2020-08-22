@@ -7,12 +7,12 @@ using UnityEngine.UI;
 
 public static class FilmoqueTyping
 {
-	public static async Task SlowlyType(string text, float cooldown, Text displayText)
+	public static async Task SlowlyTypeUnscaled(string text, float cooldown, Text displayText)
 	{
 		foreach (char c in text)
 		{
 			displayText.text += c;
-			await Async.Wait(cooldown);
+			await Async.WaitUnscaled(cooldown);
 		}
 	}
 }

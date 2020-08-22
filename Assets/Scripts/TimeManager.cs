@@ -40,7 +40,6 @@ public class TimeManager : MonoSingleton<TimeManager>
 	{
 		GameTimeSpan = inGameTimeSpan.TimeSpan;
 		StartNewDay();
-		StartCoroutine(TimeCount());
 	}
 
 	public void SkipDay ()
@@ -51,8 +50,10 @@ public class TimeManager : MonoSingleton<TimeManager>
 
 	public void StartNewDay ()
 	{
+		IsSleeping = false;
 		CurrentDay++;
 		CurrentTime = new TimeSpan(6, 0, 0);
+		StartCoroutine(TimeCount());
 	}
 
 	private IEnumerator TimeCount()
