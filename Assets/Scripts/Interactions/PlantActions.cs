@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Cyberultimate.Unity;
+using Player;
 using UI;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace Interactions
         protected override IList<InteractionGrid.Interaction> Interactions => interactions;
         private Animator anim;
         
-        public int maximumNeedsToMakeATask = 60;
+        public int maximumNeedsToCompleteTask = 60;
 
         private void Start()
         {
@@ -23,19 +24,15 @@ namespace Interactions
         {
             var plant = PlantSystem.Instance;
             var task = TaskManager.Instance;
-            if (plant.Water.Value <= maximumNeedsToMakeATask)
+            if (plant.Water.Value <= maximumNeedsToCompleteTask)
             {
                 task.AddTask("Get water for plant");
             }
-            if (plant.Soil.Value <= maximumNeedsToMakeATask)
+            if (plant.Soil.Value <= maximumNeedsToCompleteTask)
             {
                 task.AddTask("Get soil for plant");
             }
-            if (plant.FreshAir.Value <= maximumNeedsToMakeATask)
-            {
-                task.AddTask("Give the plant fresh air");
-            }
-            if (plant.Sunlight.Value <= maximumNeedsToMakeATask)
+            if (plant.Sunlight.Value <= maximumNeedsToCompleteTask)
             {
                 task.AddTask("Give the plant some sunlight");
             }
@@ -49,6 +46,11 @@ namespace Interactions
             Inventory.Instance.DrainResources();
             
             UIManager.Instance.ShowPopupText("Gave all resources to the plant");
+        }
+
+        public void PickUpPlant()
+        {
+            Hand.Instance.PickUp(transform);
         }
     }
 }
