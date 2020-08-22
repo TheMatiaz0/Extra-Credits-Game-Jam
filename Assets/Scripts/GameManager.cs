@@ -33,6 +33,12 @@ public class GameManager : MonoSingleton<GameManager>
 
 	private void Health_OnValueChangedToMin(object sender, LockValue<float>.AnyValueChangedArgs e)
 	{
+		GameOver("You have lost your health");
+	}
+
+	public void GameOver(string reason)
+	{
+		PlayerPrefs.SetString("GameOverReason", reason);
 		SceneManager.LoadScene("GameOver");
 	}
 	
