@@ -86,5 +86,22 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         plantModelMedium.SetActive(false);
         plantModelLarge.SetActive(false);
     }
-    
+
+    private float modifier = 7f;
+    public void AddResources(PlantResources resource, float amount)
+    {
+        if (resource == PlantResources.soil)
+        {
+            Soil.GiveValue(amount*modifier,"");
+        } else if (resource == PlantResources.water)
+        {
+            Water.GiveValue(amount * modifier, "");
+        } else if (resource == PlantResources.air)
+        {
+            FreshAir.GiveValue(amount * modifier, "");
+        } else if (resource == PlantResources.light)
+        {
+            Sunlight.GiveValue(amount * modifier, "");
+        }
+    }
 }
