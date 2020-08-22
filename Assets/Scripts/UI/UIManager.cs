@@ -104,11 +104,11 @@ public class UIManager : MonoSingleton<UIManager>
     public void ChangeResources(PlantSystem.PlantResources resource, float current, float max)
     {
         float v = current / max;
-        if (resource == PlantSystem.PlantResources.soil)
+        if (resource == PlantSystem.PlantResources.Soil)
         {
             soilImage.fillAmount = v;
         }
-        else if (resource == PlantSystem.PlantResources.water)
+        else if (resource == PlantSystem.PlantResources.Water)
         {
             waterImage.fillAmount = v;
         }

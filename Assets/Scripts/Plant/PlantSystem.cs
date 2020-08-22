@@ -41,7 +41,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     private float freshAirUse;
     private float sunlightUse;
 
-    public enum PlantResources { soil, water, air, light }
+    public enum PlantResources { Soil, Water, Air, Light }
 
     protected override void Awake()
     {
@@ -142,16 +142,16 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     private float modifier = 7f;
     public void AddResources(PlantResources resource, float amount)
     {
-        if (resource == PlantResources.soil)
+        if (resource == PlantResources.Soil)
         {
             Soil.GiveValue(amount * modifier,"");
-        } else if (resource == PlantResources.water)
+        } else if (resource == PlantResources.Water)
         {
             Water.GiveValue(amount * modifier, "");
-        } else if (resource == PlantResources.air)
+        } else if (resource == PlantResources.Air)
         {
             FreshAir.GiveValue(amount * modifier, "");
-        } else if (resource == PlantResources.light)
+        } else if (resource == PlantResources.Light)
         {
             Sunlight.GiveValue(amount * modifier, "");
         }

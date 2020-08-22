@@ -7,15 +7,16 @@ public class ResultMenu : MonoBehaviour
 {
 	protected void OnEnable()
 	{
-		TimeManager.Instance.StartNewDay();
-		TimeControl.Register(this, 0);
-
 		Cursor.lockState = CursorLockMode.None;
 		Cursor.visible = true;
+
+		TimeManager.Instance.StartNewDay();
+		TimeControl.Register(this, 0);
 	}
 
 	protected void OnDisable()
 	{
 		TimeControl.Unregister(this);
+		GameManager.Instance.LockCursorUp();
 	}
 }

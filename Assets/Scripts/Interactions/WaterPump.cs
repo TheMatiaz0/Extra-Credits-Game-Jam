@@ -9,6 +9,6 @@ public class WaterPump : InteractableObject
 
     protected override void OnInteract()
     {
-        Inventory.Instance.AddResource(2, PlantSystem.PlantResources.water);
+        Inventory.Instance.AddResource(2, PlantSystem.PlantResources.Water);
     }
 }
