@@ -50,8 +50,9 @@ public class EnemyBehaviour : MonoBehaviour
 
 	protected void Update()
 	{
-        HandleChase();
         HandleOutside();
+        HandleChase();
+        HandleSoloMoving();
 
 		rb.velocity *= 0.99f;
 	}
@@ -94,7 +95,6 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (Vector2.Distance(startingPos, transform.position) >= maxMovingRange)
         {
-            agent.isStopped = true;
             //nowa pozycja w kwadracie dookoła środka
             agent.Move(NewMovingPosition(startingPos));
             Debug.Log("Too far away ;(");
@@ -105,7 +105,7 @@ public class EnemyBehaviour : MonoBehaviour
     float nextMoveTime = 4;
     void HandleSoloMoving()
     {
-        if (agent.remainingDistance<0.01f) //stoi w miejscu
+        if (agent.remainingDistance<0.01f || agent.remainingDistance==Mathf.Infinity) //stoi w miejscu
         {
             nextMoveTimer += Time.deltaTime;
             Debug.Log("Waiting for next move");
