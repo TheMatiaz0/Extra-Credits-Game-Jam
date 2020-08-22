@@ -13,11 +13,15 @@ public class MovementController : MonoSingleton<MovementController>
     [Header("Movement")]
     public float moveSpeed = 8.0f;
     public float runSpeed = 12.0f;
+    public float outOfStaminaSpeed = 5f;
+
     public float movingStamina = 0.5f;
     public float runningStamina = 1f;
     
     private bool isRunning = false;
-    private float CurrentSpeed => (isRunning ? runSpeed : moveSpeed);
+
+    private bool IsOutOfStamina => GameManager.Instance.StaminaSys.Stamina.Value == 0;
+    private float CurrentSpeed => IsOutOfStamina ? outOfStaminaSpeed : isRunning ? runSpeed : moveSpeed;
     private float CurrentStamina => (isRunning ? runningStamina : movingStamina);
     
     
