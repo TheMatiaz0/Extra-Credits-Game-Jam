@@ -27,7 +27,7 @@ namespace UI
             interactionWheel.alpha = 0;
         }
 
-        public void Show(IReadOnlyList<Interaction> interactions)
+        public void Show(IList<Interaction> interactions)
         {
             slots.KillAllChildren();
             Display(interactions);
@@ -45,7 +45,7 @@ namespace UI
             Cursor.lockState = CursorLockMode.Locked;
         }
 
-        private void Display(IReadOnlyList<Interaction> interactions)
+        private void Display(IList<Interaction> interactions)
         {
             for(var i=0; i<9; i++)
             {
@@ -53,7 +53,7 @@ namespace UI
                 
                 var g = Instantiate(interactionPrefab, slots);
                 
-                var slot = g.GetComponent<InteractionWheelSlot>();
+                var slot = g.GetComponent<InteractionGridSlot>();
                 slot.image.sprite = interaction?.sprite;
                 slot.onClick = interaction?.action;
             }

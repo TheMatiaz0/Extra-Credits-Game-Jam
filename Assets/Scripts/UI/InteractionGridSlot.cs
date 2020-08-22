@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class InteractionWheelSlot : MonoBehaviour
+    public class InteractionGridSlot : MonoBehaviour
     {
         public Image image;
         public UnityEvent onClick;

@@ -52,7 +52,7 @@ namespace Cyberultimate.Editor
                 {
                     float before = EditorGUIUtility.labelWidth;
                     EditorGUIUtility.labelWidth = new GUIStyle("label").CalcSize(new GUIContent($"100")).x;
-                    EditorGUI.PropertyField(rect, ar.GetArrayElementAtIndex(index), new GUIContent($"{index}:"));
+                    EditorGUI.PropertyField(rect, ar.GetArrayElementAtIndex(index), new GUIContent($"{index}:"),true);
                     EditorGUIUtility.labelWidth = before;
                 };
                 list.elementHeightCallback += (int index) =>
