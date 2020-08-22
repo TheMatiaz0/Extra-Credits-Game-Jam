@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cyberultimate.Unity;
 using UnityEngine;
 
-public class PlantNeeds : MonoBehaviour
+public class PlantNeeds : MonoSingleton<PlantNeeds>
 {
     [SerializeField]
     private float water;
