@@ -27,13 +27,19 @@ public class UIManager : MonoSingleton<UIManager>
 	{
 		HealthSystem.Instance.Health.OnValueChanged += Health_OnValueChanged;
 		StaminaSystem.Instance.Stamina.OnValueChanged += Stamina_OnValueChanged;
-
 	}
 
 	private void Instance_OnCurrentTimeChange(object sender, SimpleArgs<TimeSpan> e)
 	{
 		var dateTime = new DateTime(e.Value.Ticks);
 		var formattedTime = dateTime.ToString("h:mm tt", CultureInfo.InvariantCulture);
+
+		if (e.Value.Hours >= 20)
+		{
+			timeText.text = $"<color=red>{formattedTime}</color>";
+			return;
+		}
+
 		timeText.text = formattedTime;
 	}
 

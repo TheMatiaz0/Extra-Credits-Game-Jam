@@ -232,7 +232,7 @@ MonoBehaviour:
   hpBar: {fileID: 138492495581682091}
   staminaBar: {fileID: 138492495301105564}
   timeText: {fileID: 3908250942323714425}
-  dayText: {fileID: 0}
+  dayText: {fileID: 8436613177284702583}
   popupText: {fileID: 6190856166800128025}
 --- !u!1 &7585109381420978127
 GameObject:
@@ -800,15 +800,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4839183195523574922, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
       propertyPath: m_Name
-      value: Timer (1)
+      value: Dayer
       objectReference: {fileID: 0}
     - target: {fileID: 4839183195835253997, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
       propertyPath: m_Text
-      value: DAY 1
+      value: DAY 0
       objectReference: {fileID: 0}
     - target: {fileID: 4839183195835253997, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839183195835253999, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
+      propertyPath: m_Name
+      value: DayText
       objectReference: {fileID: 0}
     - target: {fileID: 8625425187617570298, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
       propertyPath: m_EffectDistance.x
@@ -826,6 +830,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4839183195523574921, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
   m_PrefabInstance: {fileID: 3908250942178588058}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8436613177284702583 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4839183195835253997, guid: dfbdb60c338abab4788b2e69bc84a0cd, type: 3}
+  m_PrefabInstance: {fileID: 3908250942178588058}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5763081689450604626
 PrefabInstance:
   m_ObjectHideFlags: 0
