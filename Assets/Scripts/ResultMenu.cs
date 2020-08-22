@@ -27,9 +27,7 @@ public class ResultMenu : MonoBehaviour
 		plantInfo.text = string.Empty;
 		plantStateInfo.text = string.Empty;
 		_ = SlowlyType();
-		
-
-		TimeManager.Instance.StartNewDay();
+	
 		TimeControl.Register(this, 0);
 	}
 
@@ -56,6 +54,7 @@ public class ResultMenu : MonoBehaviour
 	protected void OnDisable()
 	{
 		TimeControl.Unregister(this);
+		TimeManager.Instance.StartNewDay();
 		GameManager.Instance.LockCursorUp();
 	}
 }

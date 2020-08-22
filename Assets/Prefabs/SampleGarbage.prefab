@@ -18,8 +18,8 @@ GameObject:
   m_Name: SampleGarbage
   m_TagString: Ground
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1639154236068980950
 Transform:
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639154236068980951}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -2635626064817481941, guid: 5c2ee72df94d98c47aa98a6ad5f84124, type: 3}
 --- !u!23 &1639154236068980948
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eb63a4df140f6494a8bf3fba04d0c73b, type: 2}
+  - {fileID: 2100000, guid: f3e814c4403b5c54aaabd566caf7f464, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -124,7 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionTime: 3
   takesStamina: 5
-  itemsNeeded: []
+  itemsNeeded:
+    _Array: []
   itemDrops:
   - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
   - {fileID: 11400000, guid: 1d163f09b76a94e4a8fb8855b5aef55d, type: 2}

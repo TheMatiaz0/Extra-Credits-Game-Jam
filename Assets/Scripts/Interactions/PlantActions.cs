@@ -11,8 +11,14 @@ namespace Interactions
         [SerializeField]
         private ReorderableArray<InteractionGrid.Interaction> interactions;
         protected override IList<InteractionGrid.Interaction> Interactions => interactions;
+        private Animator anim;
         
         public int maximumNeedsToCompleteTask = 60;
+
+        private void Start()
+        {
+            anim = GetComponent<Animator>();            
+        }
 
         public void CheckPlant()
         {

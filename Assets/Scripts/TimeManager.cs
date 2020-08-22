@@ -33,8 +33,6 @@ public class TimeManager : MonoSingleton<TimeManager>
 
 	public event EventHandler<SimpleArgs<Cint>> OnCurrentDayChange = delegate { };
 
-	public bool IsSleeping { get; set; }
-
 
 	private Cint _CurrentDay;
 
@@ -45,15 +43,13 @@ public class TimeManager : MonoSingleton<TimeManager>
 
 	public void SkipDay ()
 	{
-		IsSleeping = true;
+		StopAllCoroutines();
 		UIManager.Instance.OpenResults();
 	}
 
 	public void StartNewDay ()
 	{
 		GameManager.Instance.StaminaSys.Stamina.SetValue(GameManager.Instance.StaminaSys.Stamina.Max);
-
-		IsSleeping = false;
 		CurrentDay++;
 		CurrentTime = new TimeSpan(6, 0, 0);
 		StartCoroutine(TimeCount());
@@ -65,11 +61,6 @@ public class TimeManager : MonoSingleton<TimeManager>
 		{
 			yield return Async.Wait(inGameTimeSpan.TotalSeconds);
 			CurrentTime = new TimeSpan(CurrentTime.Hours, CurrentTime.Minutes + (int)minutesPerTimeSpan, CurrentTime.Seconds);
-
-			if (IsSleeping)
-			{
-				StopAllCoroutines();
-			}
 
 			if (CurrentTime.Days == 1)
 			{
