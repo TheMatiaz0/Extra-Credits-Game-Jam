@@ -16,12 +16,27 @@ public class GameManager : MonoSingleton<GameManager>
 
     public StaminaSystem StaminaSys => staminaSys;
 
-    private void Start()
+	protected override void Awake()
+	{
+		base.Awake();
+		LockCursorUp();
+	}
+
+	private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
         HealthSys.Health.OnValueChangeToMin += Health_OnValueChangedToMin;
     }
+
+	public void LockCursorUp ()
+	{
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
+	}
+
+	protected void OnDisable()
+	{
+		HealthSys.Health.OnValueChangeToMin -= Health_OnValueChangedToMin;
+	}
 
 	protected void Update()
 	{

@@ -193,6 +193,8 @@ MonoBehaviour:
   plantModelSmall: {fileID: 8562302308259483565}
   plantModelMedium: {fileID: 8562302308562780045}
   plantModelLarge: {fileID: 8562302308804820969}
+  growingMaterial: {fileID: 2100000, guid: f3e814c4403b5c54aaabd566caf7f464, type: 2}
+  dyingMaterial: {fileID: 2100000, guid: 3aea4adc0fd5ad746b14775c936d40f5, type: 2}
 --- !u!114 &8796094414251078653
 MonoBehaviour:
   m_ObjectHideFlags: 0
