@@ -47,12 +47,12 @@ public class UIManager : MonoSingleton<UIManager>
 
 	private void Stamina_OnValueChanged(object sender, LockValue<float>.AnyValueChangedArgs e)
 	{
-		staminaBar.fillAmount = Percent.FromValueInRange(e.Hp.Value, (0, e.Hp.Max)).AsFloat;
+		staminaBar.fillAmount = Percent.FromValueInRange(e.LockValue.Value, (0, e.LockValue.Max)).AsFloat;
 	}
 
 	private void Health_OnValueChanged(object sender, LockValue<float>.AnyValueChangedArgs e)
 	{
-		hpBar.fillAmount = Percent.FromValueInRange(e.Hp.Value, (0, e.Hp.Max)).AsFloat;
+		hpBar.fillAmount = Percent.FromValueInRange(e.LockValue.Value, (0, e.LockValue.Max)).AsFloat;
 	}
 
 	protected void OnDisable()
