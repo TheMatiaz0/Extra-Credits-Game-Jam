@@ -26,7 +26,9 @@ public class PlantSystem : MonoSingleton<PlantSystem>
 
     public Vector2 startingResourcesRandom = new Vector2(40, 70); //min and max
     public Vector2 resourceUseRandom = new Vector2(0.1f, 0.7f); //min and max
-    
+
+    private float risingAir_Light = 0.3f;
+
     public LockValue<float> Water { get; set; } = new LockValue<float>(100, 0, 50);
     public LockValue<float> Soil { get; set; } = new LockValue<float>(100, 0, 50);
     public LockValue<float> FreshAir { get; set; } = new LockValue<float>(100, 0, 50);
@@ -44,6 +46,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     private float sunlightUse;
 
     public enum PlantResources { Soil, Water, Air, Light }
+    public bool outside = false;
 
     protected override void Awake()
     {
@@ -91,8 +94,16 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     {
         Water.TakeValue(Time.deltaTime * waterUse);
         Soil.TakeValue(Time.deltaTime * soilUse);
-        FreshAir.TakeValue(Time.deltaTime * freshAirUse);
-        Sunlight.TakeValue(Time.deltaTime * sunlightUse);
+        if (outside)
+        {
+            FreshAir.TakeValue(Time.deltaTime * freshAirUse);
+            Sunlight.GiveValue(Time.deltaTime * risingAir_Light);
+        }
+        else
+        {
+            Sunlight.TakeValue(Time.deltaTime * sunlightUse);
+            FreshAir.GiveValue(Time.deltaTime * risingAir_Light);
+        }
 
         if (Input.GetKeyDown(KeyCode.Y))
         {
