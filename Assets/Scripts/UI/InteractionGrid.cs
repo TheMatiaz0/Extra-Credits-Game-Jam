@@ -22,6 +22,8 @@ namespace UI
         public RectTransform slots;
         public GameObject interactionPrefab;
 
+        [SerializeField] private Sprite emptySprite;
+
         public float appearanceTime = 0.2f;
         
         protected override void Awake()
@@ -39,6 +41,7 @@ namespace UI
             MovementController.Instance.blockAiming = true;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            InteractionUI.Instance.Hide();
         }
 
         public void Hide()
@@ -48,11 +51,12 @@ namespace UI
             MovementController.Instance.blockAiming = false;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+            InteractionUI.Instance.Show();
         }
 
         private void Display(IList<Interaction> interactions)
         {
-            for(var i=0; i<9; i++)
+            for(var i=0; i<6; i++)
             {
                 var interaction = i < interactions?.Count ? interactions[i] : null;
                 
@@ -60,7 +64,7 @@ namespace UI
                 
                 var slot = g.GetComponent<InteractionGridSlot>();
                 slot.interactionName = interaction?.interactionName;
-                slot.image.sprite = interaction?.sprite;
+                slot.image.sprite = interaction?.sprite ?? emptySprite;
                 slot.onClick = interaction?.action;
             }
         }

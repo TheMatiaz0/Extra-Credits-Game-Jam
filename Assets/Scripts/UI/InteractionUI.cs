@@ -10,8 +10,11 @@ namespace UI
         [SerializeField] private Image progressImage;
         [SerializeField] private Text eKeyText;
 
+        private CanvasGroup canvas;
+
         private void Start()
         {
+            canvas = GetComponent<CanvasGroup>();
             HidePossibleInteraction();
         }
 
@@ -30,6 +33,16 @@ namespace UI
         {
             eKeyText.color = progressImage.color = Color.clear;
             progressImage.fillAmount = 0;
+        }
+
+        public void Show()
+        {
+            canvas.alpha = 1;
+        }
+
+        public void Hide()
+        {
+            canvas.alpha = 0;
         }
     }
 }

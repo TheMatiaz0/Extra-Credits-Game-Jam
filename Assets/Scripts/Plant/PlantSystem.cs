@@ -46,6 +46,8 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     private float soilUse;
     private float sunlightUse;
 
+    private uint daysGrowing = 0;
+
     public enum PlantResources { Soil, Water, Air, Light }
 
     protected override void Awake()
@@ -101,7 +103,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         if (Physics.Raycast(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles * -1), out _, 50f)) // if plant is inside
         {
             Sunlight.TakeValue(Time.deltaTime * sunlightUse);
-            Debug.Log("plant inside");
+            //Debug.Log("plant inside");
         }
         else
         {
@@ -190,10 +192,27 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     private void OnDayChange(object sender, SimpleArgs<Cint> args)
     {
         SetPlantState(PlantState);
-        if (PlantState == State.Dying) failedDays++;
-        if (failedDays >= 3)
+        if (PlantState == State.Growing)
         {
-            GameManager.Instance.GameOver("The plant died!", GameOverType.Failed);
+            daysGrowing++;
+            if (daysGrowing >= 5)
+            {
+                PlantSize.GiveValue(1);
+                daysGrowing = 0;
+                if (PlantSize.Value == 2)
+                {
+                    GameManager.Instance.GameCompleted();
+                }
+            }
+        }
+        else
+        {
+            daysGrowing = 0;
+            failedDays++;
+            if (failedDays >= 3)
+            {
+                GameManager.Instance.GameOver("The plant died!", GameOverType.Failed);
+            }
         }
     }
 
