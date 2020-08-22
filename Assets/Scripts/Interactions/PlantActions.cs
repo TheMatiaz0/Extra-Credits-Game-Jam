@@ -11,7 +11,8 @@ namespace Interactions
         private ReorderableArray<InteractionGrid.Interaction> interactions;
         protected override IList<InteractionGrid.Interaction> Interactions => interactions;
         
-        public float maximumNeedsToMakeATask = 60;
+        public int maximumNeedsToMakeATask = 60;
+
         public void CheckPlant()
         {
             var plant = PlantSystem.Instance;

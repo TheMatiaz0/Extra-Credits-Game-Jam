@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3455365, g: 0.17019214, b: 0.055324823, a: 1}
+  m_IndirectSpecularColor: {r: 0.345525, g: 0.17022237, b: 0.05530925, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -433,7 +433,7 @@ MonoBehaviour:
   inGameTimeSpan:
     seconds: 1
     mode: 1
-  minutesPerTimeSpan: 0
+  minutesPerTimeSpan: 5
 --- !u!4 &316146376
 Transform:
   m_ObjectHideFlags: 0
@@ -2627,6 +2627,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4101473626264034099, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6527298366128970975, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8136663593090698512, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}

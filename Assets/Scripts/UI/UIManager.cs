@@ -22,6 +22,9 @@ public class UIManager : MonoSingleton<UIManager>
 	[SerializeField]
 	private Text dayText = null;
 
+	[SerializeField] 
+	private GameObject goToSleepText = null;
+
     [SerializeField]
     private Text popupText = null;
 
@@ -51,7 +54,12 @@ public class UIManager : MonoSingleton<UIManager>
 		if (e.Value.Hours >= 20)
 		{
 			timeText.text = $"<color=red>{formattedTime}</color>";
+			goToSleepText.SetActive(true);
 			return;
+		}
+		else
+		{
+			goToSleepText.SetActive(false);
 		}
 
 		timeText.text = formattedTime;

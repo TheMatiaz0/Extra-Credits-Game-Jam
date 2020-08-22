@@ -214,7 +214,7 @@ MonoBehaviour:
   runSpeed: 12
   outOfStaminaSpeed: 5
   movingStamina: 0.5
-  runningStamina: 1
+  runningStamina: 0.75
   gravity: -9.8
   jumpHeight: 1
   jumpingStamina: 10

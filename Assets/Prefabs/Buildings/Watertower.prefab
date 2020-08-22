@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionTime: 4
-  takesStamina: 10
+  takesStamina: 8
   itemsNeeded:
     _Array:
     - _Array:

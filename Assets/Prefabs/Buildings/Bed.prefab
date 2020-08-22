@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d916ec154ae594aa2e89fe5572c235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionTime: 0
+  interactionTime: 0.2
   takesStamina: 0
   itemsNeeded:
     _Array: []

@@ -14,9 +14,11 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     }
 
     private State _plantState = State.Dying;
-    
-    public State PlantState { 
-        get => _plantState;
+
+    private int maximumNeedsToMakeATask;
+
+    public State PlantState {
+        get => (Water.Value + Soil.Value + Sunlight.Value + FreshAir.Value > maximumNeedsToMakeATask*4) ? State.Growing:State.Dying;
         set => SetPlantState(value);
     }
     
@@ -62,9 +64,13 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         PlantSize.OnValueChanged += PlantSize_OnValueChanged;
 
     }
-    
+
+    [SerializeField]
+    private Interactions.PlantActions plantActions;
+
     private void Start()
     {
+        maximumNeedsToMakeATask = plantActions.maximumNeedsToMakeATask;
         PlantSize.SetValue(0);
         PlantState = State.Dying;
     }

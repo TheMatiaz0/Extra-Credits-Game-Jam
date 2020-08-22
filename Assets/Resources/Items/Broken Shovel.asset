@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3cfe33c833a1714e9850b0ba6675e0a, type: 3}
-  m_Name: ProteinBar
+  m_Name: Broken Shovel
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 6329039cc4d358e42aeac2fd0369a896, type: 3}
+  icon: {fileID: 21300000, guid: 3e102e582da0e744286d15b0d3d39c75, type: 3}
