@@ -8,10 +8,10 @@ public class PlantSystem : MonoSingleton<PlantSystem>
 {
     public enum State
     {
-        Dying, Ok, Growing
+        Dying, Growing
     }
 
-    public State PlantState { get; set; } = State.Ok;
+    public State PlantState { get; set; } = State.Dying;
     public LockValue<uint> PlantSize { get; set; }= new LockValue<uint>(2, 0, 0);
 
     public Vector2 startingResourcesRandom = new Vector2(40, 70); //min and max
