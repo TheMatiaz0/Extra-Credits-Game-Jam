@@ -5,138 +5,93 @@ using UnityEngine.AI;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    [Header("Moving")]
-    [SerializeField]
-    private float movementSpeed = 4f;
-    [SerializeField]
-    private Vector2 nextMoveRandomDelay = new Vector2(4, 8);
+	[SerializeField]
+	private float attackDistance = 3f;
 
-    [Header("Ranges")]
-    [SerializeField]
-    private float chasingRange = 3f;
-    [SerializeField]
-    private float maxMovingRange = 20;
-    [SerializeField]
-    private float movingRangeMaxMinYX = 5;
+	[SerializeField]
+	private float viewDistance = 10;
 
-    [Header("Attacking")]
-    [SerializeField]
-    private Transform firePoint;
-    [SerializeField]
-    private float attackDistance = 3f;
-    [SerializeField]
-    private float attackRate = 0.5f;
+	[SerializeField]
+	private float movementSpeed = 4f;
 
-    private Vector2 startingPos;
+	[SerializeField]
+	private float attackRate = 0.5f;
 
-    private NavMeshAgent agent;
-    private Rigidbody rb;
+	[SerializeField]
+	private Transform firePoint;
 
-    private float nextAttackTime = 0;
-    private bool goingBack = false;
+	private NavMeshAgent agent;
+	private Rigidbody rb;
 
-    protected void Start()
-    {
-        agent = GetComponent<NavMeshAgent>();
-        agent.stoppingDistance = attackDistance;
-        agent.speed = movementSpeed;
-        rb = GetComponent<Rigidbody>();
-        rb.useGravity = false;
-        rb.isKinematic = true;
+	private float nextAttackTime = 0;
 
-        startingPos = transform.position;
-    }
+	private Vector3 startPosition;
 
-    private bool chasingPlayer = false;
+	[SerializeField]
+	private Transform[] waypoints = null;
 
-    protected void Update()
-    {
-        // Debug.Log("distance: " + Vector2.Distance(startingPos, MovementController.Instance.transform.position));
-        if (!goingBack)
-        {
-            HandleOutside();
-            HandleChase();
-            HandleSoloMoving();
-        }
-        else if (agent.remainingDistance < 0.01f) goingBack = false;
+	protected void Start()
+	{
+		agent = GetComponent<NavMeshAgent>();
+		agent.stoppingDistance = attackDistance;
+		agent.speed = movementSpeed;
+		rb = GetComponent<Rigidbody>();
+		rb.useGravity = false;
+		rb.isKinematic = true;
 
-        rb.velocity *= 0.99f;
-    }
+		startPosition = this.transform.position;
+	}
 
-    void HandleChase()
-    {
-        Vector3 playerPos = MovementController.Instance.transform.position;
-        if (Vector3.Distance(transform.position, new Vector2(playerPos.x, playerPos.z)) <= chasingRange) chasingPlayer = true; else chasingPlayer = false;
+	protected void Update()
+	{
 
-        if (chasingPlayer)
-        {
-            Debug.Log("I see player!");
-            if (agent.remainingDistance - attackDistance < 0.01f)
-            {
-                if (Time.time > nextAttackTime)
-                {
-                    nextAttackTime = Time.time + attackRate;
+		Vector3 playerPos = MovementController.Instance.transform.position;
 
-                    RaycastHit hit;
-                    if (Physics.Raycast(firePoint.position, firePoint.forward, out hit, attackDistance))
-                    {
-                        HealthSystem healthSys = null;
-                        if (healthSys = (hit.transform.GetComponent<HealthSystem>()))
-                        {
-                            Debug.DrawLine(firePoint.position, firePoint.position + firePoint.forward * attackDistance, Color.cyan);
-
-                            // healthSys.Health.TakeValue(15, "Żombi");
-                        }
-                    }
-                }
-            }
-
-            agent.destination = playerPos;
-
-            transform.LookAt(new Vector3(playerPos.x, this.transform.position.y, playerPos.z));
-        }
-    }
-
-    void HandleOutside()
-    {
-        Vector2 playerPos = MovementController.Instance.transform.position;
-        if (Vector2.Distance(startingPos, playerPos) >= maxMovingRange)
-        {
-            //nowa pozycja w kwadracie dookoła środka
-            if (agent.SetDestination(NewMovingPosition(startingPos)))
+		if (Vector3.Distance(this.transform.position, playerPos) <= viewDistance)
+		{
+			if (agent.remainingDistance - attackDistance < 0.01f)
 			{
-                Debug.Log("<color=red>Good</color>");
+				if (Time.time > nextAttackTime)
+				{
+					nextAttackTime = Time.time + attackRate;
+
+					if (Physics.Raycast(firePoint.position, firePoint.forward, out RaycastHit hit, attackDistance))
+					{
+						HealthSystem healthSys = null;
+						if (healthSys = (hit.transform.GetComponent<HealthSystem>()))
+						{
+							Debug.DrawLine(firePoint.position, firePoint.position + firePoint.forward * attackDistance, Color.cyan);
+
+							// healthSys.Health.TakeValue(10, "Żombi");
+						}
+					}
+				}
 			}
 
-            else
+			ChangeFocus(playerPos);
+		}
+
+		else if (Vector3.Distance(this.transform.position, startPosition) > 3)
+		{
+			if (agent.remainingDistance - attackDistance < 0.01f)
 			{
-                Debug.Log("False");
+				ChangeFocus(startPosition);
 			}
-            Debug.Log("Too far away ;(");
-            goingBack = true;
-        }
-    }
+		}
 
-    float nextMoveTimer = 0;
-    float nextMoveTime = 4;
-    void HandleSoloMoving()
-    {
-        if (agent.remainingDistance < 2f || agent.remainingDistance == Mathf.Infinity && !chasingPlayer) //stoi w miejscu
-        {
-            nextMoveTimer += Time.deltaTime;
-            Debug.Log("Waiting for next move");
-            if (nextMoveTimer >= nextMoveTime)
-            {
-                Debug.Log("Next move!");
-                nextMoveTimer = 0;
-                nextMoveTime = Random.Range(nextMoveRandomDelay.x, nextMoveRandomDelay.y);
-                agent.SetDestination(NewMovingPosition(transform.position));
-            }
-        }
-    }
+		else
+		{
+			if (agent.remainingDistance - attackDistance < 0.01f)
+			{
+				ChangeFocus(waypoints[Random.Range(0, waypoints.Length)].position);
+			}
+		}
+	}
 
-    Vector2 NewMovingPosition(Vector2 pos)
-    {
-        return pos + new Vector2(Random.Range(-movingRangeMaxMinYX, movingRangeMaxMinYX), Random.Range(-movingRangeMaxMinYX, movingRangeMaxMinYX));
-    }
+	private void ChangeFocus (Vector3 pos)
+	{
+		agent.destination = pos;
+		transform.LookAt(new Vector3(pos.x, this.transform.position.y, pos.z));
+		rb.velocity *= 0.99f;
+	}
 }
