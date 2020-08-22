@@ -6,11 +6,11 @@ using UnityEngine.AI;
 public class EnemyBehaviour : MonoBehaviour
 {
     [Header("Moving")]
-	[SerializeField]
-	private float movementSpeed = 4f;
     [SerializeField]
-    private Vector2 nextMoveRandomDelay=new Vector2(4,8);
-    
+    private float movementSpeed = 4f;
+    [SerializeField]
+    private Vector2 nextMoveRandomDelay = new Vector2(4, 8);
+
     [Header("Ranges")]
     [SerializeField]
     private float chasingRange = 3f;
@@ -25,33 +25,33 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     private float attackDistance = 3f;
     [SerializeField]
-	private float attackRate = 0.5f;
+    private float attackRate = 0.5f;
 
     private Vector2 startingPos;
 
-	private NavMeshAgent agent;
-	private Rigidbody rb;
+    private NavMeshAgent agent;
+    private Rigidbody rb;
 
-	private float nextAttackTime = 0;
+    private float nextAttackTime = 0;
     private bool goingBack = false;
 
     protected void Start()
-	{
-		agent = GetComponent<NavMeshAgent>();
-		agent.stoppingDistance = attackDistance;
-		agent.speed = movementSpeed;
-		rb = GetComponent<Rigidbody>();
-		rb.useGravity = false;
-		rb.isKinematic = true;
+    {
+        agent = GetComponent<NavMeshAgent>();
+        agent.stoppingDistance = attackDistance;
+        agent.speed = movementSpeed;
+        rb = GetComponent<Rigidbody>();
+        rb.useGravity = false;
+        rb.isKinematic = true;
 
         startingPos = transform.position;
-	}
+    }
 
     private bool chasingPlayer = false;
 
-	protected void Update()
-	{
-        Debug.Log("distance: " + Vector2.Distance(startingPos, MovementController.Instance.transform.position));
+    protected void Update()
+    {
+        // Debug.Log("distance: " + Vector2.Distance(startingPos, MovementController.Instance.transform.position));
         if (!goingBack)
         {
             HandleOutside();
@@ -60,13 +60,13 @@ public class EnemyBehaviour : MonoBehaviour
         }
         else if (agent.remainingDistance < 0.01f) goingBack = false;
 
-		rb.velocity *= 0.99f;
-	}
+        rb.velocity *= 0.99f;
+    }
 
     void HandleChase()
     {
-        Vector3 playerPos =MovementController.Instance.transform.position;
-        if (Vector3.Distance(transform.position, new Vector2(playerPos.x,playerPos.z)) <= chasingRange) chasingPlayer = true; else chasingPlayer = false;
+        Vector3 playerPos = MovementController.Instance.transform.position;
+        if (Vector3.Distance(transform.position, new Vector2(playerPos.x, playerPos.z)) <= chasingRange) chasingPlayer = true; else chasingPlayer = false;
 
         if (chasingPlayer)
         {
@@ -85,25 +85,33 @@ public class EnemyBehaviour : MonoBehaviour
                         {
                             Debug.DrawLine(firePoint.position, firePoint.position + firePoint.forward * attackDistance, Color.cyan);
 
-                            healthSys.Health.TakeValue(15, "Żombi");
+                            // healthSys.Health.TakeValue(15, "Żombi");
                         }
                     }
                 }
             }
-   
+
             agent.destination = playerPos;
 
             transform.LookAt(new Vector3(playerPos.x, this.transform.position.y, playerPos.z));
-        } 
+        }
     }
 
     void HandleOutside()
     {
-        Vector2 playerPos =MovementController.Instance.transform.position;
+        Vector2 playerPos = MovementController.Instance.transform.position;
         if (Vector2.Distance(startingPos, playerPos) >= maxMovingRange)
         {
             //nowa pozycja w kwadracie dookoła środka
-            agent.SetDestination(NewMovingPosition(startingPos));
+            if (agent.SetDestination(NewMovingPosition(startingPos)))
+			{
+                Debug.Log("<color=red>Good</color>");
+			}
+
+            else
+			{
+                Debug.Log("False");
+			}
             Debug.Log("Too far away ;(");
             goingBack = true;
         }
@@ -113,11 +121,11 @@ public class EnemyBehaviour : MonoBehaviour
     float nextMoveTime = 4;
     void HandleSoloMoving()
     {
-        if (agent.remainingDistance<2f || agent.remainingDistance==Mathf.Infinity&&!chasingPlayer) //stoi w miejscu
+        if (agent.remainingDistance < 2f || agent.remainingDistance == Mathf.Infinity && !chasingPlayer) //stoi w miejscu
         {
             nextMoveTimer += Time.deltaTime;
             Debug.Log("Waiting for next move");
-            if (nextMoveTimer>=nextMoveTime)
+            if (nextMoveTimer >= nextMoveTime)
             {
                 Debug.Log("Next move!");
                 nextMoveTimer = 0;
