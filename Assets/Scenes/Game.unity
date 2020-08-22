@@ -384,10 +384,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1771017279031405923, guid: 98373242590278c4fa1d8ed6ba06b809, type: 3}
-      propertyPath: chasingRange
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1771017279031405933, guid: 98373242590278c4fa1d8ed6ba06b809, type: 3}
       propertyPath: m_Name
       value: Enemy 1
@@ -2417,30 +2413,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1148982547, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
-      propertyPath: m_Color.r
-      value: 0.6509434
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148982547, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
-      propertyPath: m_Color.g
-      value: 0.5339202
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148982547, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
-      propertyPath: m_Color.b
-      value: 0.39609292
-      objectReference: {fileID: 0}
-    - target: {fileID: 1241748497, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
-      propertyPath: m_Color.r
-      value: 0.20754719
-      objectReference: {fileID: 0}
-    - target: {fileID: 1241748497, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
-      propertyPath: m_Color.g
-      value: 0.124658845
-      objectReference: {fileID: 0}
-    - target: {fileID: 1241748497, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
-      propertyPath: m_Color.b
-      value: 0.08321468
-      objectReference: {fileID: 0}
     - target: {fileID: 1865763778335452127, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -2737,7 +2709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6738984027772800138, guid: 30987628d1c81754da42321e459ed12d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 6738984027772800138, guid: 30987628d1c81754da42321e459ed12d, type: 3}
       propertyPath: m_LocalPosition.z
