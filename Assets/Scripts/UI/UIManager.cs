@@ -9,6 +9,8 @@ using System;
 
 public class UIManager : MonoSingleton<UIManager>
 {
+
+
 	[SerializeField]
 	private Image hpBar = null;
 
@@ -25,8 +27,8 @@ public class UIManager : MonoSingleton<UIManager>
 
 	protected void OnEnable()
 	{
-		HealthSystem.Instance.Health.OnValueChanged += Health_OnValueChanged;
-		StaminaSystem.Instance.Stamina.OnValueChanged += Stamina_OnValueChanged;
+		GameManager.Instance.HealthSys.Health.OnValueChanged += Health_OnValueChanged;
+		GameManager.Instance.StaminaSys.Stamina.OnValueChanged += Stamina_OnValueChanged;
 	}
 
 	private void Instance_OnCurrentTimeChange(object sender, SimpleArgs<TimeSpan> e)
@@ -61,8 +63,8 @@ public class UIManager : MonoSingleton<UIManager>
 
 	protected void OnDisable()
 	{
-		HealthSystem.Instance.Health.OnValueChanged -= Health_OnValueChanged;
-		StaminaSystem.Instance.Stamina.OnValueChanged -= Stamina_OnValueChanged;
+		GameManager.Instance.HealthSys.Health.OnValueChanged -= Health_OnValueChanged;
+		GameManager.Instance.StaminaSys.Stamina.OnValueChanged -= Stamina_OnValueChanged;
 
 		TimeManager.Instance.OnCurrentDayChange -= Instance_OnCurrentDayChange;
 		TimeManager.Instance.OnCurrentTimeChange -= Instance_OnCurrentTimeChange;

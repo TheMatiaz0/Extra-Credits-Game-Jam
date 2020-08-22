@@ -96,12 +96,12 @@ public class MovementController : MonoSingleton<MovementController>
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            StaminaSystem.Instance.Stamina.TakeValue(Time.deltaTime * jumpingStamina, "Jumping");
+            GameManager.Instance.StaminaSys.Stamina.TakeValue(Time.deltaTime * jumpingStamina, "Jumping");
         }
     }
 
     private void LosingStamina()
     {
-        StaminaSystem.Instance.Stamina.TakeValue(Time.deltaTime * CurrentStamina, "Running");
+        GameManager.Instance.StaminaSys.Stamina.TakeValue(Time.deltaTime * CurrentStamina, "Running");
     }
 }
