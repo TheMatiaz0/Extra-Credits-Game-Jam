@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 253963308}
   - component: {fileID: 253963307}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: ThePlantIs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -459,6 +459,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d47ed6454ee6fb49822dbb31972ae62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dayText: {fileID: 1612406568}
+  plantInfo: {fileID: 253963307}
 --- !u!1 &825761755
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,7 +852,7 @@ GameObject:
   - component: {fileID: 1612406569}
   - component: {fileID: 1612406568}
   m_Layer: 5
-  m_Name: Text
+  m_Name: DayInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
