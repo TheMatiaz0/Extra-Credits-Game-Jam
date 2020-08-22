@@ -223,6 +223,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+  blockAiming: 0
 --- !u!114 &5528639196325777759
 MonoBehaviour:
   m_ObjectHideFlags: 0
