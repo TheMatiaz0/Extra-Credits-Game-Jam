@@ -1,6 +1,7 @@
 ﻿using System;
 using Cyberultimate.Unity;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoSingleton<GameManager>
 {
@@ -19,4 +20,12 @@ public class GameManager : MonoSingleton<GameManager>
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
+	protected void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+            SceneManager.LoadScene("Game");
+		}
+	}
 }
