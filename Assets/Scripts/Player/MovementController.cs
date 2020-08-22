@@ -40,6 +40,8 @@ public class MovementController : MonoSingleton<MovementController>
     private Vector3 velocity;
     private CharacterController cc;
 
+    [HideInInspector] public bool blockAiming = false;
+
 
     private void Start()
     {
@@ -48,7 +50,7 @@ public class MovementController : MonoSingleton<MovementController>
 
     private void Update()
     {
-        MouseAiming();
+        if(!blockAiming) MouseAiming();
         Running();
         KeyboardMovement();
         Jumping();

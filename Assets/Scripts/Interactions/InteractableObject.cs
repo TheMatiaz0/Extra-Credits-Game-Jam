@@ -65,7 +65,7 @@ public abstract class InteractableObject : MonoBehaviour
         InteractionUI.Instance.SetPossibleInteractionProgress(progress);
     }
 
-    public void ActionUp()
+    public virtual void ActionUp()
     {
         usable = true;
         holdingTime = 0;
