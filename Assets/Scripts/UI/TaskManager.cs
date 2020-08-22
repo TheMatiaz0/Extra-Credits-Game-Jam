@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cyberultimate.Unity;
 
-public class TaskManager : MonoBehaviour
+public class TaskManager : MonoSingleton<TaskManager>
 {
-    public static TaskManager instance;
-    private void Awake()
-    {
-        instance = this;
-    }
-
     private Dictionary<string, GameObject> tasks = new Dictionary<string,GameObject>();
     public GameObject textObj;
 
