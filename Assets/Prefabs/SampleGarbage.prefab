@@ -139,3 +139,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 77782c4625196bf4aa1cf886340b3ccb, type: 2}
   bottleEvolution:
   - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
+  firstItem: {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
+  firstItemGet: 0
