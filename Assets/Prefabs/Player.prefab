@@ -254,10 +254,10 @@ MonoBehaviour:
   mouseSensitivity: 90
   minTurnAngle: -70
   maxTurnAngle: 70
-  moveSpeed: 8
-  runSpeed: 12
-  outOfStaminaSpeed: 5
-  movingStamina: 0.5
+  moveSpeed: 7
+  runSpeed: 10
+  outOfStaminaSpeed: 4
+  movingStamina: 0.45
   runningStamina: 0.75
   gravity: -9.8
   jumpHeight: 1

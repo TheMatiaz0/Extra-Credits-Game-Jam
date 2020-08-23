@@ -65,8 +65,7 @@ public class TimeManager : MonoSingleton<TimeManager>
 
             if (previousHours != CurrentTime.Hours )
             {
-                //PlantSystem.Instance.ChangeResourceUse(CurrentTime.Hours);
-                //lista godzin w plant systemie -> jeżeli jest w liście currenttime.hours to zmienia zasoby
+                PlantSystem.Instance.ChangeResources(CurrentTime.Hours); //zmienia zużycie zasobów
             }
             previousHours = CurrentTime.Hours;
 

@@ -10,6 +10,7 @@ public abstract class InteractableObject : MonoBehaviour
 {
     public float interactionTime = 0;
     public float takesStamina = 0;
+    public bool canUseWithoutStamina = false;
     public ReorderableArray<ReorderableArray<string>> itemsNeeded;
 
     private float holdingTime = 0;
@@ -18,7 +19,7 @@ public abstract class InteractableObject : MonoBehaviour
 
     private bool CheckItemsNeeded(bool showMessage = false)
     {
-        if (GameManager.Instance.StaminaSys.Stamina.Value == 0)
+        if (GameManager.Instance.StaminaSys.Stamina.Value == 0&&!canUseWithoutStamina)
         {
             UIManager.Instance.ShowPopupText("You are too tired");
             return false;
