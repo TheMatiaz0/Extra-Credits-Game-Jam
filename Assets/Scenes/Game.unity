@@ -1684,28 +1684,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
   m_PrefabInstance: {fileID: 578360346}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &594452331 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 594452331, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
-  m_PrefabInstance: {fileID: 7255697829047597580}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!95 &594452333 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 594452333, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
-  m_PrefabInstance: {fileID: 7255697829047597580}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &618861866 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
-  m_PrefabInstance: {fileID: 1997679244}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &635556273
+--- !u!1001 &594815253
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1957,7 +1936,17 @@ Transform:
   m_Father: {fileID: 543450652813336487}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &761530995
+--- !u!95 &759226910 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 759226910, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
+  m_PrefabInstance: {fileID: 7255697829047597580}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &818225134 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
+  m_PrefabInstance: {fileID: 1676517171}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &836744852
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -4926,13 +4915,15 @@ GameObject:
   m_Component:
   - component: {fileID: 1808171550}
   - component: {fileID: 1808171551}
+  - component: {fileID: 1808171552}
+  - component: {fileID: 1808171553}
   m_Layer: 0
   m_Name: Timeline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1808171550
 Transform:
   m_ObjectHideFlags: 0
@@ -4967,13 +4958,71 @@ PlayableDirector:
   - key: {fileID: 2901049893728077010, guid: 87f2b639f7229da44b1a59aaa2224fde, type: 2}
     value: {fileID: 69382056}
   - key: {fileID: 9211040833064054759, guid: 87f2b639f7229da44b1a59aaa2224fde, type: 2}
-    value: {fileID: 594452331}
+    value: {fileID: 1808171553}
   - key: {fileID: 8161252736607655763, guid: 87f2b639f7229da44b1a59aaa2224fde, type: 2}
-    value: {fileID: 594452333}
+    value: {fileID: 759226910}
   - key: {fileID: 71365916902810381, guid: 87f2b639f7229da44b1a59aaa2224fde, type: 2}
     value: {fileID: 998072262}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &1808171552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808171549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9160b3736a552409ef5e2ad58e9e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressToSkip: {fileID: 1142945411}
+--- !u!114 &1808171553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808171549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: ac9c1a6a28b8edc4daabb520341f57d4, type: 2}
+    - {fileID: 11400000, guid: e1c22f2828eaca04eb40c48083b8da52, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1808171552}
+          m_TargetAssemblyTypeName: TimelineController, Assembly-CSharp
+          m_MethodName: LaunchCutscene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1808171552}
+          m_TargetAssemblyTypeName: TimelineController, Assembly-CSharp
+          m_MethodName: CloseCutscene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1832263867
 GameObject:
   m_ObjectHideFlags: 0
@@ -7101,14 +7150,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 594452331, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 28805521}
-    - target: {fileID: 594452331, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 28805521}
     - target: {fileID: 7255697829055022433, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
       propertyPath: m_Name
       value: Player
