@@ -4757,11 +4757,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7255697829055022461, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.97
+      value: -4.49
       objectReference: {fileID: 0}
     - target: {fileID: 7255697829055022461, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.66
+      value: 1.33
       objectReference: {fileID: 0}
     - target: {fileID: 7255697829055022461, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4810,19 +4810,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5768034870148786244, guid: db4114de2ddc42542b591922b9faa0c1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.871
+      value: 0.536
       objectReference: {fileID: 0}
     - target: {fileID: 5768034870148786244, guid: db4114de2ddc42542b591922b9faa0c1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1391011
+      value: 1.1391023
       objectReference: {fileID: 0}
     - target: {fileID: 5768034870148786244, guid: db4114de2ddc42542b591922b9faa0c1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.7973897
+      value: 1.1263009
       objectReference: {fileID: 0}
     - target: {fileID: 5768034870148786244, guid: db4114de2ddc42542b591922b9faa0c1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.09999997
+      value: 0.09999999
       objectReference: {fileID: 0}
     - target: {fileID: 7894296668085742160, guid: db4114de2ddc42542b591922b9faa0c1, type: 3}
       propertyPath: waypoints.Array.size
@@ -5033,14 +5033,6 @@ PrefabInstance:
     - target: {fileID: 8412728898361353831, guid: 65f4373e52099c748b3af0279507a89f, type: 3}
       propertyPath: m_Name
       value: Watertower
-      objectReference: {fileID: 0}
-    - target: {fileID: 8412728898361353831, guid: 65f4373e52099c748b3af0279507a89f, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8412728898361353831, guid: 65f4373e52099c748b3af0279507a89f, type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9190673595340012765, guid: 65f4373e52099c748b3af0279507a89f, type: 3}
       propertyPath: m_LocalPosition.x

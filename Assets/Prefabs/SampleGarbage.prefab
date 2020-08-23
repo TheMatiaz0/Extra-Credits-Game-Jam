@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionTime: 3
-  takesStamina: 5
+  takesStamina: 4
   canUseWithoutStamina: 0
   itemsNeeded:
     _Array: []

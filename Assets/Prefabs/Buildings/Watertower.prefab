@@ -19,8 +19,8 @@ GameObject:
   m_Name: Watertower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &9190673595340012765
 Transform:
@@ -110,8 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14f2cbaf9e5b2cd4d943e2739f161c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionTime: 4
+  interactionTime: 3
   takesStamina: 8
+  canUseWithoutStamina: 0
   itemsNeeded:
     _Array:
     - _Array:
