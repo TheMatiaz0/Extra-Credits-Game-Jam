@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6665394673566440754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6665394673566440765}
+  - component: {fileID: 6665394673566440764}
+  - component: {fileID: 5479602133712059488}
+  m_Layer: 0
+  m_Name: DialogTriggerItemNeeded
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6665394673566440765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6665394673566440754}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 46.6, y: 2.5, z: -17.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6665394673566440764
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6665394673566440754}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 39.69376, y: 5, z: 34.838627}
+  m_Center: {x: -15.421827, y: 0, z: -23.189024}
+--- !u!114 &5479602133712059488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6665394673566440754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97659cd39635aff4fb52e891b1ffe1d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasItemText: So much soil! At least i have a shovel...
+  doesntHaveItemtext: So much soil! ...But i need a shovel to get it.
+  once: 1
+  duration: 3
+  itemOptionsNeeded:
+  - {fileID: 11400000, guid: 842c7df675ca7874a9daee4bf4dbec58, type: 2}
+  - {fileID: 11400000, guid: f755bc711b16283419970146956c3986, type: 2}
+  - {fileID: 11400000, guid: 77782c4625196bf4aa1cf886340b3ccb, type: 2}

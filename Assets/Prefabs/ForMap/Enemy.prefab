@@ -101,11 +101,10 @@ MonoBehaviour:
   viewDistance: 10
   movementSpeed: 2
   attackRate: 0.5
+  attackDamage: 10
+  poisonTime: 10
   firePoint: {fileID: 1950078599}
   waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

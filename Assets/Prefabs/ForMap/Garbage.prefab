@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1639154236068980953}
   - component: {fileID: 1639154236068980954}
   m_Layer: 9
-  m_Name: SampleGarbage
+  m_Name: Garbage
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1639154236068980951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.4, y: -0.184, z: 57.3}
-  m_LocalScale: {x: 2.3135235, y: 1.6312082, z: 2.4293194}
+  m_LocalScale: {x: 2.3135233, y: 1.6312081, z: 2.4293196}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -125,5 +125,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 77782c4625196bf4aa1cf886340b3ccb, type: 2}
   bottleEvolution:
   - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
+  - {fileID: 11400000, guid: 00aafb89c7fb2ee4ca0ab3e8bdc2af19, type: 2}
+  - {fileID: 11400000, guid: cbbb18e46773dc9499b392b8649944a1, type: 2}
   firstItem: {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
   firstItemGet: 0
