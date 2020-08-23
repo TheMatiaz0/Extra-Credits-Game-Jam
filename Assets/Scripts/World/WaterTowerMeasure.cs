@@ -6,7 +6,7 @@ using Cyberultimate.Unity;
 
 public class WaterTowerMeasure : MonoSingleton<WaterTowerMeasure>
 {
-    public LockValue<int> water = new LockValue<int>(15, 0, 15);
+    public LockValue<uint> water = new LockValue<uint>(15, 0, 15);
 
     private void Start()
     {
