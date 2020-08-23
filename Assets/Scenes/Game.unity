@@ -6852,14 +6852,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeginCutscene
       objectReference: {fileID: 0}
-    - target: {fileID: 4070088721397157951, guid: c0a0382cfb78e9b4dace7aeba90759f7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5671186964737969484, guid: c0a0382cfb78e9b4dace7aeba90759f7, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: ff1fac1b7b366c04bb4508c91762b368, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0a0382cfb78e9b4dace7aeba90759f7, type: 3}
 --- !u!1001 &4434532884000543254
