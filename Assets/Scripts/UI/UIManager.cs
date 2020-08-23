@@ -6,11 +6,11 @@ using UnityEngine.UI;
 using Cyberultimate.Unity;
 using System.Globalization;
 using System;
+using System.Threading.Tasks;
 
 public class UIManager : MonoSingleton<UIManager>
 {
-
-
+	
 	[SerializeField]
 	private Image hpBar = null;
 
@@ -27,6 +27,9 @@ public class UIManager : MonoSingleton<UIManager>
 
     [SerializeField]
     private Text popupText = null;
+    
+    [SerializeField]
+    private Text dialogText = null;
 
     [SerializeField]
     private Image soilImage;
@@ -35,6 +38,22 @@ public class UIManager : MonoSingleton<UIManager>
 
 	[SerializeField]
 	private GameObject resultObj = null;
+	
+	
+	protected void Start()
+	{
+		GameManager.Instance.HealthSys.Health.OnValueChanged += Health_OnValueChanged;
+		GameManager.Instance.StaminaSys.Stamina.OnValueChanged += Stamina_OnValueChanged;
+
+		TimeManager.Instance.OnCurrentDayChange += Instance_OnCurrentDayChange;
+		TimeManager.Instance.OnCurrentTimeChange += Instance_OnCurrentTimeChange;
+
+		hpBar.fillAmount = 1;
+		staminaBar.fillAmount = 1;
+
+		LeanTween.alphaText(dialogText.rectTransform, 0, 0);
+		LeanTween.alphaText(popupText.rectTransform, 0, 0);
+	}
 
 	public void OpenResults ()
 	{
@@ -90,23 +109,26 @@ public class UIManager : MonoSingleton<UIManager>
 		TimeManager.Instance.OnCurrentTimeChange -= Instance_OnCurrentTimeChange;
 	}
 
-	protected void Start()
+	
+	public void ShowPopupText(string txt)
 	{
-		GameManager.Instance.HealthSys.Health.OnValueChanged += Health_OnValueChanged;
-		GameManager.Instance.StaminaSys.Stamina.OnValueChanged += Stamina_OnValueChanged;
-
-		TimeManager.Instance.OnCurrentDayChange += Instance_OnCurrentDayChange;
-		TimeManager.Instance.OnCurrentTimeChange += Instance_OnCurrentTimeChange;
-
-		hpBar.fillAmount = 1;
-		staminaBar.fillAmount = 1;
+		popupText.text = txt;
+		_ = ShowTextAsync(popupText, txt);
 	}
+	
 
-    public void ShowPopupText(string txt)
+	public void ShowDialogText(string txt)
     {
-        popupText.text = txt;
-        popupText.color = new Color(popupText.color.r, popupText.color.b, popupText.color.g, 1);
-        LeanTween.alpha(popupText.rectTransform, 1, 1).setOnComplete(() => LeanTween.alpha(popupText.rectTransform,0,0.5f).setOnComplete(()=> popupText.color = new Color(popupText.color.r, popupText.color.b, popupText.color.g, 0))); 
+	    dialogText.text = txt;
+	    _ = ShowTextAsync(dialogText, txt);
+    }
+
+    private async Task ShowTextAsync(Text text, string message)
+    {
+	    text.text = message;
+	    LeanTween.textAlpha(text.rectTransform, 1, 0.2f);
+	    await Async.Wait(TimeSpan.FromSeconds(4));
+	    LeanTween.textAlpha(text.rectTransform, 0, 0.2f);
     }
 
     public void ChangeResources(PlantSystem.PlantResources resource, float current, float max)
