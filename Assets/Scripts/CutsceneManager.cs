@@ -23,9 +23,6 @@ public class CutsceneManager : MonoBehaviour
 	[SerializeField]
 	private Text subtitles = null;
 
-	[SerializeField]
-	private UnityAction actionAfterCutsceneEnd = delegate { };
-
 	private Coroutine displayingText = null;
 	private Coroutine writeDisplayCoroutine = null;
 
@@ -39,11 +36,14 @@ public class CutsceneManager : MonoBehaviour
 
 	[SerializeField]
 	private UnityEvent onCutsceneEnd = null;
+	[SerializeField]
+	private UnityEvent onCutsceneStart = null;
 
 
 	protected void OnEnable()
 	{
 		SetupCutscene();
+		onCutsceneStart.Invoke();
 	}
 
 	private void SetupCutscene()
@@ -110,7 +110,6 @@ public class CutsceneManager : MonoBehaviour
 		}
 
 		onCutsceneEnd.Invoke();
-
-		actionAfterCutsceneEnd.Invoke();
+		subtitles.text = string.Empty;
 	}
 }
