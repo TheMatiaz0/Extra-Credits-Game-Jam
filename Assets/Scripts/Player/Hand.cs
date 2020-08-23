@@ -1,5 +1,6 @@
 ﻿using System;
 using Cyberultimate.Unity;
+using UI;
 using UnityEngine;
 
 namespace Player
@@ -18,6 +19,9 @@ namespace Player
                 return;
             }
 
+            InteractionChecker.Instance.checkInteractions = false;
+            InteractionUI.Instance.ShowPossibleInteraction();
+
             isHolding = true;
             target.parent = transform;
             target.localPosition = Vector3.zero;
@@ -35,6 +39,8 @@ namespace Player
         {
             if (!isHolding) return;
             
+            InteractionChecker.Instance.checkInteractions = true;
+            
             currentylHolding.parent = null;
             
             if (currentylHolding.TryGetComponent<Rigidbody>(out var rb))
@@ -48,7 +54,7 @@ namespace Player
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 PutDown();
             }

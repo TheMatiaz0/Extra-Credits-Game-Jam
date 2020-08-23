@@ -9,9 +9,17 @@ public class InteractionChecker : MonoSingleton<InteractionChecker>
     public LayerMask layerMask;
 
     private InteractableObject lastObject;
+
+    [HideInInspector] public bool checkInteractions = true;
     
     private void Update()
     {
+        if (!checkInteractions)
+        {
+            lastObject?.ActionUp();
+            return;
+        }
+        
         var fwd = Camera.main.transform.forward;
         //Debug.DrawRay(transform.position, fwd, Color.red);
         if (Physics.Raycast(transform.position, fwd, out var hit, distance, layerMask))
