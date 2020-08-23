@@ -122,8 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 799daa1cf9a354d4cbece3b8bbd5ac63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionTime: 3
-  takesStamina: 5
+  interactionTime: 4
+  takesStamina: 7
+  canUseWithoutStamina: 0
   itemsNeeded:
     _Array:
     - _Array:
