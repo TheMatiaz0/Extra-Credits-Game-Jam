@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1419416432}
-  m_IndirectSpecularColor: {r: 0.70239675, g: 0.34603867, b: 0.11244258, a: 1}
+  m_IndirectSpecularColor: {r: 0.702417, g: 0.34597975, b: 0.11247656, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17522,6 +17522,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3518709504952774046, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
+      propertyPath: waypoints.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518709504952774046, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 958750615}
@@ -17562,6 +17566,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1344153246}
     - target: {fileID: 6726930166898733461, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
+      propertyPath: waypoints.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726930166898733461, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 933799579}
@@ -17572,15 +17580,15 @@ PrefabInstance:
     - target: {fileID: 6726930166898733461, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
       propertyPath: waypoints.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1231802408}
     - target: {fileID: 6726930166898733461, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
       propertyPath: waypoints.Array.data[3]
       value: 
-      objectReference: {fileID: 1231802408}
+      objectReference: {fileID: 1314915146}
     - target: {fileID: 6726930166898733461, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
       propertyPath: waypoints.Array.data[4]
       value: 
-      objectReference: {fileID: 1314915146}
+      objectReference: {fileID: 30463916}
     - target: {fileID: 6726930166898733461, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
       propertyPath: waypoints.Array.data[5]
       value: 
@@ -17638,6 +17646,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 334821812}
     - target: {fileID: 6726930167223438203, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
+      propertyPath: waypoints.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726930167223438203, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 958750615}
@@ -17834,6 +17846,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 334821812}
     - target: {fileID: 6726930167902653878, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
+      propertyPath: waypoints.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726930167902653878, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 933799579}
@@ -17844,19 +17860,23 @@ PrefabInstance:
     - target: {fileID: 6726930167902653878, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
       propertyPath: waypoints.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1231802408}
     - target: {fileID: 6726930167902653878, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
       propertyPath: waypoints.Array.data[3]
       value: 
-      objectReference: {fileID: 1231802408}
+      objectReference: {fileID: 1314915146}
     - target: {fileID: 6726930167902653878, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
       propertyPath: waypoints.Array.data[4]
       value: 
-      objectReference: {fileID: 1314915146}
+      objectReference: {fileID: 30463916}
     - target: {fileID: 6726930167902653878, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
       propertyPath: waypoints.Array.data[5]
       value: 
       objectReference: {fileID: 30463916}
+    - target: {fileID: 6726930168321065688, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
+      propertyPath: waypoints.Array.size
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6726930168321065688, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
