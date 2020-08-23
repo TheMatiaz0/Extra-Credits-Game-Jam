@@ -35,7 +35,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
 
     private int failedDays;
 
-    [SerializeField] private Transform sunlight;
+    private Transform sunlight;
     [SerializeField] private LayerMask layerMask;
     
     [SerializeField]
@@ -68,6 +68,8 @@ public class PlantSystem : MonoSingleton<PlantSystem>
 
     private void Start()
     {
+        sunlight = SunSystem.Instance.transform;
+        
         maximumNeedsToMakeATask = plantActions.maximumNeedsToCompleteTask;
         PlantSize.SetValue(0);
         PlantState = State.Dying;
