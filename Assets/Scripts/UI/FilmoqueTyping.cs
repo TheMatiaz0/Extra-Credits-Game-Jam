@@ -12,6 +12,7 @@ public static class FilmoqueTyping
 		foreach (char c in text)
 		{
 			displayText.text += c;
+			AudioManager.Instance.PlaySFX("typing");
 			await Async.WaitUnscaled(cooldown);
 		}
 	}
