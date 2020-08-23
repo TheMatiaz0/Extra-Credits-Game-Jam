@@ -18726,7 +18726,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30
+      value: 31.9
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18734,7 +18734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 41.5
+      value: 17.15
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: m_LocalRotation.x
@@ -18778,8 +18778,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: text
-      value: Oh! I see trash piles on the left. Maybe i can get some useful items
-        there?
+      value: Eww! I smell some trash piles on the left. But maybe i can get some
+        useful items there?
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: duration
