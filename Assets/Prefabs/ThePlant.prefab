@@ -81,7 +81,6 @@ MonoBehaviour:
   startingResourcesRandom: {x: 50, y: 70}
   resourceUseRandom: {x: 0.05, y: 0.7}
   hoursPlantNeedsChange: 0a0000000e00000011000000
-  sunlight: {fileID: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 2048
