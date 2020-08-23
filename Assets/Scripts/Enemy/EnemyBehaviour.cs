@@ -19,6 +19,12 @@ public class EnemyBehaviour : MonoBehaviour
 	[SerializeField]
 	private float attackRate = 0.5f;
 
+    [SerializeField]
+    private float attackDamage = 10;
+
+    [SerializeField]
+    private float poisonTime = 10;
+
 	[SerializeField]
 	private Transform firePoint;
 
@@ -55,7 +61,7 @@ public class EnemyBehaviour : MonoBehaviour
 		animator.SetTrigger("Bite");
 		AudioManager.Instance.PlaySFX("bite");
 		MovementController.Instance.BlockMovement = true;
-		GameManager.Instance.HealthSys.Health.TakeValue(5, "Infected");
+		GameManager.Instance.HealthSys.Health.TakeValue(attackDamage, "Infected");
 		yield return Async.Wait(TimeSpan.FromSeconds(2.1f));
 		MovementController.Instance.BlockMovement = false;
 		yield return Async.Wait(TimeSpan.FromSeconds(3.2f));
