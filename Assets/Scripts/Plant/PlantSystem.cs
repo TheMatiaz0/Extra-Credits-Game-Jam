@@ -51,7 +51,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
 
     private uint daysGrowing = 0;
 
-    public enum PlantResources { Soil, Water, Air, Light }
+    public enum PlantResources { Soil, Water, Light }
 
     protected override void Awake()
     {
