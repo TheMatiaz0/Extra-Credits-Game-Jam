@@ -112,22 +112,20 @@ public class UIManager : MonoSingleton<UIManager>
 	
 	public void ShowPopupText(string txt)
 	{
-		popupText.text = txt;
 		_ = ShowTextAsync(popupText, txt);
 	}
 	
 
 	public void ShowDialogText(string txt)
     {
-	    dialogText.text = txt;
 	    _ = ShowTextAsync(dialogText, txt);
     }
 
-    private async Task ShowTextAsync(Text text, string message)
+    private async Task ShowTextAsync(Text text, string message, float delayInSeconds = 3f)
     {
 	    text.text = message;
 	    LeanTween.textAlpha(text.rectTransform, 1, 0.2f);
-	    await Async.Wait(TimeSpan.FromSeconds(4));
+	    await Async.Wait(TimeSpan.FromSeconds(delayInSeconds));
 	    LeanTween.textAlpha(text.rectTransform, 0, 0.2f);
     }
 
