@@ -107,6 +107,10 @@ public class CutsceneManager : MonoBehaviour
 		}
 
 		onCutsceneEnd.Invoke();
-		subtitles.text = string.Empty;
+	}
+
+	protected void OnDisable()
+	{
+		onCutsceneEnd.Invoke();
 	}
 }
