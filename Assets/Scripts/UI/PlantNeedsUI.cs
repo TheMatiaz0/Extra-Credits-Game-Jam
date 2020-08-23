@@ -11,6 +11,8 @@ namespace UI
         private bool Visible => canvas.alpha > 0;
 
         [SerializeField] private Image sunlight, soil, water;
+            
+        public int maximumNeedsToCompleteTask = 60;
 
         protected override void Awake()
         {
@@ -31,6 +33,7 @@ namespace UI
             soil.fillAmount = 0;
             water.fillAmount = 0;
             
+            canvas.blocksRaycasts = true;
             LeanTween.alphaCanvas(canvas, 1f, 0.2f).setOnComplete(_ =>
             {
                 LeanTween.value(sunlight.gameObject, (x) => sunlight.fillAmount = x,  0f, (float)p.Sunlight.Value / 100f, time);
@@ -41,9 +44,20 @@ namespace UI
 
         public void Hide()
         {
-            LeanTween.alphaCanvas(canvas, 0, 0.2f);
             InteractionChecker.Instance.checkInteractions = true;
             MouseLook.Instance.BlockAiming = false;
+
+            canvas.blocksRaycasts = false;
+
+            var plant = PlantSystem.Instance;
+            var task = TaskManager.Instance;
+            
+            LeanTween.alphaCanvas(canvas, 0, 0.2f).setOnComplete(_ =>
+            {
+                if (plant.Water.Value <= maximumNeedsToCompleteTask) task.AddTask("Get water for plant"); else task.RemoveTask("Get water for plant");
+                if (plant.Soil.Value <= maximumNeedsToCompleteTask) task.AddTask("Get soil for plant"); else task.RemoveTask("Get soil for plant");
+                if (plant.Sunlight.Value <= maximumNeedsToCompleteTask) task.AddTask("Give the plant some sunlight"); else task.RemoveTask("Give the plant some sunlight");
+            });
         }
         
         private void Update()
