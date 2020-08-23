@@ -2,9 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cyberultimate;
 
 [Serializable]
 public abstract class ItemLogic
 {
-	public abstract void Do();
+    public abstract void Do();
 }

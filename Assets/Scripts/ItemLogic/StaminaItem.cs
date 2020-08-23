@@ -7,11 +7,11 @@ using UnityEngine;
 [Serializable]
 public class StaminaItem : ItemLogic
 {
-	[SerializeField]
-	private Cint staminaRestore;
+    [SerializeField]
+    protected Cint value;
 
-	public override void Do()
+    public override void Do()
 	{
-		GameManager.Instance.StaminaSys.Stamina.GiveValue(staminaRestore, "FoodItem");
+		GameManager.Instance.StaminaSys.Stamina.GiveValue(value, "Item");
 	}
 }
