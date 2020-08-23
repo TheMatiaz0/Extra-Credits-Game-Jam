@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 1792627732534907571}
   - component: {fileID: 1792627732534907570}
   - component: {fileID: 1792627732534907569}
+  - component: {fileID: 1142945412}
   m_Layer: 5
   m_Name: PressXToSkip
   m_TagString: Untagged
@@ -208,6 +209,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
+--- !u!114 &1142945412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792627732534907575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6417d7368371e2f4c84ee4f8039550d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainText: {fileID: 1792627732534907570}
 --- !u!1 &1792627732973035209
 GameObject:
   m_ObjectHideFlags: 0
