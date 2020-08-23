@@ -31,6 +31,8 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     public LockValue<float> Soil { get; set; } = new LockValue<float>(100, 0, 50);
     public LockValue<float> Sunlight { get; set; } = new LockValue<float>(100, 0, 50);
 
+    public List<int> hoursPlantNeedsChange;
+
     private int failedDays;
 
     [SerializeField] private Transform sunlight;
@@ -54,15 +56,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     {
         base.Awake();
 
-        waterUse = SetToRandom(resourceUseRandom);
-        soilUse = SetToRandom(resourceUseRandom);
-        sunlightUse = SetToRandom(resourceUseRandom);
-
-        var startResources = SetToRandom(startingResourcesRandom);
-        
-        Water.SetValue(startResources);
-        Soil.SetValue(startResources);
-        Sunlight.SetValue(startResources);
+        NewDay();
         
         PlantSize.OnValueChanged += PlantSize_OnValueChanged;
 
@@ -216,8 +210,24 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         }
     }
 
-    public void ChangeResourceuse(int hours)
+    public void ChangeResources(int hours)
     {
-        
+        if (hoursPlantNeedsChange.Contains(hours))
+        {
+            waterUse = SetToRandom(resourceUseRandom);
+            soilUse = SetToRandom(resourceUseRandom);
+            sunlightUse = SetToRandom(resourceUseRandom);
+        }
+    }
+
+    public void NewDay()
+    {
+        waterUse = SetToRandom(resourceUseRandom);
+        soilUse = SetToRandom(resourceUseRandom);
+        sunlightUse = SetToRandom(resourceUseRandom);
+
+        Water.SetValue(SetToRandom(startingResourcesRandom));
+        Soil.SetValue(SetToRandom(startingResourcesRandom));
+        Sunlight.SetValue(SetToRandom(startingResourcesRandom));
     }
 }

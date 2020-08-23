@@ -123,11 +123,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionTime: 3
-  takesStamina: 5
+  takesStamina: 4
+  canUseWithoutStamina: 0
   itemsNeeded:
     _Array: []
   itemDrops:
   - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
   - {fileID: 11400000, guid: 1d163f09b76a94e4a8fb8855b5aef55d, type: 2}
   - {fileID: 11400000, guid: 842c7df675ca7874a9daee4bf4dbec58, type: 2}
+  - {fileID: 11400000, guid: b7657c013b2f3754e8563413fc82e3c3, type: 2}
   garbageDropChance: 50
