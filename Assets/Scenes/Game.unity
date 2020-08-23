@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1419416432}
-  m_IndirectSpecularColor: {r: 0.702417, g: 0.34597975, b: 0.11247656, a: 1}
+  m_IndirectSpecularColor: {r: 0.70239675, g: 0.34603867, b: 0.11244258, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4015,6 +4015,7 @@ Transform:
   - {fileID: 1557121561}
   - {fileID: 1608810531}
   - {fileID: 9214287410102951419}
+  - {fileID: 1905308906}
   m_Father: {fileID: 1892376789}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14711,6 +14712,88 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1639154236068980950, guid: 3ba3a64af5ab1dd4686207a49dfb0ae9, type: 3}
   m_PrefabInstance: {fileID: 1900281037}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1905308905
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 536891799}
+    m_Modifications:
+    - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 302.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 187.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.19736414
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9803303
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -22.766
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: text
+      value: Damn! Infected people! I must stay away from them!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: duration
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278351, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: m_Name
+      value: DialogTrigger (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278351, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+--- !u!4 &1905308906 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+  m_PrefabInstance: {fileID: 1905308905}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1905775315
 GameObject:
