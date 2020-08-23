@@ -109,9 +109,9 @@ NavMeshSettings:
     agentRadius: 0.3
     agentHeight: 3
     agentSlope: 60
-    agentClimb: 1.86
+    agentClimb: 2
     ledgeDropHeight: 0
-    maxJumpAcrossDistance: 0
+    maxJumpAcrossDistance: 1
     minRegionArea: 2
     manualCellSize: 0
     cellSize: 0.1
@@ -1004,11 +1004,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2594296268468552453, guid: 0271ea31484a8bc4997e554072a61b19, type: 3}
   m_PrefabInstance: {fileID: 146612150}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &148402008 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 148402008, guid: 4e192549382a01e498f3599214cf6115, type: 3}
-  m_PrefabInstance: {fileID: 1168651379003641089}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &153044854
 PrefabInstance:
@@ -16784,7 +16779,7 @@ PrefabInstance:
     - target: {fileID: 6726930166898733461, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
       propertyPath: waypoints.Array.data[2]
       value: 
-      objectReference: {fileID: 148402008}
+      objectReference: {fileID: 0}
     - target: {fileID: 6726930166898733461, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
       propertyPath: waypoints.Array.data[3]
       value: 
@@ -17056,7 +17051,7 @@ PrefabInstance:
     - target: {fileID: 6726930167902653878, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
       propertyPath: waypoints.Array.data[2]
       value: 
-      objectReference: {fileID: 148402008}
+      objectReference: {fileID: 0}
     - target: {fileID: 6726930167902653878, guid: 90c85b3714c18b6459a8e640cf2a5892, type: 3}
       propertyPath: waypoints.Array.data[3]
       value: 
