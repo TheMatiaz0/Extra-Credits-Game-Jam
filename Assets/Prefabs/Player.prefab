@@ -219,7 +219,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 7255697829055022433}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -267,7 +267,6 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
-  blockAiming: 0
 --- !u!114 &5528639196325777759
 MonoBehaviour:
   m_ObjectHideFlags: 0
