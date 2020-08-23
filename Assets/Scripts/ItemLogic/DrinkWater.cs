@@ -11,7 +11,7 @@ public class DrinkWater : ItemLogic
         {
             GameManager.Instance.HealthSys.Health.GiveValue(water*7, "Item");
             UIManager.Instance.ShowPopupText("You drinked fresh water and healed yourself");
-            // TODO AudioManager.Instance.PlaySFX("drinking");
+            AudioManager.Instance.PlaySFX("drinking");
         } else if(water <= 0)
         {
             UIManager.Instance.ShowPopupText("You don't have any water to drink");
