@@ -108,7 +108,7 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.3
     agentHeight: 3
-    agentSlope: 45
+    agentSlope: 60
     agentClimb: 1.86
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -4333,6 +4333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogTrigger (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278351, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
 --- !u!4 &1608810531 stripped
@@ -6999,6 +7003,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeginCutscene
       objectReference: {fileID: 0}
+    - target: {fileID: 4070088721397157951, guid: c0a0382cfb78e9b4dace7aeba90759f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0a0382cfb78e9b4dace7aeba90759f7, type: 3}
 --- !u!1 &4221600300240461910 stripped
@@ -7257,7 +7265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7255697829055022461, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.49
+      value: 1.47
       objectReference: {fileID: 0}
     - target: {fileID: 7255697829055022461, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7265,7 +7273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7255697829055022461, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.97
+      value: 18.03
       objectReference: {fileID: 0}
     - target: {fileID: 7255697829055022461, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
       propertyPath: m_LocalRotation.x

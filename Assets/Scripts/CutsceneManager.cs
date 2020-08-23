@@ -37,6 +37,7 @@ public class CutsceneManager : MonoBehaviour
 	[SerializeField]
 	private UnityEvent onCutsceneStart = null;
 
+
     protected void OnEnable()
 	{
 		SetupCutscene();

@@ -25,10 +25,10 @@ public class TimelineController : MonoBehaviour
 
 	public void LaunchCutscene()
 	{
+		playerCollider.enabled = false;
 		MovementController.Instance.enabled = false;
 		MouseLook.Instance.enabled = false;
 		CanvasManager.Instance.ShowCutsceneCanvas();
-		playerCollider.enabled = false;
 	}
 
 	public void CloseCutscene()
