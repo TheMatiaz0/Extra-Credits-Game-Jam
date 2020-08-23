@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1419416432}
-  m_IndirectSpecularColor: {r: 0.702417, g: 0.34597975, b: 0.11247656, a: 1}
+  m_IndirectSpecularColor: {r: 0.67748344, g: 0.3337957, b: 0.108454406, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3745,11 +3745,6 @@ Transform:
 --- !u!108 &1419416432 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 8271300062505978724, guid: b0186d7004833024ca1ca4a75fee304c, type: 3}
-  m_PrefabInstance: {fileID: 8271300061775747092}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1419416433 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8271300062505978725, guid: b0186d7004833024ca1ca4a75fee304c, type: 3}
   m_PrefabInstance: {fileID: 8271300061775747092}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1434071792
@@ -8037,10 +8032,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543450652813336487}
     m_Modifications:
-    - target: {fileID: 8796094414251078649, guid: 063634d55c6ec14439459e39c5d3f02f, type: 3}
-      propertyPath: sunlight
-      value: 
-      objectReference: {fileID: 1419416433}
     - target: {fileID: 8796094414251078652, guid: 063634d55c6ec14439459e39c5d3f02f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.9920015
