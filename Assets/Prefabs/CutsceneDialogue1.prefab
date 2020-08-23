@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2734501731739276049
 Transform:
   m_ObjectHideFlags: 0
@@ -44,11 +44,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutsceneDialogue:
-  - sentence: Hej hej, tutaj cutscenka
+  - sentence: 'Grandpa: Aw.. I was bitten by one of the infected.'
     cooldownToNext:
-      seconds: 6
+      seconds: 5
       mode: 1
-  - sentence: "No tak\u017Ce ten..."
+  - sentence: 'You: Should I go get water for you?'
+    cooldownToNext:
+      seconds: 5
+      mode: 1
+  - sentence: 'Grandpa: No... It''s too late.'
+    cooldownToNext:
+      seconds: 5
+      mode: 1
+  - sentence: Time is not on my side here.
+    cooldownToNext:
+      seconds: 5
+      mode: 1
+  - sentence: But... I ask you to do one thing...
+    cooldownToNext:
+      seconds: 5
+      mode: 1
+  - sentence: 'You: What is it?'
+    cooldownToNext:
+      seconds: 5
+      mode: 1
+  - sentence: 'Grandpa: Promise me that you and Tom will survive... you... you need
+      to take care of it, please promise me that... please...'
+    cooldownToNext:
+      seconds: 10
+      mode: 1
+  - sentence: 'You: I promise.'
+    cooldownToNext:
+      seconds: 5
+      mode: 1
+  - sentence: 'Grandpa: That''s a weird word, isn''t it... promise...'
+    cooldownToNext:
+      seconds: 5
+      mode: 1
+  - sentence: I promised your grandma that I will stay alive... guess where we are...
     cooldownToNext:
       seconds: 5
       mode: 1
