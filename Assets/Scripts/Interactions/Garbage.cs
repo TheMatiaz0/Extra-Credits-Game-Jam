@@ -19,15 +19,24 @@ public class Garbage : InteractableObject
 
     public bool firstItemGet = false;
 
+    private bool garbage1 = false;
+    
     private void Start()
     {
         interactionTime = 3f;
+    }
+
+    public override void KeyDown()
+    {
+        AudioManager.Instance.PlaySFX(garbage1 ? "garbage1" : "garbage2");
     }
 
     protected override void OnInteract()
     {
         if (garbageUsed) return;
         if (!firstItemGet) { FirstItem(); return; }
+        
+        garbage1 = !garbage1;
 
         int garbageRnd = Random.Range(0, 100);
         if (garbageRnd <= garbageDropChance)

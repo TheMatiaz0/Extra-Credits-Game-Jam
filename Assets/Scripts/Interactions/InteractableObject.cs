@@ -44,7 +44,7 @@ public abstract class InteractableObject : MonoBehaviour
         return false;
     }
     
-    public void KeyDown()
+    public virtual void KeyDown()
     {
         if (!CheckItemsNeeded(true)) return;
         if (interactionTime == 0)
@@ -53,7 +53,7 @@ public abstract class InteractableObject : MonoBehaviour
         } 
     }
 
-    public void KeyHold()
+    public virtual void KeyHold()
     {
         if (!usable || interactionTime == 0) return;
         if (!CheckItemsNeeded()) return;
