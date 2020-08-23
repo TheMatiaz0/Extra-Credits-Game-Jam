@@ -81,7 +81,6 @@ MonoBehaviour:
   startingResourcesRandom: {x: 50, y: 70}
   resourceUseRandom: {x: 0.05, y: 0.7}
   hoursPlantNeedsChange: 0a0000000e00000011000000
-  sunlight: {fileID: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 2048
@@ -111,6 +110,7 @@ MonoBehaviour:
   interactions:
     _Array:
     - interactionName: Check needs
+      itemNeeded: {fileID: 0}
       sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
       action:
         m_PersistentCalls:
@@ -128,6 +128,7 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     - interactionName: Heal
+      itemNeeded: {fileID: 0}
       sprite: {fileID: 21300000, guid: 4adab807e2341d64fbe74fcd99a7c3d7, type: 3}
       action:
         m_PersistentCalls:
@@ -145,6 +146,7 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     - interactionName: Pick up
+      itemNeeded: {fileID: 0}
       sprite: {fileID: 21300000, guid: 3e102e582da0e744286d15b0d3d39c75, type: 3}
       action:
         m_PersistentCalls:
@@ -152,6 +154,24 @@ MonoBehaviour:
           - m_Target: {fileID: 8922648348788734259}
             m_TargetAssemblyTypeName: Interactions.PlantActions, Assembly-CSharp
             m_MethodName: PickUpPlant
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - interactionName: Light it
+      itemNeeded: {fileID: 11400000, guid: b7657c013b2f3754e8563413fc82e3c3, type: 2}
+      sprite: {fileID: 21300000, guid: fda14466965d94e48a1958f1a9d5fd98, type: 3}
+      action:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 8922648348788734259}
+            m_TargetAssemblyTypeName: Interactions.PlantActions, Assembly-CSharp
+            m_MethodName: LightPlant
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}

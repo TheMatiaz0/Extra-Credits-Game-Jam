@@ -38,8 +38,7 @@ public class UIManager : MonoSingleton<UIManager>
 
 	[SerializeField]
 	private GameObject resultObj = null;
-	
-	
+
 	protected void Start()
 	{
 		GameManager.Instance.HealthSys.Health.OnValueChanged += Health_OnValueChanged;
