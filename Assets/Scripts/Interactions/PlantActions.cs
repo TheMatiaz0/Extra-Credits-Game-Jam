@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System;
 using Cyberultimate.Unity;
 using Player;
 using UI;
@@ -43,6 +44,14 @@ namespace Interactions
         public void PickUpPlant()
         {
             Hand.Instance.PickUp(transform);
+        }
+
+        private int lightStaminaDrain = 5;
+        private int lightTimeSkip = 20;
+        public void LightPlant()
+        {
+            GameManager.Instance.StaminaSys.Stamina.TakeValue(lightStaminaDrain);
+            TimeManager.Instance.CurrentTime.Add(TimeSpan.FromMinutes(lightTimeSkip));
         }
     }
 }

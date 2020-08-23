@@ -11,6 +11,9 @@ namespace UI
         public Image image;
         public UnityEvent onClick;
 
+        public ScriptableObject itemNeeded=null;
+
+
         [SerializeField] private RectTransform bg;
 
         private void Awake()
@@ -22,6 +25,8 @@ namespace UI
         {
             LeanTween.alpha((RectTransform) bg, 1f, 0.2f).setEaseInOutBounce();
             InteractionGrid.Instance.ShowTooltip(interactionName);
+
+            if (itemNeeded != null && !Inventory.Instance.HasItem(itemNeeded.name)) UIManager.Instance.ShowPopupText(itemNeeded.name + " needed!");
         }
 
         public void PointerExit()
@@ -32,6 +37,8 @@ namespace UI
 
         public void PointerDown()
         {
+            if (itemNeeded != null && !Inventory.Instance.HasItem(itemNeeded.name)) return;
+
             onClick?.Invoke();
             InteractionGrid.Instance.Hide();
         }

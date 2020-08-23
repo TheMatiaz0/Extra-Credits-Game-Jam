@@ -13,6 +13,7 @@ namespace UI
         public class Interaction
         {
             public string interactionName;
+            public ItemScriptableObject itemNeeded;
             public Sprite sprite;
             public UnityEvent action;
         }
@@ -64,6 +65,7 @@ namespace UI
                 
                 var slot = g.GetComponent<InteractionGridSlot>();
                 slot.interactionName = interaction?.interactionName;
+                slot.itemNeeded = interaction?.itemNeeded;
                 slot.image.sprite = interaction?.sprite ?? emptySprite;
                 slot.onClick = interaction?.action;
             }
