@@ -32,9 +32,9 @@ public class UIManager : MonoSingleton<UIManager>
     private Text dialogText = null;
 
     [SerializeField]
-    private Image soilImage;
+    private Image soilImageFill;
     [SerializeField]
-    private Image waterImage;
+    private Image waterImageFill;
 
 	[SerializeField]
 	private GameObject resultObj = null;
@@ -134,11 +134,11 @@ public class UIManager : MonoSingleton<UIManager>
         float v = current / max;
         if (resource == PlantSystem.PlantResources.Soil)
         {
-            soilImage.fillAmount = v;
+            soilImageFill.fillAmount = v;
         }
         else if (resource == PlantSystem.PlantResources.Water)
         {
-            waterImage.fillAmount = v;
+            waterImageFill.fillAmount = v;
         }
     }
 }
