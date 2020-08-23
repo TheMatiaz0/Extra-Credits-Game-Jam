@@ -3,6 +3,7 @@ using Cyberultimate.Unity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +18,8 @@ public class ResultMenu : MonoBehaviour
 	[SerializeField]
 	private Text plantStateInfo = null;
 
+	private Coroutine slowlyType = null;
+
 
 	protected void OnEnable()
 	{
@@ -26,28 +29,37 @@ public class ResultMenu : MonoBehaviour
 		dayText.text = string.Empty;
 		plantInfo.text = string.Empty;
 		plantStateInfo.text = string.Empty;
-		_ = SlowlyType();
-	
+		slowlyType = StartCoroutine(SlowlyType());
+
 		TimeControl.Register(this, 0);
 	}
 
-	private async Task SlowlyType ()
+	private IEnumerator SlowlyType()
 	{
-		await FilmoqueTyping.SlowlyTypeUnscaled($"Day {TimeManager.Instance.CurrentDay}", 0.105f, dayText);
+		yield return StartCoroutine(SlowlyTypeUnscaled($"Day {TimeManager.Instance.CurrentDay}", 0.105f, dayText));
 
 
-		await FilmoqueTyping.SlowlyTypeUnscaled(
-			$"The plant is... ", 0.15f, plantInfo);
+		yield return StartCoroutine(SlowlyTypeUnscaled(
+			$"The plant is... ", 0.15f, plantInfo));
 
 
 		const float ACTION_TIME = 0.16f;
-		for (int x = 0; x < 2f/(ACTION_TIME * 3); x++)
+		for (int x = 0; x < 2f / (ACTION_TIME * 3); x++)
 		{
-			await FilmoqueTyping.SlowlyTypeUnscaled("...", ACTION_TIME, plantStateInfo);
+			yield return StartCoroutine(SlowlyTypeUnscaled("...", ACTION_TIME, plantStateInfo));
 			plantStateInfo.text = string.Empty;
 		}
 
 		plantStateInfo.text = $"...<color=#{ColorUtility.ToHtmlStringRGB(PlantSystem.Instance.GetColorBasedOnState())}>{PlantSystem.Instance.PlantState.ToString().ToUpper()}</color>";
+	}
+
+	public IEnumerator SlowlyTypeUnscaled(string text, float cooldown, Text displayText)
+	{
+		foreach (char c in text)
+		{
+			displayText.text += c;
+			yield return Async.WaitUnscaled(cooldown);
+		}
 	}
 
 

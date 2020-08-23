@@ -86,7 +86,6 @@ public class CutsceneManager : MonoBehaviour
 			CutsceneAsset spriteWithSentence = cutsceneText.Dequeue();
 			subtitles.text = string.Empty;
 			writeDisplayCoroutine = StartCoroutine(TypeTextSlowly(spriteWithSentence.Sentence, textDisplayCooldown, subtitles));
-			// subtitles.text = spriteWithSentence.Sentence;
 
 			yield return Async.WaitUnscaled(spriteWithSentence.CooldownToNext);
 		}
