@@ -9,6 +9,11 @@ public enum GameOverType
 	Died, Failed
 }
 
+public enum GameCompletionType
+{
+	Normal
+}
+
 public class GameManager : MonoSingleton<GameManager>
 {
     [SerializeField]
@@ -63,6 +68,9 @@ public class GameManager : MonoSingleton<GameManager>
 		PlayerPrefs.SetString("GameOverReason", reason);
 		SceneManager.LoadScene("GameOver");
 	}
-	
-	
+
+	public void GameCompleted(GameCompletionType type = GameCompletionType.Normal)
+	{
+		
+	}
 }

@@ -20,7 +20,7 @@ public abstract class InteractableObject : MonoBehaviour
     {
         if (GameManager.Instance.StaminaSys.Stamina.Value == 0)
         {
-            UIManager.Instance.ShowPopupText("Not enough stamina!");
+            UIManager.Instance.ShowPopupText("You are too tired");
             return false;
         }
 

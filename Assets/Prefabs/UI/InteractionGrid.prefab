@@ -103,6 +103,7 @@ MonoBehaviour:
   interactionWheel: {fileID: 2151132368381492562}
   slots: {fileID: 7567181557407698534}
   interactionPrefab: {fileID: 8526241726615198636, guid: 068d77c4b4530064088e53d9d5f8f681, type: 3}
+  emptySprite: {fileID: 21300000, guid: 83010c816506b0d438b66452bcf999a6, type: 3}
   appearanceTime: 0.2
 --- !u!1 &6804013776161674260
 GameObject:

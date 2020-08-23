@@ -10,16 +10,23 @@ namespace UI
         public string interactionName;
         public Image image;
         public UnityEvent onClick;
+
+        [SerializeField] private RectTransform bg;
+
+        private void Awake()
+        {
+            LeanTween.alpha((RectTransform) bg, 0.5f, 0).setEaseInOutBounce();
+        }
         
         public void PointerEnter()
         {
-            LeanTween.scale((RectTransform) transform, Vector3.one * 1.1f, 0.2f).setEaseInOutBounce();
+            LeanTween.alpha((RectTransform) bg, 1f, 0.2f).setEaseInOutBounce();
             InteractionGrid.Instance.ShowTooltip(interactionName);
         }
 
         public void PointerExit()
         {
-            LeanTween.scale((RectTransform) transform, Vector3.one, 0.2f).setEaseInOutBounce();
+            LeanTween.alpha((RectTransform) bg, 0.5f, 0.2f).setEaseInOutBounce();
             InteractionGrid.Instance.HideTooltip();
         }
 
