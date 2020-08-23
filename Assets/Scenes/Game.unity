@@ -2165,6 +2165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1023732896}
+  - component: {fileID: 1023732897}
   m_Layer: 0
   m_Name: Garbage
   m_TagString: Untagged
@@ -2198,6 +2199,18 @@ Transform:
   m_Father: {fileID: 1892376789}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1023732897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023732895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f446760d99fa54298533506b25e52a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1035467566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1168651379854521903, guid: 4e192549382a01e498f3599214cf6115, type: 3}
@@ -5854,6 +5867,11 @@ PrefabInstance:
     - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: text
+      value: Oh! I see trash piles on the left. Maybe i can get some useful items
+        there?
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278351, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: m_Name
