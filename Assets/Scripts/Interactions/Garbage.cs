@@ -9,6 +9,9 @@ public class Garbage : InteractableObject
     public List<ItemScriptableObject> itemDrops;
     public float garbageDropChance = 50;
 
+    public List<ItemScriptableObject> shovelEvolution;
+    public List<ItemScriptableObject> bottleEvolution;
+
     private bool garbageUsed = false;
     private bool garbageOpen = false;
 
@@ -35,6 +38,17 @@ public class Garbage : InteractableObject
             if (Inventory.Instance.AddItem(itemDrops[itemRnd]))
             {
                 UIManager.Instance.ShowPopupText("You found a " + itemDrops[itemRnd].name);
+
+                if (shovelEvolution.Count>1 && !itemDrops.Contains(shovelEvolution[1]) && itemDrops[itemRnd]==shovelEvolution[0])
+                {
+                    itemDrops.Add(shovelEvolution[1]);
+                    shovelEvolution.RemoveAt(0);
+                } else if (bottleEvolution.Count > 1 && !itemDrops.Contains(bottleEvolution[1]) && itemDrops[itemRnd] == bottleEvolution[0])
+                {
+                    itemDrops.Add(bottleEvolution[1]);
+                    bottleEvolution.RemoveAt(0);
+                }
+
                 garbageUsed = true;
                 Destroy(this);
             } else 

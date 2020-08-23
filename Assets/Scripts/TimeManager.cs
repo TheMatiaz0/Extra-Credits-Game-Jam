@@ -50,6 +50,7 @@ public class TimeManager : MonoSingleton<TimeManager>
 	public void StartNewDay ()
 	{
 		GameManager.Instance.StaminaSys.Stamina.SetValue(GameManager.Instance.StaminaSys.Stamina.Max);
+        PlantSystem.Instance.NewDay();
 		CurrentDay++;
 		CurrentTime = new TimeSpan(6, 0, 0);
 		StartCoroutine(TimeCount());

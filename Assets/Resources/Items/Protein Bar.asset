@@ -21,4 +21,4 @@ MonoBehaviour:
       type: {class: StaminaItem, ns: , asm: Assembly-CSharp}
       data:
         staminaRestore:
-          _Value: 10
+          _Value: 20
