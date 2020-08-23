@@ -34,6 +34,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     private int failedDays;
 
     [SerializeField] private Transform sunlight;
+    [SerializeField] private LayerMask layerMask;
     
     [SerializeField]
     private GameObject plantModelSmall, plantModelMedium, plantModelLarge;
@@ -100,7 +101,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     {
         Soil.TakeValue(Time.deltaTime * soilUse);
 
-        if (Physics.Raycast(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles * -1), out _, 50f)) // if plant is inside
+        if (Physics.Raycast(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles * -1),50f, layerMask)) // if plant is inside
         {
             Sunlight.TakeValue(Time.deltaTime * sunlightUse);
             //Debug.Log("plant inside");
