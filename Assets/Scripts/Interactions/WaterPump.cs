@@ -9,6 +9,7 @@ public class WaterPump : InteractableObject
 
     protected override void OnInteract()
     {
+        AudioManager.Instance.PlaySFX("pump1");
         if (bottleWithFilter && Inventory.Instance.HasItem(bigBottleWithFilter.name)) interactionTime -= bigBottleWithFilter.useTakeLessTime;
         else if (bigBottleWithFilter && Inventory.Instance.HasItem(bottleWithFilter.name)) interactionTime -= bottleWithFilter.useTakeLessTime;
         Inventory.Instance.AddResource(2, PlantSystem.PlantResources.Water);

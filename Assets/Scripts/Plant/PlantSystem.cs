@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Cyberultimate;
 using Cyberultimate.Unity;
+using UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -15,10 +16,10 @@ public class PlantSystem : MonoSingleton<PlantSystem>
 
     private State _plantState = State.Dying;
 
-    private int maximumNeedsToMakeATask;
+    private int maximumNeedsToCompleteATask;
 
     public State PlantState {
-        get => (Water.Value + Soil.Value + Sunlight.Value > maximumNeedsToMakeATask * 3) ? State.Growing : State.Dying;
+        get => (Water.Value + Soil.Value + Sunlight.Value > maximumNeedsToCompleteATask * 3) ? State.Growing : State.Dying;
         set => SetPlantState(value);
     }
     
@@ -68,7 +69,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     {
         sunlight = SunSystem.Instance.transform;
         
-        maximumNeedsToMakeATask = plantActions.maximumNeedsToCompleteTask;
+        maximumNeedsToCompleteATask = PlantNeedsUI.Instance.maximumNeedsToCompleteTask;
         PlantSize.SetValue(0);
         PlantState = State.Dying;
         TimeManager.Instance.OnCurrentDayChange += OnDayChange;
@@ -108,6 +109,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         else
         {
             Water.TakeValue(Time.deltaTime * waterUse);
+            Sunlight.GiveValue(Time.deltaTime * sunlightUse);
         }
 
         if (Input.GetKeyDown(KeyCode.Y))

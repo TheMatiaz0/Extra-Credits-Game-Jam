@@ -13,5 +13,6 @@ public class StaminaItem : ItemLogic
     public override void Do()
 	{
 		GameManager.Instance.StaminaSys.Stamina.GiveValue(value, "Item");
+		AudioManager.Instance.PlaySFX("eating");
 	}
 }
