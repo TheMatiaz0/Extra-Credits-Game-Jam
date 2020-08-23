@@ -32,6 +32,8 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     public LockValue<float> Soil { get; set; } = new LockValue<float>(100, 0, 50);
     public LockValue<float> Sunlight { get; set; } = new LockValue<float>(100, 0, 50);
 
+    public float sunlightGain = 0.4f;
+
     public List<int> hoursPlantNeedsChange;
 
     private int failedDays;
@@ -101,15 +103,28 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         Soil.TakeValue(Time.deltaTime * soilUse);
 
         Debug.DrawRay(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles), Color.red);
+        bool outside = false;
         if (Physics.Raycast(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles),50f, layerMask)) // if plant is inside
         {
+            if (outside)
+            {
+                PlantParticles.Instance.ChangeSun(false);
+                outside = false;
+            }
+
             Sunlight.TakeValue(Time.deltaTime * sunlightUse);
             //Debug.Log("plant inside");
         }
         else
         {
+            if(!outside)
+            {
+                PlantParticles.Instance.ChangeSun(true);
+                outside = true;
+            }
+
             Water.TakeValue(Time.deltaTime * waterUse);
-            Sunlight.GiveValue(Time.deltaTime * sunlightUse);
+            Sunlight.GiveValue(Time.deltaTime * sunlightGain);
         }
 
         if (Input.GetKeyDown(KeyCode.Y))
@@ -179,16 +194,19 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     private float modifier = 7f;
     public void AddResources(float amount, PlantResources resource)
     {
-        if (resource == PlantResources.Soil)
+        if (resource != PlantResources.Light)
         {
-            Soil.GiveValue(amount * modifier,"");
-        } else if (resource == PlantResources.Water)
-        {
-            Water.GiveValue(amount * modifier, "");
-        } else if (resource == PlantResources.Light)
-        {
-            Sunlight.GiveValue(amount * modifier, "");
-        }
+            PlantParticles.Instance.WowParticles();
+            if (resource == PlantResources.Soil)
+            {
+                Soil.GiveValue(amount * modifier, "");
+
+            }
+            else if (resource == PlantResources.Water)
+            {
+                Water.GiveValue(amount * modifier, "");
+            }
+        } else Sunlight.GiveValue(amount * modifier, "");
     }
 
     private void ResetResources()

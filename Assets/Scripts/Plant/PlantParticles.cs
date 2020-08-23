@@ -1,33 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cyberultimate.Unity;
 
-public class PlantParticles : MonoBehaviour
+public class PlantParticles : MonoSingleton<PlantParticles>
 {
     [SerializeField]
-    private GameObject airPlus;
+    private GameObject sun;
     [SerializeField]
-    private GameObject airMinus;
+    private ParticleSystem wow1;
     [SerializeField]
-    private GameObject lightPlus;
+    private ParticleSystem wow2;
     [SerializeField]
-    private GameObject lightMinus;
+    private ParticleSystem wow3;
 
     private void Start()
     {
-        airPlus.SetActive(true);
-        lightMinus.SetActive(true);
-
-        airMinus.SetActive(false);
-        lightPlus.SetActive(false);
+        sun.SetActive(false);
     }
 
-    public void ChangeParticles()
+    public void ChangeSun(bool value)
     {
-        airPlus.SetActive(!airPlus.activeInHierarchy);
-        lightPlus.SetActive(!lightPlus.activeInHierarchy);
-        airMinus.SetActive(!airMinus.activeInHierarchy);
-        lightMinus.SetActive(!lightMinus.activeInHierarchy);
+        sun.SetActive(value);
+    }
+
+    public void WowParticles()
+    {
+        wow1.Play();
+        wow2.Play();
+        wow3.Play();
     }
 
 }
