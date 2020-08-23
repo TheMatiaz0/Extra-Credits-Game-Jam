@@ -51,7 +51,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
 
     private uint daysGrowing = 0;
 
-    public enum PlantResources { Soil, Water, Air, Light }
+    public enum PlantResources { Soil, Water, Light }
 
     protected override void Awake()
     {
@@ -203,7 +203,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         {
             daysGrowing = 0;
             failedDays++;
-            if (failedDays >= 3)
+            if (failedDays >= 4)
             {
                 GameManager.Instance.GameOver("The plant died!", GameOverType.Failed);
             }

@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 7255697829055022462}
   - component: {fileID: 5528639196325777759}
   - component: {fileID: 2796607492772967153}
+  - component: {fileID: 615539352432289558}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -252,9 +253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b0ceeaa0d5b4d6cae7073ffecaa0449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 90
-  minTurnAngle: -70
-  maxTurnAngle: 70
   moveSpeed: 5.5
   runSpeed: 8
   outOfStaminaSpeed: 3.5
@@ -293,6 +291,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366e4296576e7ad4896c26e786b6bc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &615539352432289558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7255697829055022433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1006d13dc30747d293084b3c63aa404d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7255697829160652615
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +316,7 @@ GameObject:
   - component: {fileID: 7255697829160652608}
   - component: {fileID: 7255697829160652611}
   - component: {fileID: 837730327054030038}
+  - component: {fileID: 7255697829047597583}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -470,3 +481,19 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &7255697829047597583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7255697829160652615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3476445088fdda41976e8a946784f98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensitivity: 90
+  minTurnAngle: -60
+  maxTurnAngle: 60
+  playerBody: {fileID: 7255697829055022461}
