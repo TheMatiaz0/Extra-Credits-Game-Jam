@@ -51,6 +51,7 @@ public class TimeManager : MonoSingleton<TimeManager>
 	{
         TaskManager.Instance.RemoveAllTasks();
 		GameManager.Instance.StaminaSys.Stamina.SetValue(GameManager.Instance.StaminaSys.Stamina.Max);
+
         PlantSystem.Instance.NewDay();
 
 		CurrentDay++;
