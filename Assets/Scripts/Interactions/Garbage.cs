@@ -12,8 +12,12 @@ public class Garbage : InteractableObject
     public List<ItemScriptableObject> shovelEvolution;
     public List<ItemScriptableObject> bottleEvolution;
 
+    public ItemScriptableObject firstItem;
+
     private bool garbageUsed = false;
     private bool garbageOpen = false;
+
+    public bool firstItemGet = false;
 
     private void Start()
     {
@@ -22,8 +26,8 @@ public class Garbage : InteractableObject
 
     protected override void OnInteract()
     {
-        if (garbageUsed)
-            return;
+        if (garbageUsed) return;
+        if (!firstItemGet) { FirstItem(); return; }
 
         int garbageRnd = Random.Range(0, 100);
         if (garbageRnd <= garbageDropChance)
@@ -65,6 +69,21 @@ public class Garbage : InteractableObject
                 UIManager.Instance.ShowPopupText("Inventory full!");
             }
 
+        }
+    }
+
+    void FirstItem()
+    {
+        if (Inventory.Instance.AddItem(firstItem))
+        {
+            UIManager.Instance.ShowPopupText("You found a " + firstItem.name);
+            UIManager.Instance.ShowDialogText("A bottle... maybe i can collect some water for my plant?");
+
+            GarbageManager.Instance.FirstItemUsedToAll();
+
+            garbageUsed = true;
+            firstItemGet = true;
+            Destroy(this);
         }
     }
 }
