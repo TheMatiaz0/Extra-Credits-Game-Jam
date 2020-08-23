@@ -12,9 +12,11 @@ public class WaterTowerMeasure : MonoSingleton<WaterTowerMeasure>
 
     [SerializeField]
     private Transform needle;
-
+    [SerializeField]
     private float oneMoveRot;
 
+
+    bool firstDay = true;
     private void Start()
     {
         TimeManager.Instance.OnCurrentDayChange += OnDayChange;
@@ -26,8 +28,10 @@ public class WaterTowerMeasure : MonoSingleton<WaterTowerMeasure>
 
     private void OnDayChange(object sender, SimpleArgs<Cint> e)
     {
+        if(firstDay) { firstDay = false; return; }
+
         losedWater.GiveValue(1);
-        needle.localEulerAngles = new Vector3(0, oneMoveRot * losedWater.Value, 0);
+        needle.localEulerAngles = new Vector3(0, minNeedleRot+ oneMoveRot * losedWater.Value, 0);
         //change model/ rotate so it shows 1 less
     }
 }
