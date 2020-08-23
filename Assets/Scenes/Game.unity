@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1419416432}
-  m_IndirectSpecularColor: {r: 0.3146869, g: 0.15502144, b: 0.05037207, a: 1}
+  m_IndirectSpecularColor: {r: 0.70239675, g: 0.34603867, b: 0.11244258, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5166,26 +5166,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5768034870148786244, guid: db4114de2ddc42542b591922b9faa0c1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.536
-      objectReference: {fileID: 0}
-    - target: {fileID: 5768034870148786244, guid: db4114de2ddc42542b591922b9faa0c1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.1391023
-      objectReference: {fileID: 0}
-    - target: {fileID: 5768034870148786244, guid: db4114de2ddc42542b591922b9faa0c1, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.1263009
-      objectReference: {fileID: 0}
-    - target: {fileID: 5768034870148786244, guid: db4114de2ddc42542b591922b9faa0c1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.09999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 7894296668085742160, guid: db4114de2ddc42542b591922b9faa0c1, type: 3}
-      propertyPath: waypoints.Array.size
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 7894296668085742160, guid: db4114de2ddc42542b591922b9faa0c1, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
@@ -5260,7 +5240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7894296668085742164, guid: db4114de2ddc42542b591922b9faa0c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.97
+      value: 1.11
       objectReference: {fileID: 0}
     - target: {fileID: 7894296668085742164, guid: db4114de2ddc42542b591922b9faa0c1, type: 3}
       propertyPath: m_LocalPosition.z
