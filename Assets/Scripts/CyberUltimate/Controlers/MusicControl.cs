@@ -31,7 +31,7 @@ namespace Cyberultimate.Unity
                     g.name = "_Source";
                     //g.hideFlags |= HideFlags.HideInHierarchy;      
                     _source = g.AddComponent<AudioSource>();
-                    _source.outputAudioMixerGroup = (Resources.Load("Audio") as AudioMixer).FindMatchingGroups("Music")[0];
+                    //_source.outputAudioMixerGroup = (Resources.Load("Audio") as AudioMixer).FindMatchingGroups("Music")[0];
                 }
                 return _source;
             }
