@@ -82,6 +82,9 @@ MonoBehaviour:
   resourceUseRandom: {x: 0.05, y: 0.7}
   hoursPlantNeedsChange: 0a0000000e00000011000000
   sunlight: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 2048
   plantModelSmall: {fileID: 8562302308259483565}
   plantModelMedium: {fileID: 8562302308562780045}
   plantModelLarge: {fileID: 8562302308804820969}

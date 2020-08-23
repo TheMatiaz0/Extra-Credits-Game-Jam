@@ -95,7 +95,8 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     {
         Soil.TakeValue(Time.deltaTime * soilUse);
 
-        if (Physics.Raycast(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles * -1),50f, layerMask)) // if plant is inside
+        Debug.DrawRay(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles), Color.red);
+        if (Physics.Raycast(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles),50f, layerMask)) // if plant is inside
         {
             Sunlight.TakeValue(Time.deltaTime * sunlightUse);
             //Debug.Log("plant inside");
