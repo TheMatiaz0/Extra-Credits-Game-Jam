@@ -18,18 +18,25 @@ namespace UI
             canvas = GetComponent<CanvasGroup>();
             canvas.alpha = 0;
         }
-
+        
+        private const float time = 0.7f;
         public void Show()
         {
-            LeanTween.alphaCanvas(canvas, 1f, 0.2f);
-
-            var p = PlantSystem.Instance;
-            sunlight.fillAmount = p.Sunlight.Value / 100;
-            soil.fillAmount = p.Soil.Value / 100;
-            water.fillAmount = p.Soil.Value / 100;
-
             InteractionChecker.Instance.checkInteractions = false;
             MouseLook.Instance.BlockAiming = true;
+
+            var p = PlantSystem.Instance;
+            
+            sunlight.fillAmount = 0;
+            soil.fillAmount = 0;
+            water.fillAmount = 0;
+            
+            LeanTween.alphaCanvas(canvas, 1f, 0.2f).setOnComplete(_ =>
+            {
+                LeanTween.value(sunlight.gameObject, (x) => sunlight.fillAmount = x,  0f, (float)p.Sunlight.Value / 100f, time);
+                LeanTween.value(soil.gameObject, (x) => soil.fillAmount = x,  0f, (float)p.Soil.Value / 100f, time);
+                LeanTween.value(water.gameObject, (x) => water.fillAmount = x,  0f, (float)p.Water.Value / 100f, time);
+            });
         }
 
         public void Hide()

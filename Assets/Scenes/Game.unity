@@ -457,6 +457,10 @@ PrefabInstance:
       propertyPath: onCutsceneStart.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2734501731739276049, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4135,7 +4139,7 @@ PlayableDirector:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808171549}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 87f2b639f7229da44b1a59aaa2224fde, type: 2}
   m_InitialState: 1
