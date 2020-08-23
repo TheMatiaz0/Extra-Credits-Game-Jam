@@ -38,7 +38,7 @@ namespace UI
             slots.KillAllChildren();
             Display(interactions);
             LeanTween.alphaCanvas(interactionWheel, 1f, appearanceTime).setEaseInOutCubic();
-            MovementController.Instance.blockAiming = true;
+            MouseLook.Instance.BlockAiming = true;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             InteractionUI.Instance.Hide();
@@ -48,7 +48,7 @@ namespace UI
         {
             HideTooltip();
             LeanTween.alphaCanvas(interactionWheel, 0f, appearanceTime).setEaseInOutCubic();
-            MovementController.Instance.blockAiming = false;
+            MouseLook.Instance.BlockAiming = false;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             InteractionUI.Instance.Show();
