@@ -7,6 +7,7 @@ using UnityEngine;
 public class ItemScriptableObject : ScriptableObject
 {
 	public Sprite icon;
+    public float useTakeLessTime = 0;
 
 	[SerializeReference]
 	[EditableSerializeReference(typeof(ItemLogic))]

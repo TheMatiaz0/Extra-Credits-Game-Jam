@@ -14,7 +14,7 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 
 	public void Start()
 	{
-		for (var i = 0; i < transform.childCount; i++)
+		for (var i = 0; i < 5; i++)
 		{
 			slots[i] = transform.GetChild(i).GetComponent<Slot>();
 		}

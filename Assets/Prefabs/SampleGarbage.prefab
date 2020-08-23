@@ -133,3 +133,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 842c7df675ca7874a9daee4bf4dbec58, type: 2}
   - {fileID: 11400000, guid: b7657c013b2f3754e8563413fc82e3c3, type: 2}
   garbageDropChance: 50
+  shovelEvolution:
+  - {fileID: 11400000, guid: 842c7df675ca7874a9daee4bf4dbec58, type: 2}
+  - {fileID: 11400000, guid: f755bc711b16283419970146956c3986, type: 2}
+  - {fileID: 11400000, guid: 77782c4625196bf4aa1cf886340b3ccb, type: 2}
+  bottleEvolution:
+  - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}

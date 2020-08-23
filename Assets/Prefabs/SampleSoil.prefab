@@ -131,4 +131,5 @@ MonoBehaviour:
       - Shovel
       - Broken Shovel
       - Ultra Shovel
-  soil: {fileID: 0}
+  shovel: {fileID: 11400000, guid: f755bc711b16283419970146956c3986, type: 2}
+  betterShovel: {fileID: 11400000, guid: 77782c4625196bf4aa1cf886340b3ccb, type: 2}
