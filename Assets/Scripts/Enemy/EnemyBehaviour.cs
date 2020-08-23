@@ -53,7 +53,7 @@ public class EnemyBehaviour : MonoBehaviour
 	{
 		canBite = false;
 		animator.SetTrigger("Bite");
-		AudioManager.Instance?.PlaySFX("bite");
+		AudioManager.Instance.PlaySFX("bite");
 		MovementController.Instance.BlockMovement = true;
 		GameManager.Instance.HealthSys.Health.TakeValue(5, "Infected");
 		yield return Async.Wait(TimeSpan.FromSeconds(2.1f));
@@ -80,8 +80,6 @@ public class EnemyBehaviour : MonoBehaviour
 						HealthSystem healthSys = null;
 						if (healthSys = (hit.transform.GetComponent<HealthSystem>()))
 						{
-							Debug.DrawLine(firePoint.position, firePoint.position + firePoint.forward * attackDistance, Color.cyan);
-
 							if (canBite)
 							{
 								StopAllCoroutines();
