@@ -77,7 +77,7 @@ public class MovementController : MonoSingleton<MovementController>
             dir.Normalize();
         }
 
-        if ((x > 0.5f || z > 0.5f) && lastStepTime < DateTime.Now.Subtract(TimeSpan.FromMilliseconds(500)))
+        if ((Mathf.Abs(x) > 0.5f || Mathf.Abs(z) > 0.5f) && lastStepTime < DateTime.Now.Subtract(TimeSpan.FromMilliseconds(500)))
         {
             AudioManager.Instance.PlaySFX(step1 ? "step1" : "step2");
             step1 = !step1;
