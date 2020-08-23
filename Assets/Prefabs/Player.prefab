@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3476445088fdda41976e8a946784f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 250
+  mouseSensitivity: 100
   minTurnAngle: -60
   maxTurnAngle: 60
   playerBody: {fileID: 7255697829055022461}
