@@ -72,11 +72,13 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         PlantSize.SetValue(0);
         PlantState = State.Dying;
         TimeManager.Instance.OnCurrentDayChange += OnDayChange;
+        TimeManager.Instance.OnCurrentTimeChange += OnTimeChange;
     }
 
     private void OnDisable()
     {
         TimeManager.Instance.OnCurrentDayChange -= OnDayChange;
+        TimeManager.Instance.OnCurrentTimeChange -= OnTimeChange;
     }
 
     public Color GetColorBasedOnState ()
@@ -195,10 +197,6 @@ public class PlantSystem : MonoSingleton<PlantSystem>
             {
                 PlantSize.GiveValue(1);
                 daysGrowing = 0;
-                if (PlantSize.Value == 2)
-                {
-                    GameManager.Instance.GameCompleted();
-                }
             }
         }
         else
@@ -209,6 +207,15 @@ public class PlantSystem : MonoSingleton<PlantSystem>
             {
                 GameManager.Instance.GameOver("The plant died!", GameOverType.Failed);
             }
+        }
+    }
+
+    private void OnTimeChange(object sender, SimpleArgs<TimeSpan> args)
+    {
+        if (PlantSize.Value == 2 && args.Value == TimeSpan.FromHours(19))
+        {
+            GameManager.Instance.GameFinishCutscene();
+            Debug.Log("Game finish cutscene!");
         }
     }
 
