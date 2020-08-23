@@ -118,7 +118,7 @@ MonoBehaviour:
   itemsNeeded:
     _Array:
     - _Array:
-      - Bottle
+      - Bottle (RMB to drink)
   bottleWithFilter: {fileID: 0}
   bigBottleWithFilter: {fileID: 0}
 --- !u!64 &8647313215686821981
@@ -183,7 +183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9219ee93f3bf8a548ba8dade8816f4fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.012
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9219ee93f3bf8a548ba8dade8816f4fb, type: 3}
       propertyPath: m_LocalRotation.x
