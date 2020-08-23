@@ -13,4 +13,13 @@ public class GarbageManager : MonoSingleton<GarbageManager>
             child.itemDrops.Add(item);
         }
     }
+
+    public void FirstItemUsedToAll()
+    {
+        foreach (Garbage child in transform.GetComponentsInChildren<Garbage>())
+        {
+            child.firstItemGet = true;
+        }
+
+    }
 }

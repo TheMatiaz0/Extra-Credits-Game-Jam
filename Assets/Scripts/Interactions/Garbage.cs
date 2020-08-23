@@ -79,6 +79,8 @@ public class Garbage : InteractableObject
             UIManager.Instance.ShowPopupText("You found a " + firstItem.name);
             UIManager.Instance.ShowDialogText("A bottle... maybe i can collect some water for my plant?");
 
+            GarbageManager.Instance.FirstItemUsedToAll();
+
             garbageUsed = true;
             firstItemGet = true;
             Destroy(this);
