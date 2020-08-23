@@ -58,12 +58,9 @@ public class CutsceneManager : MonoBehaviour
 
 	protected void Update()
 	{
-		if (pressToSkip != null)
+		if (Input.anyKeyDown == true)
 		{
-			if (Input.anyKeyDown == true)
-			{
-				pressToSkip.SetActive(true);
-			}
+			pressToSkip.SetActive(true);
 		}
 
 	}
