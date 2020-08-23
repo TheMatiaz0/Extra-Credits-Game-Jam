@@ -30,4 +30,9 @@ public class TaskManager : MonoSingleton<TaskManager>
             tasks.Remove(txt);
         }
     }
+
+    public void RemoveAllTasks()
+    {
+        tasks.Clear();
+    }
 }
