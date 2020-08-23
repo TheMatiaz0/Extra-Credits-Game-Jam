@@ -119,6 +119,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  animator: {fileID: 5830333809119458014}
 --- !u!54 &7894296668085742171
 Rigidbody:
   m_ObjectHideFlags: 0

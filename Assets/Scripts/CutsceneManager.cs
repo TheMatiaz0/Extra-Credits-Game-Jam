@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Cyberultimate.Unity;
 
 public class CutsceneManager : MonoBehaviour
 {
@@ -29,9 +30,6 @@ public class CutsceneManager : MonoBehaviour
 	[SerializeField]
 	private float textDisplayCooldown = 0.075f;
 
-	[SerializeField]
-	private GameObject pressToSkip = null;
-
 	private readonly Queue<CutsceneAsset> cutsceneText = new Queue<CutsceneAsset>();
 
 	[SerializeField]
@@ -40,7 +38,7 @@ public class CutsceneManager : MonoBehaviour
 	private UnityEvent onCutsceneStart = null;
 
 
-	protected void OnEnable()
+    protected void OnEnable()
 	{
 		SetupCutscene();
 		onCutsceneStart.Invoke();

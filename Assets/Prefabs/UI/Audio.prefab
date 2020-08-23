@@ -47,7 +47,7 @@ MonoBehaviour:
   music:
   - {fileID: 8300000, guid: dadf0ae63251c104c86647acebe99d13, type: 3}
   - {fileID: 8300000, guid: 686ceb5139f902e4889e15be98888f66, type: 3}
-  - {fileID: 8300000, guid: 61be80f46b6c6554c8e5e6c80ab6aad2, type: 3}
+  - {fileID: 8300000, guid: 8899b8a8242a3a54f9e3b5bb78384d2e, type: 3}
   soundEffects:
     keys:
     - step1
@@ -62,6 +62,7 @@ MonoBehaviour:
     - shovel
     - typing
     - drinking
+    - bite
     values:
     - {fileID: 8300000, guid: f5b5d715f55b8db41843298ff166d876, type: 3}
     - {fileID: 8300000, guid: b72baae51d0a36c438a3782d67850a97, type: 3}
@@ -75,6 +76,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: db301d6d1cf29fd41a9db11ef0a34c93, type: 3}
     - {fileID: 8300000, guid: ea57ef7f20bbd3f4ca123c900f1a1f3b, type: 3}
     - {fileID: 8300000, guid: 8250efd9fa02a164b9b5b2036405c89d, type: 3}
+    - {fileID: 8300000, guid: 8ca0c5ee11f5cea468037dc40a4478bf, type: 3}
   musicVolume: 0.2
   sfxVolume: 1
 --- !u!82 &9082060457484305119

@@ -14,6 +14,7 @@ public class DialogTrigger : MonoBehaviour
     {
         if (!other.gameObject.CompareTag("Player")) return;
         if (once && used) return;
+
         used = true;
         Debug.Log("Showing dialog text");
         UIManager.Instance.ShowDialogText(text, duration);

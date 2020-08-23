@@ -13,14 +13,19 @@ public class TimelineController : MonoBehaviour
 	[SerializeField]
 	private GameObject pressToSkip = null;
 
+	private Collider playerCollider = null;
+
 
 	protected void Start()
 	{
+		playerCollider = MovementController.Instance.GetComponent<Collider>();
+
 		director = GetComponent<PlayableDirector>();
 	}
 
 	public void LaunchCutscene()
 	{
+		playerCollider.enabled = false;
 		MovementController.Instance.enabled = false;
 		MouseLook.Instance.enabled = false;
 		CanvasManager.Instance.ShowCutsceneCanvas();
@@ -31,6 +36,7 @@ public class TimelineController : MonoBehaviour
 		MovementController.Instance.enabled = true;
 		MouseLook.Instance.enabled = true;
 		CanvasManager.Instance.ShowMainCanvas();
+		playerCollider.enabled = true;
 	}
 
 	protected async void Update()
