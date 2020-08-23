@@ -39,14 +39,21 @@ public class Garbage : InteractableObject
             {
                 UIManager.Instance.ShowPopupText("You found a " + itemDrops[itemRnd].name);
 
-                if (shovelEvolution.Count>1 && !itemDrops.Contains(shovelEvolution[1]) && itemDrops[itemRnd]==shovelEvolution[0])
+                if (shovelEvolution.Contains(itemDrops[itemRnd]))
                 {
-                    itemDrops.Add(shovelEvolution[1]);
-                    shovelEvolution.RemoveAt(0);
-                } else if (bottleEvolution.Count > 1 && !itemDrops.Contains(bottleEvolution[1]) && itemDrops[itemRnd] == bottleEvolution[0])
+                    int i = shovelEvolution.IndexOf(itemDrops[itemRnd]);
+                    if (shovelEvolution.Count >= i + 1)
+                    {
+                        GarbageManager.Instance.AddItemToAll(shovelEvolution[i + 1]);
+                    }
+                }
+                else if (bottleEvolution.Contains(itemDrops[itemRnd]))
                 {
-                    itemDrops.Add(bottleEvolution[1]);
-                    bottleEvolution.RemoveAt(0);
+                    int i = bottleEvolution.IndexOf(itemDrops[itemRnd]);
+                    if (bottleEvolution.Count >= i + 1)
+                    {
+                        GarbageManager.Instance.AddItemToAll(bottleEvolution[i + 1]);
+                    }
                 }
 
                 garbageUsed = true;
