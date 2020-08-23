@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AudioManager : MonoSingleton<AudioManager>
 {
+    
+    
     [SerializeField] private AudioClip[] music;
 
     [SerializeField] private SerializedDictionary<string, AudioClip> soundEffects;
