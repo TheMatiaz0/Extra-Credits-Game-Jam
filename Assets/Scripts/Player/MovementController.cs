@@ -4,12 +4,7 @@ using Cyberultimate.Unity;
 using UnityEngine;
 
 public class MovementController : MonoSingleton<MovementController>
-{
-    [Header("Mouse look")]
-    public float mouseSensitivity = 100.0f;
-    public float minTurnAngle = -90.0f;
-    public float maxTurnAngle = 90.0f;
-     
+{   
     [Header("Movement")]
     public float moveSpeed = 8.0f;
     public float runSpeed = 12.0f;
@@ -36,7 +31,6 @@ public class MovementController : MonoSingleton<MovementController>
     public LayerMask groundMask;
     private bool isGrounded;
     
-    private float rotX;
     private Vector3 velocity;
     private CharacterController cc;
 
@@ -50,24 +44,9 @@ public class MovementController : MonoSingleton<MovementController>
 
     private void Update()
     {
-        if(!blockAiming) MouseAiming();
         Running();
         KeyboardMovement();
         Jumping();
-    }
-
-    private void MouseAiming()
-    {
-        // get the mouse inputs
-        var y = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        rotX += Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
- 
-        // clamp the vertical rotation
-        rotX = Mathf.Clamp(rotX, minTurnAngle, maxTurnAngle);
- 
-        // rotate the camera
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + y, 0);
-        Camera.main.transform.eulerAngles = new Vector3(-rotX, Camera.main.transform.eulerAngles.y, 0);
     }
 
     private void KeyboardMovement()
@@ -88,6 +67,11 @@ public class MovementController : MonoSingleton<MovementController>
         dir.Normalize();*/
         
         var dir = (transform.forward * z) + (transform.right * x);
+        if (dir.magnitude > 1)
+		{
+            dir.Normalize();
+        }
+
 
         cc.Move(dir * (CurrentSpeed * Time.deltaTime));
 
