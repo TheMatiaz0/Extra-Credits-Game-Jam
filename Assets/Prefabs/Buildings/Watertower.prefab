@@ -119,8 +119,10 @@ MonoBehaviour:
     _Array:
     - _Array:
       - Bottle (RMB to drink)
-  bottleWithFilter: {fileID: 0}
-  bigBottleWithFilter: {fileID: 0}
+      - Bottle With Filter (RMB to drink)
+      - Big Bottle With Filter (RMB to drink)
+  bottleWithFilter: {fileID: 11400000, guid: 00aafb89c7fb2ee4ca0ab3e8bdc2af19, type: 2}
+  bigBottleWithFilter: {fileID: 11400000, guid: cbbb18e46773dc9499b392b8649944a1, type: 2}
 --- !u!64 &8647313215686821981
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -166,6 +168,7 @@ MonoBehaviour:
   minNeedleRot: 215
   maxNeedleRot: 510
   needle: {fileID: 5492282281156257388}
+  oneMoveRot: 0
 --- !u!1001 &8647313216106335378
 PrefabInstance:
   m_ObjectHideFlags: 0
