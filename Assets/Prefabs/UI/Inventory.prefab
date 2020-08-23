@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &134746759082759322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188569764729087682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
+--- !u!114 &3269260637078159458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4125977406021807587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &8774826016798615718
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +142,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ResourceSlot
       objectReference: {fileID: 0}
+    - target: {fileID: 2752803075284586767, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.2924528
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752803075284586767, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.107893944
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752803075284586767, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.0731132
+      objectReference: {fileID: 0}
     - target: {fileID: 4692813357362116625, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -198,15 +240,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5572502210429458123, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
       propertyPath: m_Color.r
-      value: 0.7075472
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5572502210429458123, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
       propertyPath: m_Color.g
-      value: 0.5981857
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5572502210429458123, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
       propertyPath: m_Color.b
-      value: 0.5506853
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7492275422708421913, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
       propertyPath: m_Color.g
@@ -222,6 +264,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
+--- !u!1 &1188569764729087682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1657195648590457181, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
+  m_PrefabInstance: {fileID: 468707851984752543}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5161432676891768718 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4692813357362116625, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
@@ -446,6 +493,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ResourceSlot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2752803075284586767, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.1511659
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752803075284586767, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.33565593
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752803075284586767, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4056604
+      objectReference: {fileID: 0}
     - target: {fileID: 4692813357362116625, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -532,15 +591,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5572502210429458123, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
       propertyPath: m_Color.r
-      value: 0.5066305
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5572502210429458123, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
       propertyPath: m_Color.g
-      value: 0.59263515
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5572502210429458123, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
       propertyPath: m_Color.b
-      value: 0.6509434
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7492275422708421913, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
       propertyPath: m_Color.r
@@ -556,6 +615,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
+--- !u!1 &4125977406021807587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1657195648590457181, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}
+  m_PrefabInstance: {fileID: 3440152249970001086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7970765355633081519 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4692813357362116625, guid: c33feb4f540b41e47a7e51c1ac63039c, type: 3}

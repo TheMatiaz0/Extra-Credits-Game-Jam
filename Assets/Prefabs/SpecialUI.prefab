@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 1792627732973035316}
   - component: {fileID: 1792627732973035211}
   m_Layer: 5
-  m_Name: DialogText
+  m_Name: RealDialogueText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
