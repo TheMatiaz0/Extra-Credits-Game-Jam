@@ -203,7 +203,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         {
             daysGrowing = 0;
             failedDays++;
-            if (failedDays >= 5)
+            if (failedDays >= 4)
             {
                 GameManager.Instance.GameOver("The plant died!", GameOverType.Failed);
             }
