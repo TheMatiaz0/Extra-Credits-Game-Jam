@@ -74,7 +74,7 @@ public class MovementController : MonoSingleton<MovementController>
 
         if ((x > 0.5f || z > 0.5f) && lastStepTime < DateTime.Now.Subtract(TimeSpan.FromMilliseconds(500)))
         {
-            AudioManager.Instance.PlaySFX(step1 ? "step1" : "step2");
+            AudioManager.Instance?.PlaySFX(step1 ? "step1" : "step2");
             step1 = !step1;
             lastStepTime = DateTime.Now;
         }
@@ -95,7 +95,7 @@ public class MovementController : MonoSingleton<MovementController>
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !IsOutOfStamina)
         {
-            AudioManager.Instance.PlaySFX("jump");
+            AudioManager.Instance?.PlaySFX("jump");
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             GameManager.Instance.StaminaSys.Stamina.TakeValue(Time.deltaTime * jumpingStamina, "Jumping");
         }
