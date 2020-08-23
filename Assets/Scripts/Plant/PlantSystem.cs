@@ -35,7 +35,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
 
     private int failedDays;
 
-    [SerializeField] private Transform sunlight;
+    private Transform sunlight;
     [SerializeField] private LayerMask layerMask;
     
     [SerializeField]
@@ -56,8 +56,6 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     protected override void Awake()
     {
         base.Awake();
-
-        NewDay();
         
         PlantSize.OnValueChanged += PlantSize_OnValueChanged;
 
@@ -68,11 +66,15 @@ public class PlantSystem : MonoSingleton<PlantSystem>
 
     private void Start()
     {
+        sunlight = SunSystem.Instance.transform;
+        
         maximumNeedsToMakeATask = plantActions.maximumNeedsToCompleteTask;
         PlantSize.SetValue(0);
         PlantState = State.Dying;
         TimeManager.Instance.OnCurrentDayChange += OnDayChange;
         TimeManager.Instance.OnCurrentTimeChange += OnTimeChange;
+        
+        ResetResources();
     }
 
     private void OnDisable()
@@ -187,8 +189,20 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         }
     }
 
-    private void OnDayChange(object sender, SimpleArgs<Cint> args)
+    private void ResetResources()
     {
+        waterUse = SetToRandom(resourceUseRandom);
+        soilUse = SetToRandom(resourceUseRandom);
+        sunlightUse = SetToRandom(resourceUseRandom);
+
+        Water.SetValue(SetToRandom(startingResourcesRandom));
+        Soil.SetValue(SetToRandom(startingResourcesRandom));
+        Sunlight.SetValue(SetToRandom(startingResourcesRandom));
+    }
+
+    private void OnDayChange(object sender, SimpleArgs<Cint> e)
+    {
+        if (e.Value <= 1) return;
         SetPlantState(PlantState);
         if (PlantState == State.Growing)
         {
@@ -208,6 +222,9 @@ public class PlantSystem : MonoSingleton<PlantSystem>
                 GameManager.Instance.GameOver("The plant died!", GameOverType.Failed);
             }
         }
+        Debug.Log($"Day finished. platnstate: {PlantState.ToString()}, daysGrowing: {daysGrowing}, failedDays: {failedDays}");
+        
+        ResetResources();
     }
 
     private void OnTimeChange(object sender, SimpleArgs<TimeSpan> args)
@@ -227,16 +244,5 @@ public class PlantSystem : MonoSingleton<PlantSystem>
             soilUse = SetToRandom(resourceUseRandom);
             sunlightUse = SetToRandom(resourceUseRandom);
         }
-    }
-
-    public void NewDay()
-    {
-        waterUse = SetToRandom(resourceUseRandom);
-        soilUse = SetToRandom(resourceUseRandom);
-        sunlightUse = SetToRandom(resourceUseRandom);
-
-        Water.SetValue(SetToRandom(startingResourcesRandom));
-        Soil.SetValue(SetToRandom(startingResourcesRandom));
-        Sunlight.SetValue(SetToRandom(startingResourcesRandom));
     }
 }
