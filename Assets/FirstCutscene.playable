@@ -887,7 +887,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -5089692397866468468}
-    m_Duration: 59.88333333333333
+    m_Duration: 69.8181875
     m_TimeScale: 1
     m_ParentTrack: {fileID: -2605071778160130328}
     m_EaseInDuration: 0
@@ -967,7 +967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 59.88333333333333
+  m_Time: 69.8181875
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 4c364891d3c809847bffd6038a4997f4, type: 2}
@@ -1010,7 +1010,7 @@ MonoBehaviour:
   m_Version: 3
   m_AnimClip: {fileID: 0}
   m_Locked: 0
-  m_Muted: 1
+  m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
@@ -1023,8 +1023,8 @@ MonoBehaviour:
     m_Duration: 69.8181875
     m_TimeScale: 1
     m_ParentTrack: {fileID: 71365916902810381}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_EaseInDuration: 2.5
+    m_EaseOutDuration: 2.5
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -1133,7 +1133,7 @@ MonoBehaviour:
     m_Start: 30.323672673727074
     m_ClipIn: 0
     m_Asset: {fileID: -6052036082352927488}
-    m_Duration: 29.55966065960626
+    m_Duration: 39.49451482627292
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2901049893728077010}
     m_EaseInDuration: 0
@@ -1259,7 +1259,7 @@ MonoBehaviour:
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_AvatarMask: {fileID: 0}
-  m_ApplyAvatarMask: 1
+  m_ApplyAvatarMask: 0
   m_TrackOffset: 0
   m_InfiniteClip: {fileID: -9057949765869927519}
   m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
