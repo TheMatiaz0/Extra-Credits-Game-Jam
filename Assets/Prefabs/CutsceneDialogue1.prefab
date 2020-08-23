@@ -68,8 +68,8 @@ MonoBehaviour:
     cooldownToNext:
       seconds: 5
       mode: 1
-  - sentence: 'Grandpa: Promise me that you and the Plant will survive... you...
-      you need to take care of it, please promise me that... please...'
+  - sentence: 'Grandpa: Promise me that you and Tom will survive... you... you need
+      to take care of it, please promise me that... please...'
     cooldownToNext:
       seconds: 20
       mode: 1
