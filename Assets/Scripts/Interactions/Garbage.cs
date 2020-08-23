@@ -25,7 +25,7 @@ public class Garbage : InteractableObject
         int garbageRnd = Random.Range(0, 100);
         if (garbageRnd <= garbageDropChance)
         {
-            UIManager.Instance.ShowPopupText("You found garbage");
+            UIManager.Instance.ShowPopupText("You found only garbage");
             Debug.Log("Garbage");
             garbageUsed = true;
             Destroy(this);
