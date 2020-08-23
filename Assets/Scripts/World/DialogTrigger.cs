@@ -12,8 +12,9 @@ public class DialogTrigger : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("Player")) return;
+        if (!other.gameObject.CompareTag("Player") || CutsceneManager.Instance.CutscenePlaying) return;
         if (once && used) return;
+
         used = true;
         Debug.Log("Showing dialog text");
         UIManager.Instance.ShowDialogText(text, duration);

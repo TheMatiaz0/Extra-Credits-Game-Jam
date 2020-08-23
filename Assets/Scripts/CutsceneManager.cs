@@ -7,8 +7,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Cyberultimate.Unity;
 
-public class CutsceneManager : MonoBehaviour
+public class CutsceneManager : MonoSingleton<CutsceneManager>
 {
 	[SerializeField]
 	private CutsceneAsset[] cutsceneDialogue = null;
@@ -39,9 +40,11 @@ public class CutsceneManager : MonoBehaviour
 	[SerializeField]
 	private UnityEvent onCutsceneStart = null;
 
+    public bool CutscenePlaying { get; set; } = true;
 
-	protected void OnEnable()
+    protected void OnEnable()
 	{
+        CutscenePlaying = true;
 		SetupCutscene();
 		onCutsceneStart.Invoke();
 	}
