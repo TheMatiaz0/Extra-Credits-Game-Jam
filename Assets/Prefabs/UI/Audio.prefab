@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music:
-  - {fileID: 8300000, guid: dadf0ae63251c104c86647acebe99d13, type: 3}
-  - {fileID: 8300000, guid: 686ceb5139f902e4889e15be98888f66, type: 3}
-  - {fileID: 8300000, guid: 8899b8a8242a3a54f9e3b5bb78384d2e, type: 3}
+  - {fileID: 8300000, guid: 9f07cbe9b3ae3d241b76ad8cdf97025f, type: 3}
+  - {fileID: 8300000, guid: 44988c7ae26dfa24dbb7086ac910e620, type: 3}
+  - {fileID: 8300000, guid: daff41eda4c97544a95ab811b22efbc6, type: 3}
   soundEffects:
     keys:
     - step1
