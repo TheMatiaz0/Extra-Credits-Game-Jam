@@ -19365,7 +19365,7 @@ MonoBehaviour:
     _Array:
     - interactionName: Check needs
       itemNeeded: {fileID: 0}
-      sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+      sprite: {fileID: 21300000, guid: 89fb41916da54344b87a911eca803ab8, type: 3}
       action:
         m_PersistentCalls:
           m_Calls:
@@ -19401,7 +19401,7 @@ MonoBehaviour:
             m_CallState: 2
     - interactionName: Pick up
       itemNeeded: {fileID: 0}
-      sprite: {fileID: 21300000, guid: 3e102e582da0e744286d15b0d3d39c75, type: 3}
+      sprite: {fileID: 21300000, guid: fd0325e69e414c24b91918f6e5653986, type: 3}
       action:
         m_PersistentCalls:
           m_Calls:
