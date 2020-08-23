@@ -308,6 +308,10 @@ PrefabInstance:
       propertyPath: pressToSkip
       value: 
       objectReference: {fileID: 1142945411}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[9].sentence
+      value: 'I promised your grandma that I will stay alive... '
+      objectReference: {fileID: 0}
     - target: {fileID: 2734501731739276049, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
