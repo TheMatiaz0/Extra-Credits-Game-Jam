@@ -132,7 +132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1792627732534907568
 RectTransform:
   m_ObjectHideFlags: 0
@@ -149,8 +149,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 495, y: -422}
-  m_SizeDelta: {x: 350.739, y: 65.763565}
+  m_AnchoredPosition: {x: 665.1, y: -449.4}
+  m_SizeDelta: {x: 511.33447, y: 109.33046}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1792627732534907571
 CanvasRenderer:
@@ -182,18 +182,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 916034e795df6aa49b79def91b90e3f0, type: 3}
-    m_FontSize: 24
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 45
-    m_Alignment: 2
+    m_MaxSize: 51
+    m_Alignment: 8
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press X to skip
+  m_Text: Press E to skip
 --- !u!114 &1792627732534907569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,9 +302,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin risus massa,
-    tempor in lorem nec, sodales interdum nulla. Suspendisse vestibulum imperdiet
-    tortor, quis tincidunt tellus vulputate eget.
+  m_Text: 
 --- !u!95 &1792627732973035316
 Animator:
   serializedVersion: 3
