@@ -177,16 +177,19 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     private float modifier = 7f;
     public void AddResources(float amount, PlantResources resource)
     {
-        if (resource == PlantResources.Soil)
+        if (resource != PlantResources.Light)
         {
-            Soil.GiveValue(amount * modifier,"");
-        } else if (resource == PlantResources.Water)
-        {
-            Water.GiveValue(amount * modifier, "");
-        } else if (resource == PlantResources.Light)
-        {
-            Sunlight.GiveValue(amount * modifier, "");
-        }
+            PlantParticles.Instance.WowParticles();
+            if (resource == PlantResources.Soil)
+            {
+                Soil.GiveValue(amount * modifier, "");
+
+            }
+            else if (resource == PlantResources.Water)
+            {
+                Water.GiveValue(amount * modifier, "");
+            }
+        } else Sunlight.GiveValue(amount * modifier, "");
     }
 
     private void ResetResources()
