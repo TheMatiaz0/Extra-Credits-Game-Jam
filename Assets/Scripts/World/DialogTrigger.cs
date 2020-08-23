@@ -6,6 +6,7 @@ public class DialogTrigger : MonoBehaviour
 {
     [SerializeField] private string text;
     [SerializeField] private bool once = true;
+    [SerializeField] private float duration = 0;
 
     private bool used = false;
     
@@ -15,6 +16,6 @@ public class DialogTrigger : MonoBehaviour
         if (once && used) return;
         used = true;
         Debug.Log("Showing dialog text");
-        UIManager.Instance.ShowDialogText(text);
+        UIManager.Instance.ShowDialogText(text,(duration==0)?0:duration);
     }
 }

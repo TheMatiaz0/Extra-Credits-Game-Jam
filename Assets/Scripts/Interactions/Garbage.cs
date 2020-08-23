@@ -46,7 +46,7 @@ public class Garbage : InteractableObject
                 if (shovelEvolution.Contains(itemDrops[itemRnd]))
                 {
                     int i = shovelEvolution.IndexOf(itemDrops[itemRnd]);
-                    if (shovelEvolution.Count >= i + 1)
+                    if (shovelEvolution.Count >= i + 2)
                     {
                         GarbageManager.Instance.AddItemToAll(shovelEvolution[i + 1]);
                     }
@@ -54,7 +54,7 @@ public class Garbage : InteractableObject
                 else if (bottleEvolution.Contains(itemDrops[itemRnd]))
                 {
                     int i = bottleEvolution.IndexOf(itemDrops[itemRnd]);
-                    if (bottleEvolution.Count >= i + 1)
+                    if (bottleEvolution.Count >= i + 2)
                     {
                         GarbageManager.Instance.AddItemToAll(bottleEvolution[i + 1]);
                     }
