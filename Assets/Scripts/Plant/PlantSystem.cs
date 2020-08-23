@@ -231,6 +231,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
             {
                 PlantSize.GiveValue(1);
                 daysGrowing = 0;
+                AudioManager.Instance.NextTrack();
             }
         }
         else
