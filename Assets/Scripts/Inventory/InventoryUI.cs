@@ -56,19 +56,25 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 		{
 			Inventory.Instance.RemoveItem(selectedSlot);
 		}
+		/*
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			var item = Inventory.Instance.AllGameItems["Protein Bar"];
+			Inventory.Instance.AddItem(item);
+		}
+		*/
 
 		if (Input.GetMouseButtonDown(1))
 		{
 			Cint slot = 0;
 			ItemScriptableObject it = null;
-			if (it != null)
+
+			it = Inventory.Instance.GetItem(slot = selectedSlot);
+			it?.ActionForItem?.Do();
+			if (it?.ActionForItem != null)
 			{
-				it = Inventory.Instance.GetItem(slot = selectedSlot);
-				it?.ActionForItem?.Do();
 				Inventory.Instance.RemoveItem(slot);
 			}
-
-
 		}
 
 		ScrollWheel();
