@@ -2,11 +2,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cyberultimate.Unity;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
 
-public class TimelineController : MonoBehaviour
+public class TimelineController : MonoSingleton<TimelineController>
 {
 	private PlayableDirector director;
 
@@ -14,6 +15,8 @@ public class TimelineController : MonoBehaviour
 	private GameObject pressToSkip = null;
 
 	private Collider playerCollider = null;
+
+	[HideInInspector] public bool CutsceneRunning { get; private set; } = true;
 
 
 	protected void Start()
@@ -29,6 +32,7 @@ public class TimelineController : MonoBehaviour
 		MovementController.Instance.enabled = false;
 		MouseLook.Instance.enabled = false;
 		CanvasManager.Instance.ShowCutsceneCanvas();
+		CutsceneRunning = true;
 	}
 
 	public void CloseCutscene()
@@ -37,6 +41,7 @@ public class TimelineController : MonoBehaviour
 		MouseLook.Instance.enabled = true;
 		CanvasManager.Instance.ShowMainCanvas();
 		playerCollider.enabled = true;
+		CutsceneRunning = false;
 	}
 
 	protected async void Update()

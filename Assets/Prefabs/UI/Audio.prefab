@@ -77,7 +77,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: ea57ef7f20bbd3f4ca123c900f1a1f3b, type: 3}
     - {fileID: 8300000, guid: 8250efd9fa02a164b9b5b2036405c89d, type: 3}
     - {fileID: 8300000, guid: 8ca0c5ee11f5cea468037dc40a4478bf, type: 3}
-  musicVolume: 0.2
+  musicVolume: 0.4
   sfxVolume: 1
 --- !u!82 &9082060457484305119
 AudioSource:

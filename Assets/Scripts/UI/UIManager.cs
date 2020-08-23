@@ -115,9 +115,9 @@ public class UIManager : MonoSingleton<UIManager>
 	}
 	
 
-	public void ShowDialogText(string txt, float? duration=3f)
+	public void ShowDialogText(string txt, float duration = 3f)
     {
-	    _ = ShowTextAsync(dialogText, txt);
+	    _ = ShowTextAsync(dialogText, txt, duration);
     }
 
     private async Task ShowTextAsync(Text text, string message, float delayInSeconds = 3f)
