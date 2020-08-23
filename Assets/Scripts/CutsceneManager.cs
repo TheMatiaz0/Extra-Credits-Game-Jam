@@ -56,15 +56,6 @@ public class CutsceneManager : MonoBehaviour
 		displayingText = StartCoroutine(DisplayNextSentence());
 	}
 
-	protected void Update()
-	{
-		if (Input.anyKeyDown == true)
-		{
-			pressToSkip.SetActive(true);
-		}
-
-	}
-
 	private IEnumerator DisplayNextSentence()
 	{
 		while (true)
