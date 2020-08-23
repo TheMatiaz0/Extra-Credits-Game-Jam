@@ -1,0 +1,180 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CutsceneManager
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: f2b24bca0748f0b46a84e3f779911bab, type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.size
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[0].sentence
+    value: 'Grandpa: Aw.. I was bitten by one of the infected.'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[0].cooldownToNext.seconds
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[0].cooldownToNext.mode
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[1].sentence
+    value: 'You: Should I go get water for you?'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[1].cooldownToNext.seconds
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[1].cooldownToNext.mode
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[2].sentence
+    value: 'Grandpa: No... It''s too late.'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[2].cooldownToNext.seconds
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[2].cooldownToNext.mode
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[3].sentence
+    value: Time is not on my side here.
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[3].cooldownToNext.seconds
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[3].cooldownToNext.mode
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[4].sentence
+    value: But... I ask you to do one thing...
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[4].cooldownToNext.seconds
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[4].cooldownToNext.mode
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[5].sentence
+    value: 'You: What is it?'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[5].cooldownToNext.seconds
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[5].cooldownToNext.mode
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[6].sentence
+    value: 'Grandpa: Promise me that you and Tom will survive... you... you need
+      to take care of it, please promise me that... please...'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[6].cooldownToNext.seconds
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[6].cooldownToNext.mode
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[7].sentence
+    value: 'You: I promise.'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[7].cooldownToNext.seconds
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[7].cooldownToNext.mode
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[8].sentence
+    value: 'Grandpa: That''s a weird word, isn''t it... promise...'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[8].cooldownToNext.seconds
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[8].cooldownToNext.mode
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[9].sentence
+    value: I promised your grandma that I will stay alive... guess where we are...
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[9].cooldownToNext.seconds
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cutsceneDialogue.Array.data[9].cooldownToNext.mode
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: voiceSource
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: voice
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: subtitles
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: textDisplayCooldown
+    value: 0.075
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressToSkip
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: onCutsceneEnd.m_PersistentCalls.m_Calls.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: onCutsceneStart.m_PersistentCalls.m_Calls.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []

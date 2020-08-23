@@ -34,7 +34,7 @@ public class MovementController : MonoSingleton<MovementController>
     private Vector3 velocity;
     private CharacterController cc;
 
-    [HideInInspector] public bool blockAiming = false;
+    public bool BlockMovement { get; set; }
 
     private bool step1 = false;
     private DateTime lastStepTime;
@@ -46,6 +46,11 @@ public class MovementController : MonoSingleton<MovementController>
 
     private void Update()
     {
+        if (BlockMovement)
+		{
+            return;
+		}
+
         Running();
         KeyboardMovement();
         Jumping();

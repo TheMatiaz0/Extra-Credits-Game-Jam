@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using Cyberultimate;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -30,6 +32,11 @@ public class EnemyBehaviour : MonoBehaviour
 	[SerializeField]
 	private Transform[] waypoints = null;
 
+	[SerializeField]
+	private Animator animator = null;
+
+	private static bool canBite = true;
+
 	protected void Start()
 	{
 		agent = GetComponent<NavMeshAgent>();
@@ -40,6 +47,18 @@ public class EnemyBehaviour : MonoBehaviour
 		rb.isKinematic = true;
 
 		startPosition = this.transform.position;
+	}
+
+	private IEnumerator AttackAnimation ()
+	{
+		canBite = false;
+		animator.SetTrigger("Bite");
+		MovementController.Instance.BlockMovement = true;
+		GameManager.Instance.HealthSys.Health.TakeValue(5, "Infected");
+		yield return Async.Wait(TimeSpan.FromSeconds(2.1f));
+		MovementController.Instance.BlockMovement = false;
+		yield return Async.Wait(TimeSpan.FromSeconds(3.2f));
+		canBite = true;
 	}
 
 	protected void Update()
@@ -62,7 +81,11 @@ public class EnemyBehaviour : MonoBehaviour
 						{
 							Debug.DrawLine(firePoint.position, firePoint.position + firePoint.forward * attackDistance, Color.cyan);
 
-							// healthSys.Health.TakeValue(10, "Żombi");
+							if (canBite)
+							{
+								StopAllCoroutines();
+								StartCoroutine(AttackAnimation());
+							}
 						}
 					}
 				}
@@ -83,7 +106,7 @@ public class EnemyBehaviour : MonoBehaviour
 		{
 			if (agent.remainingDistance - attackDistance < 0.01f)
 			{
-				ChangeFocus(waypoints[Random.Range(0, waypoints.Length)].position);
+				ChangeFocus(waypoints[UnityEngine.Random.Range(0, waypoints.Length)].position);
 			}
 		}
 	}
