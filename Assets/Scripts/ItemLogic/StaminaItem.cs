@@ -12,7 +12,14 @@ public class StaminaItem : ItemLogic
 
     public override void Do()
 	{
-		GameManager.Instance.StaminaSys.Stamina.GiveValue(value, "Item");
-		AudioManager.Instance.PlaySFX("eating");
+        if (GameManager.Instance.StaminaSys.Stamina.Value < GameManager.Instance.StaminaSys.Stamina.Max)
+        {
+            GameManager.Instance.StaminaSys.Stamina.GiveValue(value, "Item");
+            AudioManager.Instance.PlaySFX("eating");
+            UIManager.Instance.ShowPopupText("You ate protein bar and gained stamina");
+        } else
+        {
+            UIManager.Instance.ShowPopupText("You're already at max stamina");
+        }
 	}
 }
