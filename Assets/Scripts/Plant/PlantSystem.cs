@@ -1,100 +1,101 @@
-﻿using System;
+﻿using Cyberultimate;
+using Cyberultimate.Unity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Cyberultimate;
-using Cyberultimate.Unity;
 using UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class PlantSystem : MonoSingleton<PlantSystem>
 {
-    public enum State
-    {
-        Dying, Growing
-    }
-
-    private State _plantState = State.Dying;
-
-    private int maximumNeedsToCompleteATask;
-
-    public State PlantState {
-        get => (Water.Value + Soil.Value + Sunlight.Value > maximumNeedsToCompleteATask * 3) ? State.Growing : State.Dying;
-        set => SetPlantState(value);
-    }
-    
-    public LockValue<uint> PlantSize { get; set; }= new LockValue<uint>(2, 0, 0);
-
-    public Vector2 startingResourcesRandom = new Vector2(40, 70); //min and max
-    public Vector2 resourceUseRandom = new Vector2(0.1f, 0.7f); //min and max
-    
-    public LockValue<float> Water { get; set; } = new LockValue<float>(100, 0, 50);
-    public LockValue<float> Soil { get; set; } = new LockValue<float>(100, 0, 50);
-    public LockValue<float> Sunlight { get; set; } = new LockValue<float>(100, 0, 50);
-
-    public float sunlightGain = 0.4f;
-
-    public List<int> hoursPlantNeedsChange;
-
-    private int failedDays;
-
-    private Transform sunlight;
-    [SerializeField] private LayerMask layerMask;
-    
-    [SerializeField]
-    private GameObject plantModelSmall, plantModelMedium, plantModelLarge;
-
-    [SerializeField] 
-    private Material growingMaterial, dyingMaterial;
-    
-    
-    private float waterUse;
-    private float soilUse;
-    private float sunlightUse;
-
-    private uint daysGrowing = 0;
-
-    public enum PlantResources { Soil, Water, Light }
-
-    protected override void Awake()
-    {
-        base.Awake();
-        
-        PlantSize.OnValueChanged += PlantSize_OnValueChanged;
-
-    }
-
-    [SerializeField]
-    private Interactions.PlantActions plantActions;
-
-    private void Start()
-    {
-        sunlight = SunSystem.Instance.transform;
-        
-        maximumNeedsToCompleteATask = PlantNeedsUI.Instance.maximumNeedsToCompleteTask;
-        PlantSize.SetValue(0);
-        PlantState = State.Dying;
-        TimeManager.Instance.OnCurrentDayChange += OnDayChange;
-        TimeManager.Instance.OnCurrentTimeChange += OnTimeChange;
-        
-        ResetResources();
-    }
-
-    private void OnDisable()
-    {
-        TimeManager.Instance.OnCurrentDayChange -= OnDayChange;
-        TimeManager.Instance.OnCurrentTimeChange -= OnTimeChange;
-    }
-
-    public Color GetColorBasedOnState ()
+	public enum State
 	{
-        switch (PlantState)
-		{
-            case State.Dying:
-                return Color.red;
+		Dying, Growing
+	}
 
-            default:
-                return Color.green;
+	private State _plantState = State.Dying;
+
+	private int maximumNeedsToCompleteATask;
+
+	public State PlantState
+	{
+		get => (Water.Value + Soil.Value + Sunlight.Value > maximumNeedsToCompleteATask * 3) ? State.Growing : State.Dying;
+		set => SetPlantState(value);
+	}
+
+	public LockValue<uint> PlantSize { get; set; } = new LockValue<uint>(2, 0, 0);
+
+	public Vector2 startingResourcesRandom = new Vector2(40, 70); //min and max
+	public Vector2 resourceUseRandom = new Vector2(0.1f, 0.7f); //min and max
+
+	public LockValue<float> Water { get; set; } = new LockValue<float>(100, 0, 50);
+	public LockValue<float> Soil { get; set; } = new LockValue<float>(100, 0, 50);
+	public LockValue<float> Sunlight { get; set; } = new LockValue<float>(100, 0, 50);
+
+	public float sunlightGain = 0.4f;
+
+	public List<int> hoursPlantNeedsChange;
+
+	private int failedDays;
+
+	private Transform sunlight;
+	[SerializeField] private LayerMask layerMask;
+
+	[SerializeField]
+	private GameObject plantModelSmall, plantModelMedium, plantModelLarge;
+
+	[SerializeField]
+	private Material growingMaterial, dyingMaterial;
+
+
+	private float waterUse;
+	private float soilUse;
+	private float sunlightUse;
+
+	private uint daysGrowing = 0;
+
+	public enum PlantResources { Soil, Water, Light }
+
+	protected override void Awake()
+	{
+		base.Awake();
+
+		PlantSize.OnValueChanged += PlantSize_OnValueChanged;
+
+	}
+
+	[SerializeField]
+	private Interactions.PlantActions plantActions;
+
+	private void Start()
+	{
+		sunlight = SunSystem.Instance.transform;
+
+		maximumNeedsToCompleteATask = PlantNeedsUI.Instance.maximumNeedsToCompleteTask;
+		PlantSize.SetValue(0);
+		PlantState = State.Dying;
+		TimeManager.Instance.OnCurrentDayChange += OnDayChange;
+		TimeManager.Instance.OnCurrentTimeChange += OnTimeChange;
+
+		ResetResources();
+	}
+
+	private void OnDisable()
+	{
+		TimeManager.Instance.OnCurrentDayChange -= OnDayChange;
+		TimeManager.Instance.OnCurrentTimeChange -= OnTimeChange;
+	}
+
+	public Color GetColorBasedOnState()
+	{
+		switch (PlantState)
+		{
+			case State.Dying:
+				return Color.red;
+
+			default:
+				return Color.green;
 		}
 	}
 
@@ -129,7 +130,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
             lastStateInside = false;
 
         }
-
+/*
         if (Input.GetKeyDown(KeyCode.Y))
         {
             PlantState = State.Dying;
@@ -143,6 +144,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         {
             PlantSize.TakeValue(1);
         }
+		*/
     }
 
     private float SetToRandom(Vector2 rnd)
@@ -247,7 +249,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
                 GameManager.Instance.GameOver("The plant died!", GameOverType.Failed);
             }
         }
-        Debug.Log($"Day finished. platnstate: {PlantState.ToString()}, daysGrowing: {daysGrowing}, failedDays: {failedDays}");
+        Debug.Log($"Day finished. plantState: {PlantState.ToString()}, daysGrowing: {daysGrowing}, failedDays: {failedDays}");
         
         ResetResources();
     }
