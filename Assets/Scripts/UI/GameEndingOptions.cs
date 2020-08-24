@@ -20,12 +20,22 @@ public class GameEndingOptions : MonoSingleton<GameEndingOptions>
     {
         if (ending == Endings.plant)
         {
-            //play plant cutscene
-            Debug.Log("p");
+            SetAllTo(false);
+            specialUI.SetActive(true);
+
+            currentTimeline = plantEndingCutscene.GetComponent<TimelineController>();
+            plantEndingCutscene.SetActive(true);
+            plantEndingCutscene.GetComponent<TimelineController>().LaunchCutscene();
+            Debug.Log("h");
         } else if (ending == Endings.human)
         {
-            //play human cutscene
-            Debug.Log("h");
+            SetAllTo(false);
+            specialUI.SetActive(true);
+
+            currentTimeline = humanEndingCutscene.GetComponent<TimelineController>();
+            humanEndingCutscene.SetActive(true);
+            humanEndingCutscene.GetComponent<TimelineController>().LaunchCutscene();
+            Debug.Log("p");
         }
     }
 
@@ -73,6 +83,9 @@ public class GameEndingOptions : MonoSingleton<GameEndingOptions>
         chooseUI.SetActive(true);
         specialUI.SetActive(true);
 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         MovementController.Instance.GetComponent<Collider>().enabled = false;
         MovementController.Instance.enabled = false;
         MouseLook.Instance.enabled = false;
@@ -80,8 +93,5 @@ public class GameEndingOptions : MonoSingleton<GameEndingOptions>
         HomeMusic.Instance.gameObject.SetActive(false);
         TownMusic.Instance.gameObject.SetActive(false);
         AudioManager.Instance.gameObject.SetActive(false);
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
     }
 }
