@@ -21,7 +21,8 @@ public class Item
 
     public Item(ItemScriptableObject baseObj)
     {
-        Logic = Activator.CreateInstance(baseObj.itemAction) as ItemLogic;
+        if(baseObj.itemAction != null)
+            Logic = Activator.CreateInstance(baseObj.itemAction) as ItemLogic;
 
         Name = baseObj.name;
         Icon = baseObj.icon;
