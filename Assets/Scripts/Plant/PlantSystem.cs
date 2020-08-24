@@ -99,183 +99,179 @@ public class PlantSystem : MonoSingleton<PlantSystem>
 		}
 	}
 
-	private bool lastStateInside = true;
-	private void Update()
-	{
-		Soil.TakeValue(Time.deltaTime * soilUse);
+    private bool lastStateInside = true;
+    private void Update()
+    {
+        Soil.TakeValue(Time.deltaTime * soilUse);
 
-		// Debug.DrawRay(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles), Color.red);
-		if (Physics.Raycast(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles), 50f, layerMask)) // if plant is inside
-		{
-			if (!lastStateInside)
-			{
-				PlantParticles.Instance.ChangeSun(false);
-			}
+        //Debug.DrawRay(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles), Color.red);
+        if (Physics.Raycast(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles),50f, layerMask)) // if plant is inside
+        {
+            if (!lastStateInside)
+            {
+                PlantParticles.Instance.ChangeSun(false);
+            }
 
-			Sunlight.TakeValue(Time.deltaTime * sunlightUse);
-			//Debug.Log("plant inside");
+            Sunlight.TakeValue(Time.deltaTime * sunlightUse);
+            //Debug.Log("plant inside");
+            
+            lastStateInside = true;
+        }
+        else
+        {
+            if(lastStateInside)
+            {
+                PlantParticles.Instance.ChangeSun(true);
+            }
 
-			lastStateInside = true;
-		}
-		else
-		{
-			if (lastStateInside)
-			{
-				PlantParticles.Instance.ChangeSun(true);
-			}
+            Water.TakeValue(Time.deltaTime * waterUse);
+            Sunlight.GiveValue(Time.deltaTime * sunlightGain);
+            
+            lastStateInside = false;
 
-			Water.TakeValue(Time.deltaTime * waterUse);
-			Sunlight.GiveValue(Time.deltaTime * sunlightGain);
-
-			lastStateInside = false;
-
-		}
-		/*
-		if (Input.GetKeyDown(KeyCode.Y))
-		{
-			PlantState = State.Dying;
-		}
-		else if (Input.GetKeyDown(KeyCode.U))
-		{
-			PlantState = State.Growing;
-		}
-		else if (Input.GetKeyDown(KeyCode.V))
-		{
-			PlantSize.GiveValue(1);
-		}
-		else if (Input.GetKeyDown(KeyCode.B))
-		{
-			PlantSize.TakeValue(1);
-		}
+        }
+/*
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            PlantState = State.Dying;
+        } else if (Input.GetKeyDown(KeyCode.U))
+        {
+            PlantState = State.Growing;
+        } else if (Input.GetKeyDown(KeyCode.V))
+        {
+            PlantSize.GiveValue(1);
+        } else if (Input.GetKeyDown(KeyCode.B))
+        {
+            PlantSize.TakeValue(1);
+        }
 		*/
-	}
+    }
 
-	private float SetToRandom(Vector2 rnd)
-	{
-		return Random.Range(rnd.x, rnd.y);
-	}
+    private float SetToRandom(Vector2 rnd)
+    {
+        return Random.Range(rnd.x, rnd.y);
+    }
 
-	private void ToggleAllModelsOff()
-	{
-		plantModelSmall.SetActive(false);
-		plantModelMedium.SetActive(false);
-		plantModelLarge.SetActive(false);
-	}
+    private void ToggleAllModelsOff()
+    {
+        plantModelSmall.SetActive(false);
+        plantModelMedium.SetActive(false);
+        plantModelLarge.SetActive(false);
+    }
+    
+    private GameObject GetCurrentPlantModel(uint? val = null)
+    {
+        switch (val ?? PlantSize.Value)
+        {
+            case 0:
+                return plantModelSmall;
+            case 1:
+                return plantModelMedium;
+            case 2:
+                return plantModelLarge;
+        }
 
-	private GameObject GetCurrentPlantModel(uint? val = null)
-	{
-		switch (val ?? PlantSize.Value)
-		{
-			case 0:
-				return plantModelSmall;
-			case 1:
-				return plantModelMedium;
-			case 2:
-				return plantModelLarge;
-		}
+        return null;
+    }
 
-		return null;
-	}
+    private void PlantSize_OnValueChanged(object sender, LockValue<uint>.AnyValueChangedArgs e)
+    {
+        ToggleAllModelsOff();
+        GetCurrentPlantModel(e.LockValue.Value).SetActive(true);
+        SetPlantState(_plantState);
+    }
+    
+    private void SetPlantState(State newState)
+    {
+        _plantState = newState;
+        var mr = GetCurrentPlantModel().GetComponent<MeshRenderer>();
+        switch (newState)
+        {
+            case State.Dying:
+                mr.material = dyingMaterial;
+                break;
+            case State.Growing:
+                mr.material = growingMaterial;
+                break;
+        }
+    }
 
-	private void PlantSize_OnValueChanged(object sender, LockValue<uint>.AnyValueChangedArgs e)
-	{
-		ToggleAllModelsOff();
-		GetCurrentPlantModel(e.LockValue.Value).SetActive(true);
-		SetPlantState(_plantState);
-	}
+    
+    //private float modifier = 7f;
+    public void AddResources(float amount, PlantResources resource)
+    {
+        if (resource != PlantResources.Light)
+        {
+            PlantParticles.Instance.WowParticles();
+            if (resource == PlantResources.Soil)
+            {
+                Soil.GiveValue(amount, "");
 
-	private void SetPlantState(State newState)
-	{
-		_plantState = newState;
-		var mr = GetCurrentPlantModel().GetComponent<MeshRenderer>();
-		switch (newState)
-		{
-			case State.Dying:
-				mr.material = dyingMaterial;
-				break;
-			case State.Growing:
-				mr.material = growingMaterial;
-				break;
-		}
-	}
+            }
+            else if (resource == PlantResources.Water)
+            {
+                Water.GiveValue(amount, "");
+            }
+        } else Sunlight.GiveValue(amount, "");
+    }
 
+    private void ResetResources()
+    {
+        waterUse = SetToRandom(resourceUseRandom);
+        soilUse = SetToRandom(resourceUseRandom);
+        sunlightUse = SetToRandom(resourceUseRandom);
 
-	//private float modifier = 7f;
-	public void AddResources(float amount, PlantResources resource)
-	{
-		if (resource != PlantResources.Light)
-		{
-			PlantParticles.Instance.WowParticles();
-			if (resource == PlantResources.Soil)
-			{
-				Soil.GiveValue(amount, "");
+        Water.SetValue(SetToRandom(startingResourcesRandom));
+        Soil.SetValue(SetToRandom(startingResourcesRandom));
+        Sunlight.SetValue(SetToRandom(startingResourcesRandom));
+    }
 
-			}
-			else if (resource == PlantResources.Water)
-			{
-				Water.GiveValue(amount, "");
-			}
-		}
-		else Sunlight.GiveValue(amount, "");
-	}
+    private void OnDayChange(object sender, SimpleArgs<Cint> e)
+    {
+        if (e.Value <= 1) return;
+        SetPlantState(PlantState);
+        if (PlantState == State.Growing)
+        {
+            daysGrowing++;
+            if (daysGrowing >= 5)
+            {
+                PlantSize.GiveValue(1);
+                daysGrowing = 0;
+                HomeMusic.Instance.NextTrack();
+            }
+        }
+        else
+        {
+            daysGrowing = 0;
+            failedDays++;
+            if (failedDays >= 4)
+            {
+                GameManager.Instance.GameOver("The plant died!", GameOverType.Failed);
+            }
+        }
+        Debug.Log($"Day finished. plantState: {PlantState.ToString()}, daysGrowing: {daysGrowing}, failedDays: {failedDays}");
+        
+        ResetResources();
+    }
 
-	private void ResetResources()
-	{
-		waterUse = SetToRandom(resourceUseRandom);
-		soilUse = SetToRandom(resourceUseRandom);
-		sunlightUse = SetToRandom(resourceUseRandom);
+    private bool cutsceneShown = false;
+    private void OnTimeChange(object sender, SimpleArgs<TimeSpan> args)
+    {
+        if (PlantSize.Value == 2 && args.Value >= TimeSpan.FromHours(19) && !cutsceneShown)
+        {
+            cutsceneShown = true;
+            GameManager.Instance.GameFinishCutscene();
+            Debug.Log("Game finish cutscene!");
+        }
+    }
 
-		Water.SetValue(SetToRandom(startingResourcesRandom));
-		Soil.SetValue(SetToRandom(startingResourcesRandom));
-		Sunlight.SetValue(SetToRandom(startingResourcesRandom));
-	}
-
-	private void OnDayChange(object sender, SimpleArgs<Cint> e)
-	{
-		if (e.Value <= 1) return;
-		SetPlantState(PlantState);
-		if (PlantState == State.Growing)
-		{
-			daysGrowing++;
-			if (daysGrowing >= 5)
-			{
-				PlantSize.GiveValue(1);
-				daysGrowing = 0;
-				HomeMusic.Instance.NextTrack();
-			}
-		}
-		else
-		{
-			daysGrowing = 0;
-			failedDays++;
-			if (failedDays >= 4)
-			{
-				GameManager.Instance.GameOver("The plant died!", GameOverType.Failed);
-			}
-		}
-		Debug.Log($"Day finished. platnstate: {PlantState.ToString()}, daysGrowing: {daysGrowing}, failedDays: {failedDays}");
-
-		ResetResources();
-	}
-
-	private bool cutsceneShown = false;
-	private void OnTimeChange(object sender, SimpleArgs<TimeSpan> args)
-	{
-		if (PlantSize.Value == 2 && args.Value >= TimeSpan.FromHours(19) && !cutsceneShown)
-		{
-			cutsceneShown = true;
-			GameManager.Instance.GameFinishCutscene();
-			Debug.Log("Game finish cutscene!");
-		}
-	}
-
-	public void ChangeResources(int hours)
-	{
-		if (hoursPlantNeedsChange.Contains(hours))
-		{
-			waterUse = SetToRandom(resourceUseRandom);
-			soilUse = SetToRandom(resourceUseRandom);
-			sunlightUse = SetToRandom(resourceUseRandom);
-		}
-	}
+    public void ChangeResources(int hours)
+    {
+        if (hoursPlantNeedsChange.Contains(hours))
+        {
+            waterUse = SetToRandom(resourceUseRandom);
+            soilUse = SetToRandom(resourceUseRandom);
+            sunlightUse = SetToRandom(resourceUseRandom);
+        }
+    }
 }
