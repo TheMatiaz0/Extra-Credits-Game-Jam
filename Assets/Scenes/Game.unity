@@ -14355,10 +14355,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeforeEndCutsceneDialogue
       objectReference: {fileID: 0}
-    - target: {fileID: 3331960303645833897, guid: e09f92294df95e7479733639b0e956cb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e09f92294df95e7479733639b0e956cb, type: 3}
 --- !u!4 &1365201823 stripped
@@ -20323,7 +20319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1808171550
 Transform:
   m_ObjectHideFlags: 0
