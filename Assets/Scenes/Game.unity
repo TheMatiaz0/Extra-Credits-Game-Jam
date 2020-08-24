@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1419416432}
-  m_IndirectSpecularColor: {r: 0.6818736, g: 0.33587712, b: 0.10919032, a: 1}
+  m_IndirectSpecularColor: {r: 0.702417, g: 0.34597975, b: 0.11247656, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -25074,25 +25074,36 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -822479490718425064, guid: 888ca28142d45594a84be5cb127bdaee, type: 3}
---- !u!1 &2012747153 stripped
+--- !u!1 &2012941467
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3139342552143362673, guid: 7718aefab274a4e4792a6a0ffd6949f6, type: 3}
-  m_PrefabInstance: {fileID: 395638721}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &2012747157
-MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2012747153}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -822479490718425064, guid: 888ca28142d45594a84be5cb127bdaee, type: 3}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2012941468}
+  m_Layer: 0
+  m_Name: EndCutscene2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2012941468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012941467}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2017110754 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4661901338074455715, guid: 7718aefab274a4e4792a6a0ffd6949f6, type: 3}
@@ -25168,6 +25179,92 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -822479490718425064, guid: 888ca28142d45594a84be5cb127bdaee, type: 3}
+--- !u!1 &2024486707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2024486709}
+  - component: {fileID: 2024486708}
+  - component: {fileID: 2024486710}
+  - component: {fileID: 2024486711}
+  m_Layer: 0
+  m_Name: Timeline2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!320 &2024486708
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024486707}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 63c2d2b1341fab24f9e218ef6f4501a8, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 2
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 7439474032166464450, guid: 63c2d2b1341fab24f9e218ef6f4501a8, type: 2}
+    value: {fileID: 759226910}
+  m_ExposedReferences:
+    m_References: []
+--- !u!4 &2024486709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024486707}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2024486710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024486707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9160b3736a552409ef5e2ad58e9e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressToSkip: {fileID: 1142945411}
+  onCutsceneEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  onCutsceneStart:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2024486711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024486707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals: []
+    m_Events: []
 --- !u!1 &2027829957 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5205232144969687934, guid: 7718aefab274a4e4792a6a0ffd6949f6, type: 3}
