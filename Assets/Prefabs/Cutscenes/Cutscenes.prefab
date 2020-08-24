@@ -57,8 +57,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingCutScene: {fileID: 6427639503816108702}
   beforeEndCutscene: {fileID: 6427639502664083466}
-  humanEndingCutscene: {fileID: 6427639503566380976}
-  plantEndingCutscene: {fileID: 6427639504159670571}
+  humanEndingCutscene: {fileID: 6427639504159670571}
+  plantEndingCutscene: {fileID: 6427639503566380976}
   chooseUI: {fileID: 6427639503856507951}
   specialUI: {fileID: 6427639502958262294}
   UI: {fileID: 0}
