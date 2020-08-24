@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1419416432}
-  m_IndirectSpecularColor: {r: 0.70239675, g: 0.34603867, b: 0.11244258, a: 1}
+  m_IndirectSpecularColor: {r: 0.702417, g: 0.34597975, b: 0.11247656, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1128,6 +1128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cityline (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
 --- !u!4 &153044855 stripped
@@ -1201,6 +1205,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
       propertyPath: m_Name
       value: Cityline (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
@@ -3503,6 +3511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cityline (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
 --- !u!1001 &395638721
@@ -4740,6 +4752,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cityline (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
 --- !u!1001 &545728311
@@ -4826,7 +4842,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &547331571
 Transform:
@@ -5046,6 +5062,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
       propertyPath: m_Name
       value: Cityline (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
@@ -7719,6 +7739,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cityline (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
 --- !u!4 &921513955 stripped
@@ -8129,7 +8153,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1008434604
 Transform:
@@ -14203,6 +14227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cityline (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
 --- !u!1001 &1608810530
@@ -15386,6 +15414,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cityline (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
 --- !u!1001 &1659760518
@@ -15524,6 +15556,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
       propertyPath: m_Name
       value: Cityline (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
@@ -16307,6 +16343,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
       propertyPath: m_Name
       value: Cityline
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
@@ -18832,6 +18872,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cityline (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
 --- !u!4 &1997679245 stripped
@@ -18946,7 +18990,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2020846783
 Transform:
@@ -19282,6 +19326,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
       propertyPath: m_Name
       value: Cityline (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d35b6ff573098a4b9a80f3eef343f54, type: 3}
