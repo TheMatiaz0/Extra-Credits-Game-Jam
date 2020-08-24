@@ -105,3 +105,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 204f106bbea742f0a3c4b4f17b5d57cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skybox: {fileID: 2100000, guid: 2fb0517ea45fed845bde86a8af8c35ba, type: 2}
