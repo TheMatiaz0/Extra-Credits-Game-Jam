@@ -22390,6 +22390,10 @@ PrefabInstance:
       propertyPath: UI
       value: 
       objectReference: {fileID: 1876579989}
+    - target: {fileID: 6427639502370043988, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6427639502370043989, guid: 2db9f667932610f46849937309992dae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -22466,6 +22470,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6427639503566380976, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6427639503566380983, guid: 2db9f667932610f46849937309992dae, type: 3}
       propertyPath: m_SceneBindings.Array.data[0].value
       value: 
@@ -22474,6 +22482,10 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[3].value
       value: 
       objectReference: {fileID: 759226910}
+    - target: {fileID: 6427639503816108702, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6427639504119504370, guid: 2db9f667932610f46849937309992dae, type: 3}
       propertyPath: cleanSkybox
       value: 
@@ -22482,6 +22494,10 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[0].value
       value: 
       objectReference: {fileID: 759226910}
+    - target: {fileID: 6427639504159670571, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8578812124625682827, guid: 2db9f667932610f46849937309992dae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
