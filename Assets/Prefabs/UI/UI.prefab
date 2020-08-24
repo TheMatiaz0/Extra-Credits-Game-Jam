@@ -1389,10 +1389,18 @@ PrefabInstance:
       propertyPath: dyingSound
       value: 
       objectReference: {fileID: 8300000, guid: e8aa70fec1af8e6419dd1f86a97ecbc2, type: 3}
+    - target: {fileID: 7283882877622290268, guid: 7794c25c2d2e67842af0b88add1a7808, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -346
+      objectReference: {fileID: 0}
     - target: {fileID: 7283882877874389154, guid: 7794c25c2d2e67842af0b88add1a7808, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3908250940728553289}
+    - target: {fileID: 7283882877874389155, guid: 7794c25c2d2e67842af0b88add1a7808, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 353
+      objectReference: {fileID: 0}
     - target: {fileID: 7283882878742592817, guid: 7794c25c2d2e67842af0b88add1a7808, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1439,7 +1447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7283882878742592817, guid: 7794c25c2d2e67842af0b88add1a7808, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 7283882878742592817, guid: 7794c25c2d2e67842af0b88add1a7808, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1447,11 +1455,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7283882878742592817, guid: 7794c25c2d2e67842af0b88add1a7808, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 750.8137
       objectReference: {fileID: 0}
     - target: {fileID: 7283882878742592817, guid: 7794c25c2d2e67842af0b88add1a7808, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 422.33264
       objectReference: {fileID: 0}
     - target: {fileID: 7283882878742592817, guid: 7794c25c2d2e67842af0b88add1a7808, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1483,7 +1491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7283882878742592818, guid: 7794c25c2d2e67842af0b88add1a7808, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7794c25c2d2e67842af0b88add1a7808, type: 3}

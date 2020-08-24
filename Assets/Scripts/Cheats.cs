@@ -20,6 +20,10 @@ namespace DefaultNamespace
                 PlantSystem.Instance.AddResources(100, PlantSystem.PlantResources.Light);
                 PlantSystem.Instance.AddResources(100, PlantSystem.PlantResources.Water);
             }
+            else if (Input.GetKeyDown(KeyCode.L))
+            {
+                GameEndingOptions.Instance.ChooseEnding();
+            }
 #endif
         }
     }
