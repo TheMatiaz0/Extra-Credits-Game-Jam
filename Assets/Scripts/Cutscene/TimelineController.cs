@@ -8,7 +8,7 @@ using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using UnityEngine.Events;
 
-public class TimelineController : MonoSingleton<TimelineController>
+public class TimelineController : MonoBehaviour
 {
 	private PlayableDirector director;
 
@@ -38,7 +38,7 @@ public class TimelineController : MonoSingleton<TimelineController>
 
 	protected void Start()
 	{
-		playerCollider = MovementController.Instance.GetComponent<Collider>();
+		//playerCollider = MovementController.Instance.GetComponent<Collider>();
 
 		director = GetComponent<PlayableDirector>();
 	}
@@ -46,7 +46,7 @@ public class TimelineController : MonoSingleton<TimelineController>
 	public void LaunchCutscene()
 	{
 
-		playerCollider.enabled = false;
+        MovementController.Instance.GetComponent<Collider>().enabled= false;
 		MovementController.Instance.enabled = false;
 		MouseLook.Instance.enabled = false;
 		CanvasManager.Instance.ShowCutsceneCanvas();
@@ -62,7 +62,7 @@ public class TimelineController : MonoSingleton<TimelineController>
 		MovementController.Instance.enabled = true;
 		MouseLook.Instance.enabled = true;
 		CanvasManager.Instance.ShowMainCanvas();
-		playerCollider.enabled = true;
+        MovementController.Instance.GetComponent<Collider>().enabled = true;
 		HomeMusic.Instance.gameObject.SetActive(true);
 		TownMusic.Instance.gameObject.SetActive(true);
 		AudioManager.Instance.gameObject.SetActive(true);

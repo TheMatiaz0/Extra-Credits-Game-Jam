@@ -10,7 +10,10 @@ public class GameEndingOptions : MonoSingleton<GameEndingOptions>
     public GameObject humanEndingCutscene;
     public GameObject plantEndingCutscene;
     public GameObject chooseUI;
+    public GameObject specialUI;
     public GameObject UI;
+
+    public TimelineController currentTimeline;
 
     public enum Endings { plant, human }
     public void GameEnding(Endings ending)
@@ -39,6 +42,7 @@ public class GameEndingOptions : MonoSingleton<GameEndingOptions>
     {
         SetAllTo(false);
         startingCutScene.SetActive(true);
+        currentTimeline = startingCutScene.GetComponent<TimelineController>();
     }
 
     void SetAllTo(bool what)
@@ -48,16 +52,35 @@ public class GameEndingOptions : MonoSingleton<GameEndingOptions>
         plantEndingCutscene.SetActive(what);
         humanEndingCutscene.SetActive(what);
         startingCutScene.SetActive(what);
+        specialUI.SetActive(what);
     }
 
-    public void ChooseEnding()
+    public void StartEnding()
     {
         SetAllTo(false);
+        specialUI.SetActive(true);
 
+        currentTimeline = beforeEndCutscene.GetComponent<TimelineController>();
         beforeEndCutscene.SetActive(true);
         beforeEndCutscene.GetComponent<TimelineController>().LaunchCutscene();
 
         UI.SetActive(false);
+    }
+
+    public void ChooseEnding()
+    {
         chooseUI.SetActive(true);
+        specialUI.SetActive(true);
+
+        MovementController.Instance.GetComponent<Collider>().enabled = false;
+        MovementController.Instance.enabled = false;
+        MouseLook.Instance.enabled = false;
+        CanvasManager.Instance.ShowCutsceneCanvas();
+        HomeMusic.Instance.gameObject.SetActive(false);
+        TownMusic.Instance.gameObject.SetActive(false);
+        AudioManager.Instance.gameObject.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
