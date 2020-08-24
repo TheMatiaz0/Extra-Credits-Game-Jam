@@ -235,7 +235,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
             {
                 PlantSize.GiveValue(1);
                 daysGrowing = 0;
-                Music.Instance.NextTrack();
+                HomeMusic.Instance.NextTrack();
             }
         }
         else

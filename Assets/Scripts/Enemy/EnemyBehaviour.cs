@@ -22,9 +22,6 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     private float attackDamage = 10;
 
-    [SerializeField]
-    private float poisonTime = 10;
-
 	[SerializeField]
 	private Transform firePoint;
 
@@ -97,6 +94,7 @@ public class EnemyBehaviour : MonoBehaviour
 			}
 
 			ChangeFocus(playerPos);
+			agent.speed = movementSpeed * 1.65f;
 		}
 
 		else if (Vector3.Distance(this.transform.position, startPosition) > 3)
@@ -104,6 +102,7 @@ public class EnemyBehaviour : MonoBehaviour
 			if (agent.remainingDistance - attackDistance < 0.01f)
 			{
 				ChangeFocus(startPosition);
+				agent.speed = movementSpeed;
 			}
 		}
 
@@ -111,7 +110,8 @@ public class EnemyBehaviour : MonoBehaviour
 		{
 			if (agent.remainingDistance - attackDistance < 0.01f)
 			{
-				ChangeFocus(waypoints[UnityEngine.Random.Range(0, waypoints.Length)].position);
+				ChangeFocus(waypoints[UnityEngine.Random.Range(0, waypoints.Length)].position); 
+				agent.speed = movementSpeed;
 			}
 		}
 	}
