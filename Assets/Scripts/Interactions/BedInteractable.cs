@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BedInteractable : InteractableObject
 {
+	public override string InteractionName => "Sleep";
+
 	protected override void OnInteract()
 	{
 		if (TimeManager.Instance.CurrentTime.Hours >= 20)

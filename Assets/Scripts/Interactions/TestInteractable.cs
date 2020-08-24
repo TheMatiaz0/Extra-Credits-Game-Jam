@@ -4,9 +4,11 @@ namespace Interactions
 {
     public class TestInteractable : InteractableObject
     {
+        public override string InteractionName => "Test";
+
         protected override void OnInteract()
         {
-            Debug.Log("OK!");
+            UIManager.Instance.ShowPopupText("OK!");
         }
     }
 }

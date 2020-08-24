@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WaterPump : InteractableObject
 {
+    public override string InteractionName => "Collect water";
+
+    
     public ItemScriptableObject bottleWithFilter;
     public ItemScriptableObject bigBottleWithFilter;
 

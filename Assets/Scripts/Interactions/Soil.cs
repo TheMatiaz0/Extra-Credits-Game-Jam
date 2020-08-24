@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Soil : InteractableObject
 {
+    public override string InteractionName => "Dig soil";
+    
     public ItemScriptableObject shovel;
     public ItemScriptableObject betterShovel;
 

@@ -20,7 +20,7 @@ namespace Player
             }
             
             InteractionChecker.Instance.checkInteractions = false;
-            InteractionUI.Instance.ShowPossibleInteraction();
+            InteractionUI.Instance.ShowPossibleInteraction("Put down");
 
             isHolding = true;
             target.parent = transform;
