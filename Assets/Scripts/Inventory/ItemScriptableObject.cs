@@ -12,6 +12,9 @@ public class ItemScriptableObject : ScriptableObject
     public bool oneTimeLoot = true;
 	public bool useable = false;
 
+	public bool fillable = false;
+
 	[ClassExtends(typeof(ItemLogic))]
 	public ClassTypeReference itemAction;
+	
 }

@@ -35,7 +35,7 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 			}
 			else
 			{
-				slots[i].image.sprite = item.icon;
+				slots[i].image.sprite = item.Icon;
 			}
 			slots[i].Selected = selectedSlot == i;
 		}
@@ -72,7 +72,7 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 		if (Input.GetMouseButtonDown(1))
 		{
 			Cint slot = 0;
-			ItemScriptableObject it = null;
+			Item it = null;
 
 			it = Inventory.Instance.GetItem(slot = selectedSlot);
 
@@ -81,10 +81,9 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 				return;
 			}
 
-			var itemLogic = Activator.CreateInstance(it.itemAction) as ItemLogic;
 
-			itemLogic?.Do();
-			if (itemLogic.remove)
+			it.Logic?.Do();
+			if (it.Logic?.remove ?? false)
 			{
 				Inventory.Instance.RemoveItem(slot);
 			}
@@ -131,14 +130,14 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 
 	private void ShowCurrentItem()
 	{
-		ItemScriptableObject it = Inventory.Instance.GetItem(selectedSlot);
-		if (it?.useable ?? false)
+		var it = Inventory.Instance.GetItem(selectedSlot);
+		if (it?.Useable ?? false)
 		{
-			UIManager.Instance.ShowPopupText($"{it?.name} ({pressToUse})" ?? "");
+			UIManager.Instance.ShowPopupText($"{it?.Name} ({pressToUse})" ?? "");
 		}
 		else
 		{
-			UIManager.Instance.ShowPopupText($"{it?.name}" ?? "");
+			UIManager.Instance.ShowPopupText($"{it?.Name}" ?? "");
 		}
 
 	}
