@@ -9,9 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8060561881886777199}
-  - component: {fileID: 8060561881886777192}
   m_Layer: 0
-  m_Name: Field1
+  m_Name: GarbageLoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,46 +51,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8060561881886777192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8060561881886777198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21f446760d99fa54298533506b25e52a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemChanceDrops:
-    keys:
-    - {fileID: 11400000, guid: cbbb18e46773dc9499b392b8649944a1, type: 2}
-    - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
-    - {fileID: 11400000, guid: 00aafb89c7fb2ee4ca0ab3e8bdc2af19, type: 2}
-    - {fileID: 11400000, guid: 842c7df675ca7874a9daee4bf4dbec58, type: 2}
-    - {fileID: 11400000, guid: b7657c013b2f3754e8563413fc82e3c3, type: 2}
-    - {fileID: 11400000, guid: 1d163f09b76a94e4a8fb8855b5aef55d, type: 2}
-    - {fileID: 11400000, guid: f755bc711b16283419970146956c3986, type: 2}
-    - {fileID: 11400000, guid: 77782c4625196bf4aa1cf886340b3ccb, type: 2}
-    values: 050000000a0000000a0000000a0000000a0000000a0000001900000005000000
-  itemDrops:
-  - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
-  - {fileID: 11400000, guid: 1d163f09b76a94e4a8fb8855b5aef55d, type: 2}
-  - {fileID: 11400000, guid: b7657c013b2f3754e8563413fc82e3c3, type: 2}
-  - {fileID: 11400000, guid: 842c7df675ca7874a9daee4bf4dbec58, type: 2}
-  garbageDropChance: 50
-  shovelEvolution:
-  - {fileID: 11400000, guid: 842c7df675ca7874a9daee4bf4dbec58, type: 2}
-  - {fileID: 11400000, guid: f755bc711b16283419970146956c3986, type: 2}
-  - {fileID: 11400000, guid: 77782c4625196bf4aa1cf886340b3ccb, type: 2}
-  bottleEvolution:
-  - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
-  - {fileID: 11400000, guid: 00aafb89c7fb2ee4ca0ab3e8bdc2af19, type: 2}
-  - {fileID: 11400000, guid: cbbb18e46773dc9499b392b8649944a1, type: 2}
-  firstItem: {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
-  firstItemUsed: 0
-  garbage1: 1
 --- !u!1001 &8060561881171992585
 PrefabInstance:
   m_ObjectHideFlags: 0

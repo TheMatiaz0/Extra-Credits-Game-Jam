@@ -16,5 +16,6 @@ MonoBehaviour:
   useTakeLessTime: 0
   oneTimeLoot: 1
   useable: 1
+  fillable: 1
   itemAction:
     _classRef: DrinkWater, Assembly-CSharp
