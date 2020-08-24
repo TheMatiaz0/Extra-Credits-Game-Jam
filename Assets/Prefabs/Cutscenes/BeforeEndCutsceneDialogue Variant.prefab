@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: cutsceneDialogue.Array.size
-      value: 5
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: subtitles
@@ -54,6 +54,94 @@ PrefabInstance:
     - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: cutsceneDialogue.Array.data[4].cooldownToNext.seconds
       value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[5].sentence
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[5].cooldownToNext.seconds
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[6].sentence
+      value: My plant!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[6].cooldownToNext.seconds
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[7].sentence
+      value: But...
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[7].cooldownToNext.seconds
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[8].sentence
+      value: I'm so thirsty!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[8].cooldownToNext.seconds
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[9].sentence
+      value: I want to...
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[9].cooldownToNext.seconds
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[10].sentence
+      value: NO! My grandpa said... said... to care about him...
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[10].cooldownToNext.seconds
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[10].cooldownToNext.mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[11].sentence
+      value: But i'm also... also thirsty!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[11].cooldownToNext.seconds
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[11].cooldownToNext.mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[12].sentence
+      value: 'The Earth... The Earth is collapsing... We need the plant! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[12].cooldownToNext.seconds
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[12].cooldownToNext.mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[13].sentence
+      value: What should i do?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[13].cooldownToNext.seconds
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[13].cooldownToNext.mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2734501731739276049, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: m_LocalPosition.x
@@ -102,6 +190,10 @@ PrefabInstance:
     - target: {fileID: 2734501731739276078, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: m_Name
       value: BeforeEndCutsceneDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276078, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
