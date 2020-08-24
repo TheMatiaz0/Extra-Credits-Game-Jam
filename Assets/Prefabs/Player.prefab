@@ -46,7 +46,7 @@ MonoBehaviour:
   distance: 10
   layerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 2560
   checkInteractions: 1
 --- !u!1 &3416112175785836725
 GameObject:
