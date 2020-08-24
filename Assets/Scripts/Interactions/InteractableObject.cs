@@ -11,7 +11,7 @@ public abstract class InteractableObject : MonoBehaviour
     public float interactionTime = 0;
     public float takesStamina = 0;
     public bool canUseWithoutStamina = false;
-    public ReorderableArray<ReorderableArray<string>> itemsNeeded;
+    public ReorderableArray<ReorderableArray<ItemScriptableObject>> itemsNeeded;
     
     public abstract string InteractionName { get; }
 
@@ -21,7 +21,7 @@ public abstract class InteractableObject : MonoBehaviour
 
     private bool CheckItemsNeeded(bool showMessage = false)
     {
-        if (GameManager.Instance.StaminaSys.Stamina.Value == 0&&!canUseWithoutStamina)
+        if (GameManager.Instance.StaminaSys.Stamina.Value == 0 && !canUseWithoutStamina)
         {
             UIManager.Instance.ShowPopupText("You are too tired");
             return false;
@@ -30,7 +30,7 @@ public abstract class InteractableObject : MonoBehaviour
         List<string> missingItems = new List<string>();
         foreach (var itemOptions in itemsNeeded)
         {
-            if (!itemOptions.Any(x => Inventory.Instance.HasItem(x)))
+            if (!itemOptions.Any(x => Inventory.Instance.HasItem(x.name)))
             {
                 missingItems.Add(string.Join(" or ", itemOptions));
             }
