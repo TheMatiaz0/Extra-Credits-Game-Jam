@@ -22,7 +22,7 @@ public class Item
     public Item(ItemScriptableObject baseObj)
     {
         if(baseObj.itemAction != null)
-            Logic = Activator.CreateInstance(baseObj.itemAction) as ItemLogic;
+            Logic = Activator.CreateInstance(baseObj?.itemAction) as ItemLogic;
 
         Name = baseObj.name;
         Icon = baseObj.icon;

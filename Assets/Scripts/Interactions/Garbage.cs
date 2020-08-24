@@ -10,8 +10,8 @@ public class Garbage : InteractableObject
 	public override string InteractionName => "Search garbage";
 	public GarbageManager manager;
 
-	private bool garbageUsed = false;
-	private bool garbageOpen = false;
+	public bool garbageUsed = false;
+	public bool garbageOpen = false;
 	public float garbageDropChance = 50;
 
 	private void Start()
@@ -62,7 +62,7 @@ public class Garbage : InteractableObject
 			var item = manager.itemDrops[currIndex];
 			if (Inventory.Instance.AddItem(item))
 			{
-				UIManager.Instance.ShowPopupText("You found a " + item.name);
+				UIManager.Instance.ShowPopupText($"You found a {item.name}");
 
 				if (manager.shovelEvolution.Contains(item))
 				{
@@ -100,7 +100,7 @@ public class Garbage : InteractableObject
 	{
 		if (Inventory.Instance.AddItem(manager.firstItem))
 		{
-			UIManager.Instance.ShowPopupText("You found a " + manager.firstItem.name);
+			UIManager.Instance.ShowPopupText($"You found a {manager.firstItem.name}");
 			UIManager.Instance.ShowDialogText("A bottle... maybe i can collect some water for my plant?");
 
 
