@@ -8,23 +8,12 @@ using Random = UnityEngine.Random;
 public class Garbage : InteractableObject
 {
     public override string InteractionName => "Search garbage";
-    
-    public SerializedDictionary<ItemScriptableObject, int> itemChanceDrops = new SerializedDictionary<ItemScriptableObject, int>();
-    public List<ItemScriptableObject> itemDrops;
-    public float garbageDropChance = 50;
-
-    public List<ItemScriptableObject> shovelEvolution;
-    public List<ItemScriptableObject> bottleEvolution;
-
-    public ItemScriptableObject firstItem;
+    public GarbageManager manager;
 
     private bool garbageUsed = false;
     private bool garbageOpen = false;
+    public float garbageDropChance=50;
 
-    public bool firstItemGet = false;
-
-    private bool garbage1 = false;
-    
     private void Start()
     {
         interactionTime = 3f;
@@ -32,63 +21,62 @@ public class Garbage : InteractableObject
 
     public override void KeyDown()
     {
-        AudioManager.Instance.PlaySFX(garbage1 ? "garbage1" : "garbage2");
+        AudioManager.Instance.PlaySFX(manager.garbage1 ? "garbage1" : "garbage2");
     }
 
     protected override void OnInteract()
     {
         if (garbageUsed) return;
-        if (!firstItemGet) { FirstItem(); return; }
-        
-        garbage1 = !garbage1;
+        if (!manager.firstItemUsed) { FirstItem(); return; }
+
+        manager.garbage1 = !manager.garbage1;
 
         int garbageRnd = Random.Range(0, 100);
         if (garbageRnd <= garbageDropChance)
         {
             UIManager.Instance.ShowPopupText("You found only garbage");
-            Debug.Log("Garbage");
             garbageUsed = true;
             Destroy(this);
         } else
         {
             int m = 0;
-            foreach (int i in itemChanceDrops.Values) m += i;
+            foreach (int i in manager.itemChanceDrops.Values) m += i;
             int itemRnd = Random.Range(0, m);
 
             int currIndex = 0;
             while (itemRnd > 0)
             {
-                if (itemChanceDrops[itemDrops[currIndex]] >= itemRnd)
+                if (manager.itemChanceDrops[manager.itemDrops[currIndex]] >= itemRnd)
                 {
                     break;
                 }
-                else itemRnd -= itemChanceDrops[itemDrops[currIndex]];
+                else itemRnd -= manager.itemChanceDrops[manager.itemDrops[currIndex]];
                 currIndex += 1;
             }
 
-            var item = itemDrops[currIndex];
+            var item = manager.itemDrops[currIndex];
             if (Inventory.Instance.AddItem(item))
             {
                 UIManager.Instance.ShowPopupText("You found a " + item.name);
 
-                if (shovelEvolution.Contains(item))
+                if (manager.shovelEvolution.Contains(item))
                 {
-                    int i = shovelEvolution.IndexOf(item);
-                    if (shovelEvolution.Count >= i + 2)
+                    int i = manager.shovelEvolution.IndexOf(item);
+                    if (manager.shovelEvolution.Count >= i + 2)
                     {
-                        GarbageManager.Instance.AddItemToAll(shovelEvolution[i + 1]);
+                        manager.itemDrops.Add(manager.shovelEvolution[i + 1]);
                     }
                 }
-                else if (bottleEvolution.Contains(item))
+                else if (manager.bottleEvolution.Contains(item))
                 {
-                    int i = bottleEvolution.IndexOf(item);
-                    if (bottleEvolution.Count >= i + 2)
+                    int i = manager.bottleEvolution.IndexOf(item);
+                    if (manager.bottleEvolution.Count >= i + 2)
                     {
-                        GarbageManager.Instance.AddItemToAll(bottleEvolution[i + 1]);
+                        manager.itemDrops.Add(manager.bottleEvolution[i + 1]);
                     }
                 }
 
-                if (item.oneTimeLoot) itemDrops.Remove(item);
+                if (item.oneTimeLoot) manager.itemDrops.Remove(item);
 
                 garbageUsed = true;
                 Destroy(this);
@@ -104,17 +92,16 @@ public class Garbage : InteractableObject
 
     void FirstItem()
     {
-        if (Inventory.Instance.AddItem(firstItem))
+        if (Inventory.Instance.AddItem(manager.firstItem))
         {
-            UIManager.Instance.ShowPopupText("You found a " + firstItem.name);
+            UIManager.Instance.ShowPopupText("You found a " + manager.firstItem.name);
             UIManager.Instance.ShowDialogText("A bottle... maybe i can collect some water for my plant?");
 
-            GarbageManager.Instance.FirstItemUsedToAll();
-
-            if (firstItem.oneTimeLoot) itemDrops.Remove(firstItem);
+           
+            if (manager.firstItem.oneTimeLoot) manager.itemDrops.Remove(manager.firstItem);
 
             garbageUsed = true;
-            firstItemGet = true;
+            manager.firstItemUsed = true;
             Destroy(this);
         }
     }

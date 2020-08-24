@@ -49,25 +49,10 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 
 	private void Update()
 	{
-        /*if (Input.GetKeyDown(KeyCode.G))
-		{
-			var item = Inventory.Instance.AllGameItems["Shovel"];
-
-			Inventory.Instance.AddItem(item);
-		} else */
         if (Input.GetKeyDown(KeyCode.Q))
 		{
-			Inventory.Instance.RemoveItem(selectedSlot);
-		}
-		/*
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			var item = Inventory.Instance.AllGameItems["Protein Bar (RMB to eat)"];
-			var itemBottle = Inventory.Instance.AllGameItems["Bottle (RMB to drink)"];
-			Inventory.Instance.AddItem(item);
-			Inventory.Instance.AddItem(itemBottle);
-		}
-		*/
+            Inventory.Instance.RemoveItem(selectedSlot,true);
+        }
 
 		if (Input.GetMouseButtonDown(1))
 		{

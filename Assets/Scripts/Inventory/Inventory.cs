@@ -99,9 +99,11 @@ public class Inventory : MonoSingleton<Inventory>
 		UIManager.Instance.ChangeResources(PlantSystem.PlantResources.Soil, soil.Value, soil.Max);
 	}
 
-	public void RemoveItem(Cint slot)
+	public void RemoveItem(Cint slot, bool showPopup=false)
 	{
-		Items[slot] = null;
+        UIManager.Instance.ShowPopupText("Dropped " + Items[slot].name);
+
+        Items[slot] = null;
 		InventoryUI.Instance.Refresh();
 	}
 
