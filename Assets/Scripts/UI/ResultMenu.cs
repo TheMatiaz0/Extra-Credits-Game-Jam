@@ -20,6 +20,8 @@ public class ResultMenu : MonoBehaviour
 
 	private Coroutine slowlyType = null;
 
+    public AudioClip growingSound;
+    public AudioClip dyingSound;
 
 	protected void OnEnable()
 	{
@@ -51,6 +53,7 @@ public class ResultMenu : MonoBehaviour
 		}
 
 		plantStateInfo.text = $"...<color=#{ColorUtility.ToHtmlStringRGB(PlantSystem.Instance.GetColorBasedOnState())}>{PlantSystem.Instance.PlantState.ToString().ToUpper()}</color>";
+        AudioManager.Instance.PlayClip((PlantSystem.Instance.PlantState == PlantSystem.State.Growing) ? growingSound : dyingSound);
 	}
 
 	public IEnumerator SlowlyTypeUnscaled(string text, float cooldown, Text displayText)
