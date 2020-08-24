@@ -1057,6 +1057,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChooseUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7526153861950450570, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
+      propertyPath: m_Name
+      value: ChooseHuman
+      objectReference: {fileID: 0}
     - target: {fileID: 7526153861950450580, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1117,6 +1121,10 @@ PrefabInstance:
       propertyPath: m_Colors.m_PressedColor.a
       value: 0.25490198
       objectReference: {fileID: 0}
+    - target: {fileID: 7526153861950450580, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7526153861950450581, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -480
@@ -1139,15 +1147,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7526153861973129663, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Color.r
-      value: 0.1792453
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7526153861973129663, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Color.g
-      value: 0.1537002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7526153861973129663, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Color.b
-      value: 0.09723212
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7526153862072279560, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Name
@@ -1172,6 +1180,10 @@ PrefabInstance:
     - target: {fileID: 7526153862072279563, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 620
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526153862103439712, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
+      propertyPath: m_Name
+      value: ChoosePlant
       objectReference: {fileID: 0}
     - target: {fileID: 7526153862103439714, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
