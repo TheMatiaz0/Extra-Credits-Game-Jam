@@ -210,6 +210,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PotStandA
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8475444d16ea1fb419945fbf9ca3dae9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8475444d16ea1fb419945fbf9ca3dae9, type: 3}
 --- !u!4 &85179761 stripped
@@ -401,6 +405,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlowerShop
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4572d1cd9edb3a4c8ef154a4c97fadb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4572d1cd9edb3a4c8ef154a4c97fadb, type: 3}
 --- !u!1 &273320660
@@ -552,6 +560,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ada64fd57e0f8864998c59e1ef2edb8c, type: 3}
       propertyPath: m_Name
       value: BuildingA (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ada64fd57e0f8864998c59e1ef2edb8c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ada64fd57e0f8864998c59e1ef2edb8c, type: 3}
@@ -755,6 +767,10 @@ PrefabInstance:
     - target: {fileID: 6062373693181835122, guid: 3d930301613ae2b43bd619428f17b5b0, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 6062373693181835122, guid: 3d930301613ae2b43bd619428f17b5b0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6062373693181835124, guid: 3d930301613ae2b43bd619428f17b5b0, type: 3}
       propertyPath: m_projectionMatrixMode
@@ -1270,6 +1286,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildingA
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ada64fd57e0f8864998c59e1ef2edb8c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ada64fd57e0f8864998c59e1ef2edb8c, type: 3}
 --- !u!1001 &2111270342
@@ -1324,12 +1344,56 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: rolloffMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[1].time
+      value: 0.5414548
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[1].value
+      value: 0.56932706
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[1].inSlope
+      value: 1.4958993
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[1].outSlope
+      value: 1.4958993
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[2].time
+      value: 0.9862048
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[2].value
+      value: 0.99305725
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[2].outWeight
+      value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 6452904865074908781, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
       propertyPath: m_Name
       value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908781, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}

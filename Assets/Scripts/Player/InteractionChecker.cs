@@ -21,7 +21,7 @@ public class InteractionChecker : MonoSingleton<InteractionChecker>
         }
         
         var fwd = Camera.main.transform.forward;
-        //Debug.DrawRay(transform.position, fwd, Color.red);
+        Debug.DrawRay(transform.position, fwd, Color.red);
         if (Physics.Raycast(transform.position, fwd, out var hit, distance, layerMask))
         {
             var go = hit.collider.gameObject;

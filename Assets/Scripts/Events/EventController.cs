@@ -32,6 +32,8 @@ public class EventController : MonoSingleton<EventController>
     public void ActivateEvent(ScriptableEvent evt)
     {
         if(evt?.logic == null) return;
+
+        Debug.Log($"Activating event: {evt.name}");
         
         var logic = Activator.CreateInstance(evt.logic) as EventLogic;
 

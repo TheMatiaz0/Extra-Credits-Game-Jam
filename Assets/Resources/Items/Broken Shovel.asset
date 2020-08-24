@@ -18,4 +18,4 @@ MonoBehaviour:
   useable: 0
   fillable: 0
   itemAction:
-    _classRef: StaminaItem, Assembly-CSharp
+    _classRef: 
