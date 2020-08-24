@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 5528639196325777759}
   - component: {fileID: 2796607492772967153}
   - component: {fileID: 615539352432289558}
-  - component: {fileID: 492408791935575929}
   - component: {fileID: 759226910}
   m_Layer: 0
   m_Name: Player
@@ -210,8 +209,8 @@ MonoBehaviour:
   moveSpeed: 5.5
   runSpeed: 8
   outOfStaminaSpeed: 3.5
-  movingStamina: 0.1
-  runningStamina: 0.4
+  movingStamina: 0.2
+  runningStamina: 0.45
   gravity: -9.8
   jumpHeight: 1
   jumpingStamina: 10
@@ -232,6 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d89038f1fb8d65448e6e1a23bcb59a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startStamina: 100
 --- !u!114 &2796607492772967153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366e4296576e7ad4896c26e786b6bc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealth: 100
 --- !u!114 &615539352432289558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,19 +257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1006d13dc30747d293084b3c63aa404d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &492408791935575929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7255697829055022433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69fa532a4bffbdf4db26617964f99c11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poisonTimeLeft: 0
 --- !u!95 &759226910
 Animator:
   serializedVersion: 3
