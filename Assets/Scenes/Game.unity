@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1419416432}
-  m_IndirectSpecularColor: {r: 0.70239675, g: 0.34603867, b: 0.11244258, a: 1}
+  m_IndirectSpecularColor: {r: 0.702417, g: 0.34597975, b: 0.11247656, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15878,7 +15878,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1504916849
 MonoBehaviour:
@@ -15892,6 +15892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269c0ad27dc339b40a9a95c90924213e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cleanSkybox: {fileID: 2100000, guid: 87a17133b0e73b949bde962c6fe2cb2f, type: 2}
 --- !u!4 &1508998942 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1508998942, guid: 4e192549382a01e498f3599214cf6115, type: 3}
@@ -20088,7 +20089,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1808171550
 Transform:
   m_ObjectHideFlags: 0
@@ -22563,7 +22564,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2024486710
 MonoBehaviour:
@@ -22595,7 +22596,19 @@ MonoBehaviour:
         m_CallState: 2
   onCutsceneStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1504916849}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: ChangeSkybox
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2024486711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24891,7 +24904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4070088721397157951, guid: c0a0382cfb78e9b4dace7aeba90759f7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0a0382cfb78e9b4dace7aeba90759f7, type: 3}
@@ -25066,7 +25079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2697421664325849211, guid: adae9dc76bd827b49aea0a4acb2ee40f, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2697421664325849211, guid: adae9dc76bd827b49aea0a4acb2ee40f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

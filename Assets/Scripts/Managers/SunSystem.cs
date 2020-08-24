@@ -9,9 +9,13 @@ public class SunSystem : MonoSingleton<SunSystem>
 {
     private Light light;
 
+    [SerializeField]
+    private Material skybox;
+
     private void Start()
     {
         light = GetComponent<Light>();
+        RenderSettings.skybox = skybox;
     }
 
     private void Update()
