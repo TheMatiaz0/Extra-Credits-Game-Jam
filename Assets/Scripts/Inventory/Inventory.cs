@@ -101,7 +101,7 @@ public class Inventory : MonoSingleton<Inventory>
 
 	public void RemoveItem(Cint slot, bool showPopup=false)
 	{
-        UIManager.Instance.ShowPopupText("Dropped " + Items[slot].name);
+        UIManager.Instance.ShowPopupText("Dropped " + Items[slot].Name);
 
         Items[slot] = null;
 		InventoryUI.Instance.Refresh();

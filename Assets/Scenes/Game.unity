@@ -409,57 +409,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: onCutsceneEnd.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: subtitles
       value: 
       objectReference: {fileID: 1845574401}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: onCutsceneEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[0].cooldownToNext.seconds
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[1].cooldownToNext.seconds
-      value: 4.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[2].cooldownToNext.seconds
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[3].cooldownToNext.seconds
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[4].cooldownToNext.seconds
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[5].cooldownToNext.seconds
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[6].cooldownToNext.seconds
-      value: 13.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[7].cooldownToNext.seconds
-      value: 3.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[8].cooldownToNext.seconds
-      value: 5.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[9].cooldownToNext.seconds
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 2734501731739276049, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10128,7 +10080,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1023732896}
-  - component: {fileID: 1023732897}
   m_Layer: 0
   m_Name: Garbage
   m_TagString: Untagged
@@ -10154,27 +10105,6 @@ Transform:
   m_Father: {fileID: 1892376789}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1023732897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023732895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21f446760d99fa54298533506b25e52a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemChanceDrops:
-    keys: []
-    values: 
-  itemDrops: []
-  shovelEvolution: []
-  bottleEvolution: []
-  firstItem: {fileID: 0}
-  firstItemUsed: 0
-  garbage1: 1
 --- !u!4 &1024514339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1024514339, guid: 4e192549382a01e498f3599214cf6115, type: 3}
