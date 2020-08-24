@@ -109,9 +109,9 @@ public class UIManager : MonoSingleton<UIManager>
 	}
 
 	
-	public void ShowPopupText(string txt)
+	public void ShowPopupText(string txt, float duration=3f)
 	{
-		_ = ShowTextAsync(popupText, txt);
+		_ = ShowTextAsync(popupText, txt, duration);
 	}
 	
 

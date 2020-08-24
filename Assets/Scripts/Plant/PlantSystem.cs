@@ -98,33 +98,36 @@ public class PlantSystem : MonoSingleton<PlantSystem>
 		}
 	}
 
+    private bool lastStateInside = true;
     private void Update()
     {
         Soil.TakeValue(Time.deltaTime * soilUse);
 
         Debug.DrawRay(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles), Color.red);
-        bool outside = false;
         if (Physics.Raycast(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles),50f, layerMask)) // if plant is inside
         {
-            if (outside)
+            if (!lastStateInside)
             {
                 PlantParticles.Instance.ChangeSun(false);
-                outside = false;
             }
 
             Sunlight.TakeValue(Time.deltaTime * sunlightUse);
             //Debug.Log("plant inside");
+            
+            lastStateInside = true;
         }
         else
         {
-            if(!outside)
+            if(lastStateInside)
             {
                 PlantParticles.Instance.ChangeSun(true);
-                outside = true;
             }
 
             Water.TakeValue(Time.deltaTime * waterUse);
             Sunlight.GiveValue(Time.deltaTime * sunlightGain);
+            
+            lastStateInside = false;
+
         }
 
         if (Input.GetKeyDown(KeyCode.Y))
