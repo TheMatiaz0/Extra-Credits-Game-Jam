@@ -2798,7 +2798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inGameTimeSpan:
-    seconds: 0.5
+    seconds: 0.15
     mode: 1
   minutesPerTimeSpan: 1
 --- !u!4 &316146376
