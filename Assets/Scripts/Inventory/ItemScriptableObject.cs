@@ -8,6 +8,7 @@ public class ItemScriptableObject : ScriptableObject
 {
 	public Sprite icon;
     public float useTakeLessTime = 0;
+    public bool oneTimeLoot = true;
 
 	[SerializeReference]
 	[EditableSerializeReference(typeof(ItemLogic))]

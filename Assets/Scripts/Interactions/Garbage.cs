@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cyberultimate.Unity;
 using Random = UnityEngine.Random;
 
 public class Garbage : InteractableObject
 {
+    public SerializedDictionary<ItemScriptableObject, int> itemChanceDrops = new SerializedDictionary<ItemScriptableObject, int>();
     public List<ItemScriptableObject> itemDrops;
     public float garbageDropChance = 50;
 
@@ -47,27 +49,44 @@ public class Garbage : InteractableObject
             Destroy(this);
         } else
         {
-            int itemRnd = Random.Range(0, itemDrops.Count);
-            if (Inventory.Instance.AddItem(itemDrops[itemRnd]))
-            {
-                UIManager.Instance.ShowPopupText("You found a " + itemDrops[itemRnd].name);
+            int m = 0;
+            foreach (int i in itemChanceDrops.Values) m += i;
+            int itemRnd = Random.Range(0, m);
 
-                if (shovelEvolution.Contains(itemDrops[itemRnd]))
+            int currIndex = 0;
+            while (itemRnd > 0)
+            {
+                if (itemChanceDrops[itemDrops[currIndex]] >= itemRnd)
                 {
-                    int i = shovelEvolution.IndexOf(itemDrops[itemRnd]);
+                    break;
+                }
+                else itemRnd -= itemChanceDrops[itemDrops[currIndex]];
+                currIndex += 1;
+            }
+
+            var item = itemDrops[currIndex];
+            if (Inventory.Instance.AddItem(item))
+            {
+                UIManager.Instance.ShowPopupText("You found a " + item.name);
+
+                if (shovelEvolution.Contains(item))
+                {
+                    int i = shovelEvolution.IndexOf(item);
                     if (shovelEvolution.Count >= i + 2)
                     {
                         GarbageManager.Instance.AddItemToAll(shovelEvolution[i + 1]);
                     }
                 }
-                else if (bottleEvolution.Contains(itemDrops[itemRnd]))
+                else if (bottleEvolution.Contains(item))
                 {
-                    int i = bottleEvolution.IndexOf(itemDrops[itemRnd]);
+                    int i = bottleEvolution.IndexOf(item);
                     if (bottleEvolution.Count >= i + 2)
                     {
                         GarbageManager.Instance.AddItemToAll(bottleEvolution[i + 1]);
                     }
                 }
+
+                if (item.oneTimeLoot) itemDrops.Remove(item);
 
                 garbageUsed = true;
                 Destroy(this);
@@ -89,6 +108,8 @@ public class Garbage : InteractableObject
             UIManager.Instance.ShowDialogText("A bottle... maybe i can collect some water for my plant?");
 
             GarbageManager.Instance.FirstItemUsedToAll();
+
+            if (firstItem.oneTimeLoot) itemDrops.Remove(firstItem);
 
             garbageUsed = true;
             firstItemGet = true;
