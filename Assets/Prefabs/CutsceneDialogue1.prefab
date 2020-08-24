@@ -44,51 +44,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutsceneDialogue:
-  - sentence: 'Grandpa: Aw.. I was bitten by one of the infected.'
+  - sentence: 'Grandpa: Aw.. I was bitten by one of these monsters...'
     cooldownToNext:
-      seconds: 5
+      seconds: 4.5
       mode: 1
-  - sentence: 'You: Should I go get water for you?'
+  - sentence: 'You: Should I go get some water for you?'
     cooldownToNext:
-      seconds: 5
+      seconds: 3.5
       mode: 1
   - sentence: 'Grandpa: No... It''s too late.'
     cooldownToNext:
-      seconds: 5
+      seconds: 3
       mode: 1
   - sentence: Time is not on my side here.
     cooldownToNext:
-      seconds: 5
+      seconds: 3
       mode: 1
   - sentence: But... I ask you to do one thing...
     cooldownToNext:
-      seconds: 5
+      seconds: 3.5
       mode: 1
   - sentence: 'You: What is it?'
     cooldownToNext:
-      seconds: 5
+      seconds: 2
       mode: 1
   - sentence: 'Grandpa: Promise me that you and Tom will survive... you... you need
       to take care of it, please promise me that... please...'
     cooldownToNext:
-      seconds: 20
+      seconds: 12
       mode: 1
   - sentence: 'You: I promise.'
     cooldownToNext:
-      seconds: 5
+      seconds: 3
       mode: 1
   - sentence: 'Grandpa: That''s a weird word, isn''t it... promise...'
     cooldownToNext:
-      seconds: 5
+      seconds: 4
       mode: 1
   - sentence: 'I promised your grandma that I will stay alive... '
     cooldownToNext:
-      seconds: 5
+      seconds: 4
       mode: 1
   voiceSource: {fileID: 0}
   voice: {fileID: 0}
   subtitles: {fileID: 0}
-  textDisplayCooldown: 0.075
+  textDisplayCooldown: 0.07
   onCutsceneEnd:
     m_PersistentCalls:
       m_Calls:

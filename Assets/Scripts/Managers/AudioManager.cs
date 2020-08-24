@@ -20,7 +20,21 @@ public class AudioManager : MonoSingleton<AudioManager>
     protected override void Awake()
     {
         base.Awake();
+        /*
+        GameObject gObject;
+        if (!(gObject = GameObject.FindGameObjectWithTag("Audio")))
+		{
+
+        }
+
+        else
+		{
+            Destroy(gObject);
+		}
+        */
+
         DontDestroyOnLoad(gameObject);
+
         sfxSource = GetComponent<AudioSource>();
         sfxSource.volume = sfxVolume;
     }
