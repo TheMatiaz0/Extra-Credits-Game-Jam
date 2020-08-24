@@ -17,7 +17,7 @@ public class TimelineController : MonoSingleton<TimelineController>
 
 	private Collider playerCollider = null;
 
-	[HideInInspector] public bool CutsceneRunning { get; private set; } = true;
+	public bool CutsceneRunning { get; private set; } = true;
 
 	[SerializeField]
 	private UnityEvent onCutsceneEnd;
@@ -59,6 +59,11 @@ public class TimelineController : MonoSingleton<TimelineController>
 
 	protected async void Update()
 	{
+		if (CutsceneRunning == false)
+		{
+			return;
+		}
+
 		if (Input.GetKeyDown(KeyCode.E))
 		{
 			director.time = director.playableAsset.duration;
