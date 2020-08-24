@@ -66,6 +66,6 @@ public class GameManager : MonoSingleton<GameManager>
 
 	public void GameFinishCutscene()
 	{
-		
+        GameEndingOptions.Instance.ChooseEnding();
 	}
 }
