@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1419416432}
-  m_IndirectSpecularColor: {r: 0.61815816, g: 0.304583, b: 0.09896983, a: 1}
+  m_IndirectSpecularColor: {r: 0.6183162, g: 0.3045302, b: 0.099000886, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16117,8 +16117,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: text
-      value: Woah! I can survive few days using this water tower. My plant also won't
-        die that fast!
+      value: Hmm... I can survive few days using this water tower. My plant also
+        won't die that fast.
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278351, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: m_Name
@@ -16860,6 +16860,10 @@ PrefabInstance:
     - target: {fileID: 9214287411483278336, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: text
+      value: Maybe I should check my plant if it's healthy.
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278351, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: m_Name
@@ -20006,7 +20010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: text
-      value: Ooo! Smells like fresh soil for my plant!
+      value: Smells like fresh soil for my plant!
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: duration
@@ -20924,7 +20928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: text
-      value: Damn! Those bastards killed my grandpa... i need to be careful
+      value: Damn! Those bastards killed my grandpa... I need to be careful.
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: duration
@@ -23924,6 +23928,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 536891799}
     m_Modifications:
+    - target: {fileID: 5479602133712059488, guid: d30e7e6a9c6142348b408c430c73d5ad, type: 3}
+      propertyPath: hasItemText
+      value: So much soil! Good thing that I have a shovel...
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479602133712059488, guid: d30e7e6a9c6142348b408c430c73d5ad, type: 3}
+      propertyPath: doesntHaveItemtext
+      value: So much soil! But I need a shovel to get it.
+      objectReference: {fileID: 0}
     - target: {fileID: 6665394673566440754, guid: d30e7e6a9c6142348b408c430c73d5ad, type: 3}
       propertyPath: m_Name
       value: DialogTriggerItemNeeded
@@ -25942,7 +25954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: text
-      value: Eww! I smell some trash piles on the left. But maybe i can get some
+      value: Eww! I smell some trash piles on the left. But maybe I can get some
         useful items there?
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
