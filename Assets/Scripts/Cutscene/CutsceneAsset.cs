@@ -13,6 +13,11 @@ public class CutsceneAsset
 	public string Sentence => sentence;
 
 	[SerializeField]
+	private AudioClip voiceLine = null;
+
+	public AudioClip VoiceLine => voiceLine;
+
+	[SerializeField]
 	private SerializedTimeSpan cooldownToNext;
 
 	public TimeSpan CooldownToNext => cooldownToNext.TimeSpan;
