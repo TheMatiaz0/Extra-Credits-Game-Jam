@@ -68,7 +68,7 @@ public class Garbage : InteractableObject
             var item = manager.itemDrops[currIndex];
             if (Inventory.Instance.AddItem(item))
             {
-                UIManager.Instance.ShowPopupText($"You found a {item.name}")
+                UIManager.Instance.ShowPopupText($"You found a {item.name}");
 
                 if (manager.shovelEvolution.Contains(item))
                 {
@@ -105,7 +105,7 @@ public class Garbage : InteractableObject
     {
         if (Inventory.Instance.AddItem(manager.firstItem))
         {
-            UIManager.Instance.ShowPopupText($"You found a {item.name}")
+            UIManager.Instance.ShowPopupText($"You found a {manager.firstItem.name}");
             UIManager.Instance.ShowDialogText("A bottle... maybe i can collect some water for my plant?");
 
            
