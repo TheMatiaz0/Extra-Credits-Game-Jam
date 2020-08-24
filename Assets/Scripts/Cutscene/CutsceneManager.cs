@@ -18,8 +18,8 @@ public class CutsceneManager : MonoBehaviour
 	[SerializeField]
 	private AudioSource voiceSource = null;
 
-	[SerializeField]
-	private AudioClip voice = null;
+	// [SerializeField]
+	// private AudioClip voice = null;
 
 	[SerializeField]
 	private Text subtitles = null;
@@ -68,11 +68,16 @@ public class CutsceneManager : MonoBehaviour
 				StopCoroutine(writeDisplayCoroutine);
 			}
 
-			CutsceneAsset spriteWithSentence = cutsceneText.Dequeue();
-			subtitles.text = string.Empty;
-			writeDisplayCoroutine = StartCoroutine(TypeTextSlowly(spriteWithSentence.Sentence, textDisplayCooldown, subtitles));
+			voiceSource.Stop();
+			CutsceneAsset voiceSentence = cutsceneText.Dequeue();
 
-			yield return Async.WaitUnscaled(spriteWithSentence.CooldownToNext);
+			voiceSource.clip = voiceSentence?.VoiceLine;
+
+			voiceSource.Play(); 
+			subtitles.text = string.Empty;
+			writeDisplayCoroutine = StartCoroutine(TypeTextSlowly(voiceSentence.Sentence, textDisplayCooldown, subtitles));
+
+			yield return Async.WaitUnscaled(voiceSentence.CooldownToNext);
 		}
 	}
 
