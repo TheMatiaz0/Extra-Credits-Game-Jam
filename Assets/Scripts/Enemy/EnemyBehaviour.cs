@@ -94,7 +94,7 @@ public class EnemyBehaviour : MonoBehaviour
 			}
 
 			ChangeFocus(playerPos);
-			agent.speed = movementSpeed * 1.65f;
+			agent.speed = movementSpeed * 2.35f;
 		}
 
 		else if (Vector3.Distance(this.transform.position, startPosition) > 3)
