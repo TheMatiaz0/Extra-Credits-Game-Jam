@@ -252,10 +252,12 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         ResetResources();
     }
 
+    private bool cutsceneShown = false;
     private void OnTimeChange(object sender, SimpleArgs<TimeSpan> args)
     {
-        if (PlantSize.Value == 2 && args.Value == TimeSpan.FromHours(19))
+        if (PlantSize.Value == 2 && args.Value >= TimeSpan.FromHours(19) && !cutsceneShown)
         {
+            cutsceneShown = true;
             GameManager.Instance.GameFinishCutscene();
             Debug.Log("Game finish cutscene!");
         }
