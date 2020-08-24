@@ -76,7 +76,8 @@ namespace UI
                 return;
             }
             
-            PlantSystem.Instance.AddResources(Inventory.Instance.Water.Value, PlantSystem.PlantResources.Water);
+            Debug.Log($"giving {Inventory.Instance.Water.Value} water to plant");
+            PlantSystem.Instance.AddResources(Inventory.Instance.Water.Value / 7f, PlantSystem.PlantResources.Water);
             Inventory.Instance.DrainWater();
             AnimateResources();
         }

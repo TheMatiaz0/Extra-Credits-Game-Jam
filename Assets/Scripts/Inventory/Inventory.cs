@@ -44,7 +44,7 @@ public class Inventory : MonoSingleton<Inventory>
 
 	public Item GetItemByName(string name)
 	{
-		return Items.FirstOrDefault(x => x.Name == name);
+		return Items.FirstOrDefault(x => x?.Name == name);
 	}
 
 	public bool AddItem(ItemScriptableObject item)
