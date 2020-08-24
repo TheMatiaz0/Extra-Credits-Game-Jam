@@ -13,11 +13,7 @@ MonoBehaviour:
   m_Name: Bottle (RMB to drink)
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: ac814d704a2a96341ae627c0a737b0e5, type: 3}
-  logicPrototype:
-    id: 0
-  references:
-    version: 1
-    00000000:
-      type: {class: FoodItem, ns: , asm: Assembly-CSharp}
-      data:
-        what: Yes
+  useTakeLessTime: 0
+  oneTimeLoot: 1
+  itemAction:
+    _classRef: DrinkWater, Assembly-CSharp

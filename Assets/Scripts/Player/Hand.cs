@@ -18,7 +18,7 @@ namespace Player
                 UIManager.Instance.ShowPopupText("Cannot pick up more items");
                 return;
             }
-
+            
             InteractionChecker.Instance.checkInteractions = false;
             InteractionUI.Instance.ShowPossibleInteraction();
 
