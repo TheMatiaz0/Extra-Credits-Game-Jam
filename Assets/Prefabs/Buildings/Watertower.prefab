@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &1762273814
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132072772503120344}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8412728898361353831
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,6 +140,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
       - {fileID: 11400000, guid: 00aafb89c7fb2ee4ca0ab3e8bdc2af19, type: 2}
       - {fileID: 11400000, guid: cbbb18e46773dc9499b392b8649944a1, type: 2}
+  interactionEnabled: 1
   bottleWithFilter: {fileID: 11400000, guid: 00aafb89c7fb2ee4ca0ab3e8bdc2af19, type: 2}
   bigBottleWithFilter: {fileID: 11400000, guid: cbbb18e46773dc9499b392b8649944a1, type: 2}
 --- !u!64 &8647313215686821981
@@ -245,6 +265,11 @@ PrefabInstance:
 --- !u!4 &9190673594071542649 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9219ee93f3bf8a548ba8dade8816f4fb, type: 3}
+  m_PrefabInstance: {fileID: 8647313216106335378}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &132072772503120344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8778741566295745866, guid: 9219ee93f3bf8a548ba8dade8816f4fb, type: 3}
   m_PrefabInstance: {fileID: 8647313216106335378}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &5492282281156257388 stripped

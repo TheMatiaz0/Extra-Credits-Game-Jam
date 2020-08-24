@@ -13,7 +13,7 @@ public class DialogTrigger : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (TimelineController.Instance?.CutsceneRunning ?? false) return;
+        if (GameEndingOptions.Instance.currentTimeline?.CutsceneRunning ?? false) return;
         if (!other.gameObject.CompareTag("Player")) return;
         if (once && used) return;
 

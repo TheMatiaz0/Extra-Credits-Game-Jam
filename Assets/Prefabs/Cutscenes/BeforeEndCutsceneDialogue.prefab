@@ -1,0 +1,217 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8214901960194368443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8214901960194368388}
+  - component: {fileID: 8214901960194368389}
+  - component: {fileID: 6337645601675255612}
+  m_Layer: 0
+  m_Name: BeforeEndCutsceneDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8214901960194368388
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8214901960194368443}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15.29781, y: 10.248116, z: -26.606974}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8214901960194368389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8214901960194368443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2b24bca0748f0b46a84e3f779911bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutsceneDialogue:
+  - sentence: What? This can't be!
+    voiceLine: {fileID: 8300000, guid: 9d4c4d41951150c44a56cb2dfdb0a6f4, type: 3}
+    cooldownToNext:
+      seconds: 5
+      mode: 1
+  - sentence: No, no, no, no!
+    voiceLine: {fileID: 0}
+    cooldownToNext:
+      seconds: 3
+      mode: 1
+  - sentence: It's almost empty!
+    voiceLine: {fileID: 8300000, guid: e2716a027b7ddb04f82fddb9d2006138, type: 3}
+    cooldownToNext:
+      seconds: 3
+      mode: 1
+  - sentence: 
+    voiceLine: {fileID: 8300000, guid: 7e70e0e7d2ebff24aa2fe273ace830c6, type: 3}
+    cooldownToNext:
+      seconds: 2.4
+      mode: 1
+  - sentence: Only one bottle of water left...
+    voiceLine: {fileID: 8300000, guid: 1090b282ecb219d44a57068f377d8aee, type: 3}
+    cooldownToNext:
+      seconds: 2.4
+      mode: 1
+  - sentence: 
+    voiceLine: {fileID: 0}
+    cooldownToNext:
+      seconds: 4
+      mode: 1
+  - sentence: My plant!
+    voiceLine: {fileID: 8300000, guid: 4d932a018b92df44189f4f79e8eb31ec, type: 3}
+    cooldownToNext:
+      seconds: 1.5
+      mode: 1
+  - sentence: But...
+    voiceLine: {fileID: 0}
+    cooldownToNext:
+      seconds: 1.5
+      mode: 1
+  - sentence: I'm so thirsty!
+    voiceLine: {fileID: 8300000, guid: 84b78246c9cde014499d68575d781905, type: 3}
+    cooldownToNext:
+      seconds: 2
+      mode: 1
+  - sentence: I want to...
+    voiceLine: {fileID: 8300000, guid: f35db925380f6a5498fedf88af098b97, type: 3}
+    cooldownToNext:
+      seconds: 1.7
+      mode: 1
+  - sentence: NO! My grandpa said... said... to care about him...
+    voiceLine: {fileID: 0}
+    cooldownToNext:
+      seconds: 6
+      mode: 1
+  - sentence: But i'm also... also thirsty!
+    voiceLine: {fileID: 0}
+    cooldownToNext:
+      seconds: 3.2
+      mode: 1
+  - sentence: What should i do?
+    voiceLine: {fileID: 0}
+    cooldownToNext:
+      seconds: 5
+      mode: 1
+  voiceSource: {fileID: 6337645601675255612}
+  subtitles: {fileID: 0}
+  textDisplayCooldown: 0.05
+  onCutsceneEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  onCutsceneStart:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!82 &6337645601675255612
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8214901960194368443}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

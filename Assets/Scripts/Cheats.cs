@@ -22,7 +22,7 @@ namespace DefaultNamespace
             }
             else if (Input.GetKeyDown(KeyCode.L))
             {
-                GameEndingOptions.Instance.ChooseEnding();
+                GameEndingOptions.Instance.StartEnding();
             }
 #endif
         }
