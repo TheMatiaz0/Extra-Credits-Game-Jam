@@ -25,6 +25,16 @@ public class TimelineController : MonoSingleton<TimelineController>
 	[SerializeField]
 	private UnityEvent onCutsceneStart;
 
+	protected void OnEnable()
+	{
+		TimeControl.Register(this, 0);
+	}
+
+	protected void OnDisable()
+	{
+		TimeControl.Unregister(this);
+	}
+
 
 	protected void Start()
 	{
@@ -35,6 +45,7 @@ public class TimelineController : MonoSingleton<TimelineController>
 
 	public void LaunchCutscene()
 	{
+
 		playerCollider.enabled = false;
 		MovementController.Instance.enabled = false;
 		MouseLook.Instance.enabled = false;
@@ -57,6 +68,7 @@ public class TimelineController : MonoSingleton<TimelineController>
 		AudioManager.Instance.gameObject.SetActive(true);
 		onCutsceneEnd.Invoke();
 		CutsceneRunning = false;
+		this.gameObject.SetActive(false);
 	}
 
 	protected async void Update()

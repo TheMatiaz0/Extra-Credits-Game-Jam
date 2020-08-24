@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Cyberultimate.Unity;
 using Cyberultimate;
+using System.Linq;
 
 public class TaskManager : MonoSingleton<TaskManager>
 {
@@ -31,23 +32,24 @@ public class TaskManager : MonoSingleton<TaskManager>
             tasks.Remove(txt);
         }
     }
+    /*
+private void BrutalRemoveTask(string txt)
+{
+    Destroy(tasks[txt]);
+    tasks.Remove(txt);
+}
 
-    private void BrutalRemoveTask(string txt)
-    {
-        Destroy(tasks[txt]);
-        tasks.Remove(txt);
-    }
+private void Start()
+{
+    TimeManager.Instance.OnCurrentDayChange += RemoveAllTasks;
+}
 
-    private void Start()
+private void RemoveAllTasks(object sender, SimpleArgs<Cint> e)
+{
+    foreach(string t in tasks.Keys.ToList())
     {
-        TimeManager.Instance.OnCurrentDayChange += RemoveAllTasks;
+        BrutalRemoveTask(t);
     }
-
-    private void RemoveAllTasks(object sender, SimpleArgs<Cint> e)
-    {
-        foreach(string t in tasks.Keys)
-        {
-            BrutalRemoveTask(t);
-        }
-    }
+}
+*/
 }
