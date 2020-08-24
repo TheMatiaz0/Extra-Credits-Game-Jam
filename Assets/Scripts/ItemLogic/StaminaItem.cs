@@ -14,7 +14,7 @@ public class StaminaItem : ItemLogic
 	{
 		if (GameManager.Instance.StaminaSys.Stamina.Value < GameManager.Instance.StaminaSys.Stamina.Max)
 		{
-			remove = true;
+			removeOnUse = true;
 			GameManager.Instance.StaminaSys.Stamina.GiveValue(value, "Item");
 			AudioManager.Instance.PlaySFX("eating");
 			UIManager.Instance.ShowPopupText("You ate protein bar and gained stamina");

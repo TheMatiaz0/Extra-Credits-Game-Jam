@@ -15,7 +15,7 @@ public class Item
 
     public bool Fillable { get; private set; } = false;
 
-    public LockValue<float> FillAmount { get; private set; } = new LockValue<float>(100, 0, 0);
+    public LockValue<uint> FillAmount { get; private set; } = new LockValue<uint>(100, 0, 0);
 
     public ItemLogic Logic { get; private set; }
 
