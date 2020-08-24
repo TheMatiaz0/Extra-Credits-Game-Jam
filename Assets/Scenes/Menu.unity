@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.625
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.38634884, g: 0.19036439, b: 0.061856143, a: 0.625}
+  m_IndirectSpecularColor: {r: 0.3864476, g: 0.19033137, b: 0.061875552, a: 0.625}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1115,7 +1115,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "A game by Mateusz K\r, Jakub L, Filip L, David L & JuiceTea"
+  m_Text: "A game by Mateusz K\r, Jakub L, Filip L, David L & Justyna K"
 --- !u!222 &1476143562
 CanvasRenderer:
   m_ObjectHideFlags: 0
