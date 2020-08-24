@@ -2798,7 +2798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inGameTimeSpan:
-    seconds: 0.5
+    seconds: 0.11
     mode: 1
   minutesPerTimeSpan: 1
 --- !u!4 &316146376
@@ -14512,10 +14512,6 @@ PrefabInstance:
     - target: {fileID: 3331960303645833897, guid: e09f92294df95e7479733639b0e956cb, type: 3}
       propertyPath: m_Name
       value: BeforeEndCutsceneDialogue
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331960303645833897, guid: e09f92294df95e7479733639b0e956cb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e09f92294df95e7479733639b0e956cb, type: 3}

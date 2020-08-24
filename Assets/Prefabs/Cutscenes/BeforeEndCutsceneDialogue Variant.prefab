@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: cutsceneDialogue.Array.size
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: subtitles
@@ -121,11 +121,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: cutsceneDialogue.Array.data[12].sentence
-      value: 'The Earth... The Earth is collapsing... We need the plant! '
+      value: What should i do?
       objectReference: {fileID: 0}
     - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: cutsceneDialogue.Array.data[12].cooldownToNext.seconds
-      value: 6.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: cutsceneDialogue.Array.data[12].cooldownToNext.mode
@@ -143,17 +143,29 @@ PrefabInstance:
       propertyPath: cutsceneDialogue.Array.data[13].cooldownToNext.mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[1].voiceLine
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[5].voiceLine
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[7].voiceLine
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2734501731739276049, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 15.29781
       objectReference: {fileID: 0}
     - target: {fileID: 2734501731739276049, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 10.248116
       objectReference: {fileID: 0}
     - target: {fileID: 2734501731739276049, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -26.606974
       objectReference: {fileID: 0}
     - target: {fileID: 2734501731739276049, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: m_LocalRotation.x
@@ -193,7 +205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734501731739276078, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
