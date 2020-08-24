@@ -10,8 +10,8 @@ public class Garbage : InteractableObject
 	public override string InteractionName => "Search garbage";
 	public GarbageManager manager;
 
-	private bool garbageUsed = false;
-	private bool garbageOpen = false;
+	public bool garbageUsed = false;
+	public bool garbageOpen = false;
 	public float garbageDropChance = 50;
 
 	private void Start()
