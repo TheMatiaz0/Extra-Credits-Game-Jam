@@ -17,6 +17,9 @@ public abstract class InteractableObject : MonoBehaviour
 
     private float holdingTime = 0;
 
+    [HideInInspector]
+    public bool interactionEnabled=true;
+
     private bool usable = true;
 
     private bool CheckItemsNeeded(bool showMessage = false)
