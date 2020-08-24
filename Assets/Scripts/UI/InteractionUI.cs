@@ -9,6 +9,7 @@ namespace UI
     {
         [SerializeField] private Image progressImage;
         [SerializeField] private Text eKeyText;
+        [SerializeField] private Text interactionName;
 
         private CanvasGroup canvas;
 
@@ -18,10 +19,11 @@ namespace UI
             HidePossibleInteraction();
         }
 
-        public void ShowPossibleInteraction()
+        public void ShowPossibleInteraction(string name)
         {
             eKeyText.color = progressImage.color = Color.white;
             progressImage.fillAmount = 0;
+            interactionName.text = name;
         }
 
         public void SetPossibleInteractionProgress(float progress)
@@ -33,6 +35,7 @@ namespace UI
         {
             eKeyText.color = progressImage.color = Color.clear;
             progressImage.fillAmount = 0;
+            interactionName.text = "";
         }
 
         public void Show()

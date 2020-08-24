@@ -12,6 +12,8 @@ public abstract class InteractableObject : MonoBehaviour
     public float takesStamina = 0;
     public bool canUseWithoutStamina = false;
     public ReorderableArray<ReorderableArray<string>> itemsNeeded;
+    
+    public abstract string InteractionName { get; }
 
     private float holdingTime = 0;
 

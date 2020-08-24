@@ -7,6 +7,8 @@ using Random = UnityEngine.Random;
 
 public class Garbage : InteractableObject
 {
+    public override string InteractionName => "Search garbage";
+    
     public SerializedDictionary<ItemScriptableObject, int> itemChanceDrops = new SerializedDictionary<ItemScriptableObject, int>();
     public List<ItemScriptableObject> itemDrops;
     public float garbageDropChance = 50;

@@ -28,7 +28,7 @@ public class InteractionChecker : MonoSingleton<InteractionChecker>
             if (go.TryGetComponent<InteractableObject>(out var c))
             {
                 lastObject = c;
-                InteractionUI.Instance.ShowPossibleInteraction();
+                InteractionUI.Instance.ShowPossibleInteraction(c.InteractionName);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     c.KeyDown();
