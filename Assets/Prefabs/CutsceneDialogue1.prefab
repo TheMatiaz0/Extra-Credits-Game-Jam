@@ -46,7 +46,7 @@ MonoBehaviour:
   cutsceneDialogue:
   - sentence: 'Grandpa: Aw.. I was bitten by one of these monsters...'
     cooldownToNext:
-      seconds: 4.5
+      seconds: 5.5
       mode: 1
   - sentence: 'You: Should I go get some water for you?'
     cooldownToNext:
@@ -68,42 +68,30 @@ MonoBehaviour:
     cooldownToNext:
       seconds: 2
       mode: 1
-  - sentence: 'Grandpa: Promise me that you and Tom will survive... you... you need
-      to take care of it, please promise me that... please...'
+  - sentence: 'Grandpa: Promise me that you and The Plant will survive... you...
+      you need to take care of it, please promise me that... please...'
     cooldownToNext:
-      seconds: 12
+      seconds: 13
       mode: 1
   - sentence: 'You: I promise.'
     cooldownToNext:
-      seconds: 3
+      seconds: 2.5
       mode: 1
   - sentence: 'Grandpa: That''s a weird word, isn''t it... promise...'
     cooldownToNext:
-      seconds: 4
+      seconds: 5
       mode: 1
   - sentence: 'I promised your grandma that I will stay alive... '
     cooldownToNext:
-      seconds: 4
+      seconds: 4.5
       mode: 1
   voiceSource: {fileID: 0}
   voice: {fileID: 0}
   subtitles: {fileID: 0}
-  textDisplayCooldown: 0.07
+  textDisplayCooldown: 0.05
   onCutsceneEnd:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2734501731739276048}
-        m_TargetAssemblyTypeName: CutsceneManager, Assembly-CSharp
-        m_MethodName: set_CutscenePlaying
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onCutsceneStart:
     m_PersistentCalls:
       m_Calls: []
