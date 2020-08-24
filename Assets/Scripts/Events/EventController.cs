@@ -22,12 +22,11 @@ public class EventController : MonoSingleton<EventController>
     private void OnDayChange(object sender, SimpleArgs<Cint> e)
     {
         if (e.Value == 0) return;
+        if (Random.Range(0, 1) == 0) return;
         
         var evt = allEvents[Random.Range(0, allEvents.Length)];
         
         ActivateEvent(evt);
-        
-        UIManager.Instance.ShowDialogText(evt.text);
     }
 
     public void ActivateEvent(ScriptableEvent evt)

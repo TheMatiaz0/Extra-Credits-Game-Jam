@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class Inventory : MonoSingleton<Inventory>
 {
-	private Item[] Items { get; } = new Item[5];
+	public Item[] Items { get; private set; } = new Item[5];
 
 	public Dictionary<string, ItemScriptableObject> AllGameItems { get; private set; } = new Dictionary<string, ItemScriptableObject>();
 
