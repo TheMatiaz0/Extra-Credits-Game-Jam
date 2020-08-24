@@ -39,7 +39,8 @@ public class TimelineController : MonoSingleton<TimelineController>
 		MovementController.Instance.enabled = false;
 		MouseLook.Instance.enabled = false;
 		CanvasManager.Instance.ShowCutsceneCanvas();
-		Music.Instance.gameObject.SetActive(false);
+		HomeMusic.Instance.gameObject.SetActive(false);
+		TownMusic.Instance.gameObject.SetActive(false);
 		AudioManager.Instance.gameObject.SetActive(false);
 		onCutsceneStart.Invoke();
 		CutsceneRunning = true;
@@ -51,7 +52,8 @@ public class TimelineController : MonoSingleton<TimelineController>
 		MouseLook.Instance.enabled = true;
 		CanvasManager.Instance.ShowMainCanvas();
 		playerCollider.enabled = true;
-		Music.Instance.gameObject.SetActive(true);
+		HomeMusic.Instance.gameObject.SetActive(true);
+		TownMusic.Instance.gameObject.SetActive(true);
 		AudioManager.Instance.gameObject.SetActive(true);
 		onCutsceneEnd.Invoke();
 		CutsceneRunning = false;
