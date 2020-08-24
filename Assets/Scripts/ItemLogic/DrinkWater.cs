@@ -7,10 +7,10 @@ public class DrinkWater : ItemLogic
 {
 	public override void Do()
 	{
-		uint water = Inventory.Instance.water.Value;
+		uint water = Inventory.Instance.Water.Value;
 		if (water > 0 && GameManager.Instance.HealthSys.Health.Value < GameManager.Instance.HealthSys.Health.Max)
 		{
-			remove = true;
+			removeOnUse = true;
 			GameManager.Instance.HealthSys.Health.GiveValue(water * 7, "Item");
 			UIManager.Instance.ShowPopupText("You drinked fresh water and healed yourself");
 			AudioManager.Instance.PlaySFX("drinking");

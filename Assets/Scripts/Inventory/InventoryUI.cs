@@ -29,6 +29,12 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 		for (var i = 0; i < slots.Length; i++)
 		{
 			var item = Inventory.Instance.GetItem((Cint)(uint)i);
+
+			var fillable = item?.Fillable ?? false;
+			
+			slots[i].fillBgImage.gameObject.SetActive(fillable);
+			slots[i].fillImage.gameObject.SetActive(fillable);
+			
 			if (item == null)
 			{
 				slots[i].image.sprite = emptyImage;
@@ -36,6 +42,10 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 			else
 			{
 				slots[i].image.sprite = item.Icon;
+				if(item.Fillable)
+				{
+					slots[i].fillImage.fillAmount = item.FillAmount.Value / 100f;
+				}
 			}
 			slots[i].Selected = selectedSlot == i;
 		}
@@ -68,7 +78,7 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 
 
 			it.Logic?.Do();
-			if (it.Logic?.remove ?? false)
+			if (it.Logic?.removeOnUse ?? false)
 			{
 				Inventory.Instance.RemoveItem(slot);
 			}

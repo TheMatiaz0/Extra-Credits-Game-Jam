@@ -70,26 +70,27 @@ namespace UI
 
         public void FilWater()
         {
-            if (Inventory.Instance.water.Value == 0)
+            if (Inventory.Instance?.Water.Value == 0)
             {
                 UIManager.Instance.ShowPopupText("You don't have any water!");
                 return;
             }
             
-            PlantSystem.Instance.AddResources(Inventory.Instance.water.Value, PlantSystem.PlantResources.Water);
+            Debug.Log($"giving {Inventory.Instance.Water.Value} water to plant");
+            PlantSystem.Instance.AddResources(Inventory.Instance.Water.Value / 7f, PlantSystem.PlantResources.Water);
             Inventory.Instance.DrainWater();
             AnimateResources();
         }
 
         public void FillSoil()
         {
-            if (Inventory.Instance.soil.Value == 0)
+            if (Inventory.Instance?.Soil.Value == 0)
             {
                 UIManager.Instance.ShowPopupText("You don't have any soil!");
                 return;
             }
             
-            PlantSystem.Instance.AddResources(Inventory.Instance.soil.Value, PlantSystem.PlantResources.Soil);
+            PlantSystem.Instance.AddResources(Inventory.Instance.Soil.Value, PlantSystem.PlantResources.Soil);
 
             Inventory.Instance.DrainSoil();
             AnimateResources();

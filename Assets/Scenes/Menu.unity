@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.625
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43899798, g: 0.21627417, b: 0.07027662, a: 0.625}
+  m_IndirectSpecularColor: {r: 0.38634884, g: 0.19036439, b: 0.061856143, a: 0.625}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1211,7 +1211,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 6.1e-43, y: 1.39e-43, z: 0, w: 2.5857258}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1321,6 +1321,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6452904865074908754, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6452904865074908781, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
