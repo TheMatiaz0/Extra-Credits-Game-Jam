@@ -30,11 +30,7 @@ public class UIManager : MonoSingleton<UIManager>
     
     [SerializeField]
     private Text dialogText = null;
-
-    [SerializeField]
-    private Image soilImageFill;
-    [SerializeField]
-    private Image waterImageFill;
+    
 
 	[SerializeField]
 	private GameObject resultObj = null;
@@ -126,19 +122,6 @@ public class UIManager : MonoSingleton<UIManager>
 	    LeanTween.textAlpha(text.rectTransform, 1, 0.2f);
 	    await Async.Wait(TimeSpan.FromSeconds(delayInSeconds));
 	    LeanTween.textAlpha(text.rectTransform, 0, 0.2f);
-    }
-
-    public void ChangeResources(PlantSystem.PlantResources resource, float current, float max)
-    {
-        float v = current / max;
-        if (resource == PlantSystem.PlantResources.Soil)
-        {
-            soilImageFill.fillAmount = v;
-        }
-        else if (resource == PlantSystem.PlantResources.Water)
-        {
-            waterImageFill.fillAmount = v;
-        }
     }
 }
 

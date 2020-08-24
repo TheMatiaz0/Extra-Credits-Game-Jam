@@ -93,7 +93,6 @@ public class Inventory : MonoSingleton<Inventory>
 			else
 			{
 				Soil.GiveValue(count, "");
-				UIManager.Instance.ChangeResources(resource, soil.Value, soil.Max);
 				UIManager.Instance.ShowPopupText("Collected soil");
 			}
 		}
@@ -110,7 +109,6 @@ public class Inventory : MonoSingleton<Inventory>
 			else
 			{
 				water.GiveValue(count, "");
-				UIManager.Instance.ChangeResources(resource, water.Value, water.Max);
 				UIManager.Instance.ShowPopupText("Collected water");
 			}
 		}
@@ -119,13 +117,11 @@ public class Inventory : MonoSingleton<Inventory>
 	public void DrainWater()
 	{
 		Water.TakeValue(Water.Value);
-		UIManager.Instance.ChangeResources(PlantSystem.PlantResources.Water, Water.Value, Water.Max);
 	}
 
 	public void DrainSoil()
 	{
 		Soil.TakeValue(Soil.Value);
-		UIManager.Instance.ChangeResources(PlantSystem.PlantResources.Soil, Soil.Value, Soil.Max);
 	}
 
 	public void RemoveItem(Cint slot, bool showPopup=false)
