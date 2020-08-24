@@ -13,7 +13,7 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 
 	private const int alphaKeyCodesOffset = 49;
 
-	private const string pressToUse = "Press E to Use";
+	private const string pressToUse = "Press RMB to Use";
 
 	public void Start()
 	{
@@ -132,7 +132,7 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 	private void ShowCurrentItem()
 	{
 		ItemScriptableObject it = Inventory.Instance.GetItem(selectedSlot);
-		if (it.useable)
+		if (it?.useable ?? false)
 		{
 			UIManager.Instance.ShowPopupText($"{it?.name} ({pressToUse})" ?? "");
 		}
