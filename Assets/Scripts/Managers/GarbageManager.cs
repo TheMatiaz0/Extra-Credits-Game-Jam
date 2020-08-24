@@ -5,21 +5,16 @@ using Cyberultimate.Unity;
 
 public class GarbageManager : MonoSingleton<GarbageManager>
 {
-    public void AddItemToAll(ItemScriptableObject item)
-    {
-        foreach(Garbage child in transform.GetComponentsInChildren<Garbage>())
-        {
-            if (child.itemDrops.Contains(item)) break;
-            child.itemDrops.Add(item);
-        }
-    }
+    public SerializedDictionary<ItemScriptableObject, int> itemChanceDrops = new SerializedDictionary<ItemScriptableObject, int>();
+    public List<ItemScriptableObject> itemDrops;
 
-    public void FirstItemUsedToAll()
-    {
-        foreach (Garbage child in transform.GetComponentsInChildren<Garbage>())
-        {
-            child.firstItemGet = true;
-        }
+    public List<ItemScriptableObject> shovelEvolution;
+    public List<ItemScriptableObject> bottleEvolution;
 
-    }
+    public ItemScriptableObject firstItem;
+
+    [HideInInspector]
+    public bool firstItemUsed=false;
+    [HideInInspector]
+    public bool garbage1 = true;
 }
