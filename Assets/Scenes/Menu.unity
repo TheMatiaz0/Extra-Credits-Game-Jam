@@ -1115,7 +1115,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A game by TheMatiaz0, Jakub, Hyopplo, Davidlags & JuiceTea
+  m_Text: "A game by Mateusz K\r, Jakub L, Filip L, David L & JuiceTea"
 --- !u!222 &1476143562
 CanvasRenderer:
   m_ObjectHideFlags: 0
