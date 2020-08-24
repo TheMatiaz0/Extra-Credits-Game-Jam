@@ -12407,7 +12407,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
   - {fileID: 11400000, guid: 00aafb89c7fb2ee4ca0ab3e8bdc2af19, type: 2}
   - {fileID: 11400000, guid: cbbb18e46773dc9499b392b8649944a1, type: 2}
-  firstItem: {fileID: 11400000, guid: 842c7df675ca7874a9daee4bf4dbec58, type: 2}
+  firstItem: {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
   firstItemUsed: 0
   garbage1: 1
 --- !u!1 &1171652858 stripped
