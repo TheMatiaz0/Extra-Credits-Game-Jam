@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1419416432}
-  m_IndirectSpecularColor: {r: 0.61815816, g: 0.304583, b: 0.09896983, a: 1}
+  m_IndirectSpecularColor: {r: 0.6183162, g: 0.3045302, b: 0.099000886, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -409,57 +409,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: onCutsceneEnd.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: subtitles
       value: 
       objectReference: {fileID: 1845574401}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: onCutsceneEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[0].cooldownToNext.seconds
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[1].cooldownToNext.seconds
-      value: 4.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[2].cooldownToNext.seconds
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[3].cooldownToNext.seconds
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[4].cooldownToNext.seconds
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[5].cooldownToNext.seconds
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[6].cooldownToNext.seconds
-      value: 13.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[7].cooldownToNext.seconds
-      value: 3.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[8].cooldownToNext.seconds
-      value: 5.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2734501731739276048, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
-      propertyPath: cutsceneDialogue.Array.data[9].cooldownToNext.seconds
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 2734501731739276049, guid: 99e48c125aa83b240b3f0d0dfdb81a61, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
