@@ -1,5 +1,6 @@
 ﻿using Cyberultimate;
 using Cyberultimate.Unity;
+using System;
 using UnityEngine;
 
 public class InventoryUI : MonoSingleton<InventoryUI>
@@ -11,6 +12,8 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 	public Sprite testImage;
 
 	private const int alphaKeyCodesOffset = 49;
+
+	private const string pressToUse = "Press E to Use";
 
 	public void Start()
 	{
@@ -59,8 +62,10 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 		/*
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			var item = Inventory.Instance.AllGameItems["Protein Bar"];
+			var item = Inventory.Instance.AllGameItems["Protein Bar (RMB to eat)"];
+			var itemBottle = Inventory.Instance.AllGameItems["Bottle (RMB to drink)"];
 			Inventory.Instance.AddItem(item);
+			Inventory.Instance.AddItem(itemBottle);
 		}
 		*/
 
@@ -70,8 +75,16 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 			ItemScriptableObject it = null;
 
 			it = Inventory.Instance.GetItem(slot = selectedSlot);
-			it?.ActionForItem?.Do();
-			if (it?.ActionForItem != null)
+
+			if (it == null)
+			{
+				return;
+			}
+
+			var itemLogic = Activator.CreateInstance(it.itemAction) as ItemLogic;
+
+			itemLogic?.Do();
+			if (itemLogic.remove)
 			{
 				Inventory.Instance.RemoveItem(slot);
 			}
@@ -118,6 +131,15 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 
 	private void ShowCurrentItem()
 	{
-		UIManager.Instance.ShowPopupText(Inventory.Instance.GetItem(selectedSlot)?.name ?? "");
+		ItemScriptableObject it = Inventory.Instance.GetItem(selectedSlot);
+		if (it.useable)
+		{
+			UIManager.Instance.ShowPopupText($"{it?.name} ({pressToUse})" ?? "");
+		}
+		else
+		{
+			UIManager.Instance.ShowPopupText($"{it?.name}" ?? "");
+		}
+
 	}
 }

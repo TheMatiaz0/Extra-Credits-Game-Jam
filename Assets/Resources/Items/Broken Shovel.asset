@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Broken Shovel
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 9a34d888a72fe7740b15a1820581e9fb, type: 3}
-  actionForItem:
-    id: 0
-  references:
-    version: 1
-    00000000:
-      type: {class: , ns: , asm: }
+  useTakeLessTime: 0
+  oneTimeLoot: 1
+  itemAction:
+    _classRef: 

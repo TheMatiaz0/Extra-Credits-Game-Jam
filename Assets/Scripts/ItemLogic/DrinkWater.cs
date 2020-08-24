@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cyberultimate;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,9 +10,11 @@ public class DrinkWater : ItemLogic
 		uint water = Inventory.Instance.water.Value;
 		if (water > 0 && GameManager.Instance.HealthSys.Health.Value < GameManager.Instance.HealthSys.Health.Max)
 		{
+			remove = true;
 			GameManager.Instance.HealthSys.Health.GiveValue(water * 7, "Item");
 			UIManager.Instance.ShowPopupText("You drinked fresh water and healed yourself");
 			AudioManager.Instance.PlaySFX("drinking");
+
 		}
 		else if (water <= 0)
 		{
