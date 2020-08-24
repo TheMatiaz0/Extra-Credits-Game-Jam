@@ -16117,7 +16117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: text
-      value: Hmm... I can survive few days using this water tower. My plant also
+      value: Hmm... I can survive few days using this water tower. Also, my plant
         won't die that fast.
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278351, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}

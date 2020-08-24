@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutsceneDialogue:
   - sentence: 'Grandpa: Aw.. I was bitten by one of these monsters...'
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: 9d4c4d41951150c44a56cb2dfdb0a6f4, type: 3}
     cooldownToNext:
       seconds: 5.5
       mode: 1
@@ -56,17 +56,17 @@ MonoBehaviour:
       seconds: 3.5
       mode: 1
   - sentence: 'Grandpa: No... It''s too late.'
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: e2716a027b7ddb04f82fddb9d2006138, type: 3}
     cooldownToNext:
       seconds: 3
       mode: 1
   - sentence: Time is not on my side here.
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: 7e70e0e7d2ebff24aa2fe273ace830c6, type: 3}
     cooldownToNext:
       seconds: 3
       mode: 1
   - sentence: But... I ask you to do one thing...
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: 1090b282ecb219d44a57068f377d8aee, type: 3}
     cooldownToNext:
       seconds: 3.5
       mode: 1
@@ -77,7 +77,7 @@ MonoBehaviour:
       mode: 1
   - sentence: 'Grandpa: Promise me that you and The Plant will survive... you...
       you need to take care of it, please promise me that... please...'
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: 4d932a018b92df44189f4f79e8eb31ec, type: 3}
     cooldownToNext:
       seconds: 13
       mode: 1
@@ -87,12 +87,12 @@ MonoBehaviour:
       seconds: 2.5
       mode: 1
   - sentence: 'Grandpa: That''s a weird word, isn''t it... promise...'
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: 84b78246c9cde014499d68575d781905, type: 3}
     cooldownToNext:
       seconds: 5
       mode: 1
   - sentence: 'I promised your grandma that I will stay alive... '
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: f35db925380f6a5498fedf88af098b97, type: 3}
     cooldownToNext:
       seconds: 4.5
       mode: 1
