@@ -41,6 +41,7 @@ public class GameEndingOptions : MonoSingleton<GameEndingOptions>
     private void Start()
     {
         SetAllTo(false);
+        specialUI.SetActive(true);
         startingCutScene.SetActive(true);
         currentTimeline = startingCutScene.GetComponent<TimelineController>();
     }
