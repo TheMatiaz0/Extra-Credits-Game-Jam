@@ -112,7 +112,7 @@ namespace UI
         
         private void Update()
         {
-            if (Visible && Input.GetKeyDown(KeyCode.E))
+            if (Visible && (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Escape)))
             {
                 Hide();
             }
