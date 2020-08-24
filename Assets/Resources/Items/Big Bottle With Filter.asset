@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3cfe33c833a1714e9850b0ba6675e0a, type: 3}
-  m_Name: Bottle With Filter (RMB to drink)
+  m_Name: Big Bottle With Filter
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 14b051b09f20e724d838fae29ef88e2e, type: 3}
-  useTakeLessTime: 0.6
-  actionForItem:
-    id: 0
-  references:
-    version: 1
-    00000000:
-      type: {class: , ns: , asm: }
+  icon: {fileID: 21300000, guid: f1d5b4669f779134fb27771c5047bc83, type: 3}
+  useTakeLessTime: 1.3
+  oneTimeLoot: 1
+  useable: 1
+  itemAction:
+    _classRef: 
