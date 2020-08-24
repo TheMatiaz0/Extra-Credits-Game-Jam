@@ -1,4 +1,6 @@
-﻿using Cyberultimate;
+﻿using System;
+using System.Collections.Generic;
+using Cyberultimate;
 using Cyberultimate.Unity;
 using UnityEngine;
 
@@ -28,5 +30,14 @@ public class AudioManager : MonoSingleton<AudioManager>
         {
             sfxSource.PlayOneShot(soundEffects[name]);
         }
+        else
+        {
+            throw new KeyNotFoundException("SFX with given key not found");
+        }
+    }
+
+    public void PlayClip(AudioClip clip)
+    {
+        sfxSource.PlayOneShot(clip);
     }
 }
