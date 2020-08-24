@@ -1344,8 +1344,48 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: rolloffMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[1].time
+      value: 0.5414548
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[1].value
+      value: 0.56932706
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[1].inSlope
+      value: 1.4958993
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[1].outSlope
+      value: 1.4958993
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[2].time
+      value: 0.9862048
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[2].value
+      value: 0.99305725
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452904865074908755, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[2].outWeight
+      value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 6452904865074908781, guid: 337fe454f2f7de3428598f27b3d8452f, type: 3}
       propertyPath: m_Name
