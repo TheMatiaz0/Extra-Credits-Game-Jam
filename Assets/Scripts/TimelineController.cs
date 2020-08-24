@@ -6,6 +6,7 @@ using Cyberultimate.Unity;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
+using UnityEngine.Events;
 
 public class TimelineController : MonoSingleton<TimelineController>
 {
@@ -17,6 +18,12 @@ public class TimelineController : MonoSingleton<TimelineController>
 	private Collider playerCollider = null;
 
 	[HideInInspector] public bool CutsceneRunning { get; private set; } = true;
+
+	[SerializeField]
+	private UnityEvent onCutsceneEnd;
+
+	[SerializeField]
+	private UnityEvent onCutsceneStart;
 
 
 	protected void Start()
@@ -33,7 +40,9 @@ public class TimelineController : MonoSingleton<TimelineController>
 		MouseLook.Instance.enabled = false;
 		CanvasManager.Instance.ShowCutsceneCanvas();
 		AudioManager.Instance.gameObject.SetActive(false);
+		onCutsceneStart.Invoke();
 		CutsceneRunning = true;
+
 	}
 
 	public void CloseCutscene()
@@ -43,7 +52,9 @@ public class TimelineController : MonoSingleton<TimelineController>
 		CanvasManager.Instance.ShowMainCanvas();
 		playerCollider.enabled = true;
 		AudioManager.Instance.gameObject.SetActive(true);
+		onCutsceneEnd.Invoke();
 		CutsceneRunning = false;
+
 	}
 
 	protected async void Update()
