@@ -4,13 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cyberultimate.Unity;
 using Random = UnityEngine.Random;
+using System.Linq;
 
 public class Garbage : InteractableObject
 {
     public override string InteractionName => "Search garbage";
     public GarbageManager manager;
 
-    private bool garbageUsed = false;
+    [HideInInspector]
+    public bool garbageUsed = false;
+
     private bool garbageOpen = false;
     public float garbageDropChance=50;
 
@@ -40,7 +43,15 @@ public class Garbage : InteractableObject
         } else
         {
             int m = 0;
-            foreach (int i in manager.itemChanceDrops.Values) m += i;
+            foreach (int i in manager.itemChanceDrops.Values)
+            {
+                
+                if (manager.itemDrops.Contains(manager.itemChanceDrops[manager.itemChanceDrops.Single(s => s.Value == i).Key]))
+                {
+                    m += i;
+                }
+            }
+
             int itemRnd = Random.Range(0, m);
 
             int currIndex = 0;
@@ -57,7 +68,7 @@ public class Garbage : InteractableObject
             var item = manager.itemDrops[currIndex];
             if (Inventory.Instance.AddItem(item))
             {
-                UIManager.Instance.ShowPopupText("You found a " + item.name);
+                UIManager.Instance.ShowPopupText($"You found a {item.name}")
 
                 if (manager.shovelEvolution.Contains(item))
                 {
@@ -79,7 +90,7 @@ public class Garbage : InteractableObject
                 if (item.oneTimeLoot) manager.itemDrops.Remove(item);
 
                 garbageUsed = true;
-                Destroy(this);
+                //Destroy(this);
             } else 
             {
                 if(!garbageOpen) interactionTime /= 2;
@@ -94,15 +105,16 @@ public class Garbage : InteractableObject
     {
         if (Inventory.Instance.AddItem(manager.firstItem))
         {
-            UIManager.Instance.ShowPopupText("You found a " + manager.firstItem.name);
+            UIManager.Instance.ShowPopupText($"You found a {item.name}")
             UIManager.Instance.ShowDialogText("A bottle... maybe i can collect some water for my plant?");
 
            
             if (manager.firstItem.oneTimeLoot) manager.itemDrops.Remove(manager.firstItem);
 
             garbageUsed = true;
+            interactionEnabled = false;
             manager.firstItemUsed = true;
-            Destroy(this);
+            //Destroy(this);
         }
     }
 }

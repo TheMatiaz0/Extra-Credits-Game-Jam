@@ -25,7 +25,7 @@ public class InteractionChecker : MonoSingleton<InteractionChecker>
         if (Physics.Raycast(transform.position, fwd, out var hit, distance, layerMask))
         {
             var go = hit.collider.gameObject;
-            if (go.TryGetComponent<InteractableObject>(out var c))
+            if (go.TryGetComponent<InteractableObject>(out var c) && go.GetComponent<InteractableObject>().interactionEnabled)
             {
                 lastObject = c;
                 InteractionUI.Instance.ShowPossibleInteraction(c.InteractionName);
