@@ -7,5 +7,7 @@ using Cyberultimate;
 [Serializable]
 public abstract class ItemLogic
 {
+    public bool remove;
+
     public abstract void Do();
 }
