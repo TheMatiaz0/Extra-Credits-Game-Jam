@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class Inventory : MonoSingleton<Inventory>
 {
-	private ItemScriptableObject[] Items { get; } = new ItemScriptableObject[5];
+	private Item[] Items { get; } = new Item[5];
 
 	public Dictionary<string, ItemScriptableObject> AllGameItems { get; private set; } = new Dictionary<string, ItemScriptableObject>();
 
@@ -26,10 +26,10 @@ public class Inventory : MonoSingleton<Inventory>
 
 	public bool HasItem(string name)
 	{
-		return Items.Any(x => x != null && x.name == name);
+		return Items.Any(x => x != null && x.Name == name);
 	}
 
-	public ItemScriptableObject GetItem(Cint slot)
+	public Item GetItem(Cint slot)
 	{
 		if (slot >= Items.Length) return null;
 		return Items[slot];
@@ -42,7 +42,7 @@ public class Inventory : MonoSingleton<Inventory>
 		{
 			if (Items[i] != null) continue;
 
-			Items[i] = item;
+			Items[i] = new Item(item);
 			foundSlot = true;
 			break;
 		}
@@ -111,7 +111,7 @@ public class Inventory : MonoSingleton<Inventory>
 	{
 		for (var i = 0; i < Items.Length; i++)
 		{
-			if (Items[i].name == name)
+			if (Items[i].Name == name)
 			{
 				Items[i] = null;
 				return true;
