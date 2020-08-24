@@ -1,14 +1,12 @@
 fileFormatVersion: 2
-guid: 6866c120f48706944b89a57f06c22535
+guid: d35e57f61c24eb945923c37464ae5cd5
 ModelImporter:
   serializedVersion: 20101
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: e724bfdacd16bc244accb567ee029185, type: 2}
+      74: -203655887218126122
+    second: mixamo.com
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -77,8 +75,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - d35e57f61c24eb945923c37464ae5cd5
+  referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3

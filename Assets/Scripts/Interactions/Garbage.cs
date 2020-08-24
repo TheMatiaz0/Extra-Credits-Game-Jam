@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -40,46 +41,11 @@ public class Garbage : InteractableObject
 		}
 		else
 		{
-			int m = 0;
-			foreach (int i in manager.itemChanceDrops.Values)
-			{
-				m += i;
-			}
-
-			int itemRnd = Random.Range(0, m);
-
-			int currIndex = 0;
-			while (itemRnd > 0)
-			{
-				if (manager.itemChanceDrops[manager.itemDrops[currIndex]] >= itemRnd)
-				{
-					break;
-				}
-				else itemRnd -= manager.itemChanceDrops[manager.itemDrops[currIndex]];
-				currIndex += 1;
-			}
-
-			var item = manager.itemDrops[currIndex];
+			int rnd = Random.Range(0, 2);
+			var item = manager.itemDrops[rnd];
 			if (Inventory.Instance.AddItem(item))
 			{
 				UIManager.Instance.ShowPopupText($"You found a {item.name}");
-
-				if (manager.shovelEvolution.Contains(item))
-				{
-					int i = manager.shovelEvolution.IndexOf(item);
-					if (manager.shovelEvolution.Count >= i + 2)
-					{
-						manager.itemDrops.Add(manager.shovelEvolution[i + 1]);
-					}
-				}
-				else if (manager.bottleEvolution.Contains(item))
-				{
-					int i = manager.bottleEvolution.IndexOf(item);
-					if (manager.bottleEvolution.Count >= i + 2)
-					{
-						manager.itemDrops.Add(manager.bottleEvolution[i + 1]);
-					}
-				}
 
 				if (item.oneTimeLoot) manager.itemDrops.Remove(item);
 

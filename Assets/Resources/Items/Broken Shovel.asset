@@ -15,5 +15,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 9a34d888a72fe7740b15a1820581e9fb, type: 3}
   useTakeLessTime: 0
   oneTimeLoot: 1
+  useable: 0
+  fillable: 0
   itemAction:
-    _classRef: 
+    _classRef: StaminaItem, Assembly-CSharp

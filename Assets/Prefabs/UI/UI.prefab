@@ -166,8 +166,6 @@ MonoBehaviour:
   goToSleepText: {fileID: 1854819206889964753}
   popupText: {fileID: 6190856166800128025}
   dialogText: {fileID: 3994527229859110}
-  soilImageFill: {fileID: 0}
-  waterImageFill: {fileID: 0}
   resultObj: {fileID: 656483657}
 --- !u!225 &3908250941095275297
 CanvasGroup:
@@ -378,7 +376,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Required items: broken shovel, shovel or ultra shovel'
+  m_Text: 'Required items: broken shovel, shovel or ultra shovel.'
 --- !u!95 &1583626611966060131
 Animator:
   serializedVersion: 3
@@ -1383,6 +1381,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3908250940728553290}
     m_Modifications:
+    - target: {fileID: 1033632259432405993, guid: 7794c25c2d2e67842af0b88add1a7808, type: 3}
+      propertyPath: growingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f97d36fd4270f3844b1c6ec2adcf6c60, type: 3}
+    - target: {fileID: 1033632259432405993, guid: 7794c25c2d2e67842af0b88add1a7808, type: 3}
+      propertyPath: dyingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e8aa70fec1af8e6419dd1f86a97ecbc2, type: 3}
     - target: {fileID: 7283882877874389154, guid: 7794c25c2d2e67842af0b88add1a7808, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
