@@ -211,6 +211,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
             else if (resource == PlantResources.Water)
             {
                 Water.GiveValue(amount, "");
+                Debug.Log("amount: " + amount + " now: " + Water.Value);
             }
         } else Sunlight.GiveValue(amount, "");
     }

@@ -14,28 +14,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -9107942139504222000, guid: c3ac905c091ab2948a0d6e8c36defd5e, type: 3}
---- !u!114 &1625990629190979695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3143111999089096410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 799daa1cf9a354d4cbece3b8bbd5ac63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionTime: 4
-  takesStamina: 7
-  canUseWithoutStamina: 0
-  itemsNeeded:
-    _Array:
-    - _Array:
-      - {fileID: 11400000, guid: 842c7df675ca7874a9daee4bf4dbec58, type: 2}
-  interactionEnabled: 1
-  shovel: {fileID: 11400000, guid: f755bc711b16283419970146956c3986, type: 2}
-  betterShovel: {fileID: 11400000, guid: 77782c4625196bf4aa1cf886340b3ccb, type: 2}
 --- !u!135 &7300702244928499753
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -49,6 +27,29 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2.0667872
   m_Center: {x: 0, y: 0.30029362, z: -2.8856442e-10}
+--- !u!114 &1625990629190979695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3143111999089096410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 799daa1cf9a354d4cbece3b8bbd5ac63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionTime: 3
+  takesStamina: 7
+  canUseWithoutStamina: 0
+  itemsNeeded:
+    _Array:
+    - _Array:
+      - {fileID: 11400000, guid: 842c7df675ca7874a9daee4bf4dbec58, type: 2}
+  interactionEnabled: 1
+  shovel: {fileID: 11400000, guid: f755bc711b16283419970146956c3986, type: 2}
+  betterShovel: {fileID: 11400000, guid: 77782c4625196bf4aa1cf886340b3ccb, type: 2}
+  soilAmount: 30
 --- !u!1 &6738984027772800149
 GameObject:
   m_ObjectHideFlags: 0

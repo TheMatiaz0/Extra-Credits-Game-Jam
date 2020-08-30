@@ -9,6 +9,8 @@ public class WaterPump : InteractableObject
     public ItemScriptableObject bottleWithFilter;
     public ItemScriptableObject bigBottleWithFilter;
 
+    public uint waterAmount = 30;
+
     public override void KeyDown()
     {
         base.KeyDown();
@@ -19,6 +21,6 @@ public class WaterPump : InteractableObject
     {
         if (bottleWithFilter && Inventory.Instance.HasItem(bigBottleWithFilter.name)) interactionTime -= bigBottleWithFilter.useTakeLessTime;
         else if (bigBottleWithFilter && Inventory.Instance.HasItem(bottleWithFilter.name)) interactionTime -= bottleWithFilter.useTakeLessTime;
-        Inventory.Instance.AddResource(20, PlantSystem.PlantResources.Water);
+        Inventory.Instance.AddResource(waterAmount, PlantSystem.PlantResources.Water);
     }
 }

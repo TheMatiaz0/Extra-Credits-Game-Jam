@@ -19331,8 +19331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7ab9b9c095db34ab7c05f2a818cdb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingResourcesRandom: {x: 50, y: 70}
-  resourceUseRandom: {x: 0.05, y: 0.7}
+  startingResourcesRandom: {x: 70, y: 80}
+  resourceUseRandom: {x: 0.03, y: 0.5}
   sunlightGain: 0.4
   hoursPlantNeedsChange: 0a0000000e00000011000000
   layerMask:
@@ -19358,83 +19358,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionTime: 0.2
   takesStamina: 0
-  canUseWithoutStamina: 0
+  canUseWithoutStamina: 1
   itemsNeeded:
     _Array: []
-  interactions:
-    _Array:
-    - interactionName: Check needs
-      itemNeeded: {fileID: 0}
-      sprite: {fileID: 21300000, guid: 89fb41916da54344b87a911eca803ab8, type: 3}
-      action:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 8922648348788734259}
-            m_TargetAssemblyTypeName: Interactions.PlantActions, Assembly-CSharp
-            m_MethodName: CheckPlant
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-    - interactionName: Give resources
-      itemNeeded: {fileID: 0}
-      sprite: {fileID: 21300000, guid: 4adab807e2341d64fbe74fcd99a7c3d7, type: 3}
-      action:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 8922648348788734259}
-            m_TargetAssemblyTypeName: Interactions.PlantActions, Assembly-CSharp
-            m_MethodName: HealPlant
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-    - interactionName: Pick up
-      itemNeeded: {fileID: 0}
-      sprite: {fileID: 21300000, guid: fd0325e69e414c24b91918f6e5653986, type: 3}
-      action:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 8922648348788734259}
-            m_TargetAssemblyTypeName: Interactions.PlantActions, Assembly-CSharp
-            m_MethodName: PickUpPlant
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-    - interactionName: Light it
-      itemNeeded: {fileID: 11400000, guid: b7657c013b2f3754e8563413fc82e3c3, type: 2}
-      sprite: {fileID: 21300000, guid: fda14466965d94e48a1958f1a9d5fd98, type: 3}
-      action:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 8922648348788734259}
-            m_TargetAssemblyTypeName: Interactions.PlantActions, Assembly-CSharp
-            m_MethodName: LightPlant
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+  interactionEnabled: 1
 --- !u!114 &705895956887940747
 MonoBehaviour:
   m_ObjectHideFlags: 0
