@@ -38,6 +38,12 @@ public class GameManager : MonoSingleton<GameManager>
 		Cursor.visible = false;
 	}
 
+	public void UnlockCursor ()
+	{
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
+	}
+
 	protected void OnDisable()
 	{
 		HealthSys.Health.OnValueChangeToMin -= Health_OnValueChangedToMin;

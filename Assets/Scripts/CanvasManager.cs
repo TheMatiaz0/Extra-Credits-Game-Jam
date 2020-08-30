@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CanvasManager : MonoSingleton<CanvasManager>
 {
+	private float mainAlpha, cutsceneAlpha;
+
 	[SerializeField]
 	private CanvasGroup mainCanvas = null, cutsceneCanvas = null;
 
@@ -18,6 +20,21 @@ public class CanvasManager : MonoSingleton<CanvasManager>
 	{
 		mainCanvas.alpha = 0;
 		cutsceneCanvas.alpha = 1;
+	}
+
+	public void HideEverything()
+	{
+		mainAlpha = mainCanvas.alpha;
+		cutsceneAlpha = cutsceneCanvas.alpha;
+
+		mainCanvas.alpha = 0;
+		cutsceneCanvas.alpha = 0;
+	}
+
+	public void Restore ()
+	{
+		mainCanvas.alpha = mainAlpha;
+		cutsceneCanvas.alpha = cutsceneAlpha;
 	}
 
 	

@@ -25,8 +25,7 @@ public class ResultMenu : MonoBehaviour
 
 	protected void OnEnable()
 	{
-		Cursor.lockState = CursorLockMode.None;
-		Cursor.visible = true;
+		GameManager.Instance.UnlockCursor();
 
 		dayText.text = string.Empty;
 		plantInfo.text = string.Empty;

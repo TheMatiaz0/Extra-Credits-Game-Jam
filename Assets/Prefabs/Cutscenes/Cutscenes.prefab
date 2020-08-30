@@ -1075,6 +1075,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChooseUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7526153861576115636, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526153861576115636, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526153861576115636, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 7526153861950450570, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Name
       value: ChooseHuman
