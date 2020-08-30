@@ -17,7 +17,7 @@ public class Inventory : MonoSingleton<Inventory>
 	public LockValue<uint> water = new LockValue<uint>(10, 0, 0);
 	*/
 
-	public LockValue<uint> Soil => GetItemByName("Shovel")?.FillAmount;
+	public LockValue<uint> Soil => GetItemByName("Broken Shovel")?.FillAmount;
 
 	public LockValue<uint> Water => GetItemByName("Bottle")?.FillAmount;
 

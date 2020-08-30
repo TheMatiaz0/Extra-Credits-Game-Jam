@@ -15,6 +15,11 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 
 	private const string pressToUse = "Press RMB to Use";
 
+#if UNITY_EDITOR
+	[SerializeField]
+	private ItemScriptableObject item;
+#endif
+
 	public void Start()
 	{
 		for (var i = 0; i < 5; i++)
@@ -63,6 +68,14 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 		{
             Inventory.Instance.RemoveItem(selectedSlot,true);
         }
+
+#if UNITY_EDITOR
+		if (Input.GetKeyDown(KeyCode.H))
+		{
+
+			Inventory.Instance.AddItem(item);
+		}
+#endif
 
 		if (Input.GetMouseButtonDown(1))
 		{
