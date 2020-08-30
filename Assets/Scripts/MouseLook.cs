@@ -7,7 +7,9 @@ using UnityEngine;
 public class MouseLook : MonoSingleton<MouseLook>
 {
     [SerializeField]
-    private float mouseSensitivity = 90;
+    private int startMouseSensitivity = 90;
+
+    public int MouseSensitivity { get; set; } = 350;
 
     [SerializeField]
     private float minTurnAngle = -90;
@@ -22,16 +24,23 @@ public class MouseLook : MonoSingleton<MouseLook>
 
     public bool BlockAiming { get; set; }
 
+	protected void Start()
+	{
+        MouseSensitivity = startMouseSensitivity;
+	}
 
-    void Update()
+
+	protected void Update()
     {
         if (BlockAiming)
 		{
             return;
 		}
 
-        var mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        var mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        
+
+        var mouseX = Input.GetAxis("Mouse X") * MouseSensitivity * Time.deltaTime;
+        var mouseY = Input.GetAxis("Mouse Y") * MouseSensitivity * Time.deltaTime;
 
         // rotX += Input.GetAxis("Mouse X") * Time.deltaTime * mouseSensitivity ;
 

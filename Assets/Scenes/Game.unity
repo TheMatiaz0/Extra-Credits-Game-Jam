@@ -8534,6 +8534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7614cfba7b8cf4ba4f6012e5d7bc20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseInput: {fileID: 897006021}
 --- !u!114 &827242402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9193,14 +9194,26 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 827242401}
+        m_TargetAssemblyTypeName: PauseObject, Assembly-CSharp
+        m_MethodName: TextSetup
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 120
+  m_Text: 350
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -19248,7 +19261,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 120
+  m_Text: 350
 --- !u!222 &1692273697
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26071,6 +26084,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5532361692875267519, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
+      propertyPath: startMouseSensitivity
+      value: 350
+      objectReference: {fileID: 0}
     - target: {fileID: 7255697829055022433, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
       propertyPath: m_Name
       value: Player
