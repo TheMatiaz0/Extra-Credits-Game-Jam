@@ -41,7 +41,7 @@ public class Garbage : InteractableObject
 		}
 		else
 		{
-			int rnd = Random.Range(0, 2);
+			int rnd = Random.Range(0, manager.itemDrops.Count);
 			var item = manager.itemDrops[rnd];
 			if (Inventory.Instance.AddItem(item))
 			{

@@ -18,4 +18,4 @@ MonoBehaviour:
   useable: 0
   fillable: 1
   itemAction:
-    _classRef: 
+    _classRef: Nullable, Assembly-CSharp

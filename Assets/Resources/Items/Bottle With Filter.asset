@@ -16,5 +16,6 @@ MonoBehaviour:
   useTakeLessTime: 0.6
   oneTimeLoot: 1
   useable: 1
+  fillable: 0
   itemAction:
-    _classRef: 
+    _classRef: Nullable, Assembly-CSharp
