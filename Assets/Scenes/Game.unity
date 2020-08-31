@@ -16949,6 +16949,10 @@ PrefabInstance:
       value: Hmm... I can survive few days using this water tower. Also, my plant
         won't die that fast.
       objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: voiceline
+      value: 
+      objectReference: {fileID: 8300000, guid: af9067e420172fa4892bca4db39287b2, type: 3}
     - target: {fileID: 9214287411483278351, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: m_Name
       value: DialogTrigger (1)
@@ -17564,6 +17568,10 @@ PrefabInstance:
       propertyPath: text
       value: Maybe I should check my plant if it's healthy.
       objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: voiceline
+      value: 
+      objectReference: {fileID: 8300000, guid: 0e96f986d5be1cb48af33ee55db8809a, type: 3}
     - target: {fileID: 9214287411483278351, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: m_Name
       value: DialogTrigger (2)
@@ -20818,6 +20826,10 @@ PrefabInstance:
       propertyPath: duration
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: voiceline
+      value: 
+      objectReference: {fileID: 8300000, guid: 895bb8d931f685f4d928fb1ff0b8584a, type: 3}
     - target: {fileID: 9214287411483278351, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: m_Name
       value: DialogTrigger (4)
@@ -21731,6 +21743,10 @@ PrefabInstance:
       propertyPath: duration
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: voiceline
+      value: 
+      objectReference: {fileID: 8300000, guid: 0de9b21ab24db4845a45a6bb30ac0a52, type: 3}
     - target: {fileID: 9214287411483278351, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: m_Name
       value: DialogTrigger (3)
@@ -26828,6 +26844,10 @@ PrefabInstance:
       propertyPath: duration
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
+      propertyPath: voiceline
+      value: 
+      objectReference: {fileID: 8300000, guid: f6c76c9fb13306b4d97e43c5004f6b7c, type: 3}
     - target: {fileID: 9214287411483278351, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: m_Name
       value: DialogTrigger
