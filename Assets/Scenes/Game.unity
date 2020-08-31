@@ -16946,7 +16946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: text
-      value: Hmm... I can survive few days using this water tower. Also, my plant
+      value: Hmm... I can survive a few days with this water tower. This way my plant
         won't die that fast.
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
@@ -17566,7 +17566,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: text
-      value: Maybe I should check my plant if it's healthy.
+      value: Perhaps I should check if the plant is healthy.
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: voiceline
@@ -26838,7 +26838,7 @@ PrefabInstance:
     - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: text
       value: Eww! I smell some trash piles on the left. But maybe I can get some
-        useful items there?
+        useful items there...
       objectReference: {fileID: 0}
     - target: {fileID: 9214287411483278338, guid: f9248a8094de1a14f96454fb396ffc23, type: 3}
       propertyPath: duration

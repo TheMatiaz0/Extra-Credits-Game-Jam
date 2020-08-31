@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class DialogTrigger : MonoBehaviour
 {
-    [SerializeField] private string text;
+    [SerializeField] [TextArea] private string text;
     [SerializeField] private AudioClip voiceline;
     [SerializeField] private bool once = true;
     [SerializeField] private float duration = 3f;
