@@ -7,8 +7,7 @@ using UnityEngine;
 [Serializable]
 public class StaminaItem : ItemLogic
 {
-	[SerializeField]
-	protected Cint value;
+	private Cint value = 25;
 
 	public override void Do()
 	{
