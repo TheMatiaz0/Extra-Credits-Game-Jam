@@ -35,7 +35,7 @@ public abstract class InteractableObject : MonoBehaviour
         {
             if (!itemOptions.Any(x => Inventory.Instance.HasItem(x.name)))
             {
-                missingItems.Add(string.Join(" or ", itemOptions));
+                missingItems.Add(string.Join(" or ", itemOptions).Replace("(ItemScriptableObject)", ""));
             }
         }
 
