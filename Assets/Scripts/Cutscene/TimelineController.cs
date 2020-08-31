@@ -1,12 +1,9 @@
 ﻿using Cyberultimate;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Cyberultimate.Unity;
+using System;
 using UnityEngine;
-using UnityEngine.Playables;
-using UnityEngine.Timeline;
 using UnityEngine.Events;
+using UnityEngine.Playables;
 
 public class TimelineController : MonoBehaviour
 {
@@ -46,7 +43,7 @@ public class TimelineController : MonoBehaviour
 	public void LaunchCutscene()
 	{
 
-        MovementController.Instance.GetComponent<Collider>().enabled= false;
+		MovementController.Instance.GetComponent<Collider>().enabled = false;
 		MovementController.Instance.enabled = false;
 		MouseLook.Instance.enabled = false;
 		CanvasManager.Instance.ShowCutsceneCanvas();
@@ -62,7 +59,7 @@ public class TimelineController : MonoBehaviour
 		MovementController.Instance.enabled = true;
 		MouseLook.Instance.enabled = true;
 		CanvasManager.Instance.ShowMainCanvas();
-        MovementController.Instance.GetComponent<Collider>().enabled = true;
+		MovementController.Instance.GetComponent<Collider>().enabled = true;
 		HomeMusic.Instance.gameObject.SetActive(true);
 		TownMusic.Instance.gameObject.SetActive(true);
 		AudioManager.Instance.gameObject.SetActive(true);
@@ -81,7 +78,7 @@ public class TimelineController : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.E))
 		{
 			director.time = director.playableAsset.duration;
-			await Async.Wait(TimeSpan.FromSeconds(1));
+			await Async.Wait(TimeSpan.FromSeconds(2));
 			CloseCutscene();
 		}
 
