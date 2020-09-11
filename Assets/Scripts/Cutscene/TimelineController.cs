@@ -36,8 +36,6 @@ public class TimelineController : MonoBehaviour
 
 	protected void Start()
 	{
-		//playerCollider = MovementController.Instance.GetComponent<Collider>();
-
 		director = GetComponent<PlayableDirector>();
 	}
 
@@ -86,7 +84,7 @@ public class TimelineController : MonoBehaviour
 		{
 			director.time = director.playableAsset.duration;
 			await Async.Wait(TimeSpan.FromSeconds(2));
-			CloseCutscene();
+			// CloseCutscene();
 		}
 
 		if (Input.anyKeyDown == true)
