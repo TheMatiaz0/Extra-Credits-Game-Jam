@@ -19,7 +19,13 @@ public class DialogTrigger : MonoBehaviour
 
         used = true;
         Debug.Log("Showing dialog text");
-        UIManager.Instance.ShowDialogText(text, duration);
-        AudioManager.Instance.PlayClip(voiceline);
+        if (voiceline != null)
+        {
+            UIManager.Instance.ShowDialogText(text, voiceline);
+        }
+        else
+        {
+            UIManager.Instance.ShowDialogText(text, duration);
+        }
     }
 }

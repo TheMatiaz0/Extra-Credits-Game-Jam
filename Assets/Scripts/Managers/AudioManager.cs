@@ -13,6 +13,10 @@ public class AudioManager : MonoSingleton<AudioManager>
     
     private AudioSource sfxSource;
 
+
+    private Queue<AudioClip> dialogQueue = new Queue<AudioClip>();
+    private bool dialogInProgress = false;
+
     protected override void Awake()
     {
         base.Awake();

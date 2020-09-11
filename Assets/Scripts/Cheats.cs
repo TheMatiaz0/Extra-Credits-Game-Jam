@@ -5,6 +5,8 @@ namespace DefaultNamespace
 {
     public class Cheats : MonoBehaviour
     {
+        public AudioClip testClip;
+        private int n = 0;
         private void Update()
         {
 #if UNITY_EDITOR
@@ -23,6 +25,9 @@ namespace DefaultNamespace
             else if (Input.GetKeyDown(KeyCode.L))
             {
                 GameEndingOptions.Instance.StartEnding();
+            } else if (Input.GetKeyDown(KeyCode.B))
+            {
+                UIManager.Instance.ShowDialogText($"test{++n}", clip: testClip);
             }
 #endif
         }

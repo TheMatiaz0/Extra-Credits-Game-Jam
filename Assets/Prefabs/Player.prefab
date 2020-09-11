@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1006d13dc30747d293084b3c63aa404d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testClip: {fileID: 8300000, guid: 0de9b21ab24db4845a45a6bb30ac0a52, type: 3}
 --- !u!95 &759226910
 Animator:
   serializedVersion: 3
@@ -288,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3476445088fdda41976e8a946784f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
+  startMouseSensitivity: 90
   minTurnAngle: -60
   maxTurnAngle: 60
   playerBody: {fileID: 7255697829055022461}
