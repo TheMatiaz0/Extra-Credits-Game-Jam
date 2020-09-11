@@ -16,6 +16,11 @@ public class CanvasManager : MonoSingleton<CanvasManager>
 		cutsceneCanvas.alpha = 0;
 	}
 
+	public void EndingInteractable (bool isTrue)
+	{
+		endingCanvas.blocksRaycasts = isTrue;
+	}
+
 	public void ShowCutsceneCanvas ()
 	{
 		mainCanvas.alpha = 0;

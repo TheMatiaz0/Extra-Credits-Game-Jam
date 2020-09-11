@@ -13,26 +13,24 @@ public class GameEndingOptions : MonoSingleton<GameEndingOptions>
 	public enum Endings { plant, human }
 	public void GameEnding(Endings ending)
 	{
+		CanvasManager.Instance.EndingInteractable(false);
+		SetAllTo(false);
+
+		CanvasManager.Instance.HideEverything();
+
 		if (ending == Endings.plant)
 		{
-			SetAllTo(false);
-			CanvasManager.Instance.HideEverything();
-
 			currentTimeline = plantEndingCutscene.GetComponent<TimelineController>();
 			plantEndingCutscene.SetActive(true);
-			plantEndingCutscene.GetComponent<TimelineController>().LaunchCutscene();
-			Debug.Log("h");
 		}
+
 		else if (ending == Endings.human)
 		{
-			SetAllTo(false);
-			CanvasManager.Instance.HideEverything();
-
 			currentTimeline = humanEndingCutscene.GetComponent<TimelineController>();
 			humanEndingCutscene.SetActive(true);
-			humanEndingCutscene.GetComponent<TimelineController>().LaunchCutscene();
-			Debug.Log("p");
 		}
+
+		currentTimeline.LaunchCutscene();
 	}
 
 	public void PlantEnding()
@@ -73,6 +71,7 @@ public class GameEndingOptions : MonoSingleton<GameEndingOptions>
 	public void ChooseEnding()
 	{
 		CanvasManager.Instance.ShowOnlyEndingCanvas();
+		CanvasManager.Instance.EndingInteractable(true);
 
 		Cursor.lockState = CursorLockMode.None;
 		Cursor.visible = true;
