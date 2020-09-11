@@ -13,9 +13,13 @@ public class Soil : InteractableObject
 
     protected override void OnInteract()
     {
-        AudioManager.Instance.PlaySFX("shovel");
         if (betterShovel && Inventory.Instance.HasItem(betterShovel.name)) interactionTime -= betterShovel.useTakeLessTime;
         else if (shovel && Inventory.Instance.HasItem(shovel.name)) interactionTime -= shovel.useTakeLessTime;
         Inventory.Instance.AddResource(soilAmount, PlantSystem.PlantResources.Soil); //zależnie od rodzaju łopaty
+    }
+
+    public override void KeyDown()
+    {
+        AudioManager.Instance.PlaySFX("shovel");
     }
 }

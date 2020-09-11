@@ -208,12 +208,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5.5
   runSpeed: 8
-  outOfStaminaSpeed: 3.5
-  movingStamina: 0.2
-  runningStamina: 0.45
+  outOfStaminaSpeed: 4
+  movingStamina: 0.15
+  runningStamina: 0.35
   gravity: -9.8
   jumpHeight: 1
-  jumpingStamina: 10
+  jumpingStamina: 4
   groundCheck: {fileID: 5881757075285203781}
   groundDistance: 0.4
   groundMask:
