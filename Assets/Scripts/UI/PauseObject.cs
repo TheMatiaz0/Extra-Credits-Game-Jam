@@ -2,6 +2,7 @@
 using Cyberultimate.Unity;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,28 +17,27 @@ public class PauseObject : MonoBehaviour
 		mouseSensitivity.value = MouseLook.Instance.MouseSensitivity;
 		mouseSensitivity.onValueChanged.AddListener(OnSliderValueChanged);
 	}
-
+	
 	protected void OnEnable()
 	{
 		TimeControl.Register(this, 0);
-		GameManager.Instance.UnlockCursor();
 	}
 
 	protected void OnDisable()
 	{
 		TimeControl.Unregister(this);
-		GameManager.Instance.LockCursorUp();
 	}
 
-	public void GoMainMenu ()
+	public void GoMainMenu()
 	{
 		this.gameObject.SetActive(false);
 		SceneManager.LoadScene("Menu");
 	}
 
-	public void Resume ()
+	public void Resume()
 	{
-		this.gameObject.SetActive(false);
+		gameObject.SetActive(false);
+		GameManager.Instance.LockCursorUp();
 	}
 
 	public void OnSliderValueChanged(float v)

@@ -3,6 +3,7 @@ using Cyberultimate;
 using Cyberultimate.Unity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum GameOverType
 {
@@ -34,14 +35,18 @@ public class GameManager : MonoSingleton<GameManager>
 
 	public void LockCursorUp ()
 	{
-		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = false;
+		SetCursorLock(true);
 	}
 
 	public void UnlockCursor ()
 	{
-		Cursor.lockState = CursorLockMode.None;
-		Cursor.visible = true;
+		SetCursorLock(false);
+	}
+
+	public void SetCursorLock(bool @lock)
+	{
+		Cursor.lockState = @lock ? CursorLockMode.Locked : CursorLockMode.None;
+		Cursor.visible = !@lock;
 	}
 
 	protected void OnDisable()

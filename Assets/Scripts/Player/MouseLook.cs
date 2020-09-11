@@ -36,9 +36,7 @@ public class MouseLook : MonoSingleton<MouseLook>
 		{
             return;
 		}
-
         
-
         var mouseX = Input.GetAxis("Mouse X") * MouseSensitivity * Time.deltaTime;
         var mouseY = Input.GetAxis("Mouse Y") * MouseSensitivity * Time.deltaTime;
 
