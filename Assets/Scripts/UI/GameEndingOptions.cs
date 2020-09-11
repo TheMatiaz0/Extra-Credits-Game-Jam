@@ -18,6 +18,7 @@ public class GameEndingOptions : MonoSingleton<GameEndingOptions>
     public enum Endings { plant, human }
     public void GameEnding(Endings ending)
     {
+        MovementController.Instance.transform.localEulerAngles = Vector3.zero;
         if (ending == Endings.plant)
         {
             SetAllTo(false);
@@ -26,7 +27,6 @@ public class GameEndingOptions : MonoSingleton<GameEndingOptions>
             currentTimeline = plantEndingCutscene.GetComponent<TimelineController>();
             plantEndingCutscene.SetActive(true);
             plantEndingCutscene.GetComponent<TimelineController>().LaunchCutscene();
-            Debug.Log("h");
         } else if (ending == Endings.human)
         {
             SetAllTo(false);
@@ -35,7 +35,6 @@ public class GameEndingOptions : MonoSingleton<GameEndingOptions>
             currentTimeline = humanEndingCutscene.GetComponent<TimelineController>();
             humanEndingCutscene.SetActive(true);
             humanEndingCutscene.GetComponent<TimelineController>().LaunchCutscene();
-            Debug.Log("p");
         }
     }
 
@@ -83,6 +82,7 @@ public class GameEndingOptions : MonoSingleton<GameEndingOptions>
         chooseUI.SetActive(true);
         specialUI.SetActive(true);
 
+        MouseLook.Instance.BlockAiming = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
