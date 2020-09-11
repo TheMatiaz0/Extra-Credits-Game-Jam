@@ -1,4 +1,5 @@
-﻿using Cyberultimate.Unity;
+﻿using System;
+using Cyberultimate.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,13 @@ using UnityEngine.UI;
 public class PauseObject : MonoBehaviour
 {
 	[SerializeField]
-	private InputField mouseInput = null;
+	private Slider mouseSensitivity = null;
+
+	private void Awake()
+	{
+		mouseSensitivity.value = MouseLook.Instance.MouseSensitivity;
+		mouseSensitivity.onValueChanged.AddListener(OnSliderValueChanged);
+	}
 
 	protected void OnEnable()
 	{
@@ -33,12 +40,9 @@ public class PauseObject : MonoBehaviour
 		this.gameObject.SetActive(false);
 	}
 
-
-	public void TextSetup (string text)
+	public void OnSliderValueChanged(float v)
 	{
-		int.TryParse(text, out int result);		
-		mouseInput.text = result.ToString();
-		MouseLook.Instance.MouseSensitivity = result;
+		MouseLook.Instance.MouseSensitivity = v;
 	}
 
 }

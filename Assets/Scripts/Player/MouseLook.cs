@@ -9,7 +9,7 @@ public class MouseLook : MonoSingleton<MouseLook>
     [SerializeField]
     private int startMouseSensitivity = 90;
 
-    public int MouseSensitivity { get; set; } = 350;
+    public float MouseSensitivity { get; set; } = 350;
 
     [SerializeField]
     private float minTurnAngle = -90;
