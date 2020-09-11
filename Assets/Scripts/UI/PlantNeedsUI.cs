@@ -70,7 +70,7 @@ namespace UI
 
         public void FilWater()
         {
-            if (Inventory.Instance?.Water.Value == 0)
+            if (Inventory.Instance?.Water?.Value == 0)
             {
                 UIManager.Instance.ShowPopupText("You don't have any water!");
                 return;
@@ -84,7 +84,7 @@ namespace UI
 
         public void FillSoil()
         {
-            if (Inventory.Instance?.Soil.Value == 0)
+            if (Inventory.Instance?.Soil?.Value == 0)
             {
                 UIManager.Instance.ShowPopupText("You don't have any soil!");
                 return;
