@@ -32,9 +32,11 @@ public class ResultMenu : MonoBehaviour
 		plantStateInfo.text = string.Empty;
 		slowlyType = StartCoroutine(SlowlyType());
 
+		HomeMusic.Instance.Silence();
+
 		TimeControl.Register(this, 0);
-		AudioManager.Instance.SfxSource.Pause();
-		AudioManager.Instance.SfxSource.volume = 0;
+		// AudioManager.Instance.SfxSource.Pause();
+		// AudioManager.Instance.SfxSource.volume = 0;
 	}
 
 	private IEnumerator SlowlyType()
@@ -70,9 +72,10 @@ public class ResultMenu : MonoBehaviour
 	protected void OnDisable()
 	{
 		TimeControl.Unregister(this);
+		HomeMusic.Instance.RestoreVolume();
 		TimeManager.Instance.StartNewDay();
 		GameManager.Instance.LockCursorUp();
-		AudioManager.Instance.SfxSource.UnPause();
-		AudioManager.Instance.SfxSource.volume = 1;
+		// AudioManager.Instance.SfxSource.UnPause();
+		// AudioManager.Instance.SfxSource.volume = 1;
 	}
 }

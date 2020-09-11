@@ -14,7 +14,7 @@ public class PressKeyToSkip : MonoBehaviour
 	protected void OnEnable()
 	{
 		MakeLight();
-		Invoke("Disappear", 5);
+		Invoke(nameof(Disappear), 5);
 	}
 
 	private void Disappear ()

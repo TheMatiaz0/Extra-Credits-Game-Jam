@@ -37,6 +37,16 @@ public class HomeMusic : MonoSingleton<HomeMusic>
 
 	}
 
+	public void Silence ()
+	{
+		FadeVolume(source.volume, 0);
+	}
+
+	public void RestoreVolume()
+	{
+		FadeVolume(source.volume, 1);
+	}
+
 	private void FadeVolume(float from, float to, Action callback = null)
 	{
 		LeanTween.value(source.gameObject,
