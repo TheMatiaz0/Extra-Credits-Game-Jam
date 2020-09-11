@@ -26142,10 +26142,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 615539352432289558, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
-      propertyPath: testClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 0de9b21ab24db4845a45a6bb30ac0a52, type: 3}
     - target: {fileID: 5532361692875267519, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
       propertyPath: startMouseSensitivity
       value: 350
