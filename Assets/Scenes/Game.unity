@@ -21709,10 +21709,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio
       objectReference: {fileID: 0}
-    - target: {fileID: 9082060457484305117, guid: a2963fa725256cb47aa3006cb4949211, type: 3}
-      propertyPath: soundEffects.values.Array.data[9]
-      value: 
-      objectReference: {fileID: 8300000, guid: b8b39a4ab0d3068428f45d2f03e53c88, type: 3}
     - target: {fileID: 9082060457484305118, guid: a2963fa725256cb47aa3006cb4949211, type: 3}
       propertyPath: m_LocalPosition.x
       value: 56.617077

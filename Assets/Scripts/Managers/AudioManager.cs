@@ -12,10 +12,7 @@ public class AudioManager : MonoSingleton<AudioManager>
     [Range(0, 1)] public float sfxVolume = 1;
     
     private AudioSource sfxSource;
-
-
-    private Queue<AudioClip> dialogQueue = new Queue<AudioClip>();
-    private bool dialogInProgress = false;
+    public AudioSource SfxSource => sfxSource;
 
     protected override void Awake()
     {

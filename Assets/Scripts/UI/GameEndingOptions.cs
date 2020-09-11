@@ -45,7 +45,6 @@ public class GameEndingOptions : MonoSingleton<GameEndingOptions>
 	private void Start()
 	{
 		SetAllTo(false);
-		// specialUI.SetActive(true);
 		startingCutScene.SetActive(true);
 		currentTimeline = startingCutScene.GetComponent<TimelineController>();
 	}
@@ -79,7 +78,6 @@ public class GameEndingOptions : MonoSingleton<GameEndingOptions>
 		MovementController.Instance.GetComponent<Collider>().enabled = false;
 		MovementController.Instance.enabled = false;
 		MouseLook.Instance.enabled = false;
-		// CanvasManager.Instance.ShowCutsceneCanvas();
 		HomeMusic.Instance.gameObject.SetActive(false);
 		TownMusic.Instance.gameObject.SetActive(false);
 		AudioManager.Instance.gameObject.SetActive(false);

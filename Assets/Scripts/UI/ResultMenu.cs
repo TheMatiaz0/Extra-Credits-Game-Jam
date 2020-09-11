@@ -33,6 +33,8 @@ public class ResultMenu : MonoBehaviour
 		slowlyType = StartCoroutine(SlowlyType());
 
 		TimeControl.Register(this, 0);
+		AudioManager.Instance.SfxSource.Pause();
+		AudioManager.Instance.SfxSource.volume = 0;
 	}
 
 	private IEnumerator SlowlyType()
@@ -70,5 +72,7 @@ public class ResultMenu : MonoBehaviour
 		TimeControl.Unregister(this);
 		TimeManager.Instance.StartNewDay();
 		GameManager.Instance.LockCursorUp();
+		AudioManager.Instance.SfxSource.UnPause();
+		AudioManager.Instance.SfxSource.volume = 1;
 	}
 }
