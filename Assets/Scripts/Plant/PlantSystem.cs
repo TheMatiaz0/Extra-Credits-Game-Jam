@@ -130,21 +130,6 @@ public class PlantSystem : MonoSingleton<PlantSystem>
             lastStateInside = false;
 
         }
-/*
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            PlantState = State.Dying;
-        } else if (Input.GetKeyDown(KeyCode.U))
-        {
-            PlantState = State.Growing;
-        } else if (Input.GetKeyDown(KeyCode.V))
-        {
-            PlantSize.GiveValue(1);
-        } else if (Input.GetKeyDown(KeyCode.B))
-        {
-            PlantSize.TakeValue(1);
-        }
-		*/
     }
 
     private float SetToRandom(Vector2 rnd)
@@ -258,7 +243,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     private bool cutsceneShown = false;
     private void OnTimeChange(object sender, SimpleArgs<TimeSpan> args)
     {
-        if (PlantSize.Value == 2 && args.Value >= TimeSpan.FromHours(19) && !cutsceneShown)
+        if (PlantSize.Value == 2 && /* args.Value >= TimeSpan.FromHours(19) && */ !cutsceneShown)
         {
             cutsceneShown = true;
             GameManager.Instance.GameFinishCutscene();

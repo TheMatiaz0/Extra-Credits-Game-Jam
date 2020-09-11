@@ -42,7 +42,7 @@ public class TimelineController : MonoBehaviour
 
 	public void LaunchCutscene()
 	{
-
+		Camera.main.transform.rotation = new Quaternion();
 		MovementController.Instance.GetComponent<Collider>().enabled = false;
 		MovementController.Instance.enabled = false;
 		MouseLook.Instance.enabled = false;
