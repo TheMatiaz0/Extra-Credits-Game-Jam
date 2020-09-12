@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlantDisease
   m_EditorClassIdentifier: 
   logic:
-    _classRef: EnemyAttackEventLogic, Assembly-CSharp
+    _classRef: PlantDiseaseEventLogic, Assembly-CSharp

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Cyberultimate;
 using Cyberultimate.Unity;
 using UnityEngine;
@@ -27,7 +28,7 @@ public class EventController : MonoSingleton<EventController>
 	private void OnDayChange(object sender, SimpleArgs<Cint> e)
     {
         if (e.Value == 0) return;
-        if (Random.Range(0, 1) == 0) return;
+        if (Random.Range(0, 2) == 0) return;
         
         var evt = allEvents[Random.Range(0, allEvents.Length)];
         
@@ -39,9 +40,13 @@ public class EventController : MonoSingleton<EventController>
         if(evt?.logic == null) return;
 
         Debug.Log($"Activating event: {evt.name}");
-        
-        var logic = Activator.CreateInstance(evt.logic) as EventLogic;
 
-        logic.Activate();
+        Task.Run(async () =>
+        {
+            await Async.Wait(0.2f);
+            var logic = Activator.CreateInstance(evt.logic) as EventLogic;
+            logic?.Activate();
+        });
+        
     }
 }

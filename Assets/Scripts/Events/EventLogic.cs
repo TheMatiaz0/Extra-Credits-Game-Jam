@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class EventLogic : MonoBehaviour
+public abstract class EventLogic
 {
     public abstract void Activate();
 }
