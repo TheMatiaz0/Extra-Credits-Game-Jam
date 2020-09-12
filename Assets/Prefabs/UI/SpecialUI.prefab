@@ -146,7 +146,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 6555536271375733589}
   m_HandleRect: {fileID: 6555536272785911078}
   m_Direction: 0
-  m_MinValue: 200
+  m_MinValue: 50
   m_MaxValue: 1000
   m_WholeNumbers: 0
   m_Value: 620
