@@ -36,11 +36,11 @@ namespace DefaultNamespace
 				//items:
 				if (Input.GetKeyDown(KeyCode.S))
 				{
-					Inventory.Instance.AddItem(GarbageManager.Instance.shovelEvolution[0]);
+					// Inventory.Instance.AddItem(GarbageManager.Instance.shovelEvolution[0]);
 				}
 				else if (Input.GetKeyDown(KeyCode.W))
 				{
-					Inventory.Instance.AddItem(GarbageManager.Instance.bottleEvolution[0]);
+					// Inventory.Instance.AddItem(GarbageManager.Instance.bottleEvolution[0]);
 				}
 			}
 #endif
