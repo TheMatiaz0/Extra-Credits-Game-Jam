@@ -6,7 +6,7 @@ using UnityEngine;
 public class InventoryUI : MonoSingleton<InventoryUI>
 {
 	private Slot[] slots = new Slot[5];
-	private Cint selectedSlot = 0;
+	public Cint SelectedSlot { get; private set; }= 0;
 
 	public Sprite emptyImage;
 	public Sprite testImage;
@@ -52,13 +52,13 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 					slots[i].fillImage.fillAmount = item.FillAmount.Value / 100f;
 				}
 			}
-			slots[i].Selected = selectedSlot == i;
+			slots[i].Selected = SelectedSlot == i;
 		}
 	}
 
 	private void Select(Cint i)
 	{
-		selectedSlot = i;
+		SelectedSlot = i;
 		Refresh();
 	}
 
@@ -66,7 +66,7 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 	{
         if (Input.GetKeyDown(KeyCode.Q))
 		{
-            Inventory.Instance.RemoveItem(selectedSlot,true);
+            Inventory.Instance.RemoveItem(SelectedSlot,true);
         }
 
 #if UNITY_EDITOR
@@ -82,7 +82,7 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 			Cint slot = 0;
 			Item it = null;
 
-			it = Inventory.Instance.GetItem(slot = selectedSlot);
+			it = Inventory.Instance.GetItem(slot = SelectedSlot);
 
 			if (it == null)
 			{
@@ -105,13 +105,13 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 	{
 		if (Input.GetAxis("Mouse ScrollWheel") > 0)
 		{
-			selectedSlot--;
+			SelectedSlot--;
 			Refresh();
 			ShowCurrentItem();
 		}
 		else if (Input.GetAxis("Mouse ScrollWheel") < 0)
 		{
-			selectedSlot += selectedSlot < 4 ? (Cint)1 : Cint.Zero;
+			SelectedSlot += SelectedSlot < 4 ? (Cint)1 : Cint.Zero;
 			Refresh();
 			ShowCurrentItem();
 		}
@@ -138,7 +138,7 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 
 	private void ShowCurrentItem()
 	{
-		var it = Inventory.Instance.GetItem(selectedSlot);
+		var it = Inventory.Instance.GetItem(SelectedSlot);
 		if (it?.Useable ?? false)
 		{
 			UIManager.Instance.ShowPopupText($"{it?.Name} ({pressToUse})" ?? "");
