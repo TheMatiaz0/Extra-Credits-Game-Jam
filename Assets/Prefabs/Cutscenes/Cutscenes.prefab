@@ -59,9 +59,6 @@ MonoBehaviour:
   beforeEndCutscene: {fileID: 6427639502664083466}
   humanEndingCutscene: {fileID: 6427639504159670571}
   plantEndingCutscene: {fileID: 6427639503566380976}
-  chooseUI: {fileID: 6427639503856507951}
-  specialUI: {fileID: 6427639502958262294}
-  UI: {fileID: 0}
   currentTimeline: {fileID: 6427639503816108707}
 --- !u!1 &6427639502478636871
 GameObject:
@@ -314,6 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressToSkip: {fileID: 6427639504313736704}
+  shouldShowCutsceneCanvas: 1
   onCutsceneEnd:
     m_PersistentCalls:
       m_Calls:
@@ -332,6 +330,18 @@ MonoBehaviour:
   onCutsceneStart:
     m_PersistentCalls:
       m_Calls: []
+--- !u!225 &2075594076
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6427639503018290701}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &6427639503566380976
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressToSkip: {fileID: 6427639504313736704}
+  shouldShowCutsceneCanvas: 0
   onCutsceneEnd:
     m_PersistentCalls:
       m_Calls:
@@ -559,6 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressToSkip: {fileID: 6427639504313736704}
+  shouldShowCutsceneCanvas: 1
   onCutsceneEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -768,6 +780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressToSkip: {fileID: 6427639504313736704}
+  shouldShowCutsceneCanvas: 0
   onCutsceneEnd:
     m_PersistentCalls:
       m_Calls:
@@ -785,7 +798,19 @@ MonoBehaviour:
         m_CallState: 2
   onCutsceneStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6427639504119504370}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: ChangeSkybox
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &364547350211551759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -962,7 +987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2697421664325849212, guid: adae9dc76bd827b49aea0a4acb2ee40f, type: 3}
       propertyPath: m_Name
-      value: EndCutscene2
+      value: EndCutscene2Package
       objectReference: {fileID: 0}
     - target: {fileID: 2697421664325849212, guid: adae9dc76bd827b49aea0a4acb2ee40f, type: 3}
       propertyPath: m_IsActive
@@ -1173,7 +1198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7526153861973129663, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Text
-      value: yourself
+      value: Yourself
       objectReference: {fileID: 0}
     - target: {fileID: 7526153861973129663, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Color.r
@@ -1305,14 +1330,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
+--- !u!1 &6427639503018290701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7526153861576115627, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
+  m_PrefabInstance: {fileID: 3549352303981079462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6427639503018290700 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7526153861576115626, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
-  m_PrefabInstance: {fileID: 3549352303981079462}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6427639503856507951 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7526153860803671945, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
   m_PrefabInstance: {fileID: 3549352303981079462}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4743171658584591543
@@ -1412,11 +1437,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1355d27bf8e6a9f4fa93668b0b7f9332, type: 3}
---- !u!1 &6427639502958262294 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1792627731737539745, guid: 1355d27bf8e6a9f4fa93668b0b7f9332, type: 3}
-  m_PrefabInstance: {fileID: 4743171658584591543}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6427639503879246722 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1792627732973035317, guid: 1355d27bf8e6a9f4fa93668b0b7f9332, type: 3}
@@ -1595,7 +1615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4070088721397157951, guid: c0a0382cfb78e9b4dace7aeba90759f7, type: 3}
       propertyPath: m_Name
-      value: BeginCutscene
+      value: BeginCutscenePackage
       objectReference: {fileID: 0}
     - target: {fileID: 4070088721397157951, guid: c0a0382cfb78e9b4dace7aeba90759f7, type: 3}
       propertyPath: m_IsActive

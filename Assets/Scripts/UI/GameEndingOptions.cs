@@ -1,97 +1,85 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Cyberultimate.Unity;
 using UnityEngine;
-using Cyberultimate.Unity;
 
 public class GameEndingOptions : MonoSingleton<GameEndingOptions>
 {
-    public GameObject startingCutScene;
-    public GameObject beforeEndCutscene;
-    public GameObject humanEndingCutscene;
-    public GameObject plantEndingCutscene;
-    public GameObject chooseUI;
-    public GameObject specialUI;
-    public GameObject UI;
+	public GameObject startingCutScene;
+	public GameObject beforeEndCutscene;
+	public GameObject humanEndingCutscene;
+	public GameObject plantEndingCutscene;
 
-    public TimelineController currentTimeline;
+	public TimelineController currentTimeline;
 
-    public enum Endings { plant, human }
-    public void GameEnding(Endings ending)
-    {
-        MovementController.Instance.transform.localEulerAngles = Vector3.zero;
-        if (ending == Endings.plant)
-        {
-            SetAllTo(false);
-            specialUI.SetActive(true);
+	public enum Endings { plant, human }
+	public void GameEnding(Endings ending)
+	{
+		CanvasManager.Instance.EndingInteractable(false);
+		SetAllTo(false);
 
-            currentTimeline = plantEndingCutscene.GetComponent<TimelineController>();
-            plantEndingCutscene.SetActive(true);
-            plantEndingCutscene.GetComponent<TimelineController>().LaunchCutscene();
-        } else if (ending == Endings.human)
-        {
-            SetAllTo(false);
-            specialUI.SetActive(true);
+		CanvasManager.Instance.HideEverything();
 
-            currentTimeline = humanEndingCutscene.GetComponent<TimelineController>();
-            humanEndingCutscene.SetActive(true);
-            humanEndingCutscene.GetComponent<TimelineController>().LaunchCutscene();
-        }
-    }
+		if (ending == Endings.plant)
+		{
+			currentTimeline = plantEndingCutscene.GetComponent<TimelineController>();
+			plantEndingCutscene.SetActive(true);
+		}
 
-    public void PlantEnding()
-    {
-        GameEnding(Endings.plant);
-    }
-    public void HumanEnding()
-    {
-        GameEnding(Endings.human);
-    }
+		else if (ending == Endings.human)
+		{
+			currentTimeline = humanEndingCutscene.GetComponent<TimelineController>();
+			humanEndingCutscene.SetActive(true);
+		}
 
-    private void Start()
-    {
-        SetAllTo(false);
-        specialUI.SetActive(true);
-        startingCutScene.SetActive(true);
-        currentTimeline = startingCutScene.GetComponent<TimelineController>();
-    }
+		currentTimeline.LaunchCutscene();
+	}
 
-    void SetAllTo(bool what)
-    {
-        chooseUI.SetActive(what);
-        beforeEndCutscene.SetActive(what);
-        plantEndingCutscene.SetActive(what);
-        humanEndingCutscene.SetActive(what);
-        startingCutScene.SetActive(what);
-        specialUI.SetActive(what);
-    }
+	public void PlantEnding()
+	{
+		GameEnding(Endings.plant);
+	}
+	public void HumanEnding()
+	{
+		GameEnding(Endings.human);
+	}
 
-    public void StartEnding()
-    {
-        SetAllTo(false);
-        specialUI.SetActive(true);
+	private void Start()
+	{
+		SetAllTo(false);
+		startingCutScene.SetActive(true);
+		currentTimeline = startingCutScene.GetComponent<TimelineController>();
+	}
 
-        currentTimeline = beforeEndCutscene.GetComponent<TimelineController>();
-        beforeEndCutscene.SetActive(true);
-        beforeEndCutscene.GetComponent<TimelineController>().LaunchCutscene();
+	void SetAllTo(bool what)
+	{
+		CanvasManager.Instance.HideEverything();
+		beforeEndCutscene.SetActive(what);
+		plantEndingCutscene.SetActive(what);
+		humanEndingCutscene.SetActive(what);
+		startingCutScene.SetActive(what);
+	}
 
-        UI.SetActive(false);
-    }
+	public void StartEnding()
+	{
+		SetAllTo(false);
 
-    public void ChooseEnding()
-    {
-        chooseUI.SetActive(true);
-        specialUI.SetActive(true);
+		currentTimeline = beforeEndCutscene.GetComponent<TimelineController>();
+		beforeEndCutscene.SetActive(true);
+		currentTimeline.LaunchCutscene();
+	}
 
-        MouseLook.Instance.BlockAiming = true;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+	public void ChooseEnding()
+	{
+		CanvasManager.Instance.ShowOnlyEndingCanvas();
+		CanvasManager.Instance.EndingInteractable(true);
 
-        MovementController.Instance.GetComponent<Collider>().enabled = false;
-        MovementController.Instance.enabled = false;
-        MouseLook.Instance.enabled = false;
-        CanvasManager.Instance.ShowCutsceneCanvas();
-        HomeMusic.Instance.gameObject.SetActive(false);
-        TownMusic.Instance.gameObject.SetActive(false);
-        AudioManager.Instance.gameObject.SetActive(false);
-    }
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
+
+		MovementController.Instance.GetComponent<Collider>().enabled = false;
+		MovementController.Instance.enabled = false;
+		MouseLook.Instance.enabled = false;
+		HomeMusic.Instance.gameObject.SetActive(false);
+		TownMusic.Instance.gameObject.SetActive(false);
+		AudioManager.Instance.gameObject.SetActive(false);
+	}
 }

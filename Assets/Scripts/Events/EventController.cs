@@ -19,7 +19,12 @@ public class EventController : MonoSingleton<EventController>
         TimeManager.Instance.OnCurrentDayChange += OnDayChange;
     }
 
-    private void OnDayChange(object sender, SimpleArgs<Cint> e)
+	protected void OnDisable()
+	{
+        TimeManager.Instance.OnCurrentDayChange -= OnDayChange;
+    }
+
+	private void OnDayChange(object sender, SimpleArgs<Cint> e)
     {
         if (e.Value == 0) return;
         if (Random.Range(0, 1) == 0) return;

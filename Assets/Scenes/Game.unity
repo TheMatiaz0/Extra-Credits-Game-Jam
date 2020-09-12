@@ -353,6 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCanvas: {fileID: 78992573}
   cutsceneCanvas: {fileID: 56842485}
+  endingCanvas: {fileID: 2075594076}
 --- !u!1 &29909707 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8466167461536170829, guid: 7718aefab274a4e4792a6a0ffd6949f6, type: 3}
@@ -20414,11 +20415,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a0d137d3289051141bb88b1fa83df8e8, type: 3}
   m_PrefabInstance: {fileID: 1865432972}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1876579989 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3908250940728553294, guid: 292336f4dad7d6e4d8d7a42e1ce7c5f8, type: 3}
-  m_PrefabInstance: {fileID: 3908250941095275295}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1876993591 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5807271506688463533, guid: 7718aefab274a4e4792a6a0ffd6949f6, type: 3}
@@ -21713,10 +21709,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio
       objectReference: {fileID: 0}
-    - target: {fileID: 9082060457484305117, guid: a2963fa725256cb47aa3006cb4949211, type: 3}
-      propertyPath: soundEffects.values.Array.data[9]
-      value: 
-      objectReference: {fileID: 8300000, guid: b8b39a4ab0d3068428f45d2f03e53c88, type: 3}
     - target: {fileID: 9082060457484305118, guid: a2963fa725256cb47aa3006cb4949211, type: 3}
       propertyPath: m_LocalPosition.x
       value: 56.617077
@@ -21819,7 +21811,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994366220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 164.60287, y: -136.02702, z: 222.89882}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -22263,7 +22255,7 @@ GameObject:
   - component: {fileID: 2015741613}
   - component: {fileID: 2015741612}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22409,10 +22401,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6427639502370043988, guid: 2db9f667932610f46849937309992dae, type: 3}
-      propertyPath: UI
-      value: 
-      objectReference: {fileID: 1876579989}
     - target: {fileID: 6427639502370043989, guid: 2db9f667932610f46849937309992dae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -22974,6 +22962,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -822479490718425064, guid: 888ca28142d45594a84be5cb127bdaee, type: 3}
+--- !u!225 &2075594076 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 2075594076, guid: 2db9f667932610f46849937309992dae, type: 3}
+  m_PrefabInstance: {fileID: 2023854460}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2094360126
 GameObject:
   m_ObjectHideFlags: 0

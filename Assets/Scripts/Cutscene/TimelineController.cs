@@ -12,9 +12,10 @@ public class TimelineController : MonoBehaviour
 	[SerializeField]
 	private GameObject pressToSkip = null;
 
-	private Collider playerCollider = null;
-
 	public bool CutsceneRunning { get; private set; } = true;
+
+	[SerializeField]
+	private bool shouldShowCutsceneCanvas = true;
 
 	[SerializeField]
 	private UnityEvent onCutsceneEnd;
@@ -35,18 +36,19 @@ public class TimelineController : MonoBehaviour
 
 	protected void Start()
 	{
-		//playerCollider = MovementController.Instance.GetComponent<Collider>();
-
 		director = GetComponent<PlayableDirector>();
 	}
 
 	public void LaunchCutscene()
 	{
-
+		Camera.main.transform.rotation = new Quaternion();
 		MovementController.Instance.GetComponent<Collider>().enabled = false;
 		MovementController.Instance.enabled = false;
 		MouseLook.Instance.enabled = false;
-		CanvasManager.Instance.ShowCutsceneCanvas();
+		if (shouldShowCutsceneCanvas)
+		{
+			CanvasManager.Instance.ShowCutsceneCanvas();
+		}
 		HomeMusic.Instance.gameObject.SetActive(false);
 		TownMusic.Instance.gameObject.SetActive(false);
 		AudioManager.Instance.gameObject.SetActive(false);
@@ -58,7 +60,10 @@ public class TimelineController : MonoBehaviour
 	{
 		MovementController.Instance.enabled = true;
 		MouseLook.Instance.enabled = true;
-		CanvasManager.Instance.ShowMainCanvas();
+		if (shouldShowCutsceneCanvas)
+		{
+			CanvasManager.Instance.ShowMainCanvas();
+		}
 		MovementController.Instance.GetComponent<Collider>().enabled = true;
 		HomeMusic.Instance.gameObject.SetActive(true);
 		TownMusic.Instance.gameObject.SetActive(true);
@@ -79,7 +84,7 @@ public class TimelineController : MonoBehaviour
 		{
 			director.time = director.playableAsset.duration;
 			await Async.Wait(TimeSpan.FromSeconds(2));
-			CloseCutscene();
+			// CloseCutscene();
 		}
 
 		if (Input.anyKeyDown == true)

@@ -21,11 +21,23 @@ public class PauseObject : MonoBehaviour
 	protected void OnEnable()
 	{
 		TimeControl.Register(this, 0);
+		if (AudioManager.Instance != null)
+		{
+			AudioManager.Instance.SfxSource.Pause();
+			AudioManager.Instance.SfxSource.volume = 0;
+		}
+
 	}
 
 	protected void OnDisable()
 	{
 		TimeControl.Unregister(this);
+		if (AudioManager.Instance != null)
+		{
+			AudioManager.Instance.SfxSource.UnPause();
+			AudioManager.Instance.SfxSource.volume = 1;
+		}
+
 	}
 
 	public void GoMainMenu()

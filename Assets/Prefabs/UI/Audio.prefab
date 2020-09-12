@@ -44,10 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de85bdef5e14d5e8ce5b483e55f7abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music:
-  - {fileID: 8300000, guid: 9f07cbe9b3ae3d241b76ad8cdf97025f, type: 3}
-  - {fileID: 8300000, guid: 44988c7ae26dfa24dbb7086ac910e620, type: 3}
-  - {fileID: 8300000, guid: daff41eda4c97544a95ab811b22efbc6, type: 3}
   soundEffects:
     keys:
     - step1
@@ -73,11 +69,10 @@ MonoBehaviour:
     - {fileID: 8300000, guid: e8aa70fec1af8e6419dd1f86a97ecbc2, type: 3}
     - {fileID: 8300000, guid: f97d36fd4270f3844b1c6ec2adcf6c60, type: 3}
     - {fileID: 8300000, guid: a21673623b3c046499cbeb86cc1fcf03, type: 3}
-    - {fileID: 8300000, guid: db301d6d1cf29fd41a9db11ef0a34c93, type: 3}
+    - {fileID: 8300000, guid: b8b39a4ab0d3068428f45d2f03e53c88, type: 3}
     - {fileID: 8300000, guid: ea57ef7f20bbd3f4ca123c900f1a1f3b, type: 3}
     - {fileID: 8300000, guid: 8250efd9fa02a164b9b5b2036405c89d, type: 3}
     - {fileID: 8300000, guid: 8ca0c5ee11f5cea468037dc40a4478bf, type: 3}
-  musicVolume: 0.4
   sfxVolume: 1
 --- !u!82 &9082060457484305119
 AudioSource:
