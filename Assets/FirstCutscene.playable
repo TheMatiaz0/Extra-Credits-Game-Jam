@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_Name: AudioPlayableAsset
   m_EditorClassIdentifier: 
   m_Clip: {fileID: 8300000, guid: 1fc7ea6515d48084aa41b6ba374d61ad, type: 3}
-  m_Loop: 1
+  m_Loop: 0
   m_bufferingTime: 0.1
   m_ClipProperties:
     volume: 0.65
@@ -1461,7 +1461,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -4371915077078717344}
-    m_Duration: 83.04879890833794
+    m_Duration: 82.83333333333333
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1224117289523241308}
     m_EaseInDuration: 0
