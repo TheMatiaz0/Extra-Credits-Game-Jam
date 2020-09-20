@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class DrinkWater : ItemLogic
 {
-	public override void Do()
+	public DrinkWater(Item item) : base(item)
+	{
+	}
+	
+	protected override void OnUse()
 	{
 		uint water = Inventory.Instance.Water.Value;
 		if (water > 0 && GameManager.Instance.HealthSys.Health.Value < GameManager.Instance.HealthSys.Health.Max)

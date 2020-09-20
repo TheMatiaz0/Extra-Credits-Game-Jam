@@ -13,6 +13,8 @@ public class ItemScriptableObject : ScriptableObject
 	public bool useable = false;
 
 	public bool fillable = false;
+	public bool destructible = false;
+	public uint maxDurability;
 
 	[ClassExtends(typeof(ItemLogic))]
 	public ClassTypeReference itemAction;

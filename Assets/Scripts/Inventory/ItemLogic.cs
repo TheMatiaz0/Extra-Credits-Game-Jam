@@ -9,5 +9,18 @@ public abstract class ItemLogic
 {
     public bool removeOnUse;
 
-    public abstract void Do();
+    protected Item item;
+    
+    public ItemLogic(Item item)
+    {
+        this.item = item;
+    }
+
+    public void Use()
+    {
+        OnUse();
+        item.Durability.TakeValue(1);
+    }
+    
+    protected abstract void OnUse();
 }

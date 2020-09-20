@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Nullable : ItemLogic
 {
-	public override void Do()
+	public Nullable(Item item) : base(item)
+	{
+	}
+	
+	protected override void OnUse()
 	{
 		removeOnUse = false;
 	}

@@ -17,5 +17,7 @@ MonoBehaviour:
   oneTimeLoot: 1
   useable: 1
   fillable: 1
+  destructible: 0
+  maxDurability: 1
   itemAction:
     _classRef: DrinkWater, Assembly-CSharp

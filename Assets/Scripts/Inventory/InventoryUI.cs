@@ -90,7 +90,7 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 			}
 
 
-			it.Logic?.Do();
+			it.Logic?.Use();
 			if (it.Logic?.removeOnUse ?? false)
 			{
 				Inventory.Instance.RemoveItem(slot);

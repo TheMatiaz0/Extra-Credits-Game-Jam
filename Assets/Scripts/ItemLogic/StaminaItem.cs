@@ -9,7 +9,11 @@ public class StaminaItem : ItemLogic
 {
 	private Cint value = 25;
 
-	public override void Do()
+	public StaminaItem(Item item) : base(item)
+	{
+	}
+	
+	protected override void OnUse()
 	{
 		if (GameManager.Instance.StaminaSys.Stamina.Value < GameManager.Instance.StaminaSys.Stamina.Max)
 		{

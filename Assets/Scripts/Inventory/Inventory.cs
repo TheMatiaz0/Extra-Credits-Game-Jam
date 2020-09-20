@@ -124,7 +124,7 @@ public class Inventory : MonoSingleton<Inventory>
 		Soil.TakeValue(Soil.Value);
 	}
 
-	public void RemoveItem(Cint slot, bool showPopup=false)
+	public void RemoveItem(Cint slot, bool showPopup = false)
 	{
         if(showPopup && Items[slot] != null) UIManager.Instance.ShowPopupText($"Dropped {Items[slot].Name}");
 
@@ -132,7 +132,7 @@ public class Inventory : MonoSingleton<Inventory>
 		InventoryUI.Instance.Refresh();
 	}
 
-	public bool RemoveItemByName(string name)
+	public bool RemoveItem(string name)
 	{
 		for (var i = 0; i < Items.Length; i++)
 		{
@@ -144,5 +144,11 @@ public class Inventory : MonoSingleton<Inventory>
 		}
 
 		return false;
+	}
+
+	public void RemoveItem(Item item)
+	{
+		var found = Items.Select((x, i) => new {item = x, index = i}).FirstOrDefault(x => x.item == item);
+		if (found != null) Items[found.index] = null;
 	}
 }
