@@ -7,6 +7,7 @@ using UnityEngine;
 public class Item
 {
 	public string Name { get; private set; }
+	public string Tag { get; private set; }
 
 	public Sprite Icon { get; private set; }
 	public float UseTakeLessTime { get; private set; } = 0;
@@ -30,6 +31,7 @@ public class Item
 		}
 		
 		Name = baseObj.name;
+		Tag = baseObj.tag;
 		Icon = baseObj.icon;
 		UseTakeLessTime = baseObj.useTakeLessTime;
 		OneTimeLoot = baseObj.oneTimeLoot;

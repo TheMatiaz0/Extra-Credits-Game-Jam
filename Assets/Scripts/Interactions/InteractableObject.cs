@@ -30,12 +30,12 @@ public abstract class InteractableObject : MonoBehaviour
             return false;
         }
 
-        List<string> missingItems = new List<string>();
+        var missingItems = new List<string>();
         foreach (var itemOptions in itemsNeeded)
         {
             if (!itemOptions.Any(x => Inventory.Instance.HasItem(x.name)))
             {
-                missingItems.Add(string.Join(" or ", itemOptions).Replace("(ItemScriptableObject)", ""));
+                missingItems.Add(string.IsNullOrEmpty(itemOptions[0].tag) ? itemOptions[0].name : itemOptions[0].tag);
             }
         }
 
@@ -44,6 +44,7 @@ public abstract class InteractableObject : MonoBehaviour
         if (showMessage)
         {
             UIManager.Instance.ShowPopupText($"Required items: {string.Join("; ", missingItems)}");
+            missingItems.ForEach(x => TaskManager.Instance.AddTask($"Find {x}"));
         }
         
         return false;

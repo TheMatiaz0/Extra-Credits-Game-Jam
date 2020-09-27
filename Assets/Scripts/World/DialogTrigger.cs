@@ -2,22 +2,14 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class DialogTrigger : MonoBehaviour
+public class DialogTrigger : BaseTrigger
 {
     [SerializeField] [TextArea] private string text;
     [SerializeField] private AudioClip voiceline;
-    [SerializeField] private bool once = true;
     [SerializeField] private float duration = 3f;
-
-    private bool used = false;
     
-    private void OnTriggerEnter(Collider other)
+    protected override void Action()
     {
-        if (GameEndingOptions.Instance.currentTimeline?.CutsceneRunning ?? false) return;
-        if (!other.gameObject.CompareTag("Player")) return;
-        if (once && used) return;
-
-        used = true;
         Debug.Log("Showing dialog text");
         if (voiceline != null)
         {

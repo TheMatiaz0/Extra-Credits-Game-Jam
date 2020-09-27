@@ -31,9 +31,9 @@ public class Inventory : MonoSingleton<Inventory>
 		}
 	}
 
-	public bool HasItem(string name)
+	public bool HasItem(string keyword)
 	{
-		return Items.Any(x => x != null && x.Name == name);
+		return Items.Any(x => x != null && (x.Name == keyword || x.Tag == keyword));
 	}
 
 	public Item GetItem(Cint slot)
@@ -71,6 +71,11 @@ public class Inventory : MonoSingleton<Inventory>
 		if (!foundSlot)
 		{
 			UIManager.Instance.ShowPopupText("Inventory full!");
+		}
+		else
+		{
+			TaskManager.Instance.RemoveTask($"Find {item.name}");
+			TaskManager.Instance.RemoveTask($"Find {item.tag}");
 		}
 
 		return foundSlot;

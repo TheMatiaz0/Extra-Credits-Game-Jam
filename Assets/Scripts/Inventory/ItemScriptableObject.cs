@@ -7,6 +7,8 @@ using TypeReferences;
 [CreateAssetMenu(fileName = "Item", menuName = "ScriptableObjects/Items", order = 1)]
 public class ItemScriptableObject : ScriptableObject
 {
+	public string tag = null;
+
 	public Sprite icon;
     public float useTakeLessTime = 0;
     public bool oneTimeLoot = true;
@@ -15,6 +17,7 @@ public class ItemScriptableObject : ScriptableObject
 	public bool fillable = false;
 	public bool destructible = false;
 	public uint maxDurability;
+
 
 	[ClassExtends(typeof(ItemLogic))]
 	public ClassTypeReference itemAction;
