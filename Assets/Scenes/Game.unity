@@ -1959,6 +1959,7 @@ GameObject:
   m_Component:
   - component: {fileID: 199133932}
   - component: {fileID: 199133933}
+  - component: {fileID: 199133934}
   m_Layer: 0
   m_Name: TownTrigger
   m_TagString: Untagged
@@ -1993,6 +1994,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 83.619125, y: 10.963852, z: 46.243362}
   m_Center: {x: 25.289383, y: 4.981926, z: 1.5766678}
+--- !u!114 &199133934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199133931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6207b04003bd2ed428682d6c1b34d901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &205919705 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2697246113788440929, guid: 7718aefab274a4e4792a6a0ffd6949f6, type: 3}
