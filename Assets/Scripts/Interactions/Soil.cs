@@ -19,8 +19,12 @@ public class Soil : InteractableObject
         base.KeyDown();
         AudioManager.Instance.PlaySFX("shovel");
 
-        interactionTime = interactionTimeStateful;
-        interactionTime -= Inventory.Instance.GetItemCurrentlySelected().UseTakeLessTime;
+        Item it = null;
+        if ((it = Inventory.Instance.GetItemCurrentlySelected()) != null)
+        {
+            interactionTime = interactionTimeStateful;
+            interactionTime -= it.UseTakeLessTime;
+        }
     }
 
     protected override void OnInteract()
