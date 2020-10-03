@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionTime: 2.5
-  takesStamina: 8
+  takesStamina: 9
   canUseWithoutStamina: 0
   itemsNeeded:
     _Array:
@@ -49,8 +49,6 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 842c7df675ca7874a9daee4bf4dbec58, type: 2}
       - {fileID: 11400000, guid: 77782c4625196bf4aa1cf886340b3ccb, type: 2}
   interactionEnabled: 1
-  shovel: {fileID: 11400000, guid: f755bc711b16283419970146956c3986, type: 2}
-  betterShovel: {fileID: 11400000, guid: 77782c4625196bf4aa1cf886340b3ccb, type: 2}
   soilAmount: 30
 --- !u!1 &6738984027772800149
 GameObject:

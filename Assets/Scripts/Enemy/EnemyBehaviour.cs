@@ -23,6 +23,9 @@ public class EnemyBehaviour : MonoBehaviour
     private float attackDamage = 10;
 
 	[SerializeField]
+	private float staminaDamage = 15;
+
+	[SerializeField]
 	private Transform firePoint;
 
 	private NavMeshAgent agent;
@@ -52,13 +55,14 @@ public class EnemyBehaviour : MonoBehaviour
 		startPosition = this.transform.position;
 	}
 
-	private IEnumerator AttackAnimation ()
+	private IEnumerator AttackAnimation (HealthSystem healthSys, StaminaSystem staminaSys = null)
 	{
 		canBite = false;
 		animator.SetTrigger("Bite");
 		AudioManager.Instance.PlaySFX("bite");
 		MovementController.Instance.BlockMovement = true;
-		GameManager.Instance.HealthSys.Health.TakeValue(attackDamage, "Infected");
+		healthSys.Health.TakeValue(attackDamage, "Infected");
+		staminaSys.Stamina.TakeValue(staminaDamage, "Infected");
 		yield return Async.Wait(TimeSpan.FromSeconds(2.1f));
 		MovementController.Instance.BlockMovement = false;
 		yield return Async.Wait(TimeSpan.FromSeconds(3.2f));
@@ -86,7 +90,7 @@ public class EnemyBehaviour : MonoBehaviour
 							if (canBite)
 							{
 								StopAllCoroutines();
-								StartCoroutine(AttackAnimation());
+								StartCoroutine(AttackAnimation(healthSys, healthSys.GetComponent<StaminaSystem>()));
 							}
 						}
 					}
