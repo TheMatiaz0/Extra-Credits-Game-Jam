@@ -12452,14 +12452,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemChanceDrops:
-    keys:
+    _Array:
     - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
-    - {fileID: 11400000, guid: f755bc711b16283419970146956c3986, type: 2}
-    - {fileID: 11400000, guid: 1d163f09b76a94e4a8fb8855b5aef55d, type: 2}
-    - {fileID: 11400000, guid: 77782c4625196bf4aa1cf886340b3ccb, type: 2}
+    - {fileID: 11400000, guid: 842c7df675ca7874a9daee4bf4dbec58, type: 2}
     - {fileID: 11400000, guid: b7657c013b2f3754e8563413fc82e3c3, type: 2}
     - {fileID: 11400000, guid: 40ad4af6d15b37d43a6b8a611fe83490, type: 2}
-    values: 2d000000280000003c0000000f0000002300000050000000
+    - {fileID: 11400000, guid: 1d163f09b76a94e4a8fb8855b5aef55d, type: 2}
+    - {fileID: 11400000, guid: f755bc711b16283419970146956c3986, type: 2}
 --- !u!1 &1171652858 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2009352410433472943, guid: 7718aefab274a4e4792a6a0ffd6949f6, type: 3}
@@ -22664,6 +22663,34 @@ PrefabInstance:
     - target: {fileID: 6427639504159670571, guid: 2db9f667932610f46849937309992dae, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[11].sentence
+      value: Oh no...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[12].sentence
+      value: What should I do?!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[4].sentence
+      value: Only the last bottle of water left...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[1].sentence
+      value: No, no, no!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[0].sentence
+      value: What? This cannot be true!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[6].sentence
+      value: My plant needs it!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[9].sentence
+      value: I want to drin...
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2db9f667932610f46849937309992dae, type: 3}

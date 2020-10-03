@@ -11,23 +11,9 @@ public class Garbage : InteractableObject
 {
 	public override string InteractionName => "Search garbage";
 
-	private int[] values;
-
-	private ItemScriptableObject[] scriptableObjects;
-
-	private int total;
-	private int randNumber;
-
 	private void Start()
 	{
 		interactionTime = 3f;
-		values = GarbageManager.Instance.ItemChanceDrops.Values.ToArray();
-		scriptableObjects = GarbageManager.Instance.ItemChanceDrops.Keys.ToArray();
-
-		foreach (var item in values)
-		{
-			total += item;
-		}
 	}
 
 	public override void KeyDown()
@@ -37,44 +23,27 @@ public class Garbage : InteractableObject
 
 	protected override void OnInteract()
 	{
-
-
 		GarbageManager.Instance.GarbageSet = !GarbageManager.Instance.GarbageSet;
 
-		randNumber = Random.Range(0, total + 1);
+		// random drop here
+		ItemScriptableObject itemScriptable = null;
 
-		for (int i = 0; i < values.Length; i++)
+		if (Inventory.Instance.AddItem(itemScriptable = (GarbageManager.Instance.GetRandomItem())))
 		{
-			if (Inventory.Instance.HasItem(scriptableObjects[i].name))
+			if (itemScriptable.name == "Garbage")
 			{
-				values[i] -= (values[i] / 7);
-			}
-
-			if (randNumber <= values[i])
-			{
-				if (scriptableObjects[i].name == "Garbage")
-				{
-					UIManager.Instance.ShowPopupText($"You found only garbage");
-					break;
-				}
-
-				if (Inventory.Instance.AddItem(scriptableObjects[i]))
-				{
-					UIManager.Instance.ShowPopupText($"You found a {scriptableObjects[i].name}");
-				}
-				else
-				{
-					UIManager.Instance.ShowPopupText("Inventory full!");
-				}
-
-
-				break;
+				UIManager.Instance.ShowPopupText("You found only garbage");
 			}
 
 			else
 			{
-				randNumber -= values[i];
+				UIManager.Instance.ShowPopupText($"You found a {itemScriptable.name}");
 			}
+		}
+
+		else
+		{
+			UIManager.Instance.ShowPopupText("Inventory full!");
 		}
 
 		Destroy(this);
