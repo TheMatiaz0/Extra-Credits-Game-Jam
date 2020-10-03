@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionTime: 2.5
-  takesStamina: 9
+  takesStamina: 10
   canUseWithoutStamina: 0
   itemsNeeded:
     _Array:
