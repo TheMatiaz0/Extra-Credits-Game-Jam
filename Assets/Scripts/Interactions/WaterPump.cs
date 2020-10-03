@@ -18,9 +18,13 @@ public class WaterPump : InteractableObject
     {
         base.KeyDown();
         AudioManager.Instance.PlaySFX("pump1");
+        Item it = null;
+        if ((it = Inventory.Instance.GetItemCurrentlySelected()) != null)
+		{
+            interactionTime = interactionTimeStateful;
+            interactionTime -= it.UseTakeLessTime;
+        }
 
-        interactionTime = interactionTimeStateful;
-        interactionTime -= Inventory.Instance.GetItemCurrentlySelected().UseTakeLessTime;
     }
 
 	protected override void OnInteract()
