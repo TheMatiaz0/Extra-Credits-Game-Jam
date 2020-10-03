@@ -25,7 +25,7 @@ namespace UI
         private const float time = 0.7f;
         public void Show()
         {
-            InteractionChecker.Instance.checkInteractions = false;
+            InteractionChecker.Instance.CheckInteractions = false;
             MouseLook.Instance.BlockAiming = true;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
@@ -41,7 +41,7 @@ namespace UI
 
         public void Hide(bool enableCheckInteractions=true)
         {
-            if(enableCheckInteractions) InteractionChecker.Instance.checkInteractions = true;
+            if(enableCheckInteractions) InteractionChecker.Instance.CheckInteractions = true;
             MouseLook.Instance.BlockAiming = false;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;

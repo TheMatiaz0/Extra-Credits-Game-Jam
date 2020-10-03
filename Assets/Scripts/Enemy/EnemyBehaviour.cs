@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -61,10 +62,13 @@ public class EnemyBehaviour : MonoBehaviour
 		animator.SetTrigger("Bite");
 		AudioManager.Instance.PlaySFX("bite");
 		MovementController.Instance.BlockMovement = true;
+		InteractionChecker.Instance.CheckInteractions = false;
+		InteractionUI.Instance.HidePossibleInteraction();
 		healthSys.Health.TakeValue(attackDamage, "Infected");
 		staminaSys.Stamina.TakeValue(staminaDamage, "Infected");
 		yield return Async.Wait(TimeSpan.FromSeconds(2.1f));
 		MovementController.Instance.BlockMovement = false;
+		InteractionChecker.Instance.CheckInteractions = true;
 		yield return Async.Wait(TimeSpan.FromSeconds(3.2f));
 		canBite = true;
 	}

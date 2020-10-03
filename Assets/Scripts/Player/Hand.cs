@@ -19,7 +19,7 @@ namespace Player
                 return;
             }
             
-            InteractionChecker.Instance.checkInteractions = false;
+            InteractionChecker.Instance.CheckInteractions = false;
             InteractionUI.Instance.ShowPossibleInteraction("Put down");
 
             isHolding = true;
@@ -39,7 +39,7 @@ namespace Player
         {
             if (!isHolding) return;
             
-            InteractionChecker.Instance.checkInteractions = true;
+            InteractionChecker.Instance.CheckInteractions = true;
             
             currentylHolding.parent = null;
             
