@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 799daa1cf9a354d4cbece3b8bbd5ac63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionTime: 2.5
+  interactionTime: 3
   takesStamina: 10
   canUseWithoutStamina: 0
   itemsNeeded:
