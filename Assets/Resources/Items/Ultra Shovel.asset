@@ -19,6 +19,6 @@ MonoBehaviour:
   useable: 0
   fillable: 1
   destructible: 0
-  maxDurability: 20
+  maxDurability: 18
   itemAction:
     _classRef: Nullable, Assembly-CSharp
