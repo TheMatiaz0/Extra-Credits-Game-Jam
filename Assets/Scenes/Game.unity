@@ -22692,6 +22692,50 @@ PrefabInstance:
       propertyPath: cutsceneDialogue.Array.data[9].sentence
       value: I want to drin...
       objectReference: {fileID: 0}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[0].voiceLine
+      value: 
+      objectReference: {fileID: 8300000, guid: 6b7d5d4a16c80e84a95a4eec6957c489, type: 3}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[1].voiceLine
+      value: 
+      objectReference: {fileID: 8300000, guid: 7bb931b4263f5d54ca675300eb097f09, type: 3}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[2].voiceLine
+      value: 
+      objectReference: {fileID: 8300000, guid: c6d672afe544a834692496f226d4cb87, type: 3}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[4].voiceLine
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a1bdfa4e498d384880cab5213383b3e, type: 3}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[12].voiceLine
+      value: 
+      objectReference: {fileID: 8300000, guid: 7850370f9f859ed49a41a52f86b885ef, type: 3}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[11].voiceLine
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e230b86d57b27949ada622acfb6dd09, type: 3}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[10].voiceLine
+      value: 
+      objectReference: {fileID: 8300000, guid: a76b34745af6c074595f1cc91b705a43, type: 3}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[9].voiceLine
+      value: 
+      objectReference: {fileID: 8300000, guid: 235ccecf282db024695d18cb9284f567, type: 3}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[8].voiceLine
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e53a48838d7947489f8ea1b9762bbde, type: 3}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[6].voiceLine
+      value: 
+      objectReference: {fileID: 8300000, guid: 06d2350527c2ecd479d784fd2bf3b500, type: 3}
+    - target: {fileID: 8578812124625682826, guid: 2db9f667932610f46849937309992dae, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[7].voiceLine
+      value: 
+      objectReference: {fileID: 8300000, guid: 57b73d89111cb9243b0725e829865314, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2db9f667932610f46849937309992dae, type: 3}
 --- !u!1 &2024041129 stripped

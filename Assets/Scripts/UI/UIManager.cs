@@ -27,7 +27,7 @@ public class UIManager : MonoSingleton<UIManager>
 
     [SerializeField]
     private Text popupText = null;
-    private UITextQueue popupQueue;
+    // private UITextQueue popupQueue;
     
     [SerializeField]
     private Text dialogText = null;
@@ -45,14 +45,14 @@ public class UIManager : MonoSingleton<UIManager>
 		TimeManager.Instance.OnCurrentDayChange += Instance_OnCurrentDayChange;
 		TimeManager.Instance.OnCurrentTimeChange += Instance_OnCurrentTimeChange;
 		
-		popupQueue = new UITextQueue(popupText, 3f, 0.2f, 0.2f);
+		// popupQueue = new UITextQueue(popupText, 0.5f, 0.05f, 0.05f);
 		dialogs = new DialogManager(new UITextQueue(dialogText, 3f, 0.2f, 0.2f));
 
 		hpBar.fillAmount = 1;
 		staminaBar.fillAmount = 1;
 
 		LeanTween.alphaText(dialogText.rectTransform, 0, 0);
-		LeanTween.alphaText(popupText.rectTransform, 0, 0);
+		LeanTween.textAlpha(popupText.rectTransform, 0, 0);
 	}
 
 	public void OpenResults ()
@@ -112,7 +112,16 @@ public class UIManager : MonoSingleton<UIManager>
 	
 	public void ShowPopupText(string txt, float? duration = null)
 	{
-		popupQueue.Push(txt, duration);
+		_ = ShowTextAsync(txt, duration);
+		// popupQueue.Push(txt, duration);
+	}
+
+	private async Task ShowTextAsync (string txt, float? duration)
+	{
+		popupText.text = txt;
+		LeanTween.textAlpha(popupText.rectTransform, 1, 0.2f);
+		await Async.Wait(TimeSpan.FromSeconds(duration ?? 3f));
+		LeanTween.textAlpha(popupText.rectTransform, 0, 0.2f);
 	}
 	
 

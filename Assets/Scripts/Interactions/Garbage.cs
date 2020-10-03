@@ -25,89 +25,26 @@ public class Garbage : InteractableObject
 	{
 		GarbageManager.Instance.GarbageSet = !GarbageManager.Instance.GarbageSet;
 
-		// random drop here
-		ItemScriptableObject itemScriptable = null;
+		ItemScriptableObject itemScriptable = GarbageManager.Instance.GetRandomItem();
 
-		if (Inventory.Instance.AddItem(itemScriptable = (GarbageManager.Instance.GetRandomItem())))
+		if (itemScriptable.name == "Garbage")
 		{
-			if (itemScriptable.name == "Garbage")
-			{
-				UIManager.Instance.ShowPopupText("You found only garbage");
-			}
+			UIManager.Instance.ShowPopupText("You found only garbage");
+		}
 
-			else
+		else
+		{
+			if (Inventory.Instance.AddItem(itemScriptable))
 			{
 				UIManager.Instance.ShowPopupText($"You found a {itemScriptable.name}");
 			}
-		}
 
-		else
-		{
-			UIManager.Instance.ShowPopupText("Inventory full!");
+			else
+			{
+				UIManager.Instance.ShowPopupText("Inventory full!");
+			}
 		}
 
 		Destroy(this);
-
-
 	}
-
-	/*
-	public override void KeyDown()
-	{
-		AudioManager.Instance.PlaySFX(manager.garbage1 ? "garbage1" : "garbage2");
-	}
-
-	protected override void OnInteract()
-	{
-		if (garbageUsed) return;
-		if (!manager.firstItemUsed) { FirstItem(); return; }
-
-		manager.garbage1 = !manager.garbage1;
-
-		int garbageRnd = Random.Range(0, 100);
-		if (garbageRnd <= garbageDropChance)
-		{
-			UIManager.Instance.ShowPopupText("You found only garbage");
-			garbageUsed = true;
-			Destroy(this);
-		}
-		else
-		{
-			int rnd = Random.Range(0, manager.itemDrops.Count);
-			var item = manager.itemDrops[rnd];
-			if (Inventory.Instance.AddItem(item))
-			{
-				UIManager.Instance.ShowPopupText($"You found a {item.name}");
-
-				if (item.oneTimeLoot) manager.itemDrops.Remove(item);
-
-				garbageUsed = true;
-				Destroy(this);
-			}
-			else
-			{
-				if (!garbageOpen) interactionTime /= 2;
-				garbageOpen = true;
-				UIManager.Instance.ShowPopupText("Inventory full!");
-			}
-
-		}
-	}
-
-	void FirstItem()
-	{
-		if (Inventory.Instance.AddItem(manager.firstItem))
-		{
-			UIManager.Instance.ShowPopupText($"You found a {manager.firstItem.name}");
-			UIManager.Instance.ShowDialogText("A bottle... maybe i can collect some water for my plant?");
-
-
-			if (manager.firstItem.oneTimeLoot) manager.itemDrops.Remove(manager.firstItem);
-
-			garbageUsed = true;
-			manager.firstItemUsed = true;
-			Destroy(this);
-		}
-	}
-	*/
 }
