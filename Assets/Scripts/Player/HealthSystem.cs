@@ -15,13 +15,4 @@ public class HealthSystem : MonoBehaviour
 	{
 		Health = new LockValue<float>(startHealth, 0, startHealth);
 	}
-
-	protected void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.J))
-		{
-			Health.TakeValue(10f, "Whoooo");
-		}
-	}
-
 }

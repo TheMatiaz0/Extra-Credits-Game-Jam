@@ -9,6 +9,11 @@ using Random = UnityEngine.Random;
 
 public class Garbage : InteractableObject
 {
+	public bool GarbageSet { get; set; } = true;
+
+	[SerializeField]
+	private GarbageLooter garbageLooter = null;
+
 	public override string InteractionName => "Search garbage";
 
 	private void Start()
@@ -18,14 +23,14 @@ public class Garbage : InteractableObject
 
 	public override void KeyDown()
 	{
-		AudioManager.Instance.PlaySFX(GarbageManager.Instance.GarbageSet ? "garbage1" : "garbage2");
+		AudioManager.Instance.PlaySFX(GarbageSet ? "garbage1" : "garbage2");
 	}
 
 	protected override void OnInteract()
 	{
-		GarbageManager.Instance.GarbageSet = !GarbageManager.Instance.GarbageSet;
+		GarbageSet = !GarbageSet;
 
-		ItemScriptableObject itemScriptable = GarbageManager.Instance.GetRandomItem();
+		ItemScriptableObject itemScriptable = garbageLooter.GetRandomItem();
 
 		if (itemScriptable.name == "Garbage")
 		{

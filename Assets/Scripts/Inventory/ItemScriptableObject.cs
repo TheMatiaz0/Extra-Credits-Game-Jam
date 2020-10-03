@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TypeReferences;
 
+
 [CreateAssetMenu(fileName = "Item", menuName = "ScriptableObjects/Items", order = 1)]
 public class ItemScriptableObject : ScriptableObject
 {
-	public string tag = null;
+	public string tag;
 
 	public Sprite icon;
     public float useTakeLessTime = 0;

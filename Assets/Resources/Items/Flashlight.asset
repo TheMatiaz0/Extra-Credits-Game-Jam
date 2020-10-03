@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cfe33c833a1714e9850b0ba6675e0a, type: 3}
   m_Name: Flashlight
   m_EditorClassIdentifier: 
+  tag: Null
   icon: {fileID: 21300000, guid: fda14466965d94e48a1958f1a9d5fd98, type: 3}
   useTakeLessTime: 0
   oneTimeLoot: 1
   useable: 0
   fillable: 0
+  destructible: 0
+  maxDurability: 0
   itemAction:
     _classRef: Nullable, Assembly-CSharp

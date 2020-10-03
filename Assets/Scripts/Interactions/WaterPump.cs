@@ -5,22 +5,27 @@ using UnityEngine;
 public class WaterPump : InteractableObject
 {
     public override string InteractionName => "Collect water";
-    
-    public ItemScriptableObject bottleWithFilter;
-    public ItemScriptableObject bigBottleWithFilter;
 
     public uint waterAmount = 30;
+    private float interactionTimeStateful;
 
-    public override void KeyDown()
+	protected void Awake()
+	{
+        interactionTimeStateful = interactionTime;
+	}
+
+	public override void KeyDown()
     {
         base.KeyDown();
         AudioManager.Instance.PlaySFX("pump1");
+        interactionTime = interactionTimeStateful;
+        interactionTime -= Inventory.Instance.GetItemCurrentlySelected().UseTakeLessTime;
     }
 
-    protected override void OnInteract()
+	protected override void OnInteract()
     {
-        if (bottleWithFilter && Inventory.Instance.HasItem(bigBottleWithFilter.name)) interactionTime -= bigBottleWithFilter.useTakeLessTime;
-        else if (bigBottleWithFilter && Inventory.Instance.HasItem(bottleWithFilter.name)) interactionTime -= bottleWithFilter.useTakeLessTime;
         Inventory.Instance.AddResource(waterAmount, PlantSystem.PlantResources.Water);
+        Inventory.Instance.GetItemCurrentlySelected().Durability.TakeValue(1);
+        InventoryUI.Instance.Refresh();
     }
 }

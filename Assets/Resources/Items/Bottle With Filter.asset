@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cfe33c833a1714e9850b0ba6675e0a, type: 3}
   m_Name: Bottle With Filter
   m_EditorClassIdentifier: 
+  tag: Bottle
   icon: {fileID: 21300000, guid: 14b051b09f20e724d838fae29ef88e2e, type: 3}
-  useTakeLessTime: 0.6
+  useTakeLessTime: 0.95
   oneTimeLoot: 1
   useable: 1
-  fillable: 0
+  fillable: 1
+  destructible: 0
+  maxDurability: 12
   itemAction:
-    _classRef: Nullable, Assembly-CSharp
+    _classRef: DrinkWater, Assembly-CSharp

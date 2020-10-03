@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072a7a84dc85bdd4b99990591b329e32, type: 3}
+  m_Name: UniversalDropPattern
+  m_EditorClassIdentifier: 
+  itemChanceDrops:
+    _Array:
+    - {fileID: 11400000, guid: e8431c499f7d8484785d2dac6d203d32, type: 2}
+    - {fileID: 11400000, guid: 842c7df675ca7874a9daee4bf4dbec58, type: 2}
+    - {fileID: 11400000, guid: 1d163f09b76a94e4a8fb8855b5aef55d, type: 2}
+    - {fileID: 11400000, guid: 40ad4af6d15b37d43a6b8a611fe83490, type: 2}

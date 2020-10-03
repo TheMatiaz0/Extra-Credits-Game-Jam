@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cfe33c833a1714e9850b0ba6675e0a, type: 3}
   m_Name: Ultra Shovel
   m_EditorClassIdentifier: 
+  tag: Shovel
   icon: {fileID: 21300000, guid: 597125904d162aa44b20e25b46a1b6fe, type: 3}
-  useTakeLessTime: 1.3
+  useTakeLessTime: 1.95
   oneTimeLoot: 1
   useable: 0
-  fillable: 0
+  fillable: 1
+  destructible: 0
+  maxDurability: 20
   itemAction:
     _classRef: Nullable, Assembly-CSharp

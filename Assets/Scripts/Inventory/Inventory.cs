@@ -12,14 +12,37 @@ public class Inventory : MonoSingleton<Inventory>
 
 	public Dictionary<string, ItemScriptableObject> AllGameItems { get; private set; } = new Dictionary<string, ItemScriptableObject>();
 
-	/*
-	public LockValue<uint> soil = new LockValue<uint>(10, 0, 0);
-	public LockValue<uint> water = new LockValue<uint>(10, 0, 0);
-	*/
+	public LockValue<uint> Soil
+	{
+		get
+		{
+			Item it = GetItemCurrentlySelected();
 
-	public LockValue<uint> Soil => GetItemByName("Shovel")?.FillAmount;
+			if (it?.Tag == "Shovel")
+			{
+				return it?.FillAmount;
+			}
 
-	public LockValue<uint> Water => GetItemByName("Bottle")?.FillAmount;
+			return null;
+
+		}
+	}
+
+
+	public LockValue<uint> Water
+	{
+		get
+		{
+			Item it = GetItemCurrentlySelected();
+
+			if (it?.Tag == "Bottle")
+			{
+				return it?.FillAmount;
+			}
+
+			return null;
+		}
+	}
 
 
 	private void Start()
@@ -42,9 +65,19 @@ public class Inventory : MonoSingleton<Inventory>
 		return Items[slot];
 	}
 
+	public Item GetItemCurrentlySelected ()
+	{
+		return Items[InventoryUI.Instance.SelectedSlot];
+	}
+
 	public Item GetItemByName(string name)
 	{
 		return Items.FirstOrDefault(x => x?.Name == name);
+	}
+
+	public Item[] GetAllItemsByTag(string tag)
+	{
+		return Items.Where(x => x?.Tag == tag).ToArray();
 	}
 
 	public bool AddItem(ItemScriptableObject item)

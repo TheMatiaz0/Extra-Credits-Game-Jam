@@ -36,13 +36,33 @@ namespace DefaultNamespace
 				//items:
 				if (Input.GetKeyDown(KeyCode.S))
 				{
-					// Inventory.Instance.AddItem(GarbageManager.Instance.shovelEvolution[0]);
+					Inventory.Instance.AddItem(Inventory.Instance.AllGameItems["Shovel"]);
 				}
 				else if (Input.GetKeyDown(KeyCode.W))
 				{
-					// Inventory.Instance.AddItem(GarbageManager.Instance.bottleEvolution[0]);
+					Inventory.Instance.AddItem(Inventory.Instance.AllGameItems["Bottle"]);
+				}
+
+				else if (Input.GetKeyDown(KeyCode.H))
+				{
+					Inventory.Instance.AddItem(Inventory.Instance.AllGameItems["Broken Shovel"]);
+				}
+
+				else if (Input.GetKeyDown(KeyCode.G))
+				{
+					Inventory.Instance.AddItem(Inventory.Instance.AllGameItems["Bottle With Filter"]);
+				}
+				else if (Input.GetKeyDown(KeyCode.Semicolon)) 
+				{
+					Inventory.Instance.AddItem(Inventory.Instance.AllGameItems["Big Bottle With Filter"]);
 				}
 			}
+
+			if (Input.GetKeyDown(KeyCode.Alpha0))
+			{
+				MovementController.Instance.moveSpeed = 50;
+			}
+
 #endif
 		}
 	}

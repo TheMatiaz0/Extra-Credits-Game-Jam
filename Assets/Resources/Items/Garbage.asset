@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cfe33c833a1714e9850b0ba6675e0a, type: 3}
   m_Name: Garbage
   m_EditorClassIdentifier: 
+  tag: Null
   icon: {fileID: 0}
   useTakeLessTime: 0
   oneTimeLoot: 0
   useable: 0
   fillable: 0
+  destructible: 0
+  maxDurability: 0
   itemAction:
     _classRef: Nullable, Assembly-CSharp

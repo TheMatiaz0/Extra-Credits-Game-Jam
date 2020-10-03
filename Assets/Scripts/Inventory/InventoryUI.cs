@@ -1,12 +1,11 @@
 ﻿using Cyberultimate;
 using Cyberultimate.Unity;
-using System;
 using UnityEngine;
 
 public class InventoryUI : MonoSingleton<InventoryUI>
 {
 	private Slot[] slots = new Slot[5];
-	public Cint SelectedSlot { get; private set; }= 0;
+	public Cint SelectedSlot { get; private set; } = 0;
 
 	public Sprite emptyImage;
 	public Sprite testImage;
@@ -14,11 +13,6 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 	private const int alphaKeyCodesOffset = 49;
 
 	private const string pressToUse = "Press RMB to Use";
-
-#if UNITY_EDITOR
-	[SerializeField]
-	private ItemScriptableObject item;
-#endif
 
 	public void Start()
 	{
@@ -36,10 +30,10 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 			var item = Inventory.Instance.GetItem((Cint)(uint)i);
 
 			var fillable = item?.Fillable ?? false;
-			
+
 			slots[i].fillBgImage.gameObject.SetActive(fillable);
 			slots[i].fillImage.gameObject.SetActive(fillable);
-			
+
 			if (item == null)
 			{
 				slots[i].image.sprite = emptyImage;
@@ -47,7 +41,7 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 			else
 			{
 				slots[i].image.sprite = item.Icon;
-				if(item.Fillable)
+				if (item.Fillable)
 				{
 					slots[i].fillImage.fillAmount = item.FillAmount.Value / 100f;
 				}
@@ -64,18 +58,10 @@ public class InventoryUI : MonoSingleton<InventoryUI>
 
 	private void Update()
 	{
-        if (Input.GetKeyDown(KeyCode.Q))
+		if (Input.GetKeyDown(KeyCode.Q))
 		{
-            Inventory.Instance.RemoveItem(SelectedSlot,true);
-        }
-
-#if UNITY_EDITOR
-		if (Input.GetKeyDown(KeyCode.H))
-		{
-
-			Inventory.Instance.AddItem(item);
+			Inventory.Instance.RemoveItem(SelectedSlot, true);
 		}
-#endif
 
 		if (Input.GetMouseButtonDown(1))
 		{
