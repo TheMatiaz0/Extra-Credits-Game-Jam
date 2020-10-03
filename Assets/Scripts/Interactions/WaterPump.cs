@@ -30,7 +30,7 @@ public class WaterPump : InteractableObject
 	protected override void OnInteract()
     {
         Inventory.Instance.AddResource(waterAmount, PlantSystem.PlantResources.Water);
-        Inventory.Instance.GetItemCurrentlySelected().Durability.TakeValue(1);
+        Inventory.Instance.GetItemCurrentlySelected()?.Durability?.TakeValue(1);
         InventoryUI.Instance.Refresh();
     }
 }
