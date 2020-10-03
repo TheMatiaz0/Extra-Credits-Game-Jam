@@ -16,7 +16,7 @@ public class PlantDiseaseEventLogic : EventLogic
                 msg = "Worms got into the plant soil over night!";
                 break;
             case 1:
-                PlantSystem.Instance.Soil.SetValue(20);
+                PlantSystem.Instance.Water.SetValue(20);
                 msg = "Your plant has dried up over night!";
                 break;
         }
