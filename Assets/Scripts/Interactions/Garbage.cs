@@ -29,6 +29,7 @@ public class Garbage : InteractableObject
 	protected override void OnInteract()
 	{
 		GarbageSet = !GarbageSet;
+		GarbageChecker.Instance.Check(this);
 
 		ItemScriptableObject itemScriptable = garbageLooter.GetRandomItem();
 

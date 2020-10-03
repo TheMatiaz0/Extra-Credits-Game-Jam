@@ -46,8 +46,7 @@ MonoBehaviour:
   distance: 10
   layerMask:
     serializedVersion: 2
-    m_Bits: 2560
-  checkInteractions: 1
+    m_Bits: 2816
 --- !u!1 &3416112175785836725
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1006d13dc30747d293084b3c63aa404d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testClip: {fileID: 8300000, guid: 0de9b21ab24db4845a45a6bb30ac0a52, type: 3}
 --- !u!95 &759226910
 Animator:
   serializedVersion: 3
