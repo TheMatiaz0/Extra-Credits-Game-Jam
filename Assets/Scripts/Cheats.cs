@@ -4,6 +4,8 @@ namespace DefaultNamespace
 {
 	public class Cheats : MonoBehaviour
 	{
+		public ScriptableEvent eventToCheck;
+
 		private void Update()
 		{
 #if UNITY_EDITOR
@@ -60,6 +62,11 @@ namespace DefaultNamespace
 			if (Input.GetKeyDown(KeyCode.T))
 			{
 				EnemySpawner.Instance.GreatPlaceSpawn();
+			}
+
+			if (Input.GetKeyDown(KeyCode.Alpha7))
+			{
+				EventController.Instance.ActivateEvent(eventToCheck);
 			}
 
 #endif

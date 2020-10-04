@@ -15,10 +15,12 @@ public class TimeManager : MonoSingleton<TimeManager>
 	[SerializeField]
 	private uint minutesPerTimeSpan = 5;
 
+	public TimeSpan StartTime { get; set; } = new TimeSpan(6, 0, 0);
+
 	public TimeSpan CurrentTime 
 	{
 		get { return _CurrentTime; }
-		set { if (value == _CurrentTime) return; _CurrentTime = value; OnCurrentTimeChange(this, _CurrentTime); }
+		private set { if (value == _CurrentTime) return; _CurrentTime = value; OnCurrentTimeChange(this, _CurrentTime); }
 	}
 
 	private TimeSpan _CurrentTime;
@@ -57,7 +59,7 @@ public class TimeManager : MonoSingleton<TimeManager>
 			EnemySpawner.Instance.GreatPlaceSpawn();
 		}
 
-		CurrentTime = new TimeSpan(6, 0, 0);
+		CurrentTime = StartTime;
 		StartCoroutine(TimeCount());
 	}
 
@@ -69,10 +71,12 @@ public class TimeManager : MonoSingleton<TimeManager>
 			yield return Async.Wait(inGameTimeSpan);
 			CurrentTime = new TimeSpan(CurrentTime.Hours, CurrentTime.Minutes + (int)minutesPerTimeSpan, CurrentTime.Seconds);
 
+			/*
             if (previousHours != CurrentTime.Hours )
             {
                 PlantSystem.Instance.ChangeResources(CurrentTime.Hours); //zmienia zużycie zasobów
             }
+			*/
             previousHours = CurrentTime.Hours;
 
 			if (CurrentTime.Days == 1)

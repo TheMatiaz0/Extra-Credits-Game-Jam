@@ -1997,8 +1997,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 83.619125, y: 10.963852, z: 46.243362}
-  m_Center: {x: 25.289383, y: 4.981926, z: 1.5766678}
+  m_Size: {x: 50.812973, y: 10.963852, z: 43.862206}
+  m_Center: {x: 22.566254, y: 4.981926, z: -1.0188484}
 --- !u!114 &199133934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26256,6 +26256,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 615539352432289558, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
+      propertyPath: eventToCheck
+      value: 
+      objectReference: {fileID: 11400000, guid: 99394a86f6c83a0499fbe26d8ae0943f, type: 2}
     - target: {fileID: 7255697829055022433, guid: 551982ec5cb8d6a41b71abfaa0d23d19, type: 3}
       propertyPath: m_Name
       value: Player

@@ -35,6 +35,8 @@ public class PlantSystem : MonoSingleton<PlantSystem>
 
 	public float sunlightGain = 0.4f;
 
+    private float hardnessMultiplier;
+
 	public List<int> hoursPlantNeedsChange;
 
 	private int failedDays;
@@ -102,7 +104,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     private bool lastStateInside = true;
     private void Update()
     {
-        Soil.TakeValue(Time.deltaTime * soilUse);
+        Soil.TakeValue(Time.deltaTime * (soilUse * (1.15f + hardnessMultiplier)));
 
         //Debug.DrawRay(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles), Color.red);
         if (Physics.Raycast(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles),50f, layerMask)) // if plant is inside
@@ -112,9 +114,10 @@ public class PlantSystem : MonoSingleton<PlantSystem>
                 PlantParticles.Instance.ChangeSun(false);
             }
 
-            Sunlight.TakeValue(Time.deltaTime * sunlightUse);
+            Sunlight.TakeValue(Time.deltaTime * (sunlightUse * (1.33f + hardnessMultiplier)));
+            Water.TakeValue(Time.deltaTime * (waterUse * (0.75f + hardnessMultiplier)));
             //Debug.Log("plant inside");
-            
+
             lastStateInside = true;
         }
         else
@@ -124,8 +127,8 @@ public class PlantSystem : MonoSingleton<PlantSystem>
                 PlantParticles.Instance.ChangeSun(true);
             }
 
-            Water.TakeValue(Time.deltaTime * waterUse);
-            Sunlight.GiveValue(Time.deltaTime * sunlightGain);
+            Water.TakeValue(Time.deltaTime * waterUse * (2f + hardnessMultiplier));
+            Sunlight.GiveValue(Time.deltaTime * (sunlightGain + 1.25f));
             
             lastStateInside = false;
 
@@ -235,9 +238,12 @@ public class PlantSystem : MonoSingleton<PlantSystem>
                 GameManager.Instance.GameOver("The plant died!", GameOverType.Failed);
             }
         }
+
+        hardnessMultiplier += 0.02f;
+
         Debug.Log($"Day finished. plantState: {PlantState.ToString()}, daysGrowing: {daysGrowing}, failedDays: {failedDays}");
         
-        ResetResources();
+        // ResetResources();
     }
 
     private bool cutsceneShown = false;

@@ -6,6 +6,9 @@ public class TownTrigger : MonoBehaviour
 {
 	private void OnTriggerEnter(Collider other)
 	{
-		TaskManager.Instance.RemoveTask("Explore the city");
+		if (other.CompareTag("Player"))
+		{
+			TaskManager.Instance.RemoveTask("Explore the city");
+		}
 	}
 }
