@@ -97,11 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09bfcc82e1350af4aa5c71d221592616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDistance: 3.8
-  viewDistance: 11
-  movementSpeed: 2.1
+  attackDistance: 3
+  viewDistance: 15
+  movementSpeed: 2
   attackRate: 0.5
-  attackDamage: 33
+  attackDamage: 24
   staminaDamage: 15
   firePoint: {fileID: 1950078599}
   waypoints: []
