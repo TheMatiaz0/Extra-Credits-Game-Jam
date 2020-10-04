@@ -104,7 +104,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
     private bool lastStateInside = true;
     private void Update()
     {
-        Soil.TakeValue(Time.deltaTime * (soilUse * (1.15f + hardnessMultiplier)));
+        Soil.TakeValue(Time.deltaTime * (soilUse * (1.2f + hardnessMultiplier)));
 
         //Debug.DrawRay(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles), Color.red);
         if (Physics.Raycast(transform.position + (transform.up * 1.5f), (sunlight.eulerAngles),50f, layerMask)) // if plant is inside
@@ -114,8 +114,8 @@ public class PlantSystem : MonoSingleton<PlantSystem>
                 PlantParticles.Instance.ChangeSun(false);
             }
 
-            Sunlight.TakeValue(Time.deltaTime * (sunlightUse * (1.33f + hardnessMultiplier)));
-            Water.TakeValue(Time.deltaTime * (waterUse * (0.75f + hardnessMultiplier)));
+            Sunlight.TakeValue(Time.deltaTime * (sunlightUse * (1.45f + hardnessMultiplier)));
+            Water.TakeValue(Time.deltaTime * (waterUse * (0.95f + hardnessMultiplier)));
             //Debug.Log("plant inside");
 
             lastStateInside = true;
@@ -127,8 +127,8 @@ public class PlantSystem : MonoSingleton<PlantSystem>
                 PlantParticles.Instance.ChangeSun(true);
             }
 
-            Water.TakeValue(Time.deltaTime * waterUse * (2f + hardnessMultiplier));
-            Sunlight.GiveValue(Time.deltaTime * (sunlightGain + 1.25f));
+            Water.TakeValue(Time.deltaTime * waterUse * (2.1f + hardnessMultiplier));
+            Sunlight.GiveValue(Time.deltaTime * (sunlightGain + 0.8f));
             
             lastStateInside = false;
 
@@ -239,7 +239,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
             }
         }
 
-        hardnessMultiplier += 0.02f;
+        hardnessMultiplier += 0.025f;
 
         Debug.Log($"Day finished. plantState: {PlantState.ToString()}, daysGrowing: {daysGrowing}, failedDays: {failedDays}");
         

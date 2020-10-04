@@ -8,7 +8,7 @@ public class BedInteractable : InteractableObject
 
 	protected override void OnInteract()
 	{
-		if (TimeManager.Instance.CurrentTime.Hours >= 20)
+		if (TimeManager.Instance.CurrentTime.Hours >= 18)
 		{
 			TimeManager.Instance.SkipDay();
 		}

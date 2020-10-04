@@ -82,7 +82,9 @@ public class TimeManager : MonoSingleton<TimeManager>
 			if (CurrentTime.Days == 1)
 			{
 				StartNewDay();
-				GameManager.Instance.HealthSys.Health.TakeValue(GameManager.Instance.HealthSys.Health.Max, "Death without Caution");
+				GameManager.Instance.HealthSys.Health.TakeValue(30, "Wrong Place");
+				GameManager.Instance.StaminaSys.Stamina.TakeValue(45, "Wrong Place");
+				// GameManager.Instance.HealthSys.Health.TakeValue(GameManager.Instance.HealthSys.Health.Max, "Death without Caution");
 			}
 		}
 	}
