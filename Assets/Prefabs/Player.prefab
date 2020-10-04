@@ -206,10 +206,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5.5
-  runSpeed: 8
+  runSpeed: 9.5
   outOfStaminaSpeed: 4
   movingStamina: 0.15
-  runningStamina: 0.35
+  runningStamina: 0.5
   gravity: -9.8
   jumpHeight: 1
   jumpingStamina: 4
