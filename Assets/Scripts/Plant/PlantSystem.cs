@@ -114,7 +114,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
                 PlantParticles.Instance.ChangeSun(false);
             }
 
-            Sunlight.TakeValue(Time.deltaTime * (sunlightUse * (1.45f + hardnessMultiplier)));
+            Sunlight.TakeValue(Time.deltaTime * (sunlightUse * (1.4f + hardnessMultiplier)));
             Water.TakeValue(Time.deltaTime * (waterUse * (0.95f + hardnessMultiplier)));
             //Debug.Log("plant inside");
 
@@ -242,8 +242,12 @@ public class PlantSystem : MonoSingleton<PlantSystem>
         hardnessMultiplier += 0.025f;
 
         Debug.Log($"Day finished. plantState: {PlantState.ToString()}, daysGrowing: {daysGrowing}, failedDays: {failedDays}");
-        
+
         // ResetResources();
+        Water.TakeValue(12);
+        Sunlight.TakeValue(12);
+        Soil.TakeValue(12);
+
     }
 
     private bool cutsceneShown = false;
