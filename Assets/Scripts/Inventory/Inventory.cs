@@ -59,6 +59,11 @@ public class Inventory : MonoSingleton<Inventory>
 		return Items.Any(x => x != null && (x.Name == keyword || x.Tag == keyword));
 	}
 
+	public bool CheckNotSelectedTrueItem (string neededItemTag, Item item = null)
+	{
+		return !GetAllItemsByTag(neededItemTag).Contains(item ?? Inventory.Instance.GetItemCurrentlySelected());
+	}
+
 	public Item GetItem(Cint slot)
 	{
 		if (slot >= Items.Length) return null;

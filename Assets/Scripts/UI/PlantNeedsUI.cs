@@ -70,6 +70,12 @@ namespace UI
 
         public void FilWater()
         {
+            if (Inventory.Instance.CheckNotSelectedTrueItem("Bottle"))
+			{
+                UIManager.Instance.ShowPopupText("You need to select the bottle item");
+                return;
+            }
+
             if (Inventory.Instance.Water == null || Inventory.Instance.Water.Value == 0)
             {
                 UIManager.Instance.ShowPopupText("You don't have any water!");
@@ -84,6 +90,12 @@ namespace UI
 
         public void FillSoil()
         {
+            if (Inventory.Instance.CheckNotSelectedTrueItem("Shovel"))
+            {
+                UIManager.Instance.ShowPopupText("You need to select the shovel item");
+                return;
+            }
+
             if (Inventory.Instance.Soil == null || Inventory.Instance.Soil.Value == 0)
             {
                 UIManager.Instance.ShowPopupText("You don't have any soil!");

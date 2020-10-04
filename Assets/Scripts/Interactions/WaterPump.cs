@@ -39,7 +39,7 @@ public class WaterPump : InteractableObject
         Item selectedItem = Inventory.Instance.GetItemCurrentlySelected();
         string neededItemTag = itemsNeeded[0][0].tag;
 
-        if (Inventory.Instance.GetAllItemsByTag(neededItemTag).Any(x => x != selectedItem))
+        if (Inventory.Instance.CheckNotSelectedTrueItem(neededItemTag, selectedItem))
 		{
             UIManager.Instance.ShowPopupText("You need to select the bottle item");
             return;
