@@ -54,7 +54,7 @@ public class TimeManager : MonoSingleton<TimeManager>
 		GameManager.Instance.StaminaSys.Stamina.SetValue(GameManager.Instance.StaminaSys.Stamina.Max);
 		
 		CurrentDay++;
-		if (CurrentDay > 1)
+		if (CurrentDay % 2 == 0)
 		{
 			EnemySpawner.Instance.GreatPlaceSpawn();
 		}
