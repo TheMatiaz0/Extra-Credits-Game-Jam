@@ -102,21 +102,9 @@ MonoBehaviour:
   movementSpeed: 2
   attackRate: 0.5
   attackDamage: 33
+  staminaDamage: 15
   firePoint: {fileID: 1950078599}
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  waypoints: []
   animator: {fileID: 5830333809119458014}
 --- !u!54 &7894296668085742171
 Rigidbody:

@@ -59,7 +59,7 @@ namespace DefaultNamespace
 
 			if (Input.GetKeyDown(KeyCode.T))
 			{
-				
+				EnemySpawner.Instance.GreatPlaceSpawn();
 			}
 
 #endif

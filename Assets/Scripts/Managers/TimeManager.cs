@@ -18,7 +18,7 @@ public class TimeManager : MonoSingleton<TimeManager>
 	public TimeSpan CurrentTime 
 	{
 		get { return _CurrentTime; }
-		private set { if (value == _CurrentTime) return; _CurrentTime = value; OnCurrentTimeChange(this, _CurrentTime); }
+		set { if (value == _CurrentTime) return; _CurrentTime = value; OnCurrentTimeChange(this, _CurrentTime); }
 	}
 
 	private TimeSpan _CurrentTime;
@@ -52,6 +52,11 @@ public class TimeManager : MonoSingleton<TimeManager>
 		GameManager.Instance.StaminaSys.Stamina.SetValue(GameManager.Instance.StaminaSys.Stamina.Max);
 		
 		CurrentDay++;
+		if (CurrentDay > 1)
+		{
+			EnemySpawner.Instance.GreatPlaceSpawn();
+		}
+
 		CurrentTime = new TimeSpan(6, 0, 0);
 		StartCoroutine(TimeCount());
 	}

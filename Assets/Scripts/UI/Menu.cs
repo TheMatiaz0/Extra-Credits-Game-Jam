@@ -10,8 +10,8 @@ namespace UI
         public CanvasGroup canvas;
 
         private bool loaded = false;
-        
-        private void Start()
+
+		private void Start()
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

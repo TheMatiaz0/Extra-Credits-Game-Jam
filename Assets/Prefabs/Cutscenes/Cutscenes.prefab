@@ -205,7 +205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6427639502664083470
 Transform:
   m_ObjectHideFlags: 0
@@ -573,10 +573,34 @@ MonoBehaviour:
   shouldShowCutsceneCanvas: 1
   onCutsceneEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onCutsceneStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6427639503816108706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,11 +897,11 @@ PrefabInstance:
     - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
       propertyPath: cutsceneDialogue.Array.data[0].voiceLine
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 6b7d5d4a16c80e84a95a4eec6957c489, type: 3}
     - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
       propertyPath: cutsceneDialogue.Array.data[2].voiceLine
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: c6d672afe544a834692496f226d4cb87, type: 3}
     - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
       propertyPath: cutsceneDialogue.Array.data[3].voiceLine
       value: 
@@ -885,19 +909,19 @@ PrefabInstance:
     - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
       propertyPath: cutsceneDialogue.Array.data[4].voiceLine
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 5a1bdfa4e498d384880cab5213383b3e, type: 3}
     - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
       propertyPath: cutsceneDialogue.Array.data[6].voiceLine
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 06d2350527c2ecd479d784fd2bf3b500, type: 3}
     - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
       propertyPath: cutsceneDialogue.Array.data[9].voiceLine
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 235ccecf282db024695d18cb9284f567, type: 3}
     - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
       propertyPath: cutsceneDialogue.Array.data[8].voiceLine
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 3e53a48838d7947489f8ea1b9762bbde, type: 3}
     - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
       propertyPath: cutsceneDialogue.Array.data[3].cooldownToNext.seconds
       value: 2
@@ -918,6 +942,54 @@ PrefabInstance:
       propertyPath: cutsceneDialogue.Array.data[13].cooldownToNext.mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[0].sentence
+      value: What? This cannot be true!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[1].sentence
+      value: No, no, no!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[1].voiceLine
+      value: 
+      objectReference: {fileID: 8300000, guid: 7bb931b4263f5d54ca675300eb097f09, type: 3}
+    - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[4].sentence
+      value: Only the last bottle of water left...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[6].sentence
+      value: My plant needs it!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[7].voiceLine
+      value: 
+      objectReference: {fileID: 8300000, guid: 57b73d89111cb9243b0725e829865314, type: 3}
+    - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[9].sentence
+      value: I want to drin...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[10].voiceLine
+      value: 
+      objectReference: {fileID: 8300000, guid: a76b34745af6c074595f1cc91b705a43, type: 3}
+    - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[11].sentence
+      value: Oh no...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[11].voiceLine
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e230b86d57b27949ada622acfb6dd09, type: 3}
+    - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[12].sentence
+      value: What should I do?!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214901960194368389, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
+      propertyPath: cutsceneDialogue.Array.data[12].voiceLine
+      value: 
+      objectReference: {fileID: 8300000, guid: 7850370f9f859ed49a41a52f86b885ef, type: 3}
     - target: {fileID: 8214901960194368443, guid: 592d618ca2741cf48ab07b89de04f7ca, type: 3}
       propertyPath: m_Name
       value: BeforeEndCutsceneDialogue
@@ -1112,6 +1184,10 @@ PrefabInstance:
       propertyPath: m_ReferenceResolution.y
       value: 1080
       objectReference: {fileID: 0}
+    - target: {fileID: 7526153861576115639, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7526153861950450570, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Name
       value: ChooseHuman
@@ -1146,19 +1222,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7526153861950450580, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.8679245
+      value: 0.9433962
       objectReference: {fileID: 0}
     - target: {fileID: 7526153861950450580, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.7012409
+      value: 0.86901796
       objectReference: {fileID: 0}
     - target: {fileID: 7526153861950450580, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.47899607
+      value: 0.7698469
       objectReference: {fileID: 0}
     - target: {fileID: 7526153861950450580, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.a
-      value: 0.19607843
+      value: 0.019607844
       objectReference: {fileID: 0}
     - target: {fileID: 7526153861950450580, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Colors.m_PressedColor.r
@@ -1212,6 +1288,10 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7526153861973129663, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 7526153862072279560, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Name
       value: Plant
@@ -1231,6 +1311,14 @@ PrefabInstance:
     - target: {fileID: 7526153862072279562, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Color.b
       value: 0.26259345
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526153862072279562, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526153862072279562, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7526153862072279563, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1302,19 +1390,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7526153862103439714, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.4818886
+      value: 0.752047
       objectReference: {fileID: 0}
     - target: {fileID: 7526153862103439714, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.8584906
+      value: 0.9433962
       objectReference: {fileID: 0}
     - target: {fileID: 7526153862103439714, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.5087887
+      value: 0.76599956
       objectReference: {fileID: 0}
     - target: {fileID: 7526153862103439714, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.a
-      value: 0.19607843
+      value: 0.019607844
       objectReference: {fileID: 0}
     - target: {fileID: 7526153862103439715, guid: 9b57a891e31765f4cb6130e1ccfc99cb, type: 3}
       propertyPath: m_AnchoredPosition.x

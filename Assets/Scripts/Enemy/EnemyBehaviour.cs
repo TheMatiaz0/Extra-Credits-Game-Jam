@@ -39,13 +39,26 @@ public class EnemyBehaviour : MonoBehaviour
 	[SerializeField]
 	private Transform[] waypoints = null;
 
+	public Transform[] Waypoints { get; set; }
+
 	[SerializeField]
 	private Animator animator = null;
 
 	private static bool canBite = true;
 
+	protected void Awake()
+	{
+		if (waypoints != null || waypoints.Length > 0)
+		{
+			Waypoints = waypoints;
+		}
+
+		// MovementSpeed = movementSpeed;
+	}
+
 	protected void Start()
 	{
+
 		agent = GetComponent<NavMeshAgent>();
 		agent.stoppingDistance = attackDistance;
 		agent.speed = movementSpeed;
@@ -118,7 +131,7 @@ public class EnemyBehaviour : MonoBehaviour
 		{
 			if (agent.remainingDistance - attackDistance < 0.01f)
 			{
-				ChangeFocus(waypoints[UnityEngine.Random.Range(0, waypoints.Length)].position); 
+				ChangeFocus(Waypoints[UnityEngine.Random.Range(0, Waypoints.Length)].position); 
 				agent.speed = movementSpeed;
 			}
 		}
