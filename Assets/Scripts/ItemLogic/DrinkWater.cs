@@ -15,6 +15,7 @@ public class DrinkWater : ItemLogic
 		if (water > 0 && GameManager.Instance.HealthSys.Health.Value < GameManager.Instance.HealthSys.Health.Max)
 		{
 			removeOnUse = false;
+			Inventory.Instance.Water.TakeValue(water, "Drink");
 			GameManager.Instance.HealthSys.Health.GiveValue(water * 7, "Item");
 			UIManager.Instance.ShowPopupText("You drinked fresh water and healed yourself");
 			AudioManager.Instance.PlaySFX("drinking");

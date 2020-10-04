@@ -115,7 +115,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
             }
 
             Sunlight.TakeValue(Time.deltaTime * (sunlightUse * (1.4f + hardnessMultiplier)));
-            Water.TakeValue(Time.deltaTime * (waterUse * (0.95f + hardnessMultiplier)));
+            Water.TakeValue(Time.deltaTime * (waterUse * (0.88f + hardnessMultiplier)));
             //Debug.Log("plant inside");
 
             lastStateInside = true;
@@ -127,7 +127,7 @@ public class PlantSystem : MonoSingleton<PlantSystem>
                 PlantParticles.Instance.ChangeSun(true);
             }
 
-            Water.TakeValue(Time.deltaTime * waterUse * (2.1f + hardnessMultiplier));
+            Water.TakeValue(Time.deltaTime * waterUse * (2.15f + hardnessMultiplier));
             Sunlight.GiveValue(Time.deltaTime * (sunlightGain + 0.8f));
             
             lastStateInside = false;
@@ -239,14 +239,19 @@ public class PlantSystem : MonoSingleton<PlantSystem>
             }
         }
 
-        hardnessMultiplier += 0.025f;
+        hardnessMultiplier += 0.33f;
+
+        // durability zmniejszyć
+        // widoczność zwiększyć
+        // prędkość przeciwników lekko zwiększyć
+        // butelka nie zmniejsza paska wody... wtf
 
         Debug.Log($"Day finished. plantState: {PlantState.ToString()}, daysGrowing: {daysGrowing}, failedDays: {failedDays}");
 
         // ResetResources();
-        Water.TakeValue(12);
-        Sunlight.TakeValue(12);
-        Soil.TakeValue(12);
+        Water.TakeValue(10);
+        Sunlight.TakeValue(10);
+        Soil.TakeValue(10);
 
     }
 

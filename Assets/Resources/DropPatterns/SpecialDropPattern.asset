@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemChanceDrops:
     _Array:
-    - {fileID: 11400000, guid: 40ad4af6d15b37d43a6b8a611fe83490, type: 2}
-    - {fileID: 11400000, guid: 00aafb89c7fb2ee4ca0ab3e8bdc2af19, type: 2}
+    - {fileID: 11400000, guid: 1d163f09b76a94e4a8fb8855b5aef55d, type: 2}
     - {fileID: 11400000, guid: f755bc711b16283419970146956c3986, type: 2}
     - {fileID: 11400000, guid: 00aafb89c7fb2ee4ca0ab3e8bdc2af19, type: 2}
+    - {fileID: 11400000, guid: 77782c4625196bf4aa1cf886340b3ccb, type: 2}
     - {fileID: 11400000, guid: cbbb18e46773dc9499b392b8649944a1, type: 2}

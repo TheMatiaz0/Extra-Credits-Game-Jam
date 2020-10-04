@@ -19,7 +19,7 @@ public class GarbageChecker : MonoSingleton<GarbageChecker>
 			num++;
 		}
 
-		if (num >= (garbageArray.Length / 1.45f))
+		if (num >= (garbageArray.Length / 1.6f))
 		{
 			TaskManager.Instance.AddTask("Explore the city");
 		}

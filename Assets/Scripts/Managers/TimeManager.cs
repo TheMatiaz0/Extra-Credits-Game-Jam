@@ -81,13 +81,14 @@ public class TimeManager : MonoSingleton<TimeManager>
 
 			if (CurrentTime.Days == 1)
 			{
+				float num = 0;
 				// check if close to house
-				if (Vector3.Distance(MovementController.Instance.transform.position, GameObject.FindGameObjectWithTag("House").transform.position) < 38)
+				if ((num = Vector3.Distance(MovementController.Instance.transform.position, GameObject.FindGameObjectWithTag("House").transform.position)) < 38)
 				{
 					SkipDay();
 					UIManager.Instance.ShowPopupText("You slept outside your house. You lose some of your stamina and HP.");
-					GameManager.Instance.HealthSys.Health.TakeValue(33, "Wrong Place");
-					GameManager.Instance.StaminaSys.Stamina.TakeValue(55, "Wrong Place");
+					GameManager.Instance.HealthSys.Health.TakeValue(num, "Wrong Place");
+					GameManager.Instance.StaminaSys.Stamina.TakeValue(num, "Wrong Place");
 				}
 
 				else
