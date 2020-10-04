@@ -21,6 +21,9 @@ public class PauseObject : MonoBehaviour
 	protected void OnEnable()
 	{
 		TimeControl.Register(this, 0);
+		HomeMusic.Instance.Silence();
+		TownMusic.Instance.Silence();
+
 		if (AudioManager.Instance != null)
 		{
 			AudioManager.Instance.SfxSource.Pause();
@@ -32,6 +35,9 @@ public class PauseObject : MonoBehaviour
 	protected void OnDisable()
 	{
 		TimeControl.Unregister(this);
+		HomeMusic.Instance.RestoreVolume();
+		TownMusic.Instance.RestoreVolume();
+
 		if (AudioManager.Instance != null)
 		{
 			AudioManager.Instance.SfxSource.UnPause();

@@ -61,7 +61,7 @@ public class TimeManager : MonoSingleton<TimeManager>
 	{
 		while (true)
 		{
-			yield return Async.Wait(inGameTimeSpan.TotalSeconds);
+			yield return Async.Wait(inGameTimeSpan);
 			CurrentTime = new TimeSpan(CurrentTime.Hours, CurrentTime.Minutes + (int)minutesPerTimeSpan, CurrentTime.Seconds);
 
             if (previousHours != CurrentTime.Hours )

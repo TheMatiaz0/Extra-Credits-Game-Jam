@@ -25,6 +25,7 @@ public class ResultMenu : MonoBehaviour
 
 	protected void OnEnable()
 	{
+		MovementController.Instance.BlockMovement = true;
 		GameManager.Instance.UnlockCursor();
 
 		dayText.text = string.Empty;
@@ -33,6 +34,7 @@ public class ResultMenu : MonoBehaviour
 		slowlyType = StartCoroutine(SlowlyType());
 
 		HomeMusic.Instance.Silence();
+
 
 		TimeControl.Register(this, 0);
 		// AudioManager.Instance.SfxSource.Pause();
@@ -71,6 +73,8 @@ public class ResultMenu : MonoBehaviour
 
 	protected void OnDisable()
 	{
+		MovementController.Instance.BlockMovement = false;
+
 		TimeControl.Unregister(this);
 		HomeMusic.Instance.RestoreVolume();
 		TimeManager.Instance.StartNewDay();

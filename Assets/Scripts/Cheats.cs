@@ -57,6 +57,11 @@ namespace DefaultNamespace
 				MovementController.Instance.moveSpeed = 50;
 			}
 
+			if (Input.GetKeyDown(KeyCode.T))
+			{
+				
+			}
+
 #endif
 		}
 	}
