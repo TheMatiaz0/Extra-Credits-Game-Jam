@@ -27,6 +27,8 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
 	[SerializeField]
 	private EnemyBehaviour enemyPrefab = null;
 
+	public bool EnemyCanBite { get; set; } = true;
+
 
 	public void GreatPlaceSpawn ()
 	{

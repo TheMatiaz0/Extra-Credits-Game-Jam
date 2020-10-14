@@ -44,8 +44,6 @@ public class EnemyBehaviour : MonoBehaviour
 	[SerializeField]
 	private Animator animator = null;
 
-	private static bool canBite = true;
-
 	protected void Awake()
 	{
 		if (waypoints != null || waypoints.Length > 0)
@@ -71,7 +69,7 @@ public class EnemyBehaviour : MonoBehaviour
 
 	private IEnumerator AttackAnimation (HealthSystem healthSys, StaminaSystem staminaSys = null)
 	{
-		canBite = false;
+		EnemySpawner.Instance.EnemyCanBite = false;
 		animator.SetTrigger("Bite");
 		AudioManager.Instance.PlaySFX("bite");
 		MovementController.Instance.BlockMovement = true;
@@ -83,7 +81,7 @@ public class EnemyBehaviour : MonoBehaviour
 		MovementController.Instance.BlockMovement = false;
 		InteractionChecker.Instance.CheckInteractions = true;
 		yield return Async.Wait(TimeSpan.FromSeconds(3.2f));
-		canBite = true;
+		EnemySpawner.Instance.EnemyCanBite = true;
 	}
 
 	protected void Update()
@@ -104,7 +102,7 @@ public class EnemyBehaviour : MonoBehaviour
 						HealthSystem healthSys = null;
 						if (healthSys = (hit.transform.GetComponent<HealthSystem>()))
 						{
-							if (canBite)
+							if (EnemySpawner.Instance.EnemyCanBite)
 							{
 								StopAllCoroutines();
 								StartCoroutine(AttackAnimation(healthSys, healthSys.GetComponent<StaminaSystem>()));
