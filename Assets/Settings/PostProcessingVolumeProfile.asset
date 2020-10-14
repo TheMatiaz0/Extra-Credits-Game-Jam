@@ -172,7 +172,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   distance:
     m_OverrideState: 1
-    m_Value: 0.304
+    m_Value: 0.231
     min: 0
     max: 1
   cropToFit:
@@ -213,12 +213,12 @@ MonoBehaviour:
   m_AdvancedMode: 0
   temperature:
     m_OverrideState: 1
-    m_Value: 76
+    m_Value: 54
     min: -100
     max: 100
   tint:
-    m_OverrideState: 1
-    m_Value: 0
+    m_OverrideState: 0
+    m_Value: -4
     min: -100
     max: 100
 --- !u!114 &8427284566628204063
@@ -240,7 +240,7 @@ MonoBehaviour:
     m_Value: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.191
+    m_Value: 0.198
     min: 0
     max: 1
   response:
@@ -267,10 +267,10 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.03
+    m_Value: -0.04
   contrast:
     m_OverrideState: 1
-    m_Value: 24
+    m_Value: 30
     min: -100
     max: 100
   colorFilter:
@@ -286,6 +286,6 @@ MonoBehaviour:
     max: 180
   saturation:
     m_OverrideState: 1
-    m_Value: -13
+    m_Value: -18
     min: -100
     max: 100

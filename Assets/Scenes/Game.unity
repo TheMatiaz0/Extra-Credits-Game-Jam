@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.007
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0.71
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1419416432}
-  m_IndirectSpecularColor: {r: 0.6183162, g: 0.3045302, b: 0.099000886, a: 1}
+  m_IndirectSpecularColor: {r: 0.43900448, g: 0.21621644, b: 0.070290625, a: 0.71}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10281,6 +10281,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 6012986133620990975, guid: 7718aefab274a4e4792a6a0ffd6949f6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb63a4df140f6494a8bf3fba04d0c73b, type: 2}
     - target: {fileID: 6185774829671686428, guid: 7718aefab274a4e4792a6a0ffd6949f6, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -26633,6 +26637,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8271300062505978724, guid: b0186d7004833024ca1ca4a75fee304c, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8271300062505978725, guid: b0186d7004833024ca1ca4a75fee304c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

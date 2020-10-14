@@ -12,7 +12,6 @@ public class BedInteractable : InteractableObject
 		{
 			TimeManager.Instance.SkipDay();
 		}
-
 		else
 		{
 			UIManager.Instance.ShowPopupText("You can't sleep now");

@@ -50,5 +50,17 @@ public class CanvasManager : MonoSingleton<CanvasManager>
 		cutsceneCanvas.alpha = cutsceneAlpha;
 	}
 
+	public void Toggle()
+	{
+		if (mainCanvas.alpha == 0)
+		{
+			Restore();
+		}
+		else
+		{
+			HideEverything();
+		}
+	}
+
 	
 }

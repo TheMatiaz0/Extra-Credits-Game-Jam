@@ -5,9 +5,13 @@ namespace DefaultNamespace
 	public class Cheats : MonoBehaviour
 	{
 		public ScriptableEvent eventToCheck;
-
+		
 		private void Update()
 		{
+			if (Input.GetKeyDown(KeyCode.F1))
+			{
+				CanvasManager.Instance.Toggle();
+			}
 #if UNITY_EDITOR
 			if (Input.GetKeyDown(KeyCode.N))
 			{
